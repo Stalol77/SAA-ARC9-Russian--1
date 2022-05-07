@@ -415,6 +415,22 @@ SWEP.Animations = {
         {s = mechtable, t = 0}
         },
     },
+    ["fire_iron_empty"] = {
+        Source = "iron_firelast",
+        Mult = (600/650),
+        ShellEjectAt = 0.01,
+        EventTable = {
+            {
+            FOV = 3,
+            FOV_Start = 0.1,
+            FOV_End = 0.375,
+            FOV_FuncStart = ARC9.Ease.OutCirc,
+            FOV_FuncEnd = ARC9.Ease.InCirc,
+            t = 0.0,
+            },
+        {s = mechtable, t = 0}
+        },
+    },
     ["fire_iron"] = {
         Source = "ACT_VM_ISHOOT",
         Mult = (600/650),
