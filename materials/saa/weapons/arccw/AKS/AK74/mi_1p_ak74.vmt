@@ -1,0 +1,36 @@
+"VertexLitGeneric"
+{
+	"$basetexture"				"saa\weapons\arccw\AKS\AK74\textures\ssak74\T_1P_AK74_d"
+	"$bumpmap"					"saa\weapons\arccw\AKS\AK74\textures\ssak74\T_1P_AK74_n"
+	"$phongexponenttexture"		"saa\weapons\arccw\AKS\AK74\textures\ssak74\T_1P_AK74_e"
+	"$phongwarptexture"			"models\weapons\saa\shared\phongwarp_metal"
+	"$color2"					"[0.75 0.75 0.75]"
+	"$blendTintByBaseAlpha"		"1"
+
+	"$envmap"					"env_cubemap"
+	"$envmaptint"				"[ .3 .3 .35 ]"
+	"$normalmapalphaenvmapmask"	"1"
+
+	"$phong"					"1"
+	"$phongboost"				"75"
+	"$phongfresnelranges"		"[0.32 0.72 0.99]"
+	"$phongalbedotint" 			"1"
+
+	"$rimlight"					"1"
+	"$rimlightexponent"			"33"
+	"$rimlightboost"			"5"
+	"$rimmask"					"1"
+
+	"$nocull"					"1"
+	"$envmapcoefficient"	"0.15" // Lighting will be multiplied by this value
+Proxies
+{
+    SAA_CubemapLightMult
+    {
+        multiplier	$envmapcoefficient // Use our value for default envmap tint
+        resultvar	$envmaptint // Write final output to $envmaptint
+    }
+}
+}
+//Material setup by ShadowRUN 幸運な. 
+//You are NOT allowed to edit/modify/redistribute these materials without my explicit permission.
