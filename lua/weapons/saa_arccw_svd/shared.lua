@@ -32,16 +32,17 @@ SWEP.TracerSize = 1
 
 -- Fake name --
 SWEP.PrintName = "SVD"
+SWEP.Description = [["Thought of as the matrix that spawned the role of the Designated Marksman, the Dragunov Sniper Rifle is a continuation of the Kalashnikov's success, applied to long ranges. Its use is viable for the one of a sniper, but it is mainly intended as a squad long range weapon, helping the comrades fight off any distant targets."]]
 
 -- Trivia --
-
-SWEP.Trivia_Class = "Designated Marksman Rifle"
-SWEP.Trivia_Desc = "'The Right Arm of the Free World' as it was once called, the FAL is Belgium's most exported firearm, serving as standard issue rifle and inspiring new designs all across the world. Mainly used by the commonwealth throughout the cold war, the rifle made its way into the German, Israeli, French, Argentinian and Brazilian militaries, proving to be, not as light as the name implies (Fusil Automatique Leger, Light Automatic Rifle), but as precise and as powerful as the NATO requested."
-SWEP.Trivia_Manufacturer = "FN Herstal"
-SWEP.Trivia_Calibre = "7.62x54mmR NATO"
-SWEP.Trivia_Mechanism = "Roller-Delayed Blowback"
-SWEP.Trivia_Country = "Belgium"
-SWEP.Trivia_Year = 1958
+SWEP.Class = "Designated Marksman Rifle"
+ SWEP.Trivia = {
+     Manufacturer = "Izhevsk Mechanical Plant",
+     Calibre = "7.62x54mm Rimmed",
+     Mechanism = "Gas-Operated Rotating Bolt",
+     Country = "Soviet Union",
+     Year = 1961,
+ }
 
 -- Weapon slot --
 

@@ -28,15 +28,17 @@ SWEP.HideBones = {
 }
 SWEP.PrintName = "AKM"
 
--- Trivia --
+SWEP.Description = [["The most produced and exported gun in the globe, the AKM is the famous AK-47's direct evolution that went into main service for the Red Army for over 30 years. Its enhanced design rendered the production ever-lasting, placing it all around the globe as an extremely viable rifle."]]
 
-SWEP.Trivia_Class = "Assault Rifle"
-SWEP.Trivia_Desc = "'The Right Arm of the Free World' as it was once called, the FAL is Belgium's most exported firearm, serving as standard issue rifle and inspiring new designs all across the world. Mainly used by the commonwealth throughout the cold war, the rifle made its way into the German, Israeli, French, Argentinian and Brazilian militaries, proving to be, not as light as the name implies (Fusil Automatique Leger, Light Automatic Rifle), but as precise and as powerful as the NATO requested."
-SWEP.Trivia_Manufacturer = "FN Herstal"
-SWEP.Trivia_Calibre = "7.62x51mm NATO"
-SWEP.Trivia_Mechanism = "Roller-Delayed Blowback"
-SWEP.Trivia_Country = "Belgium"
-SWEP.Trivia_Year = 1958
+-- Trivia --
+SWEP.Class = "Assault Rifle"
+ SWEP.Trivia = {
+     Manufacturer = "Izhevsk Mechanical Plant",
+     Calibre = "7.62x39mm M43",
+     Mechanism = "Gas-Operated Rotating Bolt",
+     Country = "Soviet Union",
+     Year = 1954,
+ }
 
 -- Weapon slot --
 
