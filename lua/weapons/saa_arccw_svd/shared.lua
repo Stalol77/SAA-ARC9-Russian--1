@@ -8,7 +8,7 @@ SWEP.UseHands = true
 
 -- Muzzle and shell effects --
 
-SWEP.MuzzleParticle = "muzzleflash_ak74" -- Used for some muzzle effects.
+SWEP.MuzzleParticle = "muzzleflash_smg_bizon" -- Used for some muzzle effects.
 SWEP.ShellModel = "models/weapons/arccw/ud_shells/556.mdl"
 SWEP.ShellScale = 1.5
 --SWEP.ShellMaterial = "models/weapons/arcticcw/shell_556"
@@ -478,9 +478,17 @@ SWEP.Attachments = {
         PrintName = "Barrel",
         Category = {"SAA_SVD_BARREL"},
         Bone = "Weapon",
-        Pos = Vector(0, 20, 0.85),
+        Pos = Vector(0, 21.8, 0.85),
         Ang = Angle(0, 270, 0),
         Scale = 1,
+    },
+    {
+        PrintName = "TACTICAL",
+        Category = {"clamped"},
+        Bone = "Weapon",
+        Pos = Vector(-0.025, 19.3, 0.4),
+        Ang = Angle(0, 270, 180),
+        Scale = 0.7,
     },
     {
         PrintName = "Dovetail",
