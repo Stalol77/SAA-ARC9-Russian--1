@@ -5,7 +5,7 @@ ATT.Description = [[Barrel designed for use against distant targets. Its compara
 
 ATT.SortOrder = 0
 ATT.Category = "saa_pkm_barrel"
-ATT.RPMMult = 610/650
+ATT.RPMMult = 610/632
 ATT.RangeMaxMult = (185/150)
 ATT.SwayMult = 1.3
 ATT.PhysBulletMuzzleVelocityMult = 853/825

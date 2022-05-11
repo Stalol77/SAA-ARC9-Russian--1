@@ -22,6 +22,9 @@ local shellsounds = {
 }
 SWEP.ShellSounds = shellsounds
 
+SWEP.BipodPos = Vector(0, 1, -2)
+SWEP.BipodAng = Angle(0, 0, 0)
+
 SWEP.MuzzleEffectAttachment = 0
 SWEP.CaseEffectAttachment = 2
 SWEP.TracerNum = 3
@@ -72,7 +75,7 @@ SWEP.PhysBulletMuzzleVelocity = 28150*(825/715) -- Physical bullet muzzle veloci
 
 -- Mag size --
 
-SWEP.ChamberSize = 1
+SWEP.ChamberSize = 0
 SWEP.ClipSize = 100
 SWEP.SupplyLimit = 6 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 3 -- Amount of reserve UBGL magazines you can take.
@@ -98,7 +101,7 @@ SWEP.RecoilLookupTableOverrun = nil -- Repeatedly take values from this table if
 SWEP.Recoil = 1
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
-SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
+SWEP.RecoilUp = 0.9 -- Multiplier for vertical recoil
 SWEP.RecoilSide = 1.2 -- Multiplier for vertical recoil
 
 -- This is for EFT-like recoil, where gun shoots where sights at. Adds aditional movement to player view
@@ -162,9 +165,9 @@ SWEP.FreeAimRadiusSights = 2
 SWEP.FreeAimRadius = 12 / 1.25 
 -- Firerate / Firemodes --
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
-SWEP.TriggerDelayTime = 0.085 -- Time until weapon fires.
+SWEP.TriggerDelayTime = 0.07 -- Time until weapon fires.
 SWEP.TriggerDelayRepeat = false -- Whether to do it for every shot on automatics.
-SWEP.RPM = 650
+SWEP.RPM = 632
 SWEP.Num = 1
 SWEP.Firemodes = {
     {
@@ -178,9 +181,9 @@ SWEP.Firemodes = {
 SWEP.ActivePos = Vector(-0, -1, 0.35)
 SWEP.ActiveAng = Angle(2, 2, -4)
 
-SWEP.ShootPitch = 108
+SWEP.ShootPitch = 130
 SWEP.ShootVolume = 130
-SWEP.ShootPitchVariation = 0
+SWEP.ShootPitchVariation = 130/132
 
 SWEP.ProceduralRegularFire = false
 SWEP.ProceduralIronFire = false
@@ -297,78 +300,97 @@ SWEP.HoldTypeBlindfire = "pistol"
 
 -- Firing sounds --
 local pkm = "saa/pkm/"
-local fire = pkm .."weap_pkilo_fire_plr_"
+local pkm_far = "^" .. pkm
 local firingsound = {
-    fire .. "01.wav",
-    fire .. "02.wav",
-    fire .. "03.wav",
-    fire .. "04.wav",
-    fire .. "05.wav",
-    fire .. "06.wav",
+    pkm .. "Bruen Mk9_fire_plr_01.wav",
+    pkm .. "Bruen Mk9_fire_plr_02.wav",
+    pkm .. "Bruen Mk9_fire_plr_03.wav",
+    pkm .. "Bruen Mk9_fire_plr_04.wav",
+    pkm .. "Bruen Mk9_fire_plr_05.wav",
+    pkm .. "Bruen Mk9_fire_plr_06.wav",
+
 }
-local distant = pkm .. "weap_ar4_fire_plr_atmo_ext1_"
 local distantsound = {
-    distant .. "01.wav",
-    distant .. "02.wav",
-    distant .. "03.wav",
-    distant .. "04.wav",
-    distant .. "05.wav",
-    distant .. "06.wav",
+    pkm .. "weap_lmg_fire_plr_atmo_ext2_01.wav",
+    pkm .. "weap_lmg_fire_plr_atmo_ext2_02.wav",
+    pkm .. "weap_lmg_fire_plr_atmo_ext2_03.wav",
+    pkm .. "weap_lmg_fire_plr_atmo_ext2_04.wav",
+    pkm .. "weap_lmg_fire_plr_atmo_ext2_05.wav",
+    pkm .. "weap_lmg_fire_plr_atmo_ext2_06.wav",
 }
 SWEP.ShootSound = firingsound
 SWEP.DistantShootSound = distantsound 
 
+local firingsound_s = {
+    pkm .. "weap_scharlie_sup_npc_01.wav",
+    pkm .. "weap_scharlie_sup_npc_02.wav",
+    pkm .. "weap_scharlie_sup_npc_03.wav",
+    pkm .. "weap_scharlie_sup_npc_04.wav",
+    pkm .. "weap_scharlie_sup_npc_05.wav",
+    pkm .. "weap_scharlie_sup_npc_06.wav",
+
+}
+
+local distant_s = {
+    pkm .. "weap_dmr_sup_fire_plr_atmo_ext1_01.wav",
+    pkm .. "weap_dmr_sup_fire_plr_atmo_ext1_02.wav",
+    pkm .. "weap_dmr_sup_fire_plr_atmo_ext1_03.wav",
+    pkm .. "weap_dmr_sup_fire_plr_atmo_ext1_04.wav",
+    pkm .. "weap_dmr_sup_fire_plr_atmo_ext1_05.wav",
+    pkm .. "weap_dmr_sup_fire_plr_atmo_ext1_06.wav",
+
+}
+
 -- SWEP.FirstShootSoundSilenced = {"smc/weapons/bocw/m60/M60_S" .. math.random(1, 6) .. ".wav"}
-SWEP.ShootSoundSilenced = nil
-SWEP.DistantShootSoundSilenced = nil
+SWEP.ShootSoundSilenced = firingsound_s
+SWEP.DistantShootSoundSilenced = distant_s
 
-SWEP.Hook_TranslateAnimation = function(swep, anim)
-    local elements = swep:GetElements()
 
-    if elements["drum_75"] then
-        return anim .. "_drum"
-end
-end
 
 
 -- Animations --
-local foley = "saa/ak2022/aks_foley_"
-local drum = "saa/ak2022/global_drummag_mag_"
+local foley = "saa/pkm/handling/"
 SWEP.RicochetAngleMax = 45 -- Maximum angle at which a ricochet can occur. Between 1 and 90. Angle of 0 is impossible but would theoretically always ricochet.
 SWEP.RicochetChance = 0.1 -- If the angle is right, what is the chance that a ricochet can occur?
 
---SWEP.Hook_TranslateAnimation = function(swep, anim)
---    local elements = swep:GetElements()
---
---    if elements["n_handguard"] then
---        return anim .. "_m"
---    elseif elements["ak74m_handguard"] then
---        return anim .. "_m"
---    elseif elements["ak74_handguard"] then
---        return anim .. "_m"
---    end
---end
+local seg = pkm .. "segmented/pkm_fire_"
 
-local mech = pkm .. "Bruen Mk9_fire_plr_mech_"
-local mechtable = {
-    mech .. "01.wav",
-    mech .. "02.wav",
-    mech .. "03.wav",
-    mech .. "04.wav",
-    mech .. "05.wav",
-    mech .. "06.wav",
+local belt = {
+    seg .. "beltshot_01.wav",
+    seg .. "beltshot_02.wav",
+    seg .. "beltshot_03.wav",
+    seg .. "beltshot_04.wav",
+    seg .. "beltshot_05.wav",
+    seg .. "beltshot_06.wav",
+    seg .. "beltshot_07.wav",
+    seg .. "beltshot_08.wav",
+    seg .. "beltshot_09.wav",
+    seg .. "beltshot_10.wav",
+    seg .. "beltshot_11.wav",
+    seg .. "beltshot_12.wav",
 
 }
-local mechtable_is = {
-    ")" .. mech .. "01.wav",
-    ")" .. mech .. "02.wav",
-    ")" .. mech .. "03.wav",
-    ")" .. mech .. "04.wav",
-    ")" .. mech .. "05.wav",
-    ")" .. mech .. "06.wav",
+local belt_final = {
+    seg .. "beltshot_tail_01.wav",
+    seg .. "beltshot_tail_02.wav",
+    seg .. "beltshot_tail_03.wav",
+    seg .. "beltshot_tail_04.wav"
 
 }
-local trigger = pkm .. "pk_prefire.wav"
+local mech = {
+    pkm .. "weap_mgolf34_fire_plr_mech_01.wav",
+    pkm .. "weap_mgolf34_fire_plr_mech_02.wav",
+    pkm .. "weap_mgolf34_fire_plr_mech_03.wav",
+    pkm .. "weap_mgolf34_fire_plr_mech_04.wav",
+    pkm .. "weap_mgolf34_fire_plr_mech_05.wav",
+    pkm .. "weap_mgolf34_fire_plr_mech_06.wav",
+    pkm .. "weap_mgolf34_fire_plr_mech_07.wav",
+    pkm .. "weap_mgolf34_fire_plr_mech_08.wav",
+
+} 
+
+
+local trigger = pkm .. "pk_trigger.wav"
 local triggertable = trigger
 
 
@@ -380,13 +402,6 @@ SWEP.Animations = {
     ["trigger"] = {
         Source = "base_idle",
         EventTable = {
-            {s = trigger,    t = 0, v=1, p=90},
-        },
-    },
-    ["untrigger"] = {
-        Source = "base_idle",
-        Time = 0.03,
-        EventTable = {
             {s = trigger,    t = 0, v=1, p=100},
         },
     },
@@ -395,7 +410,9 @@ SWEP.Animations = {
         ShellEjectAt = 0.01,
         Mult = 0.55,
         EventTable = {
-            {s = mechtable,    t = 0, v=0.8, p=83},
+            {s = mech,    t = 0, v=0.4, p=100,},
+            {s = belt,    t = 0, v=0.2, p=100, l=60},
+            {s = belt_final,    t = 0, v=0.2, p=100, l=60},
             {
             FOV = -4,
             FOV_Start = 0.05,
@@ -411,7 +428,43 @@ SWEP.Animations = {
         ShellEjectAt = 0.01,
         Mult = 0.63,
         EventTable = {
-            {s = mechtable_is,    t = 0, v= 1, p=83},
+            {s = mech,    t = 0, v=0.55, p=100,},
+            {s = belt,    t = 0, v=0.2, p=100, l=60},
+            {s = belt_final,    t = 0, v=0.2, p=100, l=60},
+            {
+            FOV = -3,
+            FOV_Start = 0.05,
+            FOV_End = 0.5,
+            FOV_FuncStart = ARC9.Ease.OutCirc,
+            FOV_FuncEnd = ARC9.Ease.InCirc,
+            t = 0.0,
+            },
+        },
+    },
+    ["fire_supp"] = {
+        Source = {"base_fire_1", "base_fire_2"},
+        ShellEjectAt = 0.01,
+        Mult = 0.55,
+        EventTable = {
+            {s = belt,    t = 0, v=0.2, p=100, l=60},
+            {s = belt_final,    t = 0, v=0.2, p=100, l=60},
+            {
+            FOV = -4,
+            FOV_Start = 0.05,
+            FOV_End = 0.5,
+            FOV_FuncStart = ARC9.Ease.OutCirc,
+            FOV_FuncEnd = ARC9.Ease.InCirc,
+            t = 0.0,
+            },
+        },
+    },
+    ["fire_iron_supp"] = {
+        Source = "ACT_VM_ISHOOT",
+        ShellEjectAt = 0.01,
+        Mult = 0.63,
+        EventTable = {
+            {s = belt,    t = 0, v=0.2, p=100, l=60},
+            {s = belt_final,    t = 0, v=0.2, p=100, l=60},
             {
             FOV = -3,
             FOV_Start = 0.05,
@@ -450,46 +503,26 @@ SWEP.Animations = {
         MinProgress = 3,
         Mult = 0.725,
         EventTable = {
-            {s = foley .. "spec.wav",    t = 1, v=0.3},
-            {s = foley .. "lid_open.wav",    t = 1.5, v=0.5},
-            {s = foley .. "mag_detach.wav",    t = 2.7, v = 0.3},
-            {s = foley .. "magout.wav",    t = 3.45, v = 0.3},
-            {s = foley .. "mag_take.wav",    t = 5, v = 0.2},
-            {s = foley .. "mag_tap.wav",    t = 6, v = 0.3},
-            {s = foley .. "magin.wav",    t = 6.4, v = 0.3},
-            {s = foley .. "belt_allign.wav",    t = 7.1, v = 0.4, p=120},
-            {s = foley .. "spec.wav",    t = 7.6, v = 0.2, p=120},
-            {s = foley .. "spec.wav",    t = 8.3, v = 0.2, p=80},
-            {s = foley .. "lid_close.wav",    t = 8.7, v = 0.5, p=100},
+            {s = foley .. "lid_detach.wav", t = 1.1, p=90, v=1},
+            {s = foley .. "lid_open.wav", t = 1.5, p=86, v=1},
+            {s = foley .. "box_fidget.wav", t = 2.65, p=89, v=1},
+            {s = foley .. "linkrattle.wav", t = 2.7, p=70, v=0.2},
+            {s = foley .. "pkm_foley_mag_out.wav", t = 3.05, p=89, v=1},
+            {s = foley .. "box_fidget.wav", t = 5.6, p=100, v=1},
+            {s = foley .. "box_fidget.wav", t = 5.7, p=160, v=0.7},
+            {s = foley .. "pkm_foley_mag_in.wav", t = 5.8, p=100, v=1},
+            {s = foley .. "linkrattle.wav", t = 7.3, p=70, v=0.2},
+            {s = foley .. "pkm_foley_belt_pull.wav", t = 7.6, p=100, v=1},
+            {s = foley .. "linkrattle.wav", t = 9.1, p=70, v=0.5},
+            {s = foley .. "lid_close.wav", t = 8.85, p=90, v=1},
+
             {
             FOV = -2,
-            FOV_Start = 0.7,
-            FOV_End = 6.5,
-            FOV_FuncStart = ARC9.Ease.OutCubic,
-            FOV_FuncEnd = ARC9.Ease.InCubic,
+            FOV_Start = 0.3,
+            FOV_End = 7.5,
+            FOV_FuncStart = ARC9.Ease.InBack,
+            FOV_FuncEnd =  ARC9.Ease.OutBack,
             t = 0,
-            },
-        },
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.25,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.65,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 1,
-                lhik = 1,
-                rhik = 0
             },
         },
     },
@@ -497,21 +530,30 @@ SWEP.Animations = {
         Source = "reload_empty",
         Mult = 0.7,
         EventTable = {
-            {s = foley .. "spec.wav",    t = 1, v=0.3},
-            {s = foley .. "lid_open.wav",    t = 1.5, v=0.5},
-            {s = foley .. "mag_detach.wav",    t = 2.7, v = 0.3},
-            {s = foley .. "magout_empty.wav",    t = 3.45, v = 0.3},
-            {s = foley .. "mag_take.wav",    t = 5, v = 0.2},
-            {s = foley .. "mag_tap.wav",    t = 6, v = 0.3},
-            {s = foley .. "magin.wav",    t = 6.4, v = 0.3},
-            {s = foley .. "belt_allign.wav",    t = 7.1, v = 0.4, p=120},
-            {s = foley .. "spec.wav",    t = 7.6, v = 0.2, p=120},
-            {s = foley .. "spec.wav",    t = 8.3, v = 0.2, p=80},
-            {s = foley .. "lid_close.wav",    t = 8.7, v = 0.5, p=100},
-            {s = foley .. "spec.wav",    t = 10.8, v = 0.3, p=80},
-            {s = foley .. "boltback.wav",    t = 11.1, v = 0.6, p=100},
-            {s = foley .. "spec.wav",    t = 11.6, v = 0.3, p=120},
-            {s = foley .. "boltrelease.wav",    t = 11.8, v = 0.7, p=100},
+            {s = foley .. "lid_detach.wav", t = 1.1, p=90, v=1},
+            {s = foley .. "lid_open.wav", t = 1.5, p=86, v=1},
+            {s = foley .. "box_fidget.wav", t = 2.65, p=89, v=1},
+            {s = foley .. "pkm_foley_mag_out.wav", t = 3.05, p=89, v=1},
+            {s = foley .. "box_fidget.wav", t = 5.6, p=100, v=1},
+            {s = foley .. "box_fidget.wav", t = 5.7, p=160, v=0.7},
+            {s = foley .. "pkm_foley_mag_in.wav", t = 5.8, p=100, v=1},
+            {s = foley .. "linkrattle.wav", t = 7.3, p=70, v=0.2},
+            {s = foley .. "pkm_foley_belt_pull.wav", t = 7.6, p=100, v=1},
+            {s = foley .. "linkrattle.wav", t = 9.1, p=70, v=0.5},
+            {s = foley .. "lid_close.wav", t = 8.85, p=90, v=1},
+            {s = foley .. "pkm_foley_bolt_back.wav", t = 10.4, p=100, v=1},
+            {s = foley .. "pkm_foley_bolt_release.wav", t = 10.9, p=100, v=1},
+            {s = foley .. "chargeback.wav", t = 10.4, p=100, v=0.3},
+            {s = foley .. "linkrattle.wav", t = 10.8, p=75, v=1.0},
+            {s = foley .. "chargeforward.wav", t = 10.9, p=95, v=0.3},
+            {
+            FOV = -2,
+            FOV_Start = 0.3,
+            FOV_End = 9.5,
+            FOV_FuncStart = ARC9.Ease.InBack,
+            FOV_FuncEnd =  ARC9.Ease.OutBack,
+            t = 0,
+            },
         },
         IKTimeLine = {
             {
@@ -547,6 +589,18 @@ SWEP.Animations = {
         Source = "bipod_idle",
         Time = 0.05
     },
+    ["enter_bipod"] = {
+        Source = "bipod_idle",
+        Time = 0.05
+    },
+    ["exit_bipod"] = {
+        Source = "bipod_idle",
+        Time = 0.05
+    },
+    ["dryfire_bipod"] = {
+        Source = "bipod_idle",
+        Time = 0.05
+    },
     ["idle_bipod"] = {
         Source = "bipod_idle",
         Time = 0.05
@@ -569,7 +623,9 @@ SWEP.Animations = {
         ShellEjectAt = 0.01,
         Mult = 0.55,
         EventTable = {
-            {s = mechtable,    t = 0, v=0.45, p=82.5},
+            {s = mech,    t = 0, v=0.4, p=100,},
+            {s = belt,    t = 0, v=0.2, p=100, l=60},
+            {s = belt_final,    t = 0, v=0.2, p=100, l=60},
             {
             FOV = -4,
             FOV_Start = 0.05,
@@ -580,12 +636,14 @@ SWEP.Animations = {
             },
         },
     },
-    ["fire_empty_bipod"] = {
+    ["fire_bipod_empty"] = {
         Source = {"deployed_fire_1", "deployed_fire_2"},
         ShellEjectAt = 0.01,
         Mult = 0.55,
         EventTable = {
-            {s = mechtable,    t = 0, v=0.45, p=82.5},
+            {s = mech,    t = 0, v=0.4, p=100,},
+            {s = belt,    t = 0, v=0.2, p=100, l=60},
+            {s = belt_final,    t = 0, v=0.2, p=100, l=60},
             {
             FOV = -4,
             FOV_Start = 0.05,
@@ -601,7 +659,9 @@ SWEP.Animations = {
         ShellEjectAt = 0.01,
         Mult = 0.63,
         EventTable = {
-            {s = mechtable,    t = 0, v= 0.6, p=83},
+            {s = mech,    t = 0, v=0.6, p=100,},
+            {s = belt,    t = 0, v=0.2, p=100, l=60},
+            {s = belt_final,    t = 0, v=0.2, p=100, l=60},
             {
             FOV = -3,
             FOV_Start = 0.05,
@@ -612,12 +672,14 @@ SWEP.Animations = {
             },
         },
     },
-    ["fire_iron_empty_bipod"] = {
+    ["fire_iron_bipod_empty"] = {
         Source = {"deployed_iron_fire_1", "deployed_iron_fire_2", "deployed_iron_fire_3"},
         ShellEjectAt = 0.01,
         Mult = 0.63,
         EventTable = {
-            {s = mechtable,    t = 0, v= 0.6, p=83},
+            {s = mech,    t = 0, v=0.7, p=100,},
+            {s = belt,    t = 0, v=0.2, p=100, l=60},
+            {s = belt_final,    t = 0, v=0.2, p=100, l=60},
             {
             FOV = -3,
             FOV_Start = 0.05,
@@ -633,23 +695,24 @@ SWEP.Animations = {
         MinProgress = 3,
         Mult = 0.725,
         EventTable = {
-            {s = foley .. "spec.wav",    t = 1, v=0.3},
-            {s = foley .. "lid_open.wav",    t = 1.5, v=0.5},
-            {s = foley .. "mag_detach.wav",    t = 2.7, v = 0.3},
-            {s = foley .. "magout.wav",    t = 3.45, v = 0.3},
-            {s = foley .. "mag_take.wav",    t = 5, v = 0.2},
-            {s = foley .. "mag_tap.wav",    t = 6, v = 0.3},
-            {s = foley .. "magin.wav",    t = 6.4, v = 0.3},
-            {s = foley .. "belt_allign.wav",    t = 7.1, v = 0.4, p=120},
-            {s = foley .. "spec.wav",    t = 7.6, v = 0.2, p=120},
-            {s = foley .. "spec.wav",    t = 8.3, v = 0.2, p=80},
-            {s = foley .. "lid_close.wav",    t = 8.7, v = 0.5, p=100},
+            {s = foley .. "lid_detach.wav", t = 1.1, p=90, v=1},
+            {s = foley .. "lid_open.wav", t = 1.5, p=86, v=1},
+            {s = foley .. "box_fidget.wav", t = 2.65, p=89, v=1},
+            {s = foley .. "linkrattle.wav", t = 2.7, p=70, v=0.2},
+            {s = foley .. "pkm_foley_mag_out.wav", t = 3.05, p=89, v=1},
+            {s = foley .. "box_fidget.wav", t = 5.6, p=100, v=1},
+            {s = foley .. "box_fidget.wav", t = 5.7, p=160, v=0.7},
+            {s = foley .. "pkm_foley_mag_in.wav", t = 5.8, p=100, v=1},
+            {s = foley .. "linkrattle.wav", t = 7.3, p=70, v=0.2},
+            {s = foley .. "pkm_foley_belt_pull.wav", t = 7.6, p=100, v=1},
+            {s = foley .. "linkrattle.wav", t = 9.1, p=70, v=0.5},
+            {s = foley .. "lid_close.wav", t = 8.85, p=90, v=1},
             {
-            FOV = -2,
-            FOV_Start = 0.7,
-            FOV_End = 6.5,
-            FOV_FuncStart = ARC9.Ease.OutCubic,
-            FOV_FuncEnd = ARC9.Ease.InCubic,
+            FOV = -4,
+            FOV_Start = 0.6,
+            FOV_End = 7.5,
+            FOV_FuncStart = ARC9.Ease.InBack,
+            FOV_FuncEnd =  ARC9.Ease.OutBack,
             t = 0,
             },
         },
@@ -680,21 +743,31 @@ SWEP.Animations = {
         Source = "bipod_reload_empty",
         Mult = 0.7,
         EventTable = {
-            {s = foley .. "spec.wav",    t = 1, v=0.3},
-            {s = foley .. "lid_open.wav",    t = 1.5, v=0.5},
-            {s = foley .. "mag_detach.wav",    t = 2.7, v = 0.3},
-            {s = foley .. "magout_empty.wav",    t = 3.45, v = 0.3},
-            {s = foley .. "mag_take.wav",    t = 5, v = 0.2},
-            {s = foley .. "mag_tap.wav",    t = 6, v = 0.3},
-            {s = foley .. "magin.wav",    t = 6.4, v = 0.3},
-            {s = foley .. "belt_allign.wav",    t = 7.1, v = 0.4, p=120},
-            {s = foley .. "spec.wav",    t = 7.6, v = 0.2, p=120},
-            {s = foley .. "spec.wav",    t = 8.3, v = 0.2, p=80},
-            {s = foley .. "lid_close.wav",    t = 8.7, v = 0.5, p=100},
-            {s = foley .. "spec.wav",    t = 10.8, v = 0.3, p=80},
-            {s = foley .. "boltback.wav",    t = 11.1, v = 0.6, p=100},
-            {s = foley .. "spec.wav",    t = 11.6, v = 0.3, p=120},
-            {s = foley .. "boltrelease.wav",    t = 11.8, v = 0.7, p=100},
+            {s = foley .. "lid_detach.wav", t = 1.1, p=90, v=1},
+            {s = foley .. "lid_open.wav", t = 1.5, p=86, v=1},
+            {s = foley .. "box_fidget.wav", t = 2.65, p=89, v=1},
+            {s = foley .. "linkrattle.wav", t = 2.7, p=70, v=0.2},
+            {s = foley .. "pkm_foley_mag_out.wav", t = 3.05, p=89, v=1},
+            {s = foley .. "box_fidget.wav", t = 5.6, p=100, v=1},
+            {s = foley .. "box_fidget.wav", t = 5.7, p=160, v=0.7},
+            {s = foley .. "pkm_foley_mag_in.wav", t = 5.8, p=100, v=1},
+            {s = foley .. "linkrattle.wav", t = 7.3, p=70, v=0.2},
+            {s = foley .. "pkm_foley_belt_pull.wav", t = 7.6, p=100, v=1},
+            {s = foley .. "linkrattle.wav", t = 9.1, p=70, v=0.5},
+            {s = foley .. "lid_close.wav", t = 8.85, p=90, v=1},
+            {s = foley .. "pkm_foley_bolt_back.wav", t = 10.4, p=100, v=1},
+            {s = foley .. "pkm_foley_bolt_release.wav", t = 10.9, p=100, v=1},
+            {s = foley .. "chargeback.wav", t = 10.4, p=100, v=0.3},
+            {s = foley .. "linkrattle.wav", t = 10.8, p=75, v=1.0},
+            {s = foley .. "chargeforward.wav", t = 10.9, p=95, v=0.3},
+            {
+            FOV = -2,
+            FOV_Start = 0.6,
+            FOV_End = 9.5,
+            FOV_FuncStart = ARC9.Ease.InBack,
+            FOV_FuncEnd =  ARC9.Ease.OutBack,
+            t = 0,
+            },
         },
         IKTimeLine = {
             {
@@ -746,6 +819,14 @@ SWEP.Attachments = {
        Ang = Angle(0, 0, 0),
 
        Scale = 0.8,
+   },
+    {
+       PrintName = "Muzzle",
+       Category = {"muzzle","suppressor"},
+       Bone = "b_wpn",
+       Pos = Vector(0, 19, 1.65),
+       Ang = Angle(0, 270, 0),
+       Scale = 0.9,
    },
     {
        PrintName = "Underbarrel",

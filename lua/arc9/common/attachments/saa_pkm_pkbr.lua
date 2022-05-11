@@ -5,7 +5,7 @@ ATT.Description = [[Barrel designed for modern PK models. Improves gas recovery,
 
 ATT.SortOrder = 0
 ATT.Category = "saa_pkm_barrel"
-ATT.RPMMult = 670/650
+ATT.RPMMult = 650/632
 ATT.PhysBulletMuzzleVelocityMult = 800/825
 
 ATT.ActivateElements = {"barrel_pkp"}

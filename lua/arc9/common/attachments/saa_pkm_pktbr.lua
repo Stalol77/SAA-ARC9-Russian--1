@@ -2,10 +2,12 @@ ATT.PrintName = "PKT Coaxial Barrel"
 ATT.CompactName = "PKT Barrel"
 ATT.Description = [[Barrel designed for vehicle use. Improves gas recovery, boosting firerate, worsening muzzle velocity, range and gets rid of the front post.]]
 
-
+ATT.Cons = {
+	"No Front Sight"
+}
 ATT.SortOrder = 0
 ATT.Category = "saa_pkm_barrel"
-ATT.RPMMult = 715/650
+ATT.RPMMult = 715/632
 ATT.RangeMaxMult = (85/170)
 ATT.RecoilMult = 1.7/1.575
 ATT.SwayMult = 0.8
