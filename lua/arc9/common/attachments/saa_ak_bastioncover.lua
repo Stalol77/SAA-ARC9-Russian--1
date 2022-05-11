@@ -18,11 +18,10 @@ ATT.IronSightsOverride = {
 ATT.Attachments = {
     {
         PrintName = "OPTIC",
-        Category = "optic_picatinny",
+        Category = {"SAA_SCOPE_SMALL","SAA_SCOPE_MEDIUM"},
         Pos = Vector(0, 0, -1.2),
         Ang = Angle(0, 270, 0),
         Scale = 0.7,
-        MergeSlots = {2}
     },
 }
 

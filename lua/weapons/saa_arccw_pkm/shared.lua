@@ -803,10 +803,10 @@ SWEP.Animations = {
 SWEP.Attachments = {
     {
        PrintName = "OPTIC",
-       Category = {"SAA_SCOPE_MEDIUM"},
+       Category = {"SAA_SCOPE_SMALL","SAA_SCOPE_MEDIUM"},
        Bone = "b_wpn_lid",
        InstalledElements = {"railed_lid"},
-       Pos = Vector(0.05, -5, 1.4),
+       Pos = Vector(0.11, -4, 1.4),
        Ang = Angle(0, 270, 0),
 
        Scale = 0.8,
@@ -867,7 +867,7 @@ SWEP.Attachments = {
    },
 }
 
-SWEP.ExtraSightDist = -10
+SWEP.ExtraSightDist = 10
 
 SWEP.DefaultBodygroups = "00000000000"
 SWEP.AttachmentElements = {
