@@ -830,13 +830,13 @@ SWEP.Attachments = {
    },
     {
        PrintName = "Underbarrel",
-       Category = {"saa_pkm_ub"},
+       Category = {"saa_pkm_ub","clamped"},
        Bone = "b_wpn",
-       ExcludeElements = {"barrel_pkp"},
-       Pos = Vector(0, 7.1, 1.9),
-       Ang = Angle(0, 0, 0),
+       Pos = Vector(-0.2, 7.1, 0.45),
+       Ang = Angle(90, 270, 0),
+       Icon_Offset = Vector(0.2, 0, -0.2),
 
-       Scale = 0.8,
+       Scale = 0.6,
    },
     {
        PrintName = "Pistol Grip",

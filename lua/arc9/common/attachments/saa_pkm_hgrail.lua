@@ -8,5 +8,32 @@ ATT.Category = "saa_pkm_ub"
 ATT.RecoilSideMult = 1.7/1.5
 ATT.SwayMult = 0.95
 ATT.Bipod = false
-
+ATT.ExcludeElements = {"barrel_pkp"}
 ATT.ActivateElements = {"handguard_rail"}
+
+ATT.Attachments = {
+    {
+        PrintName = "Underbarrel",
+        Category = {"grip_picatinny"},
+        Pos = Vector(1.85, -0.425, -6),
+        Ang = Angle(90, 0, 0),
+        Icon_Offset = Vector(0, 0, 0),
+        Scale = 1
+    },
+    {
+        PrintName = "Left Rail",
+        Category = {"saa_rail_tactical"},
+        Pos = Vector(-0.075, 0.8, 2),
+        Ang = Angle(0, 0, 0),
+        Icon_Offset = Vector(0, 0, 0),
+        Scale = 1.5
+    },
+    {
+        PrintName = "Right Rail",
+        Category = {"saa_rail_tactical"},
+        Pos = Vector(0.075, -1.2, 2),
+        Ang = Angle(180, 0, 0),
+        Icon_Offset = Vector(0, 0, 0),
+        Scale = 1.5
+    },
+}
