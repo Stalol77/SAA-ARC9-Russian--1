@@ -261,6 +261,8 @@ SWEP.SightTime = 0.75
 SWEP.ShootSpeedMult = 0.2
 SWEP.AimDownSightsTime = 0.53 -- How long it takes to go from hip fire to aiming down sights.
 SWEP.SprintToFireTime = 0.9 -- How long it takes to go from sprinting to being able to fire.
+SWEP.NoSprintWhenLocked = true
+
 
 
 SWEP.SprintAng = Angle(30, -17, -15)
