@@ -81,8 +81,8 @@ SWEP.SupplyLimit = 6 -- Amount of magazines of ammo this gun can take from an AR
 SWEP.SecondarySupplyLimit = 3 -- Amount of reserve UBGL magazines you can take.
 
 SWEP.Bipod = true -- This weapon comes with a bipod.
-SWEP.RecoilMultBipod = 0.125
-SWEP.SwayMultBipod = 0.25
+SWEP.RecoilMultBipod = 0.105
+SWEP.SwayMultBipod = 0.075
 SWEP.FreeAimRadiusMultBipod = 0
 
 -- Recoil --
@@ -195,15 +195,44 @@ SWEP.ReloadInSights = false
 SWEP.NPCWeaponType = "weapon_ar2"
 SWEP.NPCWeight = 60
 
--- Accuracy --
+-------------------------- SPREAD
 
-SWEP.AccuracyMOA = 2
-SWEP.HipDispersion = 150
-SWEP.MoveDispersion = 300
-SWEP.JumpDispersion = 700
+SWEP.Spread = 0.01
 
-SWEP.Ammo = "7.62x39mm"
-SWEP.MagID = "akm"
+SWEP.UsePelletSpread = false -- Multiple bullets fired at once clump up, like for a shotgun. Spread affects which direction they get fired, not their spread relative to one another.
+SWEP.PelletSpread = 0.2
+
+SWEP.PelletSpreadPattern = {} -- Use to give shotguns custom spread patterns. If Pellet Spread is off, each pellet will be subject to spread. Otherwise, the entire pattern shifts, and each pellet is randomly offset by pellet spread amount.
+
+-- SWEP.PelletSpreadPattern = {
+--     {
+--         x = -1,
+--         y = -1
+--     },
+--     {
+--         x = -1,
+--         y = 1
+--     }
+-- }
+
+SWEP.PelletSpreadPatternOverrun = nil
+-- {Angle(1, 1, 0), Angle(1, 0, 0) ..}
+-- list of how far each pellet should veer
+-- if only one pellet then it'll use the first index
+-- if two then the first two
+-- in case of overrun pellets will start looping, preferably with the second one, so use that for the loopables
+
+SWEP.SpreadAddMove = 0.03 -- Applied when speed is equal to walking speed.
+SWEP.SpreadAddMidAir = 0.1 -- Applied when not touching the ground.
+SWEP.SpreadAddHipFire = 0 -- Applied when not sighted.
+SWEP.SpreadAddSighted = -3 -- Applied when sighted. Can be negative.
+SWEP.SpreadAddBlindFire = 0 -- Applied when blind firing.
+SWEP.SpreadAddCrouch = 0 -- Applied when crouching.
+
+SWEP.SpreadAddRecoil = 0.01 -- Applied per unit of recoil.
+
+SWEP.Ammo = "7.62x54mmR"
+SWEP.MagID = "pkm"
 
 SWEP.Jamming = true
 SWEP.Overheat = true -- Weapon will jam when it overheats, playing the "overheat" animation.
@@ -273,7 +302,7 @@ SWEP.IronSights = {
 }
 
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
-SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_AR2
+SWEP.AnimReload = false
 SWEP.AnimDraw = false
 
 
@@ -502,6 +531,7 @@ SWEP.Animations = {
         Source = "reload",
         MinProgress = 3,
         Mult = 0.725,
+        MagSwapTime = 4,
         EventTable = {
             {s = foley .. "lid_detach.wav", t = 1.1, p=90, v=1},
             {s = foley .. "lid_open.wav", t = 1.5, p=86, v=1},
@@ -523,6 +553,28 @@ SWEP.Animations = {
             FOV_FuncStart = ARC9.Ease.InBack,
             FOV_FuncEnd =  ARC9.Ease.OutBack,
             t = 0,
+            },
+        },
+            IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.09,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.9,
+                lhik = 1,
+                rhik = 0
             },
         },
     },
@@ -572,12 +624,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.5,
+                t = 0.72,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.6,
+                t = 0.8,
                 lhik = 1,
                 rhik = 0
             },
@@ -693,6 +745,7 @@ SWEP.Animations = {
     ["reload_bipod"] = {
         Source = "bipod_reload",
         MinProgress = 3,
+        MagSwapTime = 4,
         Mult = 0.725,
         EventTable = {
             {s = foley .. "lid_detach.wav", t = 1.1, p=90, v=1},
