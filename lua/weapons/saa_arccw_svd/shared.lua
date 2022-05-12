@@ -191,7 +191,7 @@ SWEP.HipDispersion = 150
 SWEP.MoveDispersion = 300
 SWEP.JumpDispersion = 700
 
-SWEP.Ammo = "7.62x54mm"
+SWEP.Ammo = "7.62x54mmR"
 SWEP.MagID = "akm"
 
 SWEP.Jamming = true

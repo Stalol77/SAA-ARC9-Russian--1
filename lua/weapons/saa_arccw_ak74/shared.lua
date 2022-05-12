@@ -169,8 +169,8 @@ SWEP.HipDispersion = 150
 SWEP.MoveDispersion = 300
 SWEP.JumpDispersion = 700
 
-SWEP.Ammo = "7.62x39mm"
-SWEP.MagID = "akm"
+SWEP.Ammo = "5.45x39mm"
+SWEP.MagID = "ak74"
 
 SWEP.Jamming = true
 SWEP.Overheat = true -- Weapon will jam when it overheats, playing the "overheat" animation.
