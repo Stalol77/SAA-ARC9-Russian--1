@@ -84,9 +84,10 @@ SWEP.ClipSize = 10
 SWEP.SupplyLimit = 6 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 3 -- Amount of reserve UBGL magazines you can take.
 
+
 -- Recoil --
 
-SWEP.RecoilSeed = 341155 -- Leave blank to use weapon class name as recoil seed.
+SWEP.RecoilSeed = 5741010077 -- Leave blank to use weapon class name as recoil seed.
 -- Should be a number.
 SWEP.RecoilPatternDrift = 12 -- Higher values = more extreme recoil patterns.
 SWEP.RecoilLookupTable = nil -- Use to set specific values for predictible recoil. If it runs out, it'll just use Recoil Seed.
@@ -97,11 +98,17 @@ SWEP.RecoilLookupTable = nil -- Use to set specific values for predictible recoi
 SWEP.RecoilLookupTableOverrun = nil -- Repeatedly take values from this table if we run out in the main table
 
 -- General recoil multiplier
-SWEP.Recoil = 0.7
+SWEP.Recoil = 1.3
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
-SWEP.RecoilSide = 0.5 -- Multiplier for vertical recoil
+SWEP.RecoilSide = 1.5 -- Multiplier for vertical recoil
+
+-- This is for EFT-like recoil, where gun shoots where sights at. Adds aditional movement to player view
+SWEP.EFTRecoil = false -- true
+SWEP.EFTRecoilUpMult = 20 -- 40-100
+SWEP.EFTRecoilSideMult = 2 -- 1-20
+SWEP.FirstShootRecoilUp = 1 -- eft too
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
@@ -115,29 +122,34 @@ SWEP.RecoilAutoControl = 1 -- Multiplier for automatic recoil control.
 
 SWEP.PushBackForce = 0 -- Push the player back when shooting.
 
-SWEP.UseVisualRecoil = true
+-- SInput rumble configuration
+-- Max of 65535
+SWEP.RumbleHeavy = 30000
+SWEP.RumbleLight = 30000
+SWEP.RumbleDuration = 0.12
 
-SWEP.VisualRecoilUp = 0.5 -- Vertical tilt for visual recoil.F
-SWEP.VisualRecoilSide = 0.05 -- Horizontal tilt for visual recoil.
-SWEP.VisualRecoilRoll = 0.23 -- Roll tilt for visual recoil.
 
-SWEP.VisualRecoilCenter = Vector(0, 1, 0) -- The "axis" of visual recoil. Where your hand is.
+SWEP.UseVisualRecoil = false
 
-SWEP.VisualRecoilPunch = 1.5 -- How far back visual recoil moves the gun.
+SWEP.VisualRecoilUp = 5 -- Vertical tilt for visual recoil.F
+SWEP.VisualRecoilSide = 5 -- Horizontal tilt for visual recoil.
+SWEP.VisualRecoilRoll = 23 -- Roll tilt for visual recoil.
+
+SWEP.VisualRecoilCenter = Vector(2, 0, 2) -- The "axis" of visual recoil. Where your hand is.
+
+SWEP.VisualRecoilPunch = 100 -- How far back visual recoil moves the gun.
 
 SWEP.VisualRecoilMult = 1
 SWEP.VisualRecoilADSMult = 0.1
+SWEP.VisualRecoilPunchADSMult = 0.1
 
 SWEP.VisualRecoilHipFire = true
 
 SWEP.VisualRecoilDampingConst = nil -- How spring will be visual recoil, 120 is default
+SWEP.VisualRecoilSpringMagnitude = 1
 
-SWEP.RecoilKick = 1 -- Camera recoil
-SWEP.RecoilKickDamping = 70.151 -- Camera recoil damping
-
-SWEP.FOV_RecoilAdd = 0 -- FOV to increase or decrease by.
-SWEP.FOV_Recoil_TimeStart = 0.05 -- Peak
-SWEP.FOV_Recoil_TimeEnd = 0.15 -- Until dropoff
+SWEP.RecoilKick = 2 -- Camera recoil
+SWEP.RecoilKickDamping = 50.151 -- Camera recoil damping
 
 -- SInput rumble configuration
 -- Max of 65535
@@ -269,27 +281,24 @@ SWEP.HoldTypeBlindfire = "pistol"
 
 -- Firing sounds --
 local svd = "saa/newsvd/"
-local fire = svd .. "weap_delta_fire_plr_0"
+local fire = svd .. "new/SVD-FIRE_0"
 local firet = {
     fire .. "1.wav",
     fire .. "2.wav",
     fire .. "3.wav",
     fire .. "4.wav",
-    fire .. "5.wav",
-    fire .. "6.wav",
 }
-local distant = svd .. "weap_dmr_fire_plr_atmo_ext1_0"
+local distant = svd .. "new/SVD-TAIL_0"
 local distantt = {
     distant .. "1.wav",
     distant .. "2.wav",
     distant .. "3.wav",
     distant .. "4.wav",
-    distant .. "5.wav",
-    distant .. "6.wav",
+
 
 }
 
-local distanti = svd .. "weap_lmg_fire_plr_atmo_int1_0"
+local distanti = svd .. "new/SVD-TAIL_0"
 local distantit = {
     distanti .. "1.wav",
     distanti .. "2.wav",
@@ -316,14 +325,12 @@ SWEP.DistantShootSoundSilenced = nil
 local foley = svd .. "handling/"
 SWEP.RicochetAngleMax = 45 -- Maximum angle at which a ricochet can occur. Between 1 and 90. Angle of 0 is impossible but would theoretically always ricochet.
 SWEP.RicochetChance = 0.1 -- If the angle is right, what is the chance that a ricochet can occur?
-local mech = svd .. "weap_delta_fire_plr_mech_"
+local mech = svd .. "new/SVD-MECH_"
 local mechtable = {
     mech .. "01.wav",
     mech .. "02.wav",
     mech .. "03.wav",
     mech .. "04.wav",
-    mech .. "05.wav",
-    mech .. "06.wav",
 }
 local trigger = "saa/ak2022/new/ak74/weap_akilo47_fire_first_plr_"
 local triggertable = {
@@ -396,7 +403,7 @@ SWEP.Animations = {
             FOV_FuncEnd = ARC9.Ease.InCirc,
             t = 0.0,
             },
-        {s = mechtable, t = 0}
+        {s = mechtable, t = 0, v = 0.4, p = 85}
         },
     },
     ["fire_empty"] = {
@@ -412,7 +419,7 @@ SWEP.Animations = {
             FOV_FuncEnd = ARC9.Ease.InCirc,
             t = 0.0,
             },
-        {s = mechtable, t = 0}
+        {s = mechtable, t = 0, v = 0.4, p = 85}
         },
     },
     ["fire_iron_empty"] = {
@@ -428,7 +435,7 @@ SWEP.Animations = {
             FOV_FuncEnd = ARC9.Ease.InCirc,
             t = 0.0,
             },
-        {s = mechtable, t = 0}
+        {s = mechtable, t = 0, p = 85, v = 0.5}
         },
     },
     ["fire_iron"] = {
@@ -444,7 +451,7 @@ SWEP.Animations = {
             FOV_FuncEnd = ARC9.Ease.InCirc,
             t = 0.0,
             },
-        {s = mechtable, t = 0}
+        {s = mechtable, t = 0, p = 85, v = 0.5}
         },
     },
 -- reloads
@@ -514,6 +521,15 @@ SWEP.Attachments = {
         Ang = Angle(0, 270, 0),
         Scale = 1,
     },
+    {
+       PrintName = "Ammo",
+       Category = {"saa_54r_ammo"},
+       Bone = "Magazine",
+       Pos = Vector(0, 0, 1.9),
+       Ang = Angle(0, 0, 0),
+
+       Scale = 0.8,
+   },
 }
 
 SWEP.NoSprintWhenLocked = true

@@ -5,8 +5,8 @@
 	"$phongexponenttexture"		"saa\weapons\arccw\AKS\AKM\sandstorm\akm_bolt_e"
 
 	"$phongwarptexture"			"models\weapons\saa\shared\lightwarps\phongwarp_metal"
-	"$color2"					"[0.2 0.2 0.2]"
-	"$blendTintByBaseAlpha"		"1"
+	"$color2"					"[0.6 0.6 0.7]"
+	"$blendTintByBaseAlpha"		"0"
 	"$phong"					"1"
 	"$phongboost"				"5"
 	"$phongfresnelranges"		"[0.32 0.72 0.99]"

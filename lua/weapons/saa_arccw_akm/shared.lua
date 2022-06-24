@@ -46,9 +46,10 @@ SWEP.Slot = 2
 
 -- Viewmodel / Worldmodel / FOV --
 
-SWEP.ViewModel = "models/saa/weapons/arccw/akpack/akm/v_akm.mdl"
+SWEP.ViewModel = "models/saa/weapons/arccw/akpack/akm/v_akm_v1.mdl"
 SWEP.WorldModel = "models/weapons/arccw/c_ud_m16.mdl"
-SWEP.ViewModelFOV = 70
+SWEP.ViewModelFOVBase = 80 -- Set to override viewmodel FOV
+SWEP.CustomizeSnapshotFOV = 100
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
 SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_AR2
 SWEP.AnimDraw = false
@@ -72,48 +73,22 @@ SWEP.ClipSize = 30
 SWEP.SupplyLimit = 6 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 3 -- Amount of reserve UBGL magazines you can take.
 
--- Recoil --
 
-SWEP.Recoil = 1.7
+SWEP.Recoil = 1
+SWEP.RecoilSide = 0.75
+SWEP.RecoilUp = 1.6
 
--- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
-SWEP.RecoilUp = 0.96 -- Multiplier for vertical recoil
-SWEP.RecoilSide = 0.7 -- Multiplier for vertical recoil
+SWEP.RecoilRandomUp = 0.6
+SWEP.RecoilRandomSide = 0.4
 
--- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
--- This type of recoil CANNOT be predicted.
-SWEP.RecoilRandomUp = 0.3
-SWEP.RecoilRandomSide = 0.3
+SWEP.RecoilDissipationRate = 40 -- How much recoil dissipates per second.
+SWEP.RecoilResetTime = 0.01 -- How long the gun must go before the recoil pattern starts to reset.
 
-SWEP.RecoilDissipationRate = 50 -- How much recoil dissipates per second.
-SWEP.RecoilResetTime = 0.05 -- How long the gun must go before the recoil pattern starts to reset.
+SWEP.RecoilAutoControl = 0.5
+SWEP.RecoilKick = 2
 
-SWEP.RecoilAutoControl = 1.5 * 0.25 -- Multiplier for automatic recoil control.
 
-SWEP.RecoilKick = 2.75
 
-SWEP.UseVisualRecoil = false
-
-SWEP.VisualRecoilUp = 5 -- Vertical tilt for visual recoil.
-SWEP.VisualRecoilSide = 0.5 -- Horizontal tilt for visual recoil.
-SWEP.VisualRecoilRoll = 1.5 -- Roll tilt for visual recoil.
-
-SWEP.VisualRecoilCenter = Vector(2, 4, 2) -- The "axis" of visual recoil. Where your hand is.
-
-SWEP.VisualRecoilPunch = 1.5 -- How far back visual recoil moves the gun.
-
-SWEP.VisualRecoilMult = 1
-
-SWEP.VisualRecoilHipFire = true
-
-SWEP.VisualRecoilDampingConst = nil -- How spring will be visual recoil, 120 is default
-
-SWEP.RecoilKick = 1 -- Camera recoil
-SWEP.RecoilKickDamping = 0 -- Camera recoil damping
-
-SWEP.RumbleHeavy = 3000000
-SWEP.RumbleLight = 30000
-SWEP.RumbleDuration = 0.05
 
 SWEP.Sway = 0.56
 SWEP.CustomizeAng = Angle(90, 0, 0)
@@ -128,6 +103,9 @@ SWEP.FreeAimRadius = 12 / 1.25
 -- Firerate / Firemodes --
 SWEP.RPM = 600
 SWEP.Num = 1
+SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
+SWEP.TriggerDelayTime = 0.025 -- Time until weapon fires.
+SWEP.TriggerDelayRepeat = false -- Whether to do it for every shot on automatics.
 SWEP.Firemodes = {
     {
         Mode = -1,
@@ -261,10 +239,10 @@ local akm = "saa/ak2022/new/remade/akm_eft_"
 SWEP.ShootSound = firingsound
 SWEP.DistantShootSound =  
 {
-    "^" .. ak .. "far_shot-1.wav",
-    "^" .. ak .. "far_shot-2.wav",
-    "^" .. ak .. "far_shot-3.wav",
-    "^" .. ak .. "far_shot-4.wav",
+    "^" .. akm .. "far_shot-1.wav",
+    "^" .. akm .. "far_shot-2.wav",
+    "^" .. akm .. "far_shot-3.wav",
+    "^" .. akm .. "far_shot-4.wav",
 }
 
 local triggersound = "saa/weapons/arccw/mp5/weap_mpapa5_fire_first_plr_0"
@@ -282,12 +260,23 @@ SWEP.DistantShootSoundSilenced =
     
 }
 
-SWEP.Hook_TranslateAnimation = function(swep, anim)
-    local elements = swep:GetElements()
+SWEP.Hook_TranslateAnimation = function (self, anim)
+    local attached = self:GetElements()
 
-    if elements["drum_75"] then
-        return anim .. "_drum"
-end
+    local suffix = ""
+
+    if attached["gp25"] then
+        suffix = "_gp25"
+        if self:GetUBGL() then
+            suffix = "_glsetup"
+        end
+    elseif attached["drum_75"] then
+        suffix = "_drum"
+    else
+        suffix = ""
+    end
+
+    return anim .. suffix
 end
 
 SWEP.ExtraSightDist = -10
@@ -337,12 +326,27 @@ SWEP.Animations = {
     ["idle"] = {
         Source = "base_idle",
     },
+    ["trigger"] = {
+        Source = "base_idle",
+        EventTable = {
+            {s = "saa/newsvd/handling/asval_magrelease.wav",  p = 50, v = 0.2, t = 0},
+            {s = "saa/newsvd/handling/svd_fireselect_1.wav",  p = 100, v = 0.8, t = 0}
+           },
+    },
     ["fire"] = {
         Source = "ACT_VM_PRIMARYATTACK",
-        Time = 0.5,
         ShellEjectAt = 0.01,
         EventTable = {
             {s = mechtable,    t = 0},
+
+           {
+            FOV = -4,
+            FOV_Start = 0.05,
+            FOV_End = 0.8,
+            FOV_FuncStart = ARC9.Ease.OutCirc,
+            FOV_FuncEnd = ARC9.Ease.InCirc,
+            t = 0.0,
+            },
         },
     },
     ["ready"] = {
@@ -401,9 +405,16 @@ SWEP.Animations = {
     ["fire_iron"] = {
         Source = "ACT_VM_ISHOOT",
         ShellEjectAt = 0.01,
-        Time = 0.8,
         EventTable = {
             {s = mechtable,    t = 0, volume = 0.5,},
+           {
+            FOV = -4,
+            FOV_Start = 0.05,
+            FOV_End = 0.8,
+            FOV_FuncStart = ARC9.Ease.OutCirc,
+            FOV_FuncEnd = ARC9.Ease.InCirc,
+            t = 0.0,
+            },
         },
     },
     ["fire_iron_bipod"] = {
@@ -543,6 +554,286 @@ SWEP.Animations = {
             },
         },
     },
+
+
+-- gp25
+
+    ["draw_gp25"] = {
+        Source = "gl_draw",
+        EventTable = {
+            {s = "saa/ak2022/ak47_rattle_nvr.wav",    t = 0},
+            {s = "saa/ak2022/ak47_rattle.wav",    t = 0.1, v = 0.3,},
+        },
+    },
+    ["holster_gp25"] = {
+        Source = "gl_holster",
+        EventTable = {
+            {s = "saa/ak2022/ak47_rattle_nvr.wav",    t = 0},
+            {s = "saa/ak2022/ak47_rattle.wav",    t = 0.1, p = 85,},
+        },
+    },
+    ["idle_gp25"] = {
+        Source = "gl_idle",
+    },
+    ["trigger_gp25"] = {
+        Source = "gl_idle",
+        EventTable = {
+            {s = "saa/newsvd/handling/asval_magrelease.wav",  p = 50, v = 0.2, t = 0},
+            {s = "saa/newsvd/handling/svd_fireselect_1.wav",  p = 100, v = 0.8, t = 0}
+           },
+    },
+    ["fire_gp25"] = {
+        Source = "gl_fire",
+        ShellEjectAt = 0.01,
+        EventTable = {
+            {s = mechtable,    t = 0},
+
+           {
+            FOV = -4,
+            FOV_Start = 0.05,
+            FOV_End = 0.8,
+            FOV_FuncStart = ARC9.Ease.OutCirc,
+            FOV_FuncEnd = ARC9.Ease.InCirc,
+            t = 0.0,
+            },
+        },
+    },
+    ["ready_gp25"] = {
+        Source = "gl_ready",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.75,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        SoundTable = {
+        },
+    },
+    ["bash_gp25"] = {
+        Source = "ACT_VM_BASH",
+        SoundTable = {
+        },
+    },
+    ["idle_bipod_gp25"] = {
+        Source = "ACT_VM_IDLE_DEPLOYED",
+        Time = 1.5,
+        SoundTable = {
+        },
+    },
+    ["exit_bipod_gp25"] = {
+        Source = "ACT_VM_DEPLOYED_IN",
+        Time = 1.5,
+        SoundTable = {
+        },
+    },
+    ["enter_bipod_gp25"] = {
+        Source = "ACT_VM_DEPLOYED_OUT",
+        Time = 1.5,
+        MinProgress = 1,
+        SoundTable = {
+        },
+    },
+    ["fire_bipod_gp25"] = {
+        Source = "ACT_VM_ISHOOT_DEPLOYED",
+        Time = 0.8,
+        ShellEjectAt = 0.01,
+        SoundTable = {
+        },
+    },
+    ["fire_iron_gp25"] = {
+        Source = {"gl_iron_fire", "gl_iron_fire_a", "gl_iron_fire_b", "gl_iron_fire_c", "gl_iron_fire_d", "gl_iron_fire_e", "gl_iron_fire_f", },
+        ShellEjectAt = 0.01,
+        EventTable = {
+            {s = mechtable,    t = 0, volume = 0.5,},
+           {
+            FOV = -4,
+            FOV_Start = 0.05,
+            FOV_End = 0.8,
+            FOV_FuncStart = ARC9.Ease.OutCirc,
+            FOV_FuncEnd = ARC9.Ease.InCirc,
+            t = 0.0,
+            },
+        },
+    },
+    ["fire_iron_bipod_gp25"] = {
+        Source = "ACT_VM_ISHOOT_DEPLOYED",
+        Time = 13 / 30,
+        ShellEjectAt = 0.01,
+        SoundTable = {
+        },
+    },
+
+    ["reload_gp25"] = {
+        Source = "gl_reload",
+        MinProgress = 3,
+        EventTable = {
+            {s = foley .. "mag_out.ogg",    t = 0.65},
+            {s = foley .. "mag_in.ogg",    t = 1.9},
+        },
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.25,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.65,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 0
+            },
+        },
+    },
+    ["reload_empty_gp25"] = {
+        Source = "gl_reloadempty",
+        Time = 4.7,
+        EventTable = {
+            {s = foley .. "mag_out.ogg",    t = 0.65},
+            {s = foley .. "mag_in.ogg",    t = 1.9},
+            {s = foley .. "charging_handle_pull.ogg",    t = 3.3},
+            {s = foley .. "charging_handle_release.ogg",    t = 3.55},
+        },
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.25,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.6,
+                lhik = 1,
+                rhik = 0
+            },
+        },
+    },
+    ["reload_drum_gp25"] = {
+        Source = "base_reload_drum",
+        MinProgress = 3,
+        EventTable = {
+            {s = drum .. "out.ogg",    t = 0.85},
+            {s = drum .. "in.ogg",    t = 2.3, v = 0.2},
+            {s = drum .. "hit.ogg",    t = 2.75},
+        },
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.125,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.8,
+                lhik = 1,
+                rhik = 0
+            },
+        },
+    },
+    ["reload_empty_drum_gp25"] = {
+        Source = "base_reloadempty_drum",
+        EventTable = {
+            {s = drum .. "out.ogg",    t = 0.85},
+            {s = drum .. "in.ogg",    t = 2.4},
+            {s = drum .. "hit.ogg",    t = 2.85},
+            {s = foley .. "charging_handle_pull.ogg",    t = 4.1},
+            {s = foley .. "charging_handle_release.ogg",    t = 4.4},
+        },
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.125,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.55,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.65 ,
+                lhik = 1,
+                rhik = 0
+            },
+        },
+    },
+
+
+-- glsetup
+    ["enter_ubgl"] = {
+        Source = "glsetup_in",
+        Mult = 0.75,
+        EventTable = {
+        },
+    },
+    ["exit_ubgl"] = {
+        Source = "glsetup_out",
+        Mult = 0.75,
+        EventTable = {
+        },
+    },
+    ["idle_glsetup"] = {
+        Source = "glsetup",
+        EventTable = {
+        },
+    },
+    ["fire_glsetup"] = {
+        Source = "ACT_VM_PRIMARYATTACK_GLSETUP",
+        EventTable = {
+        },
+    },
+    ["reload_ubgl"] = {
+        Source = "glsetup_reload",
+        EventTable = {
+        },
+    },
 }
 SWEP.Attachments = {
     {
@@ -601,7 +892,7 @@ SWEP.Attachments = {
     {
         PrintName = "Handguard",
         DefaultName = "AKM Handguard",
-        Category = "saa_ak_hg",
+        Category = {"saa_ak_hg", "saa_ak_underbarrel"},
         Bone = "b_wpn",
         Pos = Vector(0, 5, 0.5),
         Ang = Angle(0, 0, 0),
@@ -634,21 +925,26 @@ SWEP.Attachments = {
     },
 }
 
-SWEP.DefaultBodygroups = "0011010020000"
+SWEP.DefaultBodygroups = "000001000000000"
 SWEP.AttachmentElements = {
+    ["gp25"] = {
+        Bodygroups = {
+            {12, 1},
+        },
+    },
     ["dustcover_akm"] = {
         Bodygroups = {
-            {2, 0},
+            {6, 1},
         },
     },
     ["bastion_dustcover"] = {
         Bodygroups = {
-            {2, 3},
+            {6, 3},
         },
     },
     ["gasport_akm"] = {
         Bodygroups = {
-            {5, 0},
+            {3, 1},
         },
     },
     ["magpul_gasport"] = {
@@ -658,7 +954,8 @@ SWEP.AttachmentElements = {
     },
     ["alpha_gasport"] = {
         Bodygroups = {
-            {5, 3},
+            {3, 3},
+            {2, 1},
         },
     },
     ["n_gasport"] = {
@@ -668,22 +965,22 @@ SWEP.AttachmentElements = {
     },
     ["hun_gasport"] = {
         Bodygroups = {
-            {5, 5},
+            {2, 1},
         },
     },
     ["bakelite_30"] = {
         Bodygroups = {
-            {6, 1},
+            {11, 1},
         },
     },
     ["akm_iron"] = {
         Bodygroups = {
-            {3, 0},
+            {10, 1},
         },
     },
     ["iron_akmb"] = {
         Bodygroups = {
-            {3, 2},
+            {10, 2},
         },
     },
     ["steel_40"] = {
@@ -698,22 +995,27 @@ SWEP.AttachmentElements = {
     },
     ["drum_75"] = {
         Bodygroups = {
-            {6, 4},
+            {11, 2},
         },
     },
     ["akms_stock"] = {
         Bodygroups = {
-            {8, 1},
+            {7, 2},
         },
     },
     ["akm_stock"] = {
         Bodygroups = {
-            {8, 0},
+            {7, 1},
         },
     },
     ["magpul_grip"] = {
         Bodygroups = {
             {10, 1},
+        },
+    },
+    ["wood_grip"] = {
+        Bodygroups = {
+            {5, 0},
         },
     },
     ["zenitco_rk3_grip"] = {
@@ -723,7 +1025,7 @@ SWEP.AttachmentElements = {
     },
     ["magpul_stock"] = {
         Bodygroups = {
-            {8, 3},
+            {7, 3},
         },
     },
     ["alpha_stock"] = {
@@ -733,23 +1035,22 @@ SWEP.AttachmentElements = {
     },
     ["magpul_handguard"] = {
         Bodygroups = {
-            {0, 1},
             {4, 1},
         },
     },
     ["railed_guard"] = {
         Bodygroups = {
-            {4, 3},
+            {4, 4},
         },
     },
     ["helix_guard"] = {
         Bodygroups = {
-            {4, 4},
+            {4, 5},
         },
     },
     ["akmn_dovetail"] = {
         Bodygroups = {
-            {9, 1},
+            {8, 1},
         },
     },
     ["zenit_chargehandle"] = {

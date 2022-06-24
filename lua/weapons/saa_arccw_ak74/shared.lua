@@ -82,7 +82,7 @@ SWEP.SecondarySupplyLimit = 3 -- Amount of reserve UBGL magazines you can take.
 SWEP.Recoil = 1.8
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
-SWEP.RecoilUp = 0.96 -- Multiplier for vertical recoil
+SWEP.RecoilUp = 1.7 -- Multiplier for vertical recoil
 SWEP.RecoilSide = 0.7 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
@@ -96,22 +96,6 @@ SWEP.RecoilResetTime = 0.05 -- How long the gun must go before the recoil patter
 SWEP.RecoilAutoControl = 1.5 * 0.25 -- Multiplier for automatic recoil control.
 
 SWEP.RecoilKick = 2.75
-
-SWEP.UseVisualRecoil = true
-
-SWEP.VisualRecoilUp = 1 -- Vertical tilt for visual recoil.
-SWEP.VisualRecoilSide = 0 -- Horizontal tilt for visual recoil.
-SWEP.VisualRecoilRoll = 1.8 -- Roll tilt for visual recoil.
-
-SWEP.VisualRecoilCenter = Vector(2, 4, 2) -- The "axis" of visual recoil. Where your hand is.
-
-SWEP.VisualRecoilPunch = 1.5 -- How far back visual recoil moves the gun.
-
-SWEP.VisualRecoilMult = 1
-
-SWEP.VisualRecoilHipFire = true
-
-SWEP.VisualRecoilDampingConst = nil -- How spring will be visual recoil, 120 is default
 
 SWEP.RecoilKick = 1 -- Camera recoil
 SWEP.RecoilKickDamping = 0 -- Camera recoil damping

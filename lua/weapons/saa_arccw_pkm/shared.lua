@@ -8,11 +8,11 @@ SWEP.UseHands = true
 
 -- Muzzle and shell effects --
 
-SWEP.MuzzleParticle = "muzzleflash_smg_bizon" -- Used for some muzzle effects.
+SWEP.MuzzleParticle = "muzzleflash_famas" -- Used for some muzzle effects.
 SWEP.ShellModel = "models/weapons/arccw/ud_shells/556.mdl"
 SWEP.ShellScale = 1.5
 --SWEP.ShellMaterial = "models/weapons/arcticcw/shell_556"
-SWEP.ShellPitch = 100
+SWEP.ShellPitch = 93
 local shell = "shared/shells/casing_eject_308_0"
 local shellsounds = {
     shell .. "1.wav",
@@ -24,6 +24,8 @@ SWEP.ShellSounds = shellsounds
 
 SWEP.BipodPos = Vector(0, 1, -2)
 SWEP.BipodAng = Angle(0, 0, 0)
+
+SWEP.ImpactEffect = nil
 
 SWEP.MuzzleEffectAttachment = 0
 SWEP.CaseEffectAttachment = 2
