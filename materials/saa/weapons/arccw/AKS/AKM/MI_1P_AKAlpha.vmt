@@ -1,14 +1,14 @@
 "VertexLitGeneric"
 {
-	"$basetexture"				"saa\weapons\arccw\AKS\AKM\sandstorm\t_1p_akalpha_dm"
-	"$bumpmap"					"saa\weapons\arccw\AKS\AKM\sandstorm\t_1p_akalpha_nm"
-	"$phongexponenttexture"		"saa\weapons\arccw\AKS\AKM\sandstorm\t_1p_akalpha_rm"
+	"$basetexture"				"saa\weapons\arccw\AKS\AKM\sandstorm\t_1p_akalpha_bc"
+	"$bumpmap"					"saa\weapons\arccw\AKS\AKM\sandstorm\t_1p_akalpha_n"
+	"$phongexponenttexture"		"saa\weapons\arccw\AKS\AKM\sandstorm\t_1p_akalpha_m"
 	"$nocull"	"1"
 	"$phongwarptexture"			"models\weapons\saa\shared\lightwarps\phongwarp_metal"
-	"$color2"					"[0.45 0.45 0.45]"
+	"$color2"					"[0.1 0.1 0.1]"
 	"$blendTintByBaseAlpha"		"1"
 	"$phong"					"1"
-	"$phongboost"				"40"
+	"$phongboost"				"10"
 	"$phongfresnelranges"		"[0.32 0.72 0.99]"
 	"$phongalbedotint" 			"1"
 
@@ -16,13 +16,13 @@
 	"$rimlightexponent"			"33"
 	"$rimlightboost"			"1.2"
 	"$rimmask"					"1"
-	"$envmap" 			"env_cubemap"
+	"$envmap" 			"models\weapons\envmaps\metal_generic_005"
 	"$normalmapalphaenvmapmask" 	"1"
-	"$envmaptint"			"[0.5 0.5 0.5]"
-	"$envmapcoefficient"	"0.08" // Lighting will be multiplied by this value
+	"$envmapcoefficient"	"01" // Lighting will be multiplied by this value
+	"$colorcoefficient"	"0.8" // Lighting will be multiplied by this value
 Proxies
 {
-    SAA_CubemapLightMult
+    SAA_CubemapTintMult
     {
         multiplier	$envmapcoefficient // Use our value for default envmap tint
         resultvar	$envmaptint // Write final output to $envmaptint

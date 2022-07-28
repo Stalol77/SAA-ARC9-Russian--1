@@ -48,10 +48,8 @@ SWEP.Slot = 2
 
 SWEP.ViewModel = "models/saa/weapons/arccw/akpack/akm/v_akm_v1.mdl"
 SWEP.WorldModel = "models/weapons/arccw/c_ud_m16.mdl"
-SWEP.ViewModelFOVBase = 80 -- Set to override viewmodel FOV
+SWEP.ViewModelFOVBase = 65 -- Set to override viewmodel FOV
 SWEP.CustomizeSnapshotFOV = 100
-SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
-SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_AR2
 SWEP.AnimDraw = false
 
 -- Damage --
@@ -75,7 +73,7 @@ SWEP.SecondarySupplyLimit = 3 -- Amount of reserve UBGL magazines you can take.
 
 
 SWEP.Recoil = 1
-SWEP.RecoilSide = 0.75
+SWEP.RecoilSide = 1.4
 SWEP.RecoilUp = 1.6
 
 SWEP.RecoilRandomUp = 0.6
@@ -86,6 +84,34 @@ SWEP.RecoilResetTime = 0.01 -- How long the gun must go before the recoil patter
 
 SWEP.RecoilAutoControl = 0.5
 SWEP.RecoilKick = 2
+
+SWEP.EFTRecoil = true -- true
+SWEP.EFTRecoilUpMult = 11 -- 40-100
+SWEP.EFTRecoilSideMult = 15 -- 1-20
+
+SWEP.UseVisualRecoil = true
+
+SWEP.VisualRecoilUp = 0.01 -- Vertical tilt for visual recoil.F
+SWEP.VisualRecoilSide = 0.05 -- Horizontal tilt for visual recoil.
+SWEP.VisualRecoilRoll = 0.23 -- Roll tilt for visual recoil.
+
+SWEP.VisualRecoilCenter = Vector(2, 4, 2) -- The "axis" of visual recoil. Where your hand is.
+
+SWEP.VisualRecoilPunch = 1.5 -- How far back visual recoil moves the gun.
+SWEP.VisualRecoilPunchMultSights = 0.1
+
+-- SWEP.VisualRecoilMult = 1
+-- SWEP.VisualRecoilADSMult = 0.1
+-- SWEP.VisualRecoilPunchADSMult = 0.1
+
+SWEP.VisualRecoil = 1
+SWEP.VisualRecoilMultSights = 0.1
+SWEP.VisualRecoilPositionBump = 1.5
+
+SWEP.VisualRecoilHipFire = 1
+
+SWEP.VisualRecoilDampingConst = nil -- How spring will be visual recoil, 120 is default
+SWEP.VisualRecoilSpringMagnitude = 1
 
 
 
@@ -114,15 +140,16 @@ SWEP.Firemodes = {
     {
         Mode = 1,
         Mult_TriggerDelayTime = 1.2,
+        RPMOverride = 425
     },
 }
 
-SWEP.ActivePos = Vector(0, 0, 1)
+SWEP.ActivePos = Vector(0, 1, 1)
 SWEP.ActiveAng = Angle(1, 0, 0)
 
-SWEP.ShootPitch = 100
+SWEP.ShootPitch = 105
 SWEP.ShootVolume = 130
-SWEP.ShootPitchVariation = 0
+SWEP.ShootPitchVariation = 7
 
 SWEP.ProceduralRegularFire = false
 SWEP.ProceduralIronFire = false
@@ -144,16 +171,23 @@ SWEP.JumpDispersion = 700
 SWEP.Ammo = "7.62x39mm"
 SWEP.MagID = "akm"
 
-SWEP.Jamming = true
 SWEP.Overheat = true -- Weapon will jam when it overheats, playing the "overheat" animation.
 SWEP.HeatPerShot = 1
 SWEP.HeatCapacity = 75 -- rounds that can be fired non-stop before the gun jams, playing the "fix" animation
 SWEP.HeatDissipation = 5 -- rounds' worth of heat lost per second
 SWEP.HeatLockout = true -- overheating means you cannot fire until heat has been fully depleted
 SWEP.HeatDelayTime = 2 -- Amount of time that passes before heat begins to dissipate.
-SWEP.HeatFix = false -- when the "overheat" animation is played, all heat is restored.
+SWEP.HeatFix = true -- when the "overheat" animation is played, all heat is restored.
 
-SWEP.MalfunctionMean = 200
+-- If Malfunction is enabled, the gun has a random chance to be jammed
+-- after the gun is jammed, it won't fire unless reload is pressed, which plays the "fix" animation
+-- if no "fix" or "cycle" animations exist, the weapon will reload instead
+-- When the trigger is pressed, the gun will try to play the "jamfire" animation. Otherwise, it will try "dryfire". Otherwise, it will do nothing.
+SWEP.Malfunction = true
+SWEP.MalfunctionJam = true -- After a malfunction happens, the gun will dryfire until reload is pressed. If unset, instead plays animation right after.
+SWEP.MalfunctionWait = 1 -- The amount of time to wait before playing malfunction animation (or can reload)
+SWEP.MalfunctionMeanShotsToFail = 1000 -- The mean number of shots between malfunctions, will be autocalculated if nil
+
 
 SWEP.Bash = true
 SWEP.PrimaryBash = false
@@ -162,7 +196,7 @@ SWEP.BashDamage = 50
 SWEP.BashLungeRange = 128
 SWEP.BashRange = 64
 SWEP.PreBashTime = 0.25
-SWEP.PostBashTime = 0.5
+SWEP.PostBashTime = 0.8
 
 -- Speed multipliers --
 
@@ -209,7 +243,7 @@ SWEP.MirrorVMWM = true
 SWEP.WorldModelOffset = {
     Pos = Vector(3, 2.5, -18),
     Ang = Angle(-10, -4, 180),
-    Scale = 1.2
+    Scale = 1
 }
 
 -- Firing sounds --
@@ -236,14 +270,8 @@ local firstfire = ak .. "single_0"
 
 local path_g3 = "nigga balls"
 local akm = "saa/ak2022/new/remade/akm_eft_"
-SWEP.ShootSound = firingsound
-SWEP.DistantShootSound =  
-{
-    "^" .. akm .. "far_shot-1.wav",
-    "^" .. akm .. "far_shot-2.wav",
-    "^" .. akm .. "far_shot-3.wav",
-    "^" .. akm .. "far_shot-4.wav",
-}
+SWEP.ShootSound = "saa/ak2022/akm_fp1.wav"
+SWEP.DistantShootSound =  "saa/ak2022/akm_fp1_tail1.wav"
 
 local triggersound = "saa/weapons/arccw/mp5/weap_mpapa5_fire_first_plr_0"
 local triggersound_iron = "saa/weapons/arccw/mp5/weap_mpapa5_fire_first_plr_ads_0"
@@ -287,16 +315,7 @@ SWEP.RicochetAngleMax = 45 -- Maximum angle at which a ricochet can occur. Betwe
 SWEP.RicochetChance = 0.1 -- If the angle is right, what is the chance that a ricochet can occur?
 local mech = "saa/ak2022/mech/fnfal_mech_loop_"
 local mechtable = {
-    mech .. "01.ogg",
-    mech .. "02.ogg",
-    mech .. "03.ogg",
-    mech .. "04.ogg",
-    mech .. "05.ogg",
-    mech .. "06.ogg",
-    mech .. "07.ogg",
-    mech .. "08.ogg",
-    mech .. "09.ogg",
-    mech .. "10.ogg",
+    "saa/ak2022/akm_mech.wav"
     
 }
 SWEP.Animations = {
@@ -326,6 +345,14 @@ SWEP.Animations = {
     ["idle"] = {
         Source = "base_idle",
     },
+    ["firemode_1"] = {
+        Source = "base_fireselect",
+        MinProgress = 1,
+    },
+    ["firemode_2"] = {
+        Source = "base_fireselect",
+        MinProgress = 1,
+    },
     ["trigger"] = {
         Source = "base_idle",
         EventTable = {
@@ -337,7 +364,7 @@ SWEP.Animations = {
         Source = "ACT_VM_PRIMARYATTACK",
         ShellEjectAt = 0.01,
         EventTable = {
-            {s = mechtable,    t = 0},
+            {s = mechtable,    t = 0.06, v= 0.2, p = 120},
 
            {
             FOV = -4,
@@ -368,6 +395,7 @@ SWEP.Animations = {
                 rhik = 1
             },
         },
+        Mult = 90/30,
         SoundTable = {
         },
     },
@@ -375,6 +403,7 @@ SWEP.Animations = {
         Source = "ACT_VM_BASH",
         SoundTable = {
         },
+        Mult = 0.7 ,
     },
     ["idle_bipod"] = {
         Source = "ACT_VM_IDLE_DEPLOYED",
@@ -406,7 +435,7 @@ SWEP.Animations = {
         Source = "ACT_VM_ISHOOT",
         ShellEjectAt = 0.01,
         EventTable = {
-            {s = mechtable,    t = 0, volume = 0.5,},
+            {s = mechtable,    t = 0.06, v = 0.3, p= 120},
            {
             FOV = -4,
             FOV_Start = 0.05,
@@ -454,6 +483,26 @@ SWEP.Animations = {
                 rhik = 0
             },
         },
+    },
+    ["jam"] = {
+        Source = "idle",
+        Mult = 30/60,
+        EventTable = {
+            {s = "saa/ak2022/ak47_empty.wav",    t = 0.5},
+        },
+    },
+    ["fix"] = {
+        Source = "fix",
+        Mult = 30/55,
+        EventTable = {
+            {s = foley .. "charging_handle_pull.ogg",    t = 1.0},
+            {s = "saa/ak2022/ak47_empty.wav",    t = 1.15},
+            {s = foley .. "charging_handle_release.ogg",    t = 1.55},
+        },
+    },
+    ["cycle"] = {
+        Source = "fix",
+        Mult = 30/60,
     },
     ["reload_empty"] = {
         Source = "base_reloadempty",
@@ -838,13 +887,24 @@ SWEP.Animations = {
 SWEP.Attachments = {
     {
         PrintName = "Muzzle",
-        Category = {"muzzle", "suppressor"},
+        Category = {"saa_m43_muz"},
         Bone = "b_wpn",
         ExcludeElements = {"blockmuzzle"},
-        Pos = Vector(0, 15.05, 0.27),
+        InstalledElements = {"plainmuzzle"},
+        Pos = Vector(0, 15.05, 0.35),
         Ang = Angle(0, -90, 0),
 
-        Scale = 1,
+        Scale = 0.8,
+    },
+    {
+        PrintName = "Gas Tube Clamp",
+        Category = {"clamped"},
+        Bone = "b_wpn",
+        ExcludeElements = {"alpha_gasport"},
+        Pos = Vector(0, 9, 1.23),
+        Ang = Angle(90, -90, 0),
+
+        Scale = 0.8,
     },
     {
         PrintName = "Dust Cover",
@@ -865,7 +925,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Rear Sight",
-        Category = "saa_ak_iron",
+        Category = {"saa_ak_iron", "saa_akm_iron"},
         Installed = "saa_ak_akmiron",
         Bone = "b_wpn",
         Pos = Vector(0, 2.8, 2),
@@ -874,7 +934,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Magazine",
-        Category = "saa_ak_mag",
+        Category = "saa_akm_mag",
         Bone = "b_wpn_mag",
         Pos = Vector(0, 0.5, 0),
         Ang = Angle(0, 0, 0),
@@ -932,9 +992,19 @@ SWEP.AttachmentElements = {
             {12, 1},
         },
     },
+    ["plainmuzzle"] = {
+        Bodygroups = {
+            {9, 1},
+        },
+    },
     ["dustcover_akm"] = {
         Bodygroups = {
             {6, 1},
+        },
+    },
+    ["alpha_dustcover"] = {
+        Bodygroups = {
+            {6, 2},
         },
     },
     ["bastion_dustcover"] = {
@@ -949,7 +1019,7 @@ SWEP.AttachmentElements = {
     },
     ["magpul_gasport"] = {
         Bodygroups = {
-            {5, 2},
+            {3, 4},
         },
     },
     ["alpha_gasport"] = {
@@ -960,7 +1030,7 @@ SWEP.AttachmentElements = {
     },
     ["n_gasport"] = {
         Bodygroups = {
-            {5, 4},
+            {3, 5},
         },
     },
     ["hun_gasport"] = {
@@ -990,7 +1060,7 @@ SWEP.AttachmentElements = {
     },
     ["pmag_30"] = {
         Bodygroups = {
-            {6, 3},
+            {11, 3},
         },
     },
     ["drum_75"] = {
@@ -1010,7 +1080,7 @@ SWEP.AttachmentElements = {
     },
     ["magpul_grip"] = {
         Bodygroups = {
-            {10, 1},
+            {5, 3},
         },
     },
     ["wood_grip"] = {
@@ -1020,7 +1090,7 @@ SWEP.AttachmentElements = {
     },
     ["zenitco_rk3_grip"] = {
         Bodygroups = {
-            {10, 2},
+            {5, 2},
         },
     },
     ["magpul_stock"] = {
@@ -1030,7 +1100,12 @@ SWEP.AttachmentElements = {
     },
     ["alpha_stock"] = {
         Bodygroups = {
-            {8, 5},
+            {7, 4},
+        },
+    },
+    ["alpha_guard"] = {
+        Bodygroups = {
+            {4, 3},
         },
     },
     ["magpul_handguard"] = {

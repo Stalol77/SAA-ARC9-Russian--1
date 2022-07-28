@@ -2,7 +2,7 @@
 {
 	"$basetexture"				"saa\weapons\arccw\pkm\sandstorm\t_1p_pkm_n_bc"
 	"$bumpmap"					"saa\weapons\arccw\pkm\sandstorm\t_1p_pkm_n_n"
-	"$phongexponenttexture"		"saa\weapons\arccw\pkm\sandstorm\t_1p_pkm_n_m2"
+	"$phongexponenttexture"		"saa\weapons\arccw\pkm\sandstorm\t_1p_pkm_n_m"
 	"$phongwarptexture"			"models\weapons\saa\shared\lightwarps\phongwarp_metal"
 	"$color2"					"[0.3 0.3 0.3]"
 	"$blendTintByBaseAlpha"		"1"
@@ -29,11 +29,6 @@ Proxies
         multiplier	$envmapcoefficient
         resultvar	$envmaptint
     }
-    SAA_ColorLightMult
-    {
-        multiplier	$colorcoefficient
-        resultvar	$color2
-    }
-}}
+
 }
 }
