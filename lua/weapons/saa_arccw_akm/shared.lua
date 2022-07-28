@@ -9,8 +9,8 @@ SWEP.UseHands = true
 -- Muzzle and shell effects --
 
 SWEP.MuzzleParticle = "muzzleflash_ak47" -- Used for some muzzle effects.
-SWEP.ShellModel = "models/weapons/arccw/ud_shells/556.mdl"
-SWEP.ShellScale = 1.5
+SWEP.ShellModel = "models/weapons/rifleshell.mdl"
+SWEP.ShellScale = 0.8
 --SWEP.ShellMaterial = "models/weapons/arcticcw/shell_556"
 SWEP.ShellPitch = 95
 
