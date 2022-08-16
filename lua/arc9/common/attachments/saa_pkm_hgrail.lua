@@ -16,7 +16,7 @@ ATT.Attachments = {
         PrintName = "Underbarrel",
         Category = {"grip_picatinny"},
         Pos = Vector(1.85, -0.425, -6),
-        Ang = Angle(90, 0, 0),
+        Ang = Angle(90, 180, 0),
         Icon_Offset = Vector(0, 0, 0),
         Scale = 1
     },

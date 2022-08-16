@@ -164,7 +164,6 @@ SWEP.HeatDissipation = 5 -- rounds' worth of heat lost per second
 SWEP.HeatLockout = true -- overheating means you cannot fire until heat has been fully depleted
 SWEP.HeatDelayTime = 2 -- Amount of time that passes before heat begins to dissipate.
 SWEP.HeatFix = false -- when the "overheat" animation is played, all heat is restored.
-
 SWEP.MalfunctionMean = 200
 
 SWEP.Bash = true
@@ -290,6 +289,13 @@ SWEP.DistantShootSoundSilenced =
     firstfire .. "6.wav",
     
 }
+
+SWEP.Reverb = nil
+SWEP.Echo = nil
+SWEP.SuppressedReverb = nil
+SWEP.SuppressedEcho = nil
+
+
 
 SWEP.Hook_TranslateAnimation = function(swep, anim)
     local elements = swep:GetElements()
@@ -475,12 +481,12 @@ SWEP.Animations = {
 SWEP.Attachments = {
     {
         PrintName = "Muzzle",
-        Category = {"muzzle", "suppressor"},
+        Category = {"saa_545_muz"},
         Bone = "body",
         InstalledElements = {"no_muzzle"},
         ExcludeElements = {"blockmuzzle"},
         Pos = Vector(25.9, -2.05, 0),
-        Ang = Angle(0, 0, 270),
+        Ang = Angle(90, 0, 0),
         Scale = 1,
     },
     {

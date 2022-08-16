@@ -352,7 +352,17 @@ local distantsound = {
     pkm .. "weap_lmg_fire_plr_atmo_ext2_06.wav",
 }
 SWEP.ShootSound = firingsound
-SWEP.DistantShootSound = distantsound 
+SWEP.ShootSoundIndoor = firingsound
+SWEP.LayerSound = distantsound
+local lsind = "shared/base/universal/sandstorm_reverb/fromrpg7/tail_indoors_small_close_0"
+SWEP.LayerSoundIndoor = { 
+    lsind .. "1.wav", 
+    lsind .. "2.wav", 
+    lsind .. "3.wav", 
+    lsind .. "4.wav",
+    lsind .. "5.wav",  
+}
+SWEP.DistantShootSound = nil 
 
 local firingsound_s = {
     pkm .. "weap_scharlie_sup_npc_01.wav",
@@ -376,7 +386,9 @@ local distant_s = {
 
 -- SWEP.FirstShootSoundSilenced = {"smc/weapons/bocw/m60/M60_S" .. math.random(1, 6) .. ".wav"}
 SWEP.ShootSoundSilenced = firingsound_s
-SWEP.DistantShootSoundSilenced = distant_s
+SWEP.LayerSoundSilenced = distant_s
+SWEP.LayerSoundSilencedIndoor = distant_s
+SWEP.DistantShootSoundSilenced = nil
 
 
 
@@ -431,6 +443,14 @@ SWEP.Animations = {
     ["idle"] = {
         Source = "base_idle",
         Time = 0.05
+    },
+    ["draw"] = {
+        Source = "base_draw",
+        Time = 1,
+    },
+    ["holster"] = {
+        Source = "base_holster",
+        Time = 1,
     },
     ["trigger"] = {
         Source = "base_idle",
@@ -942,6 +962,11 @@ SWEP.AttachmentElements = {
         Bodygroups = {
             {4, 2},
         },
+        AttPosMods = {
+            [2] = {
+                Pos = Vector(0, -0.05, 20),
+            }
+        }
     },
     ["barrel_pkt"] = {
         Bodygroups = {
