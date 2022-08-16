@@ -8,7 +8,7 @@ SWEP.UseHands = true
 
 -- Muzzle and shell effects --
 
-SWEP.MuzzleParticle = "muzzleflash_smg_bizon" -- Used for some muzzle effects.
+SWEP.MuzzleParticle = "muzzleflash_famas" -- Used for some muzzle effects.
 SWEP.ShellModel = "models/weapons/rifleshell.mdl"
 SWEP.ShellScale = 1
 --SWEP.ShellMaterial = "models/weapons/arcticcw/shell_556"
@@ -98,11 +98,11 @@ SWEP.RecoilLookupTable = nil -- Use to set specific values for predictible recoi
 SWEP.RecoilLookupTableOverrun = nil -- Repeatedly take values from this table if we run out in the main table
 
 -- General recoil multiplier
-SWEP.Recoil = 1.3
+SWEP.Recoil = 1
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
-SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
-SWEP.RecoilSide = 1.5 -- Multiplier for vertical recoil
+SWEP.RecoilUp = 0.7 -- Multiplier for vertical recoil
+SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 
 -- This is for EFT-like recoil, where gun shoots where sights at. Adds aditional movement to player view
 SWEP.EFTRecoil = false -- true
@@ -118,15 +118,12 @@ SWEP.RecoilRandomSide = 0.1
 SWEP.RecoilDissipationRate = 10 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0.1 -- How long the gun must go before the recoil pattern starts to reset.
 
-SWEP.RecoilAutoControl = 1 -- Multiplier for automatic recoil control.
+SWEP.RecoilAutoControl = 0.4 -- Multiplier for automatic recoil control.
 
 SWEP.PushBackForce = 0 -- Push the player back when shooting.
 
 -- SInput rumble configuration
 -- Max of 65535
-SWEP.RumbleHeavy = 30000
-SWEP.RumbleLight = 30000
-SWEP.RumbleDuration = 0.12
 
 
 SWEP.UseVisualRecoil = false
@@ -184,7 +181,7 @@ SWEP.ActiveAng = Angle(0, 0, 0)
 
 SWEP.ShootPitch = 100
 SWEP.ShootVolume = 140
-SWEP.ShootPitchVariation = 0
+SWEP.ShootPitchVariation = 5
 
 SWEP.ProceduralRegularFire = false
 SWEP.ProceduralIronFire = false
@@ -267,7 +264,7 @@ SWEP.BarrelOffsetCrouch = Vector(-1, 0, 10)
 
 SWEP.MirrorVMWM = true
 SWEP.WorldModelOffset = {
-    Pos = Vector(-1, 0, -9),
+    Pos = Vector(-1, 4, -9),
     Ang = Angle(-10, -4, 180),
     Scale = 1
 }
@@ -281,38 +278,43 @@ SWEP.HoldTypeBlindfire = "pistol"
 
 -- Firing sounds --
 local svd = "saa/newsvd/"
-local fire = svd .. "new/SVD-FIRE_0"
+local newfire = svd .. "sandstorm/"
+local shoot = newfire .. "dragunov_core_0"
 local firet = {
-    fire .. "1.wav",
-    fire .. "2.wav",
-    fire .. "3.wav",
-    fire .. "4.wav",
+    shoot .. "1.wav",
+    shoot .. "2.wav",
+    shoot .. "3.wav",
+    shoot .. "4.wav",
 }
-local distant = svd .. "new/SVD-TAIL_0"
+local tail = newfire .. "tail_open_field_close_sniper_0"
+local tailt = {
+    tail .. "1.wav",
+    tail .. "2.wav",
+    tail .. "3.wav",
+    tail .. "4.wav",
+    tail .. "5.wav",
+}
+local distant = newfire .. "semi_rifle_core_distant_indoor_0"
 local distantt = {
     distant .. "1.wav",
     distant .. "2.wav",
     distant .. "3.wav",
     distant .. "4.wav",
-
-
+    distant .. "5.wav",
 }
-
-local distanti = svd .. "new/SVD-TAIL_0"
-local distantit = {
-    distanti .. "1.wav",
-    distanti .. "2.wav",
-    distanti .. "3.wav",
-    distanti .. "4.wav",
-    distanti .. "5.wav",
-    distanti .. "6.wav",
-
-}
-
-local path_g3 = "nigga balls"
-local akm = "saa/ak2022/new/remade/akm_eft_"
 
 SWEP.ShootSound = firet
+SWEP.ShootSoundIndoor = firet
+SWEP.LayerSound = tailt
+
+local lsind = "shared/base/universal/sandstorm_reverb/fromrpg7/low/tail_indoors_small_close_0"
+SWEP.LayerSoundIndoor = { 
+    lsind .. "1.wav", 
+    lsind .. "2.wav", 
+    lsind .. "3.wav", 
+    lsind .. "4.wav",
+    lsind .. "5.wav",  
+}
 
 SWEP.DistantShootSound = distantt
 --SWEP.DistantShootSoundIndoor = distantit
@@ -403,7 +405,7 @@ SWEP.Animations = {
             FOV_FuncEnd = ARC9.Ease.InCirc,
             t = 0.0,
             },
-        {s = mechtable, t = 0, v = 0.4, p = 85}
+        {s = nil, t = 0, v = 0.4, p = 85}
         },
     },
     ["fire_empty"] = {
@@ -419,7 +421,7 @@ SWEP.Animations = {
             FOV_FuncEnd = ARC9.Ease.InCirc,
             t = 0.0,
             },
-        {s = mechtable, t = 0, v = 0.4, p = 85}
+        {s = nil, t = 0, v = 0.4, p = 85}
         },
     },
     ["fire_iron_empty"] = {
