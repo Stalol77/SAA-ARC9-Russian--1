@@ -126,18 +126,18 @@ SWEP.PushBackForce = 0 -- Push the player back when shooting.
 -- Max of 65535
 
 
-SWEP.UseVisualRecoil = false
+SWEP.UseVisualRecoil = true
 
-SWEP.VisualRecoilUp = 5 -- Vertical tilt for visual recoil.F
-SWEP.VisualRecoilSide = 5 -- Horizontal tilt for visual recoil.
-SWEP.VisualRecoilRoll = 23 -- Roll tilt for visual recoil.
+SWEP.VisualRecoilUp = 4 -- Vertical tilt for visual recoil.F
+SWEP.VisualRecoilSide = 0 -- Horizontal tilt for visual recoil.
+SWEP.VisualRecoilRoll = 2 -- Roll tilt for visual recoil.
 
 SWEP.VisualRecoilCenter = Vector(2, 0, 2) -- The "axis" of visual recoil. Where your hand is.
 
-SWEP.VisualRecoilPunch = 100 -- How far back visual recoil moves the gun.
+SWEP.VisualRecoilPunch = 1.5 -- How far back visual recoil moves the gun.
 
 SWEP.VisualRecoilMult = 1
-SWEP.VisualRecoilADSMult = 0.1
+SWEP.VisualRecoilADSMult = 0.
 SWEP.VisualRecoilPunchADSMult = 0.1
 
 SWEP.VisualRecoilHipFire = true
@@ -145,7 +145,7 @@ SWEP.VisualRecoilHipFire = true
 SWEP.VisualRecoilDampingConst = nil -- How spring will be visual recoil, 120 is default
 SWEP.VisualRecoilSpringMagnitude = 1
 
-SWEP.RecoilKick = 2 -- Camera recoil
+SWEP.RecoilKick = 1 -- Camera recoil
 SWEP.RecoilKickDamping = 50.151 -- Camera recoil damping
 
 -- SInput rumble configuration
@@ -437,7 +437,7 @@ SWEP.Animations = {
             FOV_FuncEnd = ARC9.Ease.InCirc,
             t = 0.0,
             },
-        {s = mechtable, t = 0, p = 85, v = 0.5}
+        {s = nil, t = 0, p = 85, v = 0.5}
         },
     },
     ["fire_iron"] = {
@@ -453,7 +453,7 @@ SWEP.Animations = {
             FOV_FuncEnd = ARC9.Ease.InCirc,
             t = 0.0,
             },
-        {s = mechtable, t = 0, p = 85, v = 0.5}
+        {s = nil, t = 0, p = 85, v = 0.5}
         },
     },
 -- reloads
