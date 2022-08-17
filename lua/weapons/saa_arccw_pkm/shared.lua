@@ -120,7 +120,7 @@ SWEP.RecoilRandomSide = 0.1
 SWEP.RecoilDissipationRate = 10 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0.1 -- How long the gun must go before the recoil pattern starts to reset.
 
-SWEP.RecoilAutoControl = 1 -- Multiplier for automatic recoil control.
+SWEP.RecoilAutoControl = 0.2 -- Multiplier for automatic recoil control.
 
 SWEP.PushBackForce = 0 -- Push the player back when shooting.
 

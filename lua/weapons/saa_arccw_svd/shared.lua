@@ -105,9 +105,9 @@ SWEP.RecoilUp = 0.7 -- Multiplier for vertical recoil
 SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 
 -- This is for EFT-like recoil, where gun shoots where sights at. Adds aditional movement to player view
-SWEP.EFTRecoil = false -- true
-SWEP.EFTRecoilUpMult = 20 -- 40-100
-SWEP.EFTRecoilSideMult = 2 -- 1-20
+SWEP.EFTRecoil = true -- true
+SWEP.EFTRecoilUpMult = 30 -- 40-100
+SWEP.EFTRecoilSideMult = 30 -- 1-20
 SWEP.FirstShootRecoilUp = 1 -- eft too
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
