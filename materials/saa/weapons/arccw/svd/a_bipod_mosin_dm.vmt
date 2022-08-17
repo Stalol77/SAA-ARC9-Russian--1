@@ -19,7 +19,7 @@
 	"$envmap" 			"models\weapons\envmaps\fo4_dith"
 	"$normalmapalphaenvmapmask" 	"1"
 	"$envmaptint"			"[0.5 0.5 0.5]"
-	"$envmapcoefficient"	"2" // Lighting will be multiplied by this value
+	"$envmapcoefficient"	"1.5" // Lighting will be multiplied by this value
 	"$colorcoefficient"	"0.3" // Lighting will be multiplied by this value
 Proxies
 {
