@@ -292,7 +292,14 @@ SWEP.LayerSoundSilenced =
     firstfire .. "6.wav",
     
 }
-SWEP.LayerSoundSilencedIndoor = nil
+local lsinds = "shared/base/universal/sandstorm_reverb/fromrpg7/lowest/tail_indoors_small_close_0"
+SWEP.LayerSoundSilencedIndoor = {
+    lsinds .. "1.mp3", 
+    lsinds .. "2.mp3", 
+    lsinds .. "3.mp3", 
+    lsinds .. "4.mp3",
+    lsinds .. "5.mp3",  
+}
 local lsind = "shared/base/universal/sandstorm_reverb/fromrpg7/low/tail_indoors_small_close_0"
 SWEP.LayerSoundIndoor = { 
     lsind .. "1.wav", 
@@ -305,6 +312,7 @@ SWEP.LayerSoundIndoor = {
 local triggersound = "saa/weapons/arccw/mp5/weap_mpapa5_fire_first_plr_0"
 local triggersound_iron = "saa/weapons/arccw/mp5/weap_mpapa5_fire_first_plr_ads_0"
 -- SWEP.FirstShootSoundSilenced = {"smc/weapons/bocw/m60/M60_S" .. math.random(1, 6) .. ".wav"}
+
 SWEP.ShootSoundSilenced = firingsoundsup
 SWEP.DistantShootSoundSilenced =
 {

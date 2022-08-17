@@ -98,8 +98,8 @@ SWEP.RecoilLookupTable = nil -- Use to set specific values for predictible recoi
 SWEP.RecoilLookupTableOverrun = nil -- Repeatedly take values from this table if we run out in the main table
 
 -- General recoil multiplier
-SWEP.Recoil = 0.7
-SWEP.RecoilMultSights = 0.7
+SWEP.Recoil = 0.7*(1.5)
+SWEP.RecoilMultSights = 0.4
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 0.7 -- Multiplier for vertical recoil
@@ -178,7 +178,14 @@ SWEP.Firemodes = {
 }
 
 SWEP.ActivePos = Vector(0.5, 1.2, -1)
-SWEP.ActiveAng = Angle(0, 0, 0)
+SWEP.ActiveAng = Angle(0, 1.5, 0)
+
+SWEP.BipodPos = Vector(0.5, 1.2, -2)
+SWEP.BipodAng = Angle(0, 2, 0)
+SWEP.RecoilMultBipod = 0.15
+SWEP.SwayMultBipod = 0.1
+SWEP.FreeAimRadiusMultBipod = 0
+
 
 SWEP.ShootPitch = 100
 SWEP.ShootVolume = 125
@@ -288,7 +295,7 @@ local firet = {
     shoot .. "4.wav",
 }
 local shootsup = newfire .. "suppressed_rifle_core_0"
-local firet = {
+local firest = {
     shootsup .. "1.wav",
     shootsup .. "2.wav",
     shootsup .. "3.wav",
@@ -317,14 +324,20 @@ local distantt = {
     distant .. "4.wav",
     distant .. "5.wav",
 }
+local lsinds = "shared/base/universal/sandstorm_reverb/fromrpg7/lowest/tail_indoors_small_close_0"
 
 SWEP.ShootSound = firet
-SWEP.ShootSoundSilenced = firet
+SWEP.ShootSoundSilenced = firest
 SWEP.ShootSoundIndoor = firet
 SWEP.LayerSound = tailt
 SWEP.LayerSoundSilenced = tailsupt
-SWEP.LayerSoundSilencedIndoor = tailsupt
-
+SWEP.LayerSoundSilencedIndoor = { 
+    lsinds .. "1.mp3", 
+    lsinds .. "2.mp3", 
+    lsinds .. "3.mp3", 
+    lsinds .. "4.mp3",
+    lsinds .. "5.mp3",  
+}
 local lsind = "shared/base/universal/sandstorm_reverb/fromrpg7/low/tail_indoors_small_close_0"
 SWEP.LayerSoundIndoor = { 
     lsind .. "1.wav", 
@@ -477,12 +490,12 @@ SWEP.Animations = {
     ["reload"] = {
         Source = "base_reload",
         EventTable = {
-            {s= foley .. "asval_magrelease.wav", t= 0.4 },
+            {s= foley .. "asval_magrelease.wav", t= 0.4, v= 1.0 },
             {s= foley .. "svd_magout.wav", t= 0.6 },
-            {s= foley .. "ppsh_draw.wav", t= 1.6 },
-            {s= foley .. "svd_magrelease.wav", t= 2.2, p= 92 },
-            {s= foley .. "svd_magin.wav", t= 2.35, p= 92 },
-            {s= foley .. "ppsh_drummagfetch.wav", t= 2.55, p= 92 },
+            {s= newfire .. "handling/dragunov_foley_mag_out_arm_movement.mp3", t= 1 },
+            {s= foley .. "svd_magrelease.wav", t= 2.2, p= 92, v= 0.2 },
+            {s= newfire .. "handling/dragunov_foley_mag_in_empty.mp3", v= 0.5, t= 2.25, p= 92 },
+            {s= foley .. "ppsh_drummagfetch.wav", t= 2.6, v= 0.1, p= 92 },
         },
     },
     ["reload_empty"] = {
@@ -490,12 +503,76 @@ SWEP.Animations = {
         EventTable = {
             {s= foley .. "asval_magrelease.wav", t= 0.4 },
             {s= foley .. "svd_magout.wav", t= 0.6 },
-            {s= foley .. "ppsh_draw.wav", t= 1.7 },
-            {s= foley .. "svd_magrelease.wav", t= 2.4, p= 92 },
-            {s= foley .. "svd_magin.wav", t= 2.55, p= 92 },
-            {s= foley .. "svd_boltrelease.wav", t= 3.5},
+            {s= newfire .. "handling/dragunov_foley_mag_out_arm_movement.mp3", t= 1 },
+            {s= foley .. "svd_magrelease.wav", t= 2.4, p= 92, v=0.2 },
+            {s= newfire .. "handling/dragunov_foley_mag_in_empty.mp3", t= 2.55, v= 0.5, p= 92 },
+            {s= newfire .. "handling/dragunov_foley_arm_movement.mp3", t= 2.8, p= 92 },
+            {s= foley .. "svd_boltrelease.wav", t= 3.5, p=100,},
             {s= foley .. "ppsh_drummagfetch.wav", t= 3.8, p= 92 },
         },
+    },
+-- bipod
+    ["idle_bipod"] = {
+        Source = "deployed_pose",
+        Time = 0.01,
+    },
+    ["idle_empty_bipod"] = {
+        Source = "deployed_empty",
+        Time = 0.1,
+    },
+    ["trigger_bipod"] = {
+        Source = "deployed_pose",
+        Time = 0.01,
+        EventTable = {
+            {s = triggertable, t = 0, p = 120,}
+        }
+    },
+    ["trigger_bipod_empty"] = {
+        Source = "deployed_empty",
+        Time = 0.01,
+        EventTable = {
+            {s = triggertable, t = 0, p = 120,}
+        }
+    },
+    ["reload_bipod"] = {
+        Source = "deployed_reload",
+        EventTable = {
+            {s= foley .. "asval_magrelease.wav", t= 0.4, v= 1.0 },
+            {s= foley .. "svd_magout.wav", t= 0.6 },
+            {s= newfire .. "handling/dragunov_foley_mag_out_arm_movement.mp3", t= 1 },
+            {s= foley .. "svd_magrelease.wav", t= 2.2, p= 92, v= 0.2 },
+            {s= newfire .. "handling/dragunov_foley_mag_in_empty.mp3", v= 0.5, t= 2.25, p= 92 },
+            {s= foley .. "ppsh_drummagfetch.wav", t= 2.6, v= 0.1, p= 92 },
+        },
+    },
+    ["reload_bipod_empty"] = {
+        Source = "deployed_reloadempty",
+        Mult = 0.9,
+        EventTable = {
+            {s= foley .. "asval_magrelease.wav", t= 0.4 },
+            {s= foley .. "svd_magout.wav", t= 0.6 },
+            {s= newfire .. "handling/dragunov_foley_mag_out_arm_movement.mp3", t= 1 },
+            {s= foley .. "svd_magrelease.wav", t= 2.4, p= 92 },
+            {s= newfire .. "handling/dragunov_foley_mag_in_empty.mp3", t= 2.55, v= 0.5, p= 92 },
+            {s= newfire .. "handling/dragunov_foley_arm_movement.mp3", t= 2.8, p= 92 },
+            {s= foley .. "svd_boltrelease.wav", t= 3.5, p=100,},
+            {s= foley .. "ppsh_drummagfetch.wav", t= 3.8, p= 92 },
+        },
+    },
+    ["fire_bipod"] = {
+        Source = "deployed_fire",
+    },
+    ["fire_iron_bipod"] = {
+        Source = "deployed_iron_fire",
+    },
+    ["fire_bipod_empty"] = {
+        Source = "deployed_firelast",
+    },
+    ["fire_iron_bipod_empty"] = {
+        Source = "deployed_iron_firelast",
+    },
+    ["idle_bipod_empty"] = {
+        Source = "deployed_idle_empty",
     },
 }
 
@@ -506,7 +583,7 @@ SWEP.Attachments = {
         Bone = "Weapon",
         Pos = Vector(0, 26.35, 0.6),
         Ang = Angle(0, 270, 0),
-        Scale = 0.7,
+        Scale = 0.8,
     },
     {
         PrintName = "Barrel",
@@ -549,6 +626,14 @@ SWEP.Attachments = {
         Scale = 1,
     },
     {
+        PrintName = "Underbarrel",
+        Category = {"saa_svd_underbarrel"},
+        Bone = "Weapon",
+        Pos = Vector(0, 10, -1),
+        Ang = Angle(0, 270, 0),
+        Scale = 1,
+    },
+    {
        PrintName = "Ammo",
        Category = {"saa_54r_ammo"},
        Bone = "Magazine",
@@ -563,19 +648,24 @@ SWEP.NoSprintWhenLocked = true
 
 SWEP.DefaultBodygroups = "000000000"
 SWEP.AttachmentElements = {
-   ["svds_stock"] = {
+   ["svdm_stock"] = {
        Bodygroups = {
            {1, 1},
        },
    },
-   ["svdm_stock"] = {
+   ["svds_stock"] = {
        Bodygroups = {
            {1, 2},
        },
    },
-   ["svds_handguard"] = {
+   ["svdm_handguard"] = {
        Bodygroups = {
            {2, 1},
+       },
+   },
+   ["bipod"] = {
+       Bodygroups = {
+           {5, 1},
        },
    },
    ["svdm_barrel"] = {
@@ -583,6 +673,11 @@ SWEP.AttachmentElements = {
            {3, 1},
            {4, 1},
        },
+        AttPosMods = {
+            [1] = {
+                Pos = Vector(0, 24.8, 0.6),
+            }
+        },
    },
 }
 
