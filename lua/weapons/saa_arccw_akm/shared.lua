@@ -939,7 +939,7 @@ SWEP.Attachments = {
         Bone = "b_wpn",
         ExcludeElements = {"alpha_gasport"},
         Pos = Vector(0, 9, 1.23),
-        Ang = Angle(90, -90, 0),
+        Ang = Angle(0, -90, 90),
 
         Scale = 0.8,
     },

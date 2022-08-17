@@ -879,6 +879,14 @@ SWEP.Animations = {
 
 SWEP.Attachments = {
     {
+       PrintName = "Muzzle",
+       Category = {"saa_54r_muz"},
+       Bone = "b_wpn",
+       Pos = Vector(0, 19.32, 1.65),
+       Ang = Angle(0, 270, 0),
+       Scale = 0.9,
+   },
+    {
        PrintName = "OPTIC",
        Category = {"SAA_SCOPE_SMALL","SAA_SCOPE_MEDIUM"},
        Bone = "b_wpn_lid",
@@ -896,14 +904,6 @@ SWEP.Attachments = {
        Ang = Angle(0, 0, 0),
 
        Scale = 0.8,
-   },
-    {
-       PrintName = "Muzzle",
-       Category = {"muzzle","suppressor"},
-       Bone = "b_wpn",
-       Pos = Vector(0, 19, 1.65),
-       Ang = Angle(0, 270, 0),
-       Scale = 0.9,
    },
     {
        PrintName = "Underbarrel",
@@ -963,14 +963,19 @@ SWEP.AttachmentElements = {
             {4, 2},
         },
         AttPosMods = {
-            [2] = {
-                Pos = Vector(0, -0.05, 20),
+            [1] = {
+                Pos = Vector(0, 23, 1.55),
             }
-        }
+        },
     },
     ["barrel_pkt"] = {
         Bodygroups = {
             {4, 3},
+        },
+        AttPosMods = {
+            [1] = {
+                Pos = Vector(0, 17, 1.55),
+            }
         },
     },
     ["handguard_rail"] = {
