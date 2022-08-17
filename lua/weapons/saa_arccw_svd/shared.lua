@@ -287,6 +287,13 @@ local firet = {
     shoot .. "3.wav",
     shoot .. "4.wav",
 }
+local shootsup = newfire .. "suppressed_rifle_core_0"
+local firet = {
+    shootsup .. "1.wav",
+    shootsup .. "2.wav",
+    shootsup .. "3.wav",
+    shootsup .. "4.wav",
+}
 local tail = newfire .. "tail_open_field_close_sniper_0"
 local tailt = {
     tail .. "1.wav",
@@ -294,6 +301,13 @@ local tailt = {
     tail .. "3.wav",
     tail .. "4.wav",
     tail .. "5.wav",
+}
+local tailsup = newfire .. "supp_layer_0"
+local tailsupt = {
+    tailsup .. "1.wav",
+    tailsup .. "2.wav",
+    tailsup .. "3.wav",
+    tailsup .. "4.wav",
 }
 local distant = newfire .. "semi_rifle_core_distant_indoor_0"
 local distantt = {
@@ -305,8 +319,11 @@ local distantt = {
 }
 
 SWEP.ShootSound = firet
+SWEP.ShootSoundSilenced = firet
 SWEP.ShootSoundIndoor = firet
 SWEP.LayerSound = tailt
+SWEP.LayerSoundSilenced = tailsupt
+SWEP.LayerSoundSilencedIndoor = tailsupt
 
 local lsind = "shared/base/universal/sandstorm_reverb/fromrpg7/low/tail_indoors_small_close_0"
 SWEP.LayerSoundIndoor = { 
@@ -320,8 +337,7 @@ SWEP.LayerSoundIndoor = {
 SWEP.DistantShootSound = distantt
 --SWEP.DistantShootSoundIndoor = distantit
 -- SWEP.FirstShootSoundSilenced = {"smc/weapons/bocw/m60/M60_S" .. math.random(1, 6) .. ".wav"}
-SWEP.ShootSoundSilenced = firingsoundsup
-SWEP.DistantShootSoundSilenced = nil
+SWEP.DistantShootSoundSilenced = "ahahahahhaahahah"
 
 
 -- Animations --
@@ -484,6 +500,14 @@ SWEP.Animations = {
 }
 
 SWEP.Attachments = {
+    {
+        PrintName = "MUZZLE",
+        Category = {"saa_54r_muz"},
+        Bone = "Weapon",
+        Pos = Vector(0, 26.35, 0.6),
+        Ang = Angle(0, 270, 0),
+        Scale = 0.7,
+    },
     {
         PrintName = "Barrel",
         Category = {"SAA_SVD_BARREL"},
