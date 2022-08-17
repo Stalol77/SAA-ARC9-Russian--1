@@ -99,6 +99,7 @@ SWEP.RecoilLookupTableOverrun = nil -- Repeatedly take values from this table if
 
 -- General recoil multiplier
 SWEP.Recoil = 0.7
+SWEP.RecoilMultSights = 0.7
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 0.7 -- Multiplier for vertical recoil
