@@ -81,7 +81,7 @@ SWEP.BodyDamageMults = {
 
 SWEP.ChamberSize = 1
 SWEP.ClipSize = 10
-SWEP.SupplyLimit = 6 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
+SWEP.SupplyLimit = 10 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 3 -- Amount of reserve UBGL magazines you can take.
 
 
@@ -180,7 +180,7 @@ SWEP.ActivePos = Vector(0.5, 1.2, -1)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
 SWEP.ShootPitch = 100
-SWEP.ShootVolume = 140
+SWEP.ShootVolume = 125
 SWEP.ShootPitchVariation = 5
 
 SWEP.ProceduralRegularFire = false
@@ -264,7 +264,7 @@ SWEP.BarrelOffsetCrouch = Vector(-1, 0, 10)
 
 SWEP.MirrorVMWM = true
 SWEP.WorldModelOffset = {
-    Pos = Vector(-1, 4, -9),
+    Pos = Vector(-1, 4, -8),
     Ang = Angle(-10, -4, 180),
     Scale = 1
 }

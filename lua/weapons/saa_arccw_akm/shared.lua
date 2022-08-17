@@ -271,7 +271,36 @@ local firstfire = ak .. "single_0"
 local path_g3 = "nigga balls"
 local akm = "saa/ak2022/new/remade/akm_eft_"
 SWEP.ShootSound = "saa/ak2022/akm_fp1.wav"
-SWEP.DistantShootSound =  "saa/ak2022/akm_fp1_tail1.wav"
+SWEP.ShootSoundIndoor = "saa/ak2022/akm_fp1.wav"
+local tail = "saa/newsvd/sandstorm/tail_open_field_close_sniper_0"
+local tailt = {
+    tail .. "1.wav",
+    tail .. "2.wav",
+    tail .. "3.wav",
+    tail .. "4.wav",
+    tail .. "5.wav",
+}
+SWEP.LayerSound = tailt
+SWEP.DistantShootSound =  nil
+SWEP.LayerSoundSilenced = 
+{
+    firstfire .. "1.wav",
+    firstfire .. "2.wav",
+    firstfire .. "3.wav",
+    firstfire .. "4.wav",
+    firstfire .. "5.wav",
+    firstfire .. "6.wav",
+    
+}
+SWEP.LayerSoundSilencedIndoor = nil
+local lsind = "shared/base/universal/sandstorm_reverb/fromrpg7/low/tail_indoors_small_close_0"
+SWEP.LayerSoundIndoor = { 
+    lsind .. "1.wav", 
+    lsind .. "2.wav", 
+    lsind .. "3.wav", 
+    lsind .. "4.wav",
+    lsind .. "5.wav",  
+}
 
 local triggersound = "saa/weapons/arccw/mp5/weap_mpapa5_fire_first_plr_0"
 local triggersound_iron = "saa/weapons/arccw/mp5/weap_mpapa5_fire_first_plr_ads_0"

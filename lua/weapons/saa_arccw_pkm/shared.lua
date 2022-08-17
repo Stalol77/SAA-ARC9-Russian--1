@@ -79,7 +79,7 @@ SWEP.PhysBulletMuzzleVelocity = 28150*(825/715) -- Physical bullet muzzle veloci
 
 SWEP.ChamberSize = 0
 SWEP.ClipSize = 100
-SWEP.SupplyLimit = 6 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
+SWEP.SupplyLimit = 3 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 3 -- Amount of reserve UBGL magazines you can take.
 
 SWEP.Bipod = true -- This weapon comes with a bipod.
