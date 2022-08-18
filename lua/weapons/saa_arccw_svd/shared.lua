@@ -169,7 +169,7 @@ SWEP.FreeAimRadius = 12 / 1.25
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayTime = 0.025 -- Time until weapon fires.
 SWEP.TriggerDelayRepeat = false -- Whether to do it for every shot on automatics.
-SWEP.RPM = 400
+SWEP.RPM = 500
 SWEP.Num = 1
 SWEP.Firemodes = {
     {
@@ -408,9 +408,11 @@ SWEP.Animations = {
     },
     ["idle"] = {
         Source = "base_idle",
+        Time = 0.01,
     },
     ["idle_empty"] = {
         Source = "empty_idle",
+        Time = 0.01,
     },
 
 -- fire & trigger
@@ -491,8 +493,9 @@ SWEP.Animations = {
         Source = "base_reload",
         EventTable = {
             {s= foley .. "asval_magrelease.wav", t= 0.4, v= 1.0 },
-            {s= foley .. "svd_magout.wav", t= 0.6 },
-            {s= newfire .. "handling/dragunov_foley_mag_out_arm_movement.mp3", t= 1 },
+            {s= foley .. "asval_magrelease.wav", t= 0.6, p= 80, v= 1.0 },
+            {s= foley .. "svd_magout.wav", t= 0.6, p= 87.5, },
+            {s= newfire .. "handling/dragunov_foley_mag_out_arm_movement.mp3", t= 1, },
             {s= foley .. "svd_magrelease.wav", t= 2.2, p= 92, v= 0.2 },
             {s= newfire .. "handling/dragunov_foley_mag_in_empty.mp3", v= 0.5, t= 2.25, p= 92 },
             {s= foley .. "svd_magrelease.wav", t= 2.5, p= 100, v= 0.5 },
@@ -503,7 +506,8 @@ SWEP.Animations = {
         Source = "base_reloadempty",
         EventTable = {
             {s= foley .. "asval_magrelease.wav", t= 0.4 },
-            {s= foley .. "svd_magout.wav", t= 0.6 },
+            {s= foley .. "asval_magrelease.wav", t= 0.6, p= 80, v= 1.0 },
+            {s= foley .. "svd_magout.wav", t= 0.6, p= 87.5, },
             {s= newfire .. "handling/dragunov_foley_mag_out_arm_movement.mp3", t= 1 },
             {s= foley .. "svd_magrelease.wav", t= 2.4, p= 92, v=0.2 },
             {s= newfire .. "handling/dragunov_foley_mag_in_empty.mp3", t= 2.55, v= 0.5, p= 92 },
@@ -540,7 +544,8 @@ SWEP.Animations = {
         Source = "deployed_reload",
         EventTable = {
             {s= foley .. "asval_magrelease.wav", t= 0.4, v= 1.0 },
-            {s= foley .. "svd_magout.wav", t= 0.6 },
+            {s= foley .. "asval_magrelease.wav", t= 0.6, p= 80, v= 1.0 },
+            {s= foley .. "svd_magout.wav", t= 0.6, p= 87.5, },
             {s= newfire .. "handling/dragunov_foley_mag_out_arm_movement.mp3", t= 1 },
             {s= foley .. "svd_magrelease.wav", t= 2.2, p= 92, v= 0.2 },
             {s= newfire .. "handling/dragunov_foley_mag_in_empty.mp3", v= 0.5, t= 2.25, p= 92 },
@@ -553,7 +558,8 @@ SWEP.Animations = {
         Mult = 0.9,
         EventTable = {
             {s= foley .. "asval_magrelease.wav", t= 0.4 },
-            {s= foley .. "svd_magout.wav", t= 0.6 },
+            {s= foley .. "asval_magrelease.wav", t= 0.6, p= 80, v= 1.0 },
+            {s= foley .. "svd_magout.wav", t= 0.6, p= 87.5, },
             {s= newfire .. "handling/dragunov_foley_mag_out_arm_movement.mp3", t= 1 },
             {s= foley .. "svd_magrelease.wav", t= 2.4, p= 92, v= 0.2 },
             {s= newfire .. "handling/dragunov_foley_mag_in_empty.mp3", t= 2.55, v= 0.5, p= 92 },
