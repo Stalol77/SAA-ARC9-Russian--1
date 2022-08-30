@@ -30,6 +30,30 @@ ARC9.LoadAttachment(ATT, "saa_ak_ribbedcover")
 
 ATT = {}
 
+ATT.PrintName = "6P20-01 Smooth Dust Cover"
+ATT.CompactName = "6P20-01"
+ATT.Description = [[Dust cover produced for later AK rifles. Features a sleek design, free of structure-reinforcing ribs and rails for basic bolt covering functionalities.]]
+
+
+ATT.SortOrder = 0
+ATT.Category = "saa_ak_dustcover"
+
+
+ATT.SprintToFireTimeMult = 0.965
+ATT.SpeedMult = 0.985
+ATT.AimDownSightsTimeMult = 1.015
+ATT.HeatDissipationMult = 0.975
+
+ATT.ActivateElements = {"dustcover_6p20"}
+
+ARC9.LoadAttachment(ATT, "saa_ak_dc6p20")
+
+-- end here
+
+-- start here
+
+ATT = {}
+
 ATT.PrintName = "Zenitco Alpha AK Dustcover"
 ATT.CompactName = "Zenit Alpha Cover"
 ATT.Description = [[Dust cover produced by private companies to allow mainly reflex sight usage. Is not fitted for long range optics.]]
@@ -322,6 +346,47 @@ ARC9.LoadAttachment(ATT, "saa_ak_magpulhandguard")
 
 -- end here
 
+
+-- start here
+
+ATT = {}
+
+ATT.PrintName = "Series 100 Handguard"
+ATT.CompactName = "S-100"
+ATT.Description = [[Handguard produced by private companies. Eases aim and .]]
+
+
+ATT.SortOrder = 1
+ATT.Category = "saa_ak_polyhg"
+ATT.Sway = 0.75
+ATT.RecoilMult = 0.965
+ATT.SprintToFireTimeMult = 1.1
+ATT.ActivateElements = {"s100_handguard"}
+
+ARC9.LoadAttachment(ATT, "saa_ak_s100hg")
+
+-- end here
+
+-- start here
+
+ATT = {}
+
+ATT.PrintName = "AKM Ribbed Handguard"
+ATT.CompactName = "AKM"
+ATT.Description = [[Handguard produced by private companies. Eases aim and .]]
+
+
+ATT.SortOrder = 1
+ATT.Category = "saa_ak_akmhg"
+ATT.Sway = 0.75
+ATT.RecoilMult = 0.965
+ATT.SprintToFireTimeMult = 1.1
+ATT.ActivateElements = {"akm_handguard"}
+
+ARC9.LoadAttachment(ATT, "saa_ak_akmhg")
+
+-- end here
+
 -- start here
 
 ATT = {}
@@ -476,3 +541,249 @@ ARC9.LoadAttachment(ATT, "saa_akm_40_steel")
 
 -- end here
 
+-- start here
+
+ATT = {}
+
+ATT.PrintName = "Magpul Stock"
+ATT.CompactName = "MGP"
+ATT.Description = [[Polymer stock built by private companies.]]
+
+
+ATT.SortOrder = 1
+ATT.Category = "saa_ak_stock"
+ATT.Sway = 0.9
+ATT.SpeedMult = 0.855/0.88
+ATT.ReloadTimeMult = 1.015
+ATT.RecoilMult = 1/1.32
+
+ATT.ActivateElements = {"magpul_stock"}
+
+ARC9.LoadAttachment(ATT, "saa_ak_magpulstock")
+
+-- end here
+
+-- start here
+
+ATT = {}
+
+ATT.PrintName = "Helix AS-2 Stock"
+ATT.CompactName = "Helix"
+ATT.Description = [[Multi-stage tube stock with buffer adaptor for AKs. Dampens recoil and eases aim control with a relatively complex surface that renders aiming down sights and running more difficult]]
+
+
+ATT.SortOrder = 1
+ATT.Category = "saa_ak_stock"
+ATT.Sway = 0.91
+ATT.SpeedMult = 0.855/0.87
+ATT.RecoilMult = 1/1.41
+ATT.AimDownSightsTimeMult = 1.065
+ATT.SprintToFireTimeMult = 1.05
+ATT.RecoilKickMult = 1.075
+
+
+ATT.ActivateElements = {"alpha_stock"}
+
+ARC9.LoadAttachment(ATT, "saa_ak_alphastock")
+
+-- end here
+
+-- start here
+
+ATT = {}
+
+ATT.PrintName = "AKM Stock"
+ATT.CompactName = "AKM"
+ATT.Description = [[Original wooden composite stock produced for use on AKM rifles. Sturdy and moderately heavy, reduces sway and recoil.]]
+
+
+ATT.SortOrder = 1
+ATT.Category = "saa_ak_stock"
+ATT.Sway = 0.9
+ATT.SpeedMult = 0.855/0.91
+ATT.ReloadTimeMult = 1.03
+ATT.RecoilMult = 1/1.5
+ATT.SprintToFireTimeMult = 1.15
+ATT.AimDownSightsTimeMult = 1.2 
+
+ATT.ActivateElements = {"akm_stock"}
+
+ARC9.LoadAttachment(ATT, "saa_ak_akmstock")
+
+-- end here
+
+-- start here
+
+ATT = {}
+
+ATT.PrintName = "AKMS Stock Mod"
+ATT.CompactName = "AKMS"
+ATT.Description = [[Receiver modification that allows use of the AK pattern underfolder stock. Perfect for a mobility oriented build that seeks for ease of use in CQB.]]
+
+
+ATT.SortOrder = 0
+ATT.Category = "saa_akm_stock"
+
+ATT.SpeedMult = 0.855/0.86
+ATT.ReloadTimeMult = 1.015
+ATT.RecoilMult = 1/1.2
+
+ATT.ActivateElements = {"akms_stock"}
+
+ARC9.LoadAttachment(ATT, "saa_akms")
+
+-- end here
+
+-- start here
+
+ATT = {}
+
+ATT.PrintName = "Alpha Rail Gas Port"
+ATT.CompactName = "Alpha"
+ATT.Description = [[Gas port produced by private companies. Longer design allowing for railed accessories to be attached. Its sleek yet elongated aluminum structure enhances the heat capacity and dissipation.]]
+
+
+ATT.SortOrder = 1
+ATT.Category = "saa_ak_gp"
+ATT.Sway = 1.065
+ATT.SprintToFireTimeMult = 1.05
+ATT.RecoilMult = 0.985
+ATT.HeatCapacityMult = 1.225
+ATT.HeatDissipationMult = 1.15
+ATT.Cons = {"Using a Top Barrel attachment might render aiming", "down sights difficult. High-Profile Optics are ", "very recommended."}
+ATT.ActivateElements = {"alpha_gasport"}
+
+ATT.Attachments = {
+    {
+        PrintName = "Top Barrel",
+        Category = { "picatinny"},
+        Pos = Vector(0, 4, -0.4),
+        Ang = Angle(0, 270, 0),
+        Icon_Offset = Vector(0, 0, 0),
+        Scale = 0.7
+    },
+}
+
+ARC9.LoadAttachment(ATT, "saa_ak_alphagp")
+
+-- end here
+
+-- start here
+
+ATT = {}
+
+ATT.PrintName = "Magpul Gas Port"
+ATT.CompactName = "MGP"
+ATT.Description = [[Handguard produced by private companies. Reduces forward weight.]]
+
+
+ATT.SortOrder = 1
+ATT.Category = "saa_ak_gp"
+ATT.Sway = 0.95
+ATT.SprintToFireTimeMult = 1.05
+ATT.RecoilMult = 0.985
+ATT.HeatCapacityMult = 1.15
+ATT.HeatDissipationMult = 0.8
+
+ATT.ActivateElements = {"magpul_gasport"}
+
+ARC9.LoadAttachment(ATT, "saa_ak_mgpgp")
+
+-- end here
+
+-- start here
+
+ATT = {}
+
+ATT.PrintName = "N Series Gas Port"
+ATT.CompactName = "N-Series"
+ATT.Description = [[Sturdy Gas Port that generates good weight near grip area. Reduces felt recoil and boosts up heat capacity at the cost of a slower dissipation and heavier mass.]]
+
+
+ATT.SortOrder = 0
+ATT.Category = "saa_ak_gp"
+
+ATT.SpeedMult = 0.96
+ATT.HeatCapacityMult = 1.375
+ATT.RecoilMult = 0.945
+ATT.RecoilKickMult = 0.7
+ATT.HeatDissipationMult = 0.60
+
+ATT.ActivateElements = {"n_gasport"}
+
+ARC9.LoadAttachment(ATT, "saa_ak_n_gp")
+
+-- end here
+
+-- start here
+
+ATT = {}
+
+ATT.PrintName = "Hungarian Long Bare Port"
+ATT.CompactName = "Hungarian GP"
+ATT.Description = [[Gasport based upon the Hungaro-Romanian designs. Reduces forward weight.]]
+
+
+ATT.SortOrder = 1
+ATT.Category = "saa_ak_gp"
+ATT.SwayMult = 0.995
+ATT.SpeedMult = 1.005
+
+
+ATT.ActivateElements = {"hun_gasport"}
+
+ARC9.LoadAttachment(ATT, "saa_ak_nogp")
+
+-- end here
+
+-- start here
+
+ATT = {}
+
+ATT.PrintName = "AKM Handguard Gas Port"
+ATT.CompactName = "AKM"
+ATT.Description = [[AKM production Gas Port Cover, increases heat capacity at the cost of a slower dissipation.]]
+
+
+ATT.SortOrder = 0
+ATT.Category = "saa_ak_gp"
+
+ATT.SpeedMult = 0.985
+ATT.HeatCapacityMult = 1.25
+ATT.RecoilMult = 0.965
+ATT.HeatDissipationMult = 0.75
+
+ATT.ActivateElements = {"gasport_akm"}
+
+ARC9.LoadAttachment(ATT, "saa_ak_akmgp")
+
+-- end here
+
+-- start here
+
+ATT = {}
+
+ATT.PrintName = [["N" Series Receiver]]
+ATT.CompactName = "DVT"
+ATT.Description = [[Swaps the receiver for a series N one. Features a dovetail plate that allows for dovetail attachments such as external rails and special optics to be attached on the get-go.]]
+
+
+ATT.SortOrder = 0
+ATT.Category = "saa_ak_rec"
+
+ATT.ActivateElements = {"akmn_dovetail"}
+
+ATT.Attachments = {
+    {
+        PrintName = "Dovetail",
+        Category = "SAA_AK_DOVETAIL",
+        Pos = Vector(-1, 0.8, 0),
+        Ang = Angle(0, 270, 0),
+        Scale = 0.8,
+        MergeSlots = {2}
+    },
+}
+
+ARC9.LoadAttachment(ATT, "saa_akmn")
+
+-- end here

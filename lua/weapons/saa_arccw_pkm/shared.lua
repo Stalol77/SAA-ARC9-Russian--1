@@ -29,9 +29,9 @@ SWEP.ImpactEffect = nil
 
 SWEP.MuzzleEffectAttachment = 0
 SWEP.CaseEffectAttachment = 2
-SWEP.TracerNum = 3
-SWEP.TracerEffect = "ARC9_tracer"
-SWEP.TracerColor = Color(100, 185, 0)
+SWEP.TracerNum = 0
+SWEP.TracerEffect = nul
+SWEP.TracerColor = Color(0, 0, 0)
 SWEP.TracerSize = 1
 
 
@@ -936,6 +936,7 @@ SWEP.Attachments = {
     {
        PrintName = "Ammo",
        Category = {"saa_54r_ammo"},
+        Installed = "saa_54r_k57",
        Bone = "b_wpn",
        Pos = Vector(-2.5, -1.4, 1.9),
        Ang = Angle(0, 0, 0),

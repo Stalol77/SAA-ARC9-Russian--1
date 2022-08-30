@@ -147,8 +147,8 @@ SWEP.Firemodes = {
 SWEP.ActivePos = Vector(0, 1, 1)
 SWEP.ActiveAng = Angle(1, 0, 0)
 
-SWEP.ShootPitch = 105
-SWEP.ShootVolume = 130
+SWEP.ShootPitch = 100
+SWEP.ShootVolume = 120
 SWEP.ShootPitchVariation = 7
 
 SWEP.ProceduralRegularFire = false
@@ -248,6 +248,8 @@ SWEP.WorldModelOffset = {
 
 -- Firing sounds --
 local ak = "saa/ak2022/new/akm_eft_"
+local sandstorm = "saa/ak2022/sandstorm/"
+local ssfs =  sandstorm .. "akm_core_loop_v1_0" 
 local firingsound = {
     ak .. "01.wav",
     ak .. "02.wav",
@@ -258,39 +260,59 @@ local firingsound = {
     ak .. "07.wav",
 }
 local firingsoundsup = {
-    ak .. "s01.wav",
-    ak .. "s02.wav",
-    ak .. "s03.wav",
-    ak .. "s04.wav",
-    ak .. "s05.wav",
-    ak .. "s06.wav",
-    ak .. "s07.wav",
+    sandstorm .. "suppressed_core_loop_120_01.wav",
+    sandstorm .. "suppressed_core_loop_120_02.wav",
+    sandstorm .. "suppressed_core_loop_120_03.wav",
+    sandstorm .. "suppressed_core_loop_120_04.wav",
+    sandstorm .. "suppressed_core_loop_120_05.wav",
+    sandstorm .. "suppressed_core_loop_120_06.wav",
+    sandstorm .. "suppressed_core_loop_120_07.wav",
+    sandstorm .. "suppressed_core_loop_120_08.wav",
+    sandstorm .. "suppressed_core_loop_120_09.wav",
+    sandstorm .. "suppressed_core_loop_120_10.wav",
 }
 local firstfire = ak .. "single_0"
 
 local path_g3 = "nigga balls"
 local akm = "saa/ak2022/new/remade/akm_eft_"
-SWEP.ShootSound = "saa/ak2022/akm_fp1.wav"
-SWEP.ShootSoundIndoor = "saa/ak2022/akm_fp1.wav"
-local tail = "saa/newsvd/sandstorm/tail_open_field_close_sniper_0"
+SWEP.ShootSound = {
+    ssfs .. "1.wav",
+    ssfs .. "2.wav",
+    ssfs .. "3.wav",
+    ssfs .. "4.wav",
+    ssfs .. "5.wav",
+    ssfs .. "6.wav",
+    ssfs .. "7.wav",
+    ssfs .. "8.wav",
+    ssfs .. "9.wav",
+    sandstorm .. "akm_core_loop_v1_10.wav"
+}
+SWEP.ShootSoundIndoor = {
+    ssfs .. "1.wav",
+    ssfs .. "2.wav",
+    ssfs .. "3.wav",
+    ssfs .. "4.wav",
+    ssfs .. "5.wav",
+    ssfs .. "6.wav",
+    ssfs .. "7.wav",
+    ssfs .. "8.wav",
+    ssfs .. "9.wav",
+    sandstorm .. "akm_core_loop_v1_10.wav"
+}
+local tail = sandstorm .. "noise_urban_close_end_0"
 local tailt = {
     tail .. "1.wav",
     tail .. "2.wav",
     tail .. "3.wav",
-    tail .. "4.wav",
-    tail .. "5.wav",
 }
 SWEP.LayerSound = tailt
 SWEP.DistantShootSound =  nil
 SWEP.LayerSoundSilenced = 
 {
-    firstfire .. "1.wav",
-    firstfire .. "2.wav",
-    firstfire .. "3.wav",
-    firstfire .. "4.wav",
-    firstfire .. "5.wav",
-    firstfire .. "6.wav",
-    
+    sandstorm .. "sup/noise_urban_close_end_01.wav",
+    sandstorm .. "sup/noise_urban_close_end_02.wav",
+    sandstorm .. "sup/noise_urban_close_end_03.wav",
+
 }
 local lsinds = "shared/base/universal/sandstorm_reverb/fromrpg7/lowest/tail_indoors_small_close_0"
 SWEP.LayerSoundSilencedIndoor = {
@@ -350,11 +372,20 @@ local foley = "saa/ak2022/aks_foley_"
 local drum = "saa/ak2022/global_drummag_mag_"
 SWEP.RicochetAngleMax = 45 -- Maximum angle at which a ricochet can occur. Between 1 and 90. Angle of 0 is impossible but would theoretically always ricochet.
 SWEP.RicochetChance = 0.1 -- If the angle is right, what is the chance that a ricochet can occur?
-local mech = "saa/ak2022/mech/fnfal_mech_loop_"
+local mech = sandstorm .. "akm_mech_loop_0"
 local mechtable = {
-    "saa/ak2022/akm_mech.wav"
-    
+    mech .. "1.wav",
+    mech .. "2.wav",
+    mech .. "3.wav",
+    mech .. "4.wav",
+    mech .. "5.wav",
+    mech .. "6.wav",
+    mech .. "7.wav",
+    mech .. "8.wav",
+    mech .. "9.wav",
+    sandstorm .. "akm_mech_loop_10.wav"
 }
+
 SWEP.Animations = {
     ["draw"] = {
         Source = "ACT_VM_DRAW",
@@ -401,7 +432,8 @@ SWEP.Animations = {
         Source = "ACT_VM_PRIMARYATTACK",
         ShellEjectAt = 0.01,
         EventTable = {
-            {s = mechtable,    t = 0.06, v= 0.2, p = 120},
+            {s = mechtable,    t = 0, v= 0.8, p = 100, c = cl },
+            {s = sandstorm .. "akm_mech_end_01.wav",    t = 0.1, v= 0.8, p = 100},
 
            {
             FOV = -4,
@@ -472,7 +504,9 @@ SWEP.Animations = {
         Source = "ACT_VM_ISHOOT",
         ShellEjectAt = 0.01,
         EventTable = {
-            {s = mechtable,    t = 0.06, v = 0.3, p= 120},
+            {s = mechtable,    t = 0, v= 1, p = 100, c = cl },
+            {s = sandstorm .. "akm_mech_end_01.wav",    t = 0.1, v= 1, p = 100},
+
            {
             FOV = -4,
             FOV_Start = 0.05,
@@ -946,7 +980,7 @@ SWEP.Attachments = {
     {
         PrintName = "Dust Cover",
         Category = "saa_ak_dustcover",
-        Installed = "saa_ak_akmdustcover",
+        Installed = "saa_ak_dc6p20",
         Bone = "b_wpn",
         Pos = Vector(0, -2.5, 1),
         Ang = Angle(0, 0, 0),
@@ -1005,7 +1039,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Stock",
-        Category = "saa_ak_stock",
+        Category = {"saa_ak_stock", "saa_akm_stock"},
         Installed = "saa_ak_akmstock",
         Bone = "b_wpn",
         Pos = Vector(0, -7.3, 0),
@@ -1013,7 +1047,7 @@ SWEP.Attachments = {
         Scale = 1,
     },
     {
-        PrintName = "AKM Plain Receiver",
+        PrintName = "AK-104 Plain Receiver",
         Category = "saa_ak_rec",
         Bone = "b_wpn",
         Pos = Vector(0, -3.4, 0.1),
@@ -1037,6 +1071,11 @@ SWEP.AttachmentElements = {
     ["dustcover_akm"] = {
         Bodygroups = {
             {6, 1},
+        },
+    },
+    ["dustcover_6p20"] = {
+        Bodygroups = {
+            {6, 4},
         },
     },
     ["alpha_dustcover"] = {
