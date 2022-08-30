@@ -28,7 +28,7 @@ SWEP.HideBones = {
 }
 SWEP.PrintName = "AK-104"
 
-SWEP.Description = [["The most produced and exported gun in the globe, the AKM is the famous AK-47's direct evolution that went into main service for the Red Army for over 30 years. Its enhanced design rendered the production ever-lasting, placing it all around the globe as an extremely viable rifle."]]
+SWEP.Description = [[Coming in with the Kalashnikov Century Program, the AK-104 offers the AKM's firepower and purpose to a compact package, featuring a shorter 12.4" barrel and a slightly greater rate of fire.]]
 
 -- Trivia --
 SWEP.Class = "Assault Rifle"

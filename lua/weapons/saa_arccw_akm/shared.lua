@@ -28,7 +28,7 @@ SWEP.HideBones = {
 }
 SWEP.PrintName = "AKM"
 
-SWEP.Description = [["The most produced and exported gun in the globe, the AKM is the famous AK-47's direct evolution that went into main service for the Red Army for over 30 years. Its enhanced design rendered the production ever-lasting, placing it all around the globe as an extremely viable rifle."]]
+SWEP.Description = [[The most produced and exported gun in the globe, the AKM is the famous AK-47's direct evolution that went into main service for the Red Army for over 30 years. Its enhanced design rendered the production ever-lasting, placing it all around the globe as an extremely viable rifle.]]
 
 -- Trivia --
 SWEP.Class = "Assault Rifle"
@@ -1023,7 +1023,7 @@ SWEP.Attachments = {
     {
         PrintName = "Handguard",
         DefaultName = "AKM Handguard",
-        Category = {"saa_ak_hg", "saa_ak_underbarrel"},
+        Category = {"saa_ak_hg", "saa_ak_polyhg", "saa_ak_underbarrel"},
         Bone = "b_wpn",
         Pos = Vector(0, 5, 0.5),
         Ang = Angle(0, 0, 0),
@@ -1187,6 +1187,11 @@ SWEP.AttachmentElements = {
     ["magpul_handguard"] = {
         Bodygroups = {
             {4, 1},
+        },
+    },
+    ["s100_handguard"] = {
+        Bodygroups = {
+            {4, 2},
         },
     },
     ["railed_guard"] = {
