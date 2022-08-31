@@ -72,7 +72,7 @@ SWEP.SupplyLimit = 6 -- Amount of magazines of ammo this gun can take from an AR
 SWEP.SecondarySupplyLimit = 3 -- Amount of reserve UBGL magazines you can take.
 
 
-SWEP.Recoil = 0.87
+SWEP.Recoil = 0.74
 SWEP.RecoilSide = 1.4
 SWEP.RecoilUp = 1.6
 
@@ -144,7 +144,7 @@ SWEP.Firemodes = {
     },
 }
 
-SWEP.ActivePos = Vector(0, 1, 1)
+SWEP.ActivePos = Vector(0, 2, 1)
 SWEP.ActiveAng = Angle(1, 0, 0)
 
 SWEP.ShootPitch = 100
@@ -1190,6 +1190,11 @@ SWEP.AttachmentElements = {
     ["alpha_stock"] = {
         Bodygroups = {
             {7, 4},
+        },
+    },
+    ["s100_stock"] = {
+        Bodygroups = {
+            {7, 5},
         },
     },
     ["alpha_guard"] = {

@@ -144,7 +144,7 @@ SWEP.Firemodes = {
     },
 }
 
-SWEP.ActivePos = Vector(0, 1, 1)
+SWEP.ActivePos = Vector(0, 2, 1)
 SWEP.ActiveAng = Angle(1, 0, 0)
 
 SWEP.ShootPitch = 100
@@ -200,7 +200,8 @@ SWEP.PostBashTime = 0.8
 
 -- Speed multipliers --
 
-SWEP.SpeedMult = 0.89
+SWEP.Speed = 0.85
+SWEP.SpeedMult = 0.85
 SWEP.SightedSpeedMult = 0.75
 SWEP.SightTime = 0.5
 SWEP.ShootSpeedMult = 0.8
@@ -1177,6 +1178,11 @@ SWEP.AttachmentElements = {
     ["alpha_stock"] = {
         Bodygroups = {
             {7, 4},
+        },
+    },
+    ["s100_stock"] = {
+        Bodygroups = {
+            {7, 5},
         },
     },
     ["alpha_guard"] = {

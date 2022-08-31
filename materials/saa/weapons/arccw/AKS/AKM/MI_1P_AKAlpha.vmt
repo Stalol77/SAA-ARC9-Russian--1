@@ -16,7 +16,7 @@
 	"$rimlightexponent"			"33"
 	"$rimlightboost"			"1.2"
 	"$rimmask"					"1"
-	"$envmap" 			"models\weapons\envmaps\metal_generic_005"
+	"$envmap" 			"models\weapons\envmaps\fo4_dith"
 	"$normalmapalphaenvmapmask" 	"1"
 	"$envmapcoefficient"	"01" // Lighting will be multiplied by this value
 	"$colorcoefficient"	"0.8" // Lighting will be multiplied by this value

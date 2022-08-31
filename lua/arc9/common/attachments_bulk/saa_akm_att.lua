@@ -264,7 +264,7 @@ ATT.Attachments = {
         PrintName = "Right Tactical",
         Category = {"saa_rail_tactical"},
         Pos = Vector(1.05, 7., 0.35),
-        Ang = Angle(270, 270, 180),
+        Ang = Angle(0, 270, 90),
         Icon_Offset = Vector(0, 0, 0),
         Scale = 0.8
     },
@@ -272,7 +272,7 @@ ATT.Attachments = {
         PrintName = "Left Tactical",
         Category = {"saa_rail_tactical"},
         Pos = Vector(-1.05, 5.25, 0.35),
-        Ang = Angle(90, 270, 180),
+        Ang = Angle(0, 270, 270),
         Icon_Offset = Vector(0, 0, 0),
         Scale = 0.8
     },
@@ -560,6 +560,28 @@ ATT.RecoilMult = 1/1.32
 ATT.ActivateElements = {"magpul_stock"}
 
 ARC9.LoadAttachment(ATT, "saa_ak_magpulstock")
+
+-- end here
+
+-- start here
+
+ATT = {}
+
+ATT.PrintName = "Series-100 Polymer Stock"
+ATT.CompactName = "S-100"
+ATT.Description = [[Polymer stock built by private companies.]]
+
+
+ATT.SortOrder = 1
+ATT.Category = "saa_ak_stock"
+ATT.Sway = 0.9
+ATT.SpeedMult = 0.855/0.88
+ATT.ReloadTimeMult = 1.015
+ATT.RecoilMult = 1/1.32
+
+ATT.ActivateElements = {"s100_stock"}
+
+ARC9.LoadAttachment(ATT, "saa_ak_polystock")
 
 -- end here
 
