@@ -498,6 +498,30 @@ ARC9.LoadAttachment(ATT, "saa_akm_30_bak")
 
 ATT = {}
 
+ATT.PrintName = "7.62x39mm 20 Round Steel Magazine"
+ATT.CompactName = "20-RND"
+ATT.Description = [[Lower-Capacity Steel Magazine produced for Civilian usage. 
+Commonly Found in Sporter type rifles such as VPOs and SKS, this magazine can only allot up to 20 rounds, rendering it a lighter choice for quicker reloading speeds.]]
+
+
+ATT.SortOrder = 0
+ATT.Category = "saa_akm_mag"
+
+ATT.ReloadTimeMult = 0.91
+ATT.RecoilSideMult = 0.975
+ATT.ClipSizeOverride = 20
+ATT.SpeedMult = 1.1
+
+ATT.ActivateElements = {"steel_20"}
+
+ARC9.LoadAttachment(ATT, "saa_akm_20_stl")
+
+-- end here
+
+-- start here
+
+ATT = {}
+
 ATT.PrintName = "7.62x39mm 35 Round PMAG Magazine"
 ATT.CompactName = "35-PMAG"
 ATT.Description = [[35-Round Capacity Magpul Magazine produced by private companies. Comes at an easier reload drill and lower weight with a simpler structure that causes the shooter to feel a heavier horizontal recoil.]]
@@ -507,7 +531,7 @@ ATT.SortOrder = 0
 ATT.Category = "saa_akm_mag"
 
 ATT.ReloadTimeMult = 1.05
-ATT.RecoilMult = 1.03
+ATT.RecoilSideMult = 1.075
 ATT.ClipSizeOverride = 35
 ATT.SpeedMult = 0.975
 
@@ -556,6 +580,8 @@ ATT.Sway = 0.9
 ATT.SpeedMult = 0.855/0.88
 ATT.ReloadTimeMult = 1.015
 ATT.RecoilMult = 1/1.32
+ATT.RecoilMultSights = 0.825
+
 
 ATT.ActivateElements = {"magpul_stock"}
 
@@ -578,6 +604,7 @@ ATT.Sway = 0.9
 ATT.SpeedMult = 0.855/0.88
 ATT.ReloadTimeMult = 1.015
 ATT.RecoilMult = 1/1.32
+ATT.RecoilMultSights = 0.675
 
 ATT.ActivateElements = {"s100_stock"}
 
@@ -602,6 +629,7 @@ ATT.RecoilMult = 1/1.41
 ATT.AimDownSightsTimeMult = 1.065
 ATT.SprintToFireTimeMult = 1.05
 ATT.RecoilKickMult = 1.075
+ATT.RecoilMultSights = 0.85
 
 
 ATT.ActivateElements = {"alpha_stock"}
@@ -627,6 +655,7 @@ ATT.ReloadTimeMult = 1.03
 ATT.RecoilMult = 1/1.5
 ATT.SprintToFireTimeMult = 1.15
 ATT.AimDownSightsTimeMult = 1.2 
+ATT.RecoilMultSights = 0.6
 
 ATT.ActivateElements = {"akm_stock"}
 
@@ -649,6 +678,7 @@ ATT.Category = "saa_akm_stock"
 ATT.SpeedMult = 0.855/0.86
 ATT.ReloadTimeMult = 1.015
 ATT.RecoilMult = 1/1.2
+ATT.RecoilMultSights = 0.95
 
 ATT.ActivateElements = {"akms_stock"}
 

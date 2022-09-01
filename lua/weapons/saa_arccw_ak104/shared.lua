@@ -8,7 +8,7 @@ SWEP.UseHands = true
 
 -- Muzzle and shell effects --
 
-SWEP.MuzzleParticle = "muzzleflash_ak47" -- Used for some muzzle effects.
+SWEP.MuzzleParticle = "muzzleflash_ak74" -- Used for some muzzle effects.
 SWEP.ShellModel = "models/weapons/rifleshell.mdl"
 SWEP.ShellScale = 0.8
 --SWEP.ShellMaterial = "models/weapons/arcticcw/shell_556"
@@ -57,7 +57,7 @@ SWEP.AnimDraw = false
 SWEP.DamageMax = 36 -- 3 shot kill
 SWEP.DamageMin = 12 -- 5 shot kill
 SWEP.RangeMin = 10
-SWEP.RangeMax = 12000
+SWEP.RangeMax = 12000*(191/305)
 SWEP.ArmorPiercing = 0.75
 SWEP.Penetration = 15
 SWEP.DamageType = DMG_BULLET
@@ -127,7 +127,7 @@ SWEP.SwayMultShooting = 1.2
 SWEP.FreeAimRadiusSights = 2
 SWEP.FreeAimRadius = 12 / 1.25 
 -- Firerate / Firemodes --
-SWEP.RPM = 620
+SWEP.RPM = 625
 SWEP.Num = 1
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayTime = 0.025 -- Time until weapon fires.
@@ -148,7 +148,7 @@ SWEP.ActivePos = Vector(0, 2, 1)
 SWEP.ActiveAng = Angle(1, 0, 0)
 
 SWEP.ShootPitch = 100
-SWEP.ShootVolume = 120
+SWEP.ShootVolume = 115
 SWEP.ShootPitchVariation = 7
 
 SWEP.ProceduralRegularFire = false
@@ -176,7 +176,7 @@ SWEP.HeatPerShot = 1
 SWEP.HeatCapacity = 75 -- rounds that can be fired non-stop before the gun jams, playing the "fix" animation
 SWEP.HeatDissipation = 5 -- rounds' worth of heat lost per second
 SWEP.HeatLockout = true -- overheating means you cannot fire until heat has been fully depleted
-SWEP.HeatDelayTime = 2 -- Amount of time that passes before heat begins to dissipate.
+SWEP.HeatDelayTime = 0.8 -- Amount of time that passes before heat begins to dissipate.
 SWEP.HeatFix = true -- when the "overheat" animation is played, all heat is restored.
 
 -- If Malfunction is enabled, the gun has a random chance to be jammed
@@ -542,8 +542,13 @@ SWEP.Animations = {
         Source = "base_reload",
         MinProgress = 3,
         EventTable = {
-            {s = foley .. "mag_out.ogg",    t = 0.65},
-            {s = foley .. "mag_in.ogg",    t = 1.9},
+            {s = "shared/foley/shared/ads-up.wav", t= 0, v= 0.5, p = 100},
+            {s = "saa/pkm/handling/pkm_foley_lid_release.wav", t= 0.4, v= 0.5, p = 150},
+            {s = foley .. "mag_out.ogg", v = 1.0, t = 0.65},
+            {s = "shared/foley/ak_val/stock_unlock.wav",    t = 0.75, v= 0.2},
+            {s = foley .. "mag_in.ogg", v = 1.0, t = 1.9},
+            {s = "shared/foley/m4_1/m4_magrelease.wav",    t = 2.0, v= 0.6},
+            {s = "shared/foley/ak_generic/ak47_rattle.wav",    t = 2.2, v= 0.4, p = 110},
         },
         IKTimeLine = {
             {
@@ -591,10 +596,18 @@ SWEP.Animations = {
     ["reload_empty"] = {
         Source = "base_reloadempty",
         EventTable = {
-            {s = foley .. "mag_out.ogg",    t = 0.65},
-            {s = foley .. "mag_in.ogg",    t = 1.9},
+            {s = "shared/foley/shared/ads-up.wav", t= 0, v= 0.5, p = 100},
+            {s = "saa/pkm/handling/pkm_foley_lid_release.wav", t= 0.4, v= 0.5, p = 150},
+            {s = foley .. "mag_out.ogg", v = 1.0, t = 0.65},
+            {s = "shared/foley/ak_val/stock_unlock.wav", t = 0.75, v= 0.2},
+            {s = foley .. "mag_in.ogg", v = 1.0, t = 1.9},
+            {s = "shared/foley/m4_1/m4_magrelease.wav",    t = 2.0, v= 0.6},
+            {s = "shared/foley/ak_generic/ak47_rattle.wav",    t = 2.2, v= 0.4, p = 110},
             {s = foley .. "charging_handle_pull.ogg",    t = 3.3},
+            {s = "shared/foley/ak_generic/ak47_boltback.wav",    t = 3.3, v= 0.6, p = 100},
             {s = foley .. "charging_handle_release.ogg",    t = 3.55},
+            {s = "shared/foley/ak_generic/ak47_boltrelease.wav",    t = 3.65, v= 0.3, p = 100},
+            {s = "shared/foley/shared/movement_raise.wav",    t = 3.9, v= 0.4, p = 100},
         },
         IKTimeLine = {
             {
@@ -993,7 +1006,7 @@ SWEP.Attachments = {
     {
         PrintName = "Dust Cover",
         Category = "saa_ak_dustcover",
-        Installed = "saa_ak_akmdustcover",
+        Installed = "saa_ak_dc6p20",
         Bone = "b_wpn",
         Pos = Vector(0, -2.5, 1),
         Ang = Angle(0, 0, 0),
@@ -1027,7 +1040,7 @@ SWEP.Attachments = {
     {
         PrintName = "Gas Port",
         Category = "saa_ak_gp",
-        Installed = "saa_ak_akmport",
+        Installed = "saa_ak_akmgp",
         Bone = "b_wpn",
         Pos = Vector(0, 6, 1.5),
         Ang = Angle(0, 0, 0),
@@ -1060,16 +1073,16 @@ SWEP.Attachments = {
         Scale = 1,
     },
     {
-        PrintName = "AKM Plain Receiver",
-        Category = "saa_ak_rec",
+        PrintName = "Dovetail",
+        Category = "SAA_AK_DOVETAIL",
         Bone = "b_wpn",
-        Pos = Vector(0, -3.4, 0.1),
-        Ang = Angle(0, 0, 0),
-        Scale = 1,
+        Pos = Vector(0.81, -3.4+0.7, 0.1),
+        Ang = Angle(0, 270, 0),
+        Scale = 0.8,
     },
 }
 
-SWEP.DefaultBodygroups = "000001000000000"
+SWEP.DefaultBodygroups = "000001001000000"
 SWEP.AttachmentElements = {
     ["gp25"] = {
         Bodygroups = {
@@ -1132,6 +1145,11 @@ SWEP.AttachmentElements = {
             {11, 1},
         },
     },
+    ["steel_20"] = {
+        Bodygroups = {
+            {11, 5},
+        },
+    },
     ["akm_iron"] = {
         Bodygroups = {
             {10, 1},
@@ -1144,7 +1162,7 @@ SWEP.AttachmentElements = {
     },
     ["steel_40"] = {
         Bodygroups = {
-            {6, 2},
+            {11, 4},
         },
     },
     ["pmag_30"] = {

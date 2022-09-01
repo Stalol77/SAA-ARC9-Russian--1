@@ -5,7 +5,7 @@
 	"$phongexponenttexture"		"saa\weapons\arccw\AKS\AKM\sandstorm\t_1p_akalpha_m"
 	"$nocull"	"1"
 	"$phongwarptexture"			"models\weapons\saa\shared\lightwarps\phongwarp_metal"
-	"$color2"					"[0.1 0.1 0.1]"
+	"$color2"					"[0.4 0.4 0.4]"
 	"$blendTintByBaseAlpha"		"1"
 	"$phong"					"1"
 	"$phongboost"				"10"
@@ -18,7 +18,7 @@
 	"$rimmask"					"1"
 	"$envmap" 			"models\weapons\envmaps\fo4_dith"
 	"$normalmapalphaenvmapmask" 	"1"
-	"$envmapcoefficient"	"01" // Lighting will be multiplied by this value
+	"$envmapcoefficient"	"0.15" // Lighting will be multiplied by this value
 	"$colorcoefficient"	"0.8" // Lighting will be multiplied by this value
 Proxies
 {

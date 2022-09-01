@@ -367,6 +367,7 @@ SWEP.Hook_TranslateAnimation = function (self, anim)
     return anim .. suffix
 end
 
+
 SWEP.ExtraSightDist = -10
 -- Animations --
 local foley = "saa/ak2022/aks_foley_"
@@ -530,8 +531,13 @@ SWEP.Animations = {
         Source = "base_reload",
         MinProgress = 3,
         EventTable = {
-            {s = foley .. "mag_out.ogg",    t = 0.65},
-            {s = foley .. "mag_in.ogg",    t = 1.9},
+            {s = "shared/foley/shared/ads-up.wav", t= 0, v= 0.5, p = 100},
+            {s = "saa/pkm/handling/pkm_foley_lid_release.wav", t= 0.4, v= 0.5, p = 150},
+            {s = foley .. "mag_out.ogg", v = 1.0, t = 0.65},
+            {s = "shared/foley/ak_val/stock_unlock.wav",    t = 0.75, v= 0.2},
+            {s = foley .. "mag_in.ogg", v = 1.0, t = 1.9},
+            {s = "shared/foley/m4_1/m4_magrelease.wav",    t = 2.0, v= 0.6},
+            {s = "shared/foley/ak_generic/ak47_rattle.wav",    t = 2.2, v= 0.4, p = 110},
         },
         IKTimeLine = {
             {
@@ -579,10 +585,18 @@ SWEP.Animations = {
     ["reload_empty"] = {
         Source = "base_reloadempty",
         EventTable = {
-            {s = foley .. "mag_out.ogg",    t = 0.65},
-            {s = foley .. "mag_in.ogg",    t = 1.9},
+            {s = "shared/foley/shared/ads-up.wav", t= 0, v= 0.5, p = 100},
+            {s = "saa/pkm/handling/pkm_foley_lid_release.wav", t= 0.4, v= 0.5, p = 150},
+            {s = foley .. "mag_out.ogg", v = 1.0, t = 0.65},
+            {s = "shared/foley/ak_val/stock_unlock.wav", t = 0.75, v= 0.2},
+            {s = foley .. "mag_in.ogg", v = 1.0, t = 1.9},
+            {s = "shared/foley/m4_1/m4_magrelease.wav",    t = 2.0, v= 0.6},
+            {s = "shared/foley/ak_generic/ak47_rattle.wav",    t = 2.2, v= 0.4, p = 110},
             {s = foley .. "charging_handle_pull.ogg",    t = 3.3},
+            {s = "shared/foley/ak_generic/ak47_boltback.wav",    t = 3.3, v= 0.6, p = 100},
             {s = foley .. "charging_handle_release.ogg",    t = 3.55},
+            {s = "shared/foley/ak_generic/ak47_boltrelease.wav",    t = 3.65, v= 0.3, p = 100},
+            {s = "shared/foley/shared/movement_raise.wav",    t = 3.9, v= 0.4, p = 100},
         },
         IKTimeLine = {
             {
@@ -981,7 +995,7 @@ SWEP.Attachments = {
     {
         PrintName = "Dust Cover",
         Category = "saa_ak_dustcover",
-        Installed = "saa_ak_dc6p20",
+        Installed = "saa_ak_ribbedcover",
         Bone = "b_wpn",
         Pos = Vector(0, -2.5, 1),
         Ang = Angle(0, 0, 0),
@@ -1015,7 +1029,7 @@ SWEP.Attachments = {
     {
         PrintName = "Gas Port",
         Category = "saa_ak_gp",
-        Installed = "saa_ak_akmport",
+        Installed = "saa_ak_akmgp",
         Bone = "b_wpn",
         Pos = Vector(0, 6, 1.5),
         Ang = Angle(0, 0, 0),
@@ -1130,9 +1144,14 @@ SWEP.AttachmentElements = {
             {10, 2},
         },
     },
+    ["steel_20"] = {
+        Bodygroups = {
+            {11, 5},
+        },
+    },
     ["steel_40"] = {
         Bodygroups = {
-            {6, 2},
+            {11, 4},
         },
     },
     ["pmag_30"] = {
