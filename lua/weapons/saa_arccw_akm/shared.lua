@@ -467,7 +467,22 @@ SWEP.Animations = {
             },
         },
         Mult = 90/30,
-        SoundTable = {
+        EventTable = {
+            {s = "shared/foley/shared/ads-up.wav", t= 0, v= 0.5, p = 100},
+            {s = foley .. "mag_in.ogg", v = 0.5, t = 0.6, p = 100},
+            {s = "saa/ak2022/ak47_rattle.wav", t= 0.55, v= 0.5, p = 100},
+            {s = "saa/pkm/handling/pkm_foley_lid_release.wav", t= 0.75, v= 0.5, p = 150},
+            {s = "shared/foley/ak_val/stock_unlock.wav",    t = 0.65, v= 0.3},
+            {s = "shared/foley/shared/hr_down.wav", t= 0.9, v= 0.3, p = 120},
+            {s = "shared/foley/shared/ads-down.wav", t= 1.05, v= 0.3, p = 100},
+            {s = "shared/foley/new/ak_foley/ak_rof2.wav", t= 1.1, v= 0.3, p = 100},
+            {s = "shared/foley/shared/ads-up.wav", t= 1.15, v= 0.2, p = 110},
+            {s = "shared/foley/shared/ads-up.wav", t= 1.15, v= 0.0, p = 100},
+            {s = foley .. "charging_handle_pull.ogg",    t = 1.32, v= 0.7, p = 100},
+            {s = "shared/foley/ak_generic/ak47_boltback.wav",    t = 1.32, v= 0.3, p = 100},
+            {s = foley .. "charging_handle_release.ogg",    t = 1.43, v= 0.7, p = 100},
+            {s = "shared/foley/ak_generic/ak47_boltrelease.wav",    t = 1.48, v= 0.3, p = 100},
+            {s = "shared/foley/shared/hr_down.wav", t= 1.6, v= 0.3, p = 100}
         },
     },
     ["bash"] = {
