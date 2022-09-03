@@ -118,8 +118,8 @@ SWEP.VisualRecoilSpringMagnitude = 1
 
 SWEP.Sway = 0.42
 SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizePos = Vector(13.5 , 23, 5)
-SWEP.CustomizeSnapshotFOV = 110
+SWEP.CustomizePos = Vector(10 , 31, 4)
+SWEP.CustomizeSnapshotFOV = 100
 SWEP.SwayMultMidAir = 2
 SWEP.SwayMultMove = 1.5
 SWEP.SwayMultCrouch = 0.66
@@ -492,9 +492,7 @@ SWEP.Animations = {
             {s = "shared/foley/ak_generic/ak47_boltback.wav",    t = 1.32, v= 0.3, p = 100},
             {s = foley .. "charging_handle_release.ogg",    t = 1.43, v= 0.7, p = 100},
             {s = "shared/foley/ak_generic/ak47_boltrelease.wav",    t = 1.48, v= 0.3, p = 100},
-            {s = "shared/foley/shared/hr_down.wav", t= 1.6, v= 0.3, p = 100},
-
-
+            {s = "shared/foley/shared/hr_down.wav", t= 1.6, v= 0.3, p = 100}
         },
     },
     ["bash"] = {

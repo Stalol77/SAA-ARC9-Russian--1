@@ -118,8 +118,8 @@ SWEP.VisualRecoilSpringMagnitude = 1
 
 SWEP.Sway = 0.56
 SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizePos = Vector(13.5 , 23, 5)
-SWEP.CustomizeSnapshotFOV = 110
+SWEP.CustomizePos = Vector(10 , 31, 4)
+SWEP.CustomizeSnapshotFOV = 100
 SWEP.SwayMultMidAir = 2
 SWEP.SwayMultMove = 1.5
 SWEP.SwayMultCrouch = 0.66
