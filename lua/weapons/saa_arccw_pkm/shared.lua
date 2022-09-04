@@ -39,7 +39,7 @@ SWEP.TracerSize = 1
 SWEP.PrintName = "PKM"
 
 -- Trivia --
-SWEP.Description = [[This hulk of steel has accompanied squads for over 60 years. The PKM, or Kalashnikov's Modernised Machinegun, has proven to be one of the most viable, if not the most, in battlefields all around the globe, shredding light armored vehicles and materiel but also offering optimal suppressing fire.]]
+SWEP.Description = [[This hunk of steel has accompanied squads for over 60 years. The PKM, or Kalashnikov's Modernised Machinegun, has proven to be one of the most viable, if not the most, in battlefields all around the globe, shredding light armored vehicles and materiel but also offering optimal suppressing fire.]]
 
 -- Trivia --
 SWEP.Class = "Medium Machinegun"
