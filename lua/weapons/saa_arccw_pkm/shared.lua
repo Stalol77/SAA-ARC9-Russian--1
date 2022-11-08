@@ -891,10 +891,10 @@ SWEP.Attachments = {
        Category = {"SAA_SCOPE_SMALL","SAA_SCOPE_MEDIUM"},
        Bone = "b_wpn_lid",
        InstalledElements = {"railed_lid"},
-       Pos = Vector(0.11, -4, 1.4),
+       Pos = Vector(0.11, -4, 1.45),
        Ang = Angle(0, 270, 0),
 
-       Scale = 0.8,
+       Scale = 0.9,
    },
     {
        PrintName = "Barrel",

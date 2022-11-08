@@ -14,11 +14,11 @@ ATT.ActivateElements = {"handguard_rail"}
 ATT.Attachments = {
     {
         PrintName = "Underbarrel",
-        Category = {"grip_picatinny"},
-        Pos = Vector(1.85, -0.425, -6),
+        Category = {"SAA_FOREGRIP"},
+        Pos = Vector(0.5, 0, -2),
         Ang = Angle(90, 180, 0),
         Icon_Offset = Vector(0, 0, 0),
-        Scale = 1
+        Scale = 2
     },
     {
         PrintName = "Left Rail",

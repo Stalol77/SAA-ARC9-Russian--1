@@ -46,7 +46,7 @@ SWEP.Slot = 2
 
 -- Viewmodel / Worldmodel / FOV --
 
-SWEP.ViewModel = "models/saa/weapons/arccw/akpack/ak104/v_ak104.mdl"
+SWEP.ViewModel = "models/saa/weapons/arccw/akpack/ak104/v_ak104_v2.mdl"
 SWEP.WorldModel = "models/weapons/arccw/c_ud_m16.mdl"
 SWEP.ViewModelFOVBase = 65 -- Set to override viewmodel FOV
 SWEP.CustomizeSnapshotFOV = 100
@@ -72,7 +72,7 @@ SWEP.SupplyLimit = 6 -- Amount of magazines of ammo this gun can take from an AR
 SWEP.SecondarySupplyLimit = 3 -- Amount of reserve UBGL magazines you can take.
 
 
-SWEP.Recoil = 0.74
+SWEP.Recoil = 0.91
 SWEP.RecoilSide = 1.4
 SWEP.RecoilUp = 1.6
 
@@ -85,9 +85,9 @@ SWEP.RecoilResetTime = 0.01 -- How long the gun must go before the recoil patter
 SWEP.RecoilAutoControl = 0
 SWEP.RecoilKick = 2
 
-SWEP.EFTRecoil = true -- true
-SWEP.EFTRecoilUpMult = 11 -- 40-100
-SWEP.EFTRecoilSideMult = 15 -- 1-20
+SWEP.ViewRecoil = true -- true
+SWEP.ViewRecoilUpMult = 11 -- 40-100
+SWEP.ViewRecoilSideMult = 15 -- 1-20
 
 SWEP.UseVisualRecoil = true
 
@@ -173,7 +173,6 @@ SWEP.MagID = "akm"
 
 SWEP.Overheat = true -- Weapon will jam when it overheats, playing the "overheat" animation.
 SWEP.HeatPerShot = 1
-SWEP.HeatCapacity = 75 -- rounds that can be fired non-stop before the gun jams, playing the "fix" animation
 SWEP.HeatDissipation = 5 -- rounds' worth of heat lost per second
 SWEP.HeatLockout = true -- overheating means you cannot fire until heat has been fully depleted
 SWEP.HeatDelayTime = 0.8 -- Amount of time that passes before heat begins to dissipate.
@@ -186,7 +185,8 @@ SWEP.HeatFix = true -- when the "overheat" animation is played, all heat is rest
 SWEP.Malfunction = true
 SWEP.MalfunctionJam = true -- After a malfunction happens, the gun will dryfire until reload is pressed. If unset, instead plays animation right after.
 SWEP.MalfunctionWait = 1 -- The amount of time to wait before playing malfunction animation (or can reload)
-SWEP.MalfunctionMeanShotsToFail = 1000 -- The mean number of shots between malfunctions, will be autocalculated if nil
+SWEP.MalfunctionMeanShotsToFail = 900 -- The mean number of shots between malfunctions, will be autocalculated if nil
+SWEP.HeatCapacity = 70 -- rounds that can be fired non-stop before the gun jams, playing the "fix" animation
 
 
 SWEP.Bash = true
@@ -207,9 +207,9 @@ SWEP.ShootSpeedMult = 0.8
 SWEP.AimDownSightsTime = 0.33 -- How long it takes to go from hip fire to aiming down sights.
 SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being able to fire.
 
-
-SWEP.SprintAng = Angle(20, -15, 0)
-SWEP.SprintPos = Vector(0, -0.5, 0.2)
+SWEP.Spread =  0.0022
+SWEP.SprintAng = Angle(40, -15, -30)
+SWEP.SprintPos = Vector(-0, -0.5, 1)
 -- Length --
 
 SWEP.BarrelLength = 34
@@ -221,7 +221,7 @@ SWEP.HoldtypeActive = "ar2"
 SWEP.HoldtypeSights = "rpg"
 
 SWEP.IronSights = {
-    Pos = Vector(-2.45, -3, 1.5),
+    Pos = Vector(-2.45, -3, 1.5)*1.1,
     Ang = Angle(0.0, 0.2,0),
     Midpoint = { -- Where the gun should be at the middle of it's irons
         Pos = Vector(0, 15, -4),
@@ -260,16 +260,16 @@ local firingsound = {
     ak .. "07.wav",
 }
 local firingsoundsup = {
-    sandstorm .. "suppressed_core_loop_120_01.wav",
-    sandstorm .. "suppressed_core_loop_120_02.wav",
-    sandstorm .. "suppressed_core_loop_120_03.wav",
-    sandstorm .. "suppressed_core_loop_120_04.wav",
-    sandstorm .. "suppressed_core_loop_120_05.wav",
-    sandstorm .. "suppressed_core_loop_120_06.wav",
-    sandstorm .. "suppressed_core_loop_120_07.wav",
-    sandstorm .. "suppressed_core_loop_120_08.wav",
-    sandstorm .. "suppressed_core_loop_120_09.wav",
-    sandstorm .. "suppressed_core_loop_120_10.wav",
+    "shared/base/universal/sandstorm_suppressed/suppressed_core_loop_120_01.wav",
+    "shared/base/universal/sandstorm_suppressed/suppressed_core_loop_120_02.wav",
+    "shared/base/universal/sandstorm_suppressed/suppressed_core_loop_120_03.wav",
+    "shared/base/universal/sandstorm_suppressed/suppressed_core_loop_120_04.wav",
+    "shared/base/universal/sandstorm_suppressed/suppressed_core_loop_120_05.wav",
+    "shared/base/universal/sandstorm_suppressed/suppressed_core_loop_120_06.wav",
+    "shared/base/universal/sandstorm_suppressed/suppressed_core_loop_120_07.wav",
+    "shared/base/universal/sandstorm_suppressed/suppressed_core_loop_120_08.wav",
+    "shared/base/universal/sandstorm_suppressed/suppressed_core_loop_120_09.wav",
+    "shared/base/universal/sandstorm_suppressed/suppressed_core_loop_120_10.wav",
 }
 local firstfire = ak .. "single_0"
 
@@ -311,43 +311,34 @@ SWEP.ShootSoundIndoor = {
     sandstorm .. "ak104/ak74_core_loop_15_A.wav",
     sandstorm .. "ak104/ak74_core_loop_16_A.wav",
 }
-local tail = sandstorm .. "noise_urban_close_end_0"
+local tail = "shared/base/universal/sandstorm_outdoor/noise_urban_close_end_0"
 local tailt = {
     tail .. "1.wav",
     tail .. "2.wav",
     tail .. "3.wav",
 }
-SWEP.LayerSound = tailt
 SWEP.DistantShootSound =  nil
-SWEP.LayerSoundSilenced = 
-{
-    sandstorm .. "sup/noise_urban_close_end_01.wav",
-    sandstorm .. "sup/noise_urban_close_end_02.wav",
-    sandstorm .. "sup/noise_urban_close_end_03.wav",
 
+local akm = "saa/ak2022/bf2/"
+
+SWEP.LayerSound = akm .. "new/akm_outdoor_tail.wav"
+SWEP.LayerSoundIndoor = {
+    akm .. "new/akm_indoor_1.wav",
+    akm .. "new/akm_indoor_2.wav",
+    akm .. "new/akm_indoor_3.wav",
 }
+
+SWEP.LayerSoundSilenced = akm .. "akm_outdoor_sup.wav"
+SWEP.LayerSoundSilencedIndoor = akm .. "akm_indoor_sup.wav"
 local lsinds = "shared/base/universal/sandstorm_reverb/fromrpg7/lowest/tail_indoors_small_close_0"
-SWEP.LayerSoundSilencedIndoor = {
-    lsinds .. "1.mp3", 
-    lsinds .. "2.mp3", 
-    lsinds .. "3.mp3", 
-    lsinds .. "4.mp3",
-    lsinds .. "5.mp3",  
-}
-local lsind = "shared/base/universal/sandstorm_reverb/fromrpg7/low/tail_indoors_small_close_0"
-SWEP.LayerSoundIndoor = { 
-    lsind .. "1.wav", 
-    lsind .. "2.wav", 
-    lsind .. "3.wav", 
-    lsind .. "4.wav",
-    lsind .. "5.wav",  
-}
 
+local lsind = "shared/base/universal/sandstorm_reverb/fromrpg7/low/tail_indoors_small_close_0"
 local triggersound = "saa/weapons/arccw/mp5/weap_mpapa5_fire_first_plr_0"
 local triggersound_iron = "saa/weapons/arccw/mp5/weap_mpapa5_fire_first_plr_ads_0"
 -- SWEP.FirstShootSoundSilenced = {"smc/weapons/bocw/m60/M60_S" .. math.random(1, 6) .. ".wav"}
 
 SWEP.ShootSoundSilenced = firingsoundsup
+SWEP.ShootSoundSilencedIndoor = firingsoundsup
 SWEP.DistantShootSoundSilenced =
 {
     firstfire .. "1.wav",
@@ -590,7 +581,7 @@ SWEP.Animations = {
     },
     ["jam"] = {
         Source = "idle",
-        Mult = 30/60,
+        Time = 0.5,
         EventTable = {
             {s = "saa/ak2022/ak47_empty.wav",    t = 0.5},
         },
@@ -1003,27 +994,27 @@ SWEP.Attachments = {
         Bone = "b_wpn",
         ExcludeElements = {"blockmuzzle"},
         InstalledElements = {"plainmuzzle"},
-        Pos = Vector(0, 11.5, 0.35),
+        Pos = Vector(0, 11.5*1.1, 0.35*1.1),
         Ang = Angle(0, -90, 0),
 
-        Scale = 0.8,
+        Scale = 0.8*1.1,
     },
     {
         PrintName = "Gas Tube Clamp",
         Category = {"clamped"},
         Bone = "b_wpn",
         ExcludeElements = {"alpha_gasport"},
-        Pos = Vector(0, 9, 1.23),
+        Pos = Vector(0, 9*1.1, 1.23*1.1),
         Ang = Angle(0, -90, 90),
 
-        Scale = 0.8,
+        Scale = 0.8*1.1,
     },
     {
         PrintName = "Dust Cover",
         Category = "saa_ak_dustcover",
         Installed = "saa_ak_dc6p20",
         Bone = "b_wpn",
-        Pos = Vector(0, -2.5, 1),
+        Pos = Vector(0, -2.5*1.1, 1*1.1),
         Ang = Angle(0, 0, 0),
         Scale = 1,
     },
@@ -1031,9 +1022,9 @@ SWEP.Attachments = {
         PrintName = "Pistol Grip",
         Category = "saa_ak_pgrip",
         Bone = "b_wpn",
-        Pos = Vector(0, -5.3, -2),
+        Pos = Vector(0, -5.3*1.1, -2*1.1),
         Ang = Angle(0, 0, 0),
-        Scale = 1,
+        Scale = 1*1.1,
     },
     {
         PrintName = "Rear Sight",
@@ -1048,35 +1039,35 @@ SWEP.Attachments = {
         PrintName = "Magazine",
         Category = "saa_akm_mag",
         Bone = "b_wpn_mag",
-        Pos = Vector(0, 0.5, 0),
+        Pos = Vector(0, 0.5*1.1, 0),
         Ang = Angle(0, 0, 0),
-        Scale = 1,
+        Scale = 1*1.1,
     },
     {
         PrintName = "Gas Port",
         Category = "saa_ak_gp",
         Installed = "saa_ak_akmgp",
         Bone = "b_wpn",
-        Pos = Vector(0, 6, 1.5),
+        Pos = Vector(0, 6*1.1, 1.5*1.1),
         Ang = Angle(0, 0, 0),
-        Scale = 1,
+        Scale = 1*1.1,
     },
     {
         PrintName = "Handguard",
         DefaultName = "AKM Handguard",
         Category = {"saa_ak_hg", "saa_ak_polyhg", "saa_ak_underbarrel"},
         Bone = "b_wpn",
-        Pos = Vector(0, 5, 0.5),
+        Pos = Vector(0, 5*1.1, 0.5*1.1),
         Ang = Angle(0, 0, 0),
-        Scale = 1,
+        Scale = 1*1.1,
     },
     {
         PrintName = "Ammunition",
         Category = "saa_ak_ammo",
         Bone = "b_wpn_mag",
-        Pos = Vector(0, -0.2, 1.5),
+        Pos = Vector(0, -0.2*1.1, 1.5*1.1),
         Ang = Angle(0, 0, 0),
-        Scale = 1,
+        Scale = 1*1.1,
     },
     {
         PrintName = "Stock",
@@ -1091,9 +1082,9 @@ SWEP.Attachments = {
         PrintName = "Dovetail",
         Category = "SAA_AK_DOVETAIL",
         Bone = "b_wpn",
-        Pos = Vector(0.81, -3.4+0.7, 0.1),
+        Pos = Vector(0.81*1.1, (-3.4+0.7)*1.1, 0.1*1.1),
         Ang = Angle(0, 270, 0),
-        Scale = 0.8,
+        Scale = 0.8*1.1,
     },
 }
 
@@ -1175,6 +1166,11 @@ SWEP.AttachmentElements = {
             {10, 2},
         },
     },
+    ["iron_alpha"] = {
+        Bodygroups = {
+            {10, 3},
+        },
+    },
     ["steel_40"] = {
         Bodygroups = {
             {11, 4},
@@ -1233,6 +1229,11 @@ SWEP.AttachmentElements = {
     ["alpha_guard"] = {
         Bodygroups = {
             {4, 3},
+        },
+    },
+    ["romanian"] = {
+        Bodygroups = {
+            {4, 6},
         },
     },
     ["s100_handguard"] = {

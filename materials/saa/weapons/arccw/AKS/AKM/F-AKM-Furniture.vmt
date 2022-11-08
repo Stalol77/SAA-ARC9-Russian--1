@@ -1,8 +1,8 @@
 "VertexLitGeneric"
 {
-	"$basetexture"				"saa\weapons\arccw\AKS\AKM\frimenitnet-new\akm_sec_d"
-	"$bumpmap"					"saa\weapons\arccw\AKS\AKM\frimenitnet-new\akm_sec_n"
-	"$phongexponenttexture"		"saa\weapons\arccw\AKS\AKM\frimenitnet-new\akm_sec_e"
+	"$basetexture"				"saa\weapons\arccw\AKS\AKM\frimenitnet-new\AKM AKMS DVT Basemat_secondary_BaseColor"
+	"$bumpmap"					"saa\weapons\arccw\AKS\AKM\frimenitnet-new\AKM AKMS DVT Basemat_secondary_Normal"
+	"$phongexponenttexture"		"saa\weapons\arccw\AKS\AKM\frimenitnet-new\AKM AKMS DVT Basemat_secondary_Roughness"
 	"$phongwarptexture"			"models\weapons\saa\shared\lightwarps\phongwarp_metal"
 	"$color2"					"[0.5 0.5 0.5]"
 	"$blendTintByBaseAlpha"		"1"

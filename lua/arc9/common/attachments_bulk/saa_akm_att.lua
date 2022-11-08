@@ -19,6 +19,9 @@ ATT.SprintToFireTimeMult = 0.95
 ATT.SpeedMult = 0.98
 ATT.AimDownSightsTimeMult = 1.02
 ATT.HeatDissipationMult = 0.98
+ATT.MalfunctionMeanShotsToFailMult = 1.225
+ATT.MalfunctionWaitMult = 3
+
 
 ATT.ActivateElements = {"dustcover_akm"}
 
@@ -65,12 +68,12 @@ ATT.Category = "saa_ak_dustcover"
 ATT.Attachments = {
     {
         PrintName = "OPTIC",
-        Category = {"SAA_SCOPE_SMALL","SAA_SCOPE_MEDIUM"},
-        Pos = Vector(-0.2, 0, -1.2),
+        Category = {"SAA_SCOPE_IRONSIGHT","SAA_SCOPE_SMALL","SAA_SCOPE_MEDIUM"},
+        Pos = Vector(-0.2, 0, -1.1),
         ExcludeElements = {"nodustcoveroptics"},
-        InstalledElements = {"nodovetailoptics"},
+        InstalledElements = {"nodovetailoptics", "norearsightoptics"},
         Ang = Angle(0, 270, 0),
-        Scale = 0.8,
+        Scale = 0.9,
     },
 }
 
@@ -97,7 +100,7 @@ ATT.Pros = {"Allows for Picatinny Railed Optic use"}
 ATT.SortOrder = 1
 ATT.Category = "saa_ak_dustcover"
 ATT.IronSightsOverride = {
-    Pos = Vector(-2.45, -3, 1.25),
+    Pos = Vector(-2.45*1.1, -3*1.1, 1.25*1.1),
     Ang = Angle(0.0, 0.8,0),
     Midpoint = { -- Where the gun should be at the middle of it's irons
         Pos = Vector(0, 15, -4),
@@ -112,9 +115,9 @@ ATT.Attachments = {
         Category = {"SAA_SCOPE_SMALL","SAA_SCOPE_MEDIUM"},
         Pos = Vector(-0.2, 0, -1.2),
         ExcludeElements = {"nodustcoveroptics"},
-        InstalledElements = {"nodovetailoptics"},
+        InstalledElements = {"nodovetailoptics", "norearsightoptics"},
         Ang = Angle(0, 270, 0),
-        Scale = 0.8,
+        Scale = 0.9,
     },
 }
 
@@ -123,7 +126,7 @@ ATT.SpeedMult = 0.98
 ATT.AimDownSightsTimeMult = 1.02
 ATT.HeatDissipationMult = 0.98
 
-ATT.ExcludeElements = {"akm_iron","iron_akmb","ak_iron"}
+ATT.ExcludeElements = {"akm_iron","iron_akmb","ak_iron", "iron_alpha"}
 ATT.ActivateElements = {"bastion_dustcover"}
 
 ARC9.LoadAttachment(ATT, "saa_ak_ironcover")
@@ -154,8 +157,8 @@ ARC9.LoadAttachment(ATT, "saa_ak_akmiron")
 
 ATT = {}
 
-ATT.PrintName = "AKMB Rear Sight"
-ATT.CompactName = "AKMB"
+ATT.PrintName = "TULA Tactical Picatinny Rear Sight"
+ATT.CompactName = "TULA Tac"
 ATT.Description = [[Custom Ironsight fabricated for later models, including as earliest versions the M43 chambered RPK family.]]
 
 
@@ -164,7 +167,38 @@ ATT.Category = "saa_ak_iron"
 ATT.GivesFlags = {"iron"}
 ATT.ActivateElements = {"iron_akmb"}
 
+ATT.Attachments = {
+    {
+        PrintName = "OPTIC",
+        Category = {"SAA_SCOPE_SMALL","SAA_SCOPE_MEDIUM"},
+        Pos = Vector(-0.2, -3, -0.3),
+        ExcludeElements = {"norearsightoptics"},
+        InstalledElements = {"nodovetailoptics", "nodustcoveroptics"},
+        Ang = Angle(0, 270, 0),
+        Scale = 0.9,
+    },
+}
+
 ARC9.LoadAttachment(ATT, "saa_ak_bsight")
+
+-- end here
+
+-- start here
+
+ATT = {}
+
+ATT.PrintName = "Zenitco TSiK Rear Sight Cap"
+ATT.CompactName = "TSiK RSC"
+ATT.Description = [[Custom Ironsight fabricated for later models, including as earliest versions the M43 chambered RPK family.]]
+
+
+ATT.SortOrder = 0
+ATT.Category = "saa_ak_iron"
+ATT.GivesFlags = {"iron"}
+ATT.ActivateElements = {"iron_alpha"}
+
+
+ARC9.LoadAttachment(ATT, "saa_ak_alphasight")
 
 -- end here
 
@@ -254,11 +288,11 @@ ATT.HeatDissipationMult = 1.50
 ATT.Attachments = {
     {
         PrintName = "Underbarrel",
-        Category = {"grip_picatinny"},
-        Pos = Vector(0, 0, 1.5),
+        Category = {"SAA_FOREGRIP"},
+        Pos = Vector(0, 0, 1.),
         Ang = Angle(0, 270, 180),
         Icon_Offset = Vector(0, 0, 0),
-        Scale = 0.8
+        Scale = 1
     },
     {
         PrintName = "Right Tactical",
@@ -313,11 +347,11 @@ ATT.HeatDissipationMult = 1.50
 ATT.Attachments = {
     {
         PrintName = "Underbarrel",
-        Category = {"grip_picatinny", "saa_rail_tactical"},
-        Pos = Vector(0, 0, 1.5),
+        Category = {"SAA_FOREGRIP"},
+        Pos = Vector(0, 0, 0.9),
         Ang = Angle(0, 270, 180),
         Icon_Offset = Vector(0, 0, 0),
-        Scale = 0.8
+        Scale = 1
     },
 }
 
@@ -346,6 +380,37 @@ ARC9.LoadAttachment(ATT, "saa_ak_magpulhandguard")
 
 -- end here
 
+-- start here
+
+ATT = {}
+
+ATT.PrintName = "Romanian Dong-Grip Handguard"
+ATT.CompactName = "Dong"
+ATT.Description = [[Handguard produced by private companies. Eases aim and .]]
+
+
+ATT.SortOrder = 1
+ATT.Category = "saa_ak_hg"
+ATT.ActivateElements = {"romanian"}
+
+ATT.Model = "models/saa/upgrades/arc9/a_kac_grip_rail.mdl"
+ATT.ModelAngleOffset = Angle(15, -90, 0)
+ATT.ModelOffset = Vector(-0.5, 0, -0.5)
+ATT.ModelMaterial = "models/weapons/saa/shared/unlit_transparent"
+ATT.Scale = 1
+ATT.SortOrder = 0
+ATT.LHIK_Priority = 10
+ATT.LHIK = true
+
+ATT.Sway = 0.8
+ATT.RecoilUpMult = 0.875
+ATT.RecoilMult = 0.915
+ATT.SprintToFireTimeMult = 1.05
+
+ARC9.LoadAttachment(ATT, "saa_ak_dong")
+
+-- end here
+
 
 -- start here
 
@@ -362,6 +427,18 @@ ATT.Sway = 0.75
 ATT.RecoilMult = 0.965
 ATT.SprintToFireTimeMult = 1.1
 ATT.ActivateElements = {"s100_handguard"}
+
+ATT.Attachments = {
+    {
+        PrintName = "Underbarrel",
+        Category = {"SAA_FOREGRIP_RAIL"},
+        Pos = Vector(0, 0, 1.1),
+        Ang = Angle(0, 270, 180),
+        Icon_Offset = Vector(0, 0, 0),
+        Scale = 1
+    },
+}
+
 
 ARC9.LoadAttachment(ATT, "saa_ak_s100hg")
 
@@ -411,11 +488,11 @@ ATT.SwayMult = 1.25
 ATT.Attachments = {
     {
         PrintName = "Underbarrel",
-        Category = {"grip_picatinny"},
-        Pos = Vector(0, 0, 1.5),
+        Category = {"SAA_FOREGRIP_RAIL"},
+        Pos = Vector(0, 0, 1.2),
         Ang = Angle(0, 270, 180),
         Icon_Offset = Vector(0, 0, 0),
-        Scale = 0.8
+        Scale = 1
     },
     {
         PrintName = "Right Tactical",
@@ -708,8 +785,8 @@ ATT.ActivateElements = {"alpha_gasport"}
 ATT.Attachments = {
     {
         PrintName = "Top Barrel",
-        Category = { "picatinny"},
-        Pos = Vector(0, 4, -0.4),
+        Category = { "picatinny", "SAA_SCOPE_FRONTPOST"},
+        Pos = Vector(-0.225, 5, -0.82),
         Ang = Angle(0, 270, 0),
         Icon_Offset = Vector(0, 0, 0),
         Scale = 0.7
@@ -829,9 +906,9 @@ ATT.Attachments = {
     {
         PrintName = "Dovetail",
         Category = "SAA_AK_DOVETAIL",
-        Pos = Vector(-1, 0.8, 0),
+        Pos = Vector(-1*1.1, 0.8*1.1, 0),
         Ang = Angle(0, 270, 0),
-        Scale = 0.8,
+        Scale = 0.8*1.1,
         MergeSlots = {2}
     },
 }

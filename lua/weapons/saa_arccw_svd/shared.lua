@@ -501,6 +501,28 @@ SWEP.Animations = {
             {s= foley .. "svd_magrelease.wav", t= 2.5, p= 100, v= 0.5 },
             {s= foley .. "ppsh_drummagfetch.wav", t= 2.6, v= 0.1, p= 92 },
         },
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.775,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 0
+            },
+        },
     },
     ["reload_empty"] = {
         Source = "base_reloadempty",
@@ -515,6 +537,28 @@ SWEP.Animations = {
             {s= newfire .. "handling/dragunov_foley_arm_movement.mp3", t= 2.8, p= 92 },
             {s= foley .. "svd_boltrelease.wav", t= 3.5, p=100,},
             {s= foley .. "ppsh_drummagfetch.wav", t= 3.8, p= 92 },
+        },
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.775,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 0
+            },
         },
     },
 -- bipod
@@ -637,10 +681,10 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Underbarrel",
-        Category = {"saa_svd_underbarrel"},
+        Category = {"saa_svd_underbarrel", "SAA_FOREGRIP_RAIL"},
         Bone = "Weapon",
-        Pos = Vector(0, 10, -1),
-        Ang = Angle(0, 270, 0),
+        Pos = Vector(0, 10, -0.5),
+        Ang = Angle(0, 270, 180),
         Scale = 1,
     },
     {

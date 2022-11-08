@@ -1,0 +1,24 @@
+"VertexLitGeneric"
+{
+	"$basetexture"				"saa\weapons\arccw\AKS\AKM\sandstorm\T_1P_A_FG_Woodgrip_AKM_D"
+	"$bumpmap"					"saa\weapons\arccw\AKS\AKM\sandstorm\T_1P_A_FG_Woodgrip_AKM_N"
+	"$phongexponenttexture"		"saa\weapons\arccw\AKS\AKM\sandstorm\T_1P_A_FG_Woodgrip_AKM_E"
+	"$phongwarptexture"			"models\weapons\saa\shared\phongwarp_metal"
+	"$color2"					"[2.2 1.6 1.5]"
+
+	"$envmap"					"env_cubemap"
+	"$envmaptint"				"[ .04 .04 .04 ]"
+	"$normalmapalphaenvmapmask"	"1"
+
+	"$phong"					"1"
+	"$phongboost"				"15"
+	"$phongfresnelranges"		"[0.32 0.72 0.99]"
+	"$phongalbedotint" 			"1"
+
+	"$rimlight"					"1"
+	"$rimlightexponent"			"33"	
+	"$rimlightboost"			"3"
+	"$rimmask"					"1"
+}
+//Material setup by ShadowRUN 幸運な, using various parts from Thanez' and 4Echo's materials. 
+//You are NOT allowed to edit/modify/redistribute these materials without my explicit permission.
