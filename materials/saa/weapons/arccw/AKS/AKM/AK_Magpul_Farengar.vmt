@@ -8,7 +8,7 @@
 	"$color2"					"[0.85 0.85 0.85]"
 	"$blendTintByBaseAlpha"		"1"
 	"$phong"					"1"
-	"$phongboost"				"90"
+	"$phongboost"				"50"
 	"$phongfresnelranges"		"[0.32 0.72 0.99]"
 	"$phongalbedotint" 			"1"
 
@@ -20,7 +20,7 @@
 	"$envmap" 			"models\weapons\envmaps\fo4_dith"
 	"$normalmapalphaenvmapmask" 	"1"
 	"$envmaptint"			"[0.5 0.5 0.5]"
-	"$envmapcoefficient"	"0.2" // Lighting will be multiplied by this value
+	"$envmapcoefficient"	"0.1" // Lighting will be multiplied by this value
 Proxies
 {
     SAA_CubemapTintMult
