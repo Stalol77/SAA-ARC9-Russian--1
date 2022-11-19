@@ -1,26 +1,26 @@
 "VertexLitGeneric"
 {
-	"$basetexture"				"saa\weapons\arccw\mosin\eft\stock_mosin_ati_monte_carlo_LOD0_diff"
-	"$bumpmap"					"saa\weapons\arccw\mosin\eft\stock_mosin_ati_monte_carlo_LOD0_nrm"
-	"$phongexponenttexture"		"saa\weapons\arccw\mosin\eft\stock_mosin_ati_monte_carlo_LOD0_gloss"
-	"$nocull"	"1"
-//	"$phongwarptexture"			"models\weapons\saa\shared\lightwarps\phongwarp_metal"
-	"$color2"					"[0.15 0.15 0.15]"
+	"$basetexture"				"saa\weapons\arccw\mosin\eft\stock_ati_monte_carlo_d"
+	"$bumpmap"					"saa\weapons\arccw\mosin\eft\stock_ati_monte_carlo_n"
+	"$phongexponenttexture"		"saa\weapons\arccw\mosin\eft\stock_ati_monte_carlo_e"
+	"$color2"					"[0.5 0.5 0.5]"
 	"$blendTintByBaseAlpha"		"1"
+
+	"$envmap"					"env_cubemap"
+	"$envmapfresnel"			".5"
+	"$envmaptint"				"[ .5 .5 .5 ]"
+	"$envmapcoefficient"		".1" // Lighting will be multiplied by this value
+
 	"$phong"					"1"
-	"$phongboost"				"5"
+	"$phongboost"				"15"
 	"$phongfresnelranges"		"[0.32 0.72 0.99]"
 	"$phongalbedotint" 			"1"
 
 	"$rimlight"					"1"
 	"$rimlightexponent"			"33"
-	"$rimlightboost"			"0.4"
+	"$rimlightboost"			"2"
 	"$rimmask"					"1"
-	"$normalmapalphaenvmapmask" 	"1"
-	"$envmap" 			"models\weapons\envmaps\fo4_dith"
-	"$normalmapalphaenvmapmask" 	"1"
-	"$envmaptint"			"[0.5 0.5 0.5]"
-	"$envmapcoefficient"	"0.1" // Lighting will be multiplied by this value
+
 Proxies
 {
     SAA_CubemapTintMult
@@ -30,3 +30,5 @@ Proxies
     }
 }
 }
+//Material setup by ShadowRUN 幸運な. 
+//Do NOT edit\modify\redistribute these materials without my explicit permission.

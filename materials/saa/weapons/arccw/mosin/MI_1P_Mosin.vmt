@@ -1,26 +1,28 @@
-"VertexLitGeneric"
+//"VertexLitGeneric"
 {
-	"$basetexture"				"saa\weapons\arccw\mosin\sandstorm\T_1P_Mosin_BC"
-	"$bumpmap"					"saa\weapons\arccw\mosin\sandstorm\T_1P_Mosin_N"
-	"$phongexponenttexture"		"saa\weapons\arccw\mosin\sandstorm\T_1P_Mosin_M"
-	"$nocull"	"1"
+	"$basetexture"				"saa\weapons\arccw\mosin\sandstorm\T_1P_Mosin_d"
+	"$bumpmap"					"saa\weapons\arccw\mosin\sandstorm\T_1P_Mosin_n"
+	"$phongexponenttexture"		"saa\weapons\arccw\mosin\sandstorm\T_1P_Mosin_e"
 	"$phongwarptexture"			"models\weapons\saa\shared\lightwarps\phongwarp_metal"
-	"$color2"					"[0.5 0.5 0.5]"
-	"$blendTintByBaseAlpha"		"1"
+	"$color2"					"[0.35 0.35 0.35]"
+
+	"$envmap"					"models\weapons\envmaps\fo4_dith"
+	"$envmapfresnel"			".5"
+	"$envmaptint"				"[0.5 0.5 0.5]"
+	"$envmapcoefficient"		".2" // Lighting will be multiplied by this value
+
 	"$phong"					"1"
-	"$phongboost"				"5"
+	"$phongboost"				"50"
 	"$phongfresnelranges"		"[0.32 0.72 0.99]"
 	"$phongalbedotint" 			"1"
 
 	"$rimlight"					"1"
 	"$rimlightexponent"			"33"
-	"$rimlightboost"			"0.5"
+	"$rimlightboost"			"5"
 	"$rimmask"					"1"
-	"$normalmapalphaenvmapmask" 	"1"
-	"$envmap" 			"models\weapons\envmaps\fo4_dith"
-	"$normalmapalphaenvmapmask" 	"1"
-	"$envmaptint"			"[0.5 0.5 0.5]"
-	"$envmapcoefficient"	".2" // Lighting will be multiplied by this value
+
+	"$nocull"					"1"
+
 Proxies
 {
     SAA_CubemapTintMult
@@ -30,3 +32,5 @@ Proxies
     }
 }
 }
+//Material setup by ShadowRUN 幸運な. 
+//Do NOT edit\modify\redistribute these materials without my explicit permission.
