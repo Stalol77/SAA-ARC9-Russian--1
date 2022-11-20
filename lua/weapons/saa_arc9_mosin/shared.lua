@@ -65,7 +65,7 @@ SWEP.AnimDraw = false
 
 SWEP.DamageMax = 105 -- 3 shot kill
 SWEP.DamageMin = 39 -- 5 shot kill
-SWEP.ImpactForce = 1
+SWEP.ImpactForce = 10
 SWEP.RangeMin = 10
 SWEP.RangeMax = (400/304.8)*12000
 SWEP.ArmorPiercing = 0.67
