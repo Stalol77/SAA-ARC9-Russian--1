@@ -1,0 +1,25 @@
+"VertexLitGeneric"
+{
+	"$basetexture"				"T_1P_KS23_d"
+	"$bumpmap"					"T_1P_KS23_n"
+	"$phongexponenttexture"		"T_1P_KS23_e"
+	"$phongwarptexture"			"phongwarp_metal"
+	"$color2"					"[0.5 0.5 0.5]"
+//	"$blendTintByBaseAlpha"		"1"
+
+	"$envmap"					"env_cubemap"
+	"$envmapfresnel"			".25"
+	"$envmaptint"				"[ .13 .13 .13 ]"
+
+	"$phong"					"1"
+	"$phongboost"				"50"
+	"$phongfresnelranges"		"[0.32 0.72 0.99]"
+	"$phongalbedotint" 			"1"
+
+	"$rimlight"					"1"
+	"$rimlightexponent"			"33"
+	"$rimlightboost"			"15"
+	"$rimmask"					"1"
+}
+//Material setup by ShadowRUN 幸運な. 
+//You are NOT allowed to edit\modify\redistribute these materials without my explicit permission.
