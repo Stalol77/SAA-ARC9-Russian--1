@@ -250,105 +250,99 @@ SWEP.WorldModelOffset = {
 local ak = "saa/ak2022/new/akm_eft_"
 local sandstorm = "saa/ak2022/sandstorm/"
 local ssfs =  sandstorm .. "ak104/ak74_core_loop_0" 
-local firingsound = {
-    ak .. "01.wav",
-    ak .. "02.wav",
-    ak .. "03.wav",
-    ak .. "04.wav",
-    ak .. "05.wav",
-    ak .. "06.wav",
-    ak .. "07.wav",
-}
-local firingsoundsup = {
-    "shared/base/universal/sandstorm_suppressed/suppressed_core_loop_120_01.wav",
-    "shared/base/universal/sandstorm_suppressed/suppressed_core_loop_120_02.wav",
-    "shared/base/universal/sandstorm_suppressed/suppressed_core_loop_120_03.wav",
-    "shared/base/universal/sandstorm_suppressed/suppressed_core_loop_120_04.wav",
-    "shared/base/universal/sandstorm_suppressed/suppressed_core_loop_120_05.wav",
-    "shared/base/universal/sandstorm_suppressed/suppressed_core_loop_120_06.wav",
-    "shared/base/universal/sandstorm_suppressed/suppressed_core_loop_120_07.wav",
-    "shared/base/universal/sandstorm_suppressed/suppressed_core_loop_120_08.wav",
-    "shared/base/universal/sandstorm_suppressed/suppressed_core_loop_120_09.wav",
-    "shared/base/universal/sandstorm_suppressed/suppressed_core_loop_120_10.wav",
-}
-local firstfire = ak .. "single_0"
+local akm = "saa/ak2022/bf2/"
+local akv = "saa/akmv2/"
+local akv2 = "saa/akmv3/"
 
-local path_g3 = "nigga balls"
-local akm = "saa/ak2022/new/remade/akm_eft_"
+local ak74 = "saa/ak74/"
+local ak7v = "saa/ak74v/"
+
 SWEP.ShootSound = {
-    ssfs .. "1_A.wav",
-    ssfs .. "2_A.wav",
-    ssfs .. "3_A.wav",
-    ssfs .. "4_A.wav",
-    ssfs .. "5_A.wav",
-    ssfs .. "6_A.wav",
-    ssfs .. "7_A.wav",
-    ssfs .. "8_A.wav",
-    ssfs .. "9_A.wav",
-    sandstorm .. "ak104/ak74_core_loop_10_A.wav",
-    sandstorm .. "ak104/ak74_core_loop_11_A.wav",
-    sandstorm .. "ak104/ak74_core_loop_12_A.wav",
-    sandstorm .. "ak104/ak74_core_loop_13_A.wav",
-    sandstorm .. "ak104/ak74_core_loop_14_A.wav",
-    sandstorm .. "ak104/ak74_core_loop_15_A.wav",
-    sandstorm .. "ak104/ak74_core_loop_16_A.wav",
+    ak7v .. "akm_loop_stereo_default_initial_01.wav",
+    ak7v .. "akm_loop_stereo_default_initial_02.wav",
+    ak7v .. "akm_loop_stereo_default_initial_03.wav",
+    ak7v .. "akm_loop_stereo_default_initial_04.wav",
+    ak7v .. "akm_loop_stereo_default_initial_05.wav",
+    ak7v .. "akm_loop_stereo_default_initial_06.wav",
+    ak7v .. "akm_loop_stereo_default_initial_07.wav",
+    ak7v .. "akm_loop_stereo_default_initial_08.wav",
+    ak7v .. "akm_loop_stereo_default_initial_09.wav",
+    ak7v .. "akm_loop_stereo_default_initial_10.wav",
+    ak7v .. "akm_loop_stereo_default_initial_11.wav",
+    ak7v .. "akm_loop_stereo_default_initial_12.wav",
+    
 }
 SWEP.ShootSoundIndoor = {
-    ssfs .. "1_A.wav",
-    ssfs .. "2_A.wav",
-    ssfs .. "3_A.wav",
-    ssfs .. "4_A.wav",
-    ssfs .. "5_A.wav",
-    ssfs .. "6_A.wav",
-    ssfs .. "7_A.wav",
-    ssfs .. "8_A.wav",
-    ssfs .. "9_A.wav",
-    sandstorm .. "ak104/ak74_core_loop_10_A.wav",
-    sandstorm .. "ak104/ak74_core_loop_11_A.wav",
-    sandstorm .. "ak104/ak74_core_loop_12_A.wav",
-    sandstorm .. "ak104/ak74_core_loop_13_A.wav",
-    sandstorm .. "ak104/ak74_core_loop_14_A.wav",
-    sandstorm .. "ak104/ak74_core_loop_15_A.wav",
-    sandstorm .. "ak104/ak74_core_loop_16_A.wav",
-}
-local tail = "shared/base/universal/sandstorm_outdoor/noise_urban_close_end_0"
-local tailt = {
-    tail .. "1.wav",
-    tail .. "2.wav",
-    tail .. "3.wav",
-}
-SWEP.DistantShootSound =  nil
+    ak7v .. "akm_loop_stereo_default_initial_01.wav",
+    ak7v .. "akm_loop_stereo_default_initial_02.wav",
+    ak7v .. "akm_loop_stereo_default_initial_03.wav",
+    ak7v .. "akm_loop_stereo_default_initial_04.wav",
+    ak7v .. "akm_loop_stereo_default_initial_05.wav",
+    ak7v .. "akm_loop_stereo_default_initial_06.wav",
+    ak7v .. "akm_loop_stereo_default_initial_07.wav",
+    ak7v .. "akm_loop_stereo_default_initial_08.wav",
+    ak7v .. "akm_loop_stereo_default_initial_09.wav",
+    ak7v .. "akm_loop_stereo_default_initial_10.wav",
+    ak7v .. "akm_loop_stereo_default_initial_11.wav",
+    ak7v .. "akm_loop_stereo_default_initial_12.wav",
 
-local akm = "saa/ak2022/bf2/"
+}
 
-SWEP.LayerSound = akm .. "new/akm_outdoor_tail.wav"
+
+
+SWEP.LayerSound = {
+    akv .. "rpd_fire_initial_1p_tail_01.wav",
+    akv .. "rpd_fire_initial_1p_tail_02.wav",
+    akv .. "rpd_fire_initial_1p_tail_03.wav",
+    akv .. "rpd_fire_initial_1p_tail_04.wav",
+}
 SWEP.LayerSoundIndoor = {
     akm .. "new/akm_indoor_1.wav",
     akm .. "new/akm_indoor_2.wav",
     akm .. "new/akm_indoor_3.wav",
+
 }
 
-SWEP.LayerSoundSilenced = akm .. "akm_outdoor_sup.wav"
+SWEP.ShootSoundSilenced = {
+    akv2 .. "akm_distant_loop.wav",
+    akv2 .. "akm_distant_loop-2.wav",
+    akv2 .. "akm_distant_loop-3.wav",
+    akv2 .. "akm_distant_loop-4.wav",
+    akv2 .. "akm_distant_loop-5.wav",
+    akv2 .. "akm_distant_loop-6.wav",
+    akv2 .. "akm_distant_loop-7.wav",
+    akv2 .. "akm_distant_loop-8.wav",
+    akv2 .. "akm_distant_loop-9.wav",
+    akv2 .. "akm_distant_loop-10.wav",
+    akv2 .. "akm_distant_loop-11.wav",
+    akv2 .. "akm_distant_loop-12.wav",
+    akv2 .. "akm_distant_loop-13.wav",
+    akv2 .. "akm_distant_loop-14.wav",
+    akv2 .. "akm_distant_loop-15.wav",
+    akv2 .. "akm_distant_loop-16.wav",
+}
+SWEP.ShootSoundSilencedIndoor = {
+    akv2 .. "akm_distant_loop.wav",
+    akv2 .. "akm_distant_loop-2.wav",
+    akv2 .. "akm_distant_loop-3.wav",
+    akv2 .. "akm_distant_loop-4.wav",
+    akv2 .. "akm_distant_loop-5.wav",
+    akv2 .. "akm_distant_loop-6.wav",
+    akv2 .. "akm_distant_loop-7.wav",
+    akv2 .. "akm_distant_loop-8.wav",
+    akv2 .. "akm_distant_loop-9.wav",
+    akv2 .. "akm_distant_loop-10.wav",
+    akv2 .. "akm_distant_loop-11.wav",
+    akv2 .. "akm_distant_loop-12.wav",
+    akv2 .. "akm_distant_loop-13.wav",
+    akv2 .. "akm_distant_loop-14.wav",
+    akv2 .. "akm_distant_loop-15.wav",
+    akv2 .. "akm_distant_loop-16.wav",
+}
+
+SWEP.LayerSoundSilenced = akv2 .. "akm_distant_loop_tail.wav"
 SWEP.LayerSoundSilencedIndoor = akm .. "akm_indoor_sup.wav"
-local lsinds = "shared/base/universal/sandstorm_reverb/fromrpg7/lowest/tail_indoors_small_close_0"
 
-local lsind = "shared/base/universal/sandstorm_reverb/fromrpg7/low/tail_indoors_small_close_0"
-local triggersound = "saa/weapons/arccw/mp5/weap_mpapa5_fire_first_plr_0"
-local triggersound_iron = "saa/weapons/arccw/mp5/weap_mpapa5_fire_first_plr_ads_0"
--- SWEP.FirstShootSoundSilenced = {"smc/weapons/bocw/m60/M60_S" .. math.random(1, 6) .. ".wav"}
-
-SWEP.ShootSoundSilenced = firingsoundsup
-SWEP.ShootSoundSilencedIndoor = firingsoundsup
-SWEP.DistantShootSoundSilenced =
-{
-    firstfire .. "1.wav",
-    firstfire .. "2.wav",
-    firstfire .. "3.wav",
-    firstfire .. "4.wav",
-    firstfire .. "5.wav",
-    firstfire .. "6.wav",
-    
-}
 
 SWEP.Hook_TranslateAnimation = function (self, anim)
     local attached = self:GetElements()
@@ -436,7 +430,7 @@ SWEP.Animations = {
         ShellEjectAt = 0.01,
         EventTable = {
             {s = mechtable,    t = 0, v= 1.0, p = 100, c = cl },
-            {s = sandstorm .. "akm_mech_end_01.wav",    t = 0.1, v= 0.2, p = 150},
+            {s = akv2 .. "ak74_boltback.wav",    t = 0.0, v= 0.15, p = 100},
 
            {
             FOV = -4,
@@ -524,7 +518,7 @@ SWEP.Animations = {
         Mult = 600/625,
         EventTable = {
             {s = mechtable,    t = 0, v= 1, p = 100, c = cl },
-            {s = sandstorm .. "akm_mech_end_01.wav",    t = 0.1, v= 0.2, p = 150},
+            {s = akv2 .. "ak74_boltback.wav",    t = 0.0, v= 0.15, p = 100},
 
            {
             FOV = -4,
@@ -1151,6 +1145,16 @@ SWEP.AttachmentElements = {
             {11, 1},
         },
     },
+    ["ak74_stock"] = {
+        Bodygroups = {
+            {7, 7},
+        },
+    },
+    ["74n_gasport"] = {
+        Bodygroups = {
+            {3, 7},
+        },
+    },
     ["steel_20"] = {
         Bodygroups = {
             {11, 5},
@@ -1196,6 +1200,16 @@ SWEP.AttachmentElements = {
             {7, 1},
         },
     },
+    ["s200_gasport"] = {
+        Bodygroups = {
+            {3, 6},
+        },
+    },
+    ["s200_handguard"] = {
+        Bodygroups = {
+            {4, 7},
+        },
+    },
     ["magpul_grip"] = {
         Bodygroups = {
             {5, 3},
@@ -1204,6 +1218,11 @@ SWEP.AttachmentElements = {
     ["wood_grip"] = {
         Bodygroups = {
             {5, 0},
+        },
+    },
+    ["s200_grip"] = {
+        Bodygroups = {
+            {5, 4},
         },
     },
     ["zenitco_rk3_grip"] = {
@@ -1219,6 +1238,11 @@ SWEP.AttachmentElements = {
     ["alpha_stock"] = {
         Bodygroups = {
             {7, 4},
+        },
+    },
+    ["s200_stock"] = {
+        Bodygroups = {
+            {7, 6},
         },
     },
     ["s100_stock"] = {

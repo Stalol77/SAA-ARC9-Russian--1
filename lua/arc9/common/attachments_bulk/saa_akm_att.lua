@@ -248,6 +248,26 @@ ARC9.LoadAttachment(ATT, "saa_ak_magpul_pg")
 
 ATT = {}
 
+ATT.PrintName = "VEPR-200 Pistol Grip"
+ATT.CompactName = "VEPR-200"
+ATT.Description = [[Polymer pistol grip built by private companies with ergonomics in mind.]]
+
+
+ATT.SortOrder = 1
+ATT.Category = "saa_ak_pgrip"
+ATT.Sway = 0.5
+ATT.SpeedMult = 0.855/0.86
+ATT.ReloadTimeMult = 1.005
+ATT.ActivateElements = {"s200_grip"}
+
+ARC9.LoadAttachment(ATT, "saa_ak_vepr_pg")
+
+-- end here
+
+-- start here
+
+ATT = {}
+
 ATT.PrintName = "AK Izhevsk Wood Pistol Grip"
 ATT.CompactName = "AK Wood"
 ATT.Description = [[Early AK Wooden Pistol Grip. Sturdy but great for main hand recoil control.]]
@@ -441,6 +461,38 @@ ATT.Attachments = {
 
 
 ARC9.LoadAttachment(ATT, "saa_ak_s100hg")
+
+-- end here
+
+-- start here
+
+ATT = {}
+
+ATT.PrintName = "VEPR Series 200 Handguard"
+ATT.CompactName = "VEPR-200"
+ATT.Description = [[Handguard produced by private companies. Eases aim and .]]
+
+
+ATT.SortOrder = 1
+ATT.Category = "saa_ak_polyhg"
+ATT.Sway = 0.75
+ATT.RecoilMult = 0.965
+ATT.SprintToFireTimeMult = 1.1
+ATT.ActivateElements = {"s200_handguard"}
+
+ATT.Attachments = {
+    {
+        PrintName = "Underbarrel",
+        Category = {"SAA_FOREGRIP_RAIL"},
+        Pos = Vector(0, 0, 1.1),
+        Ang = Angle(0, 270, 180),
+        Icon_Offset = Vector(0, 0, 0),
+        Scale = 1
+    },
+}
+
+
+ARC9.LoadAttachment(ATT, "saa_ak_s200hg")
 
 -- end here
 
@@ -693,6 +745,31 @@ ARC9.LoadAttachment(ATT, "saa_ak_polystock")
 
 ATT = {}
 
+ATT.PrintName = "VEPR Clubfoot Polymer Stock"
+ATT.CompactName = "VEPR-200"
+ATT.Description = [[Polymer stock built by private companies.]]
+
+
+ATT.SortOrder = 1
+ATT.Category = "saa_ak_stock"
+ATT.Sway = 0.9
+ATT.SpeedMult = 0.855/0.91
+ATT.ReloadTimeMult = 1.03
+ATT.RecoilMult = 1/1.5
+ATT.SprintToFireTimeMult = 1.15
+ATT.AimDownSightsTimeMult = 1.2 
+ATT.RecoilMultSights = 0.6
+
+ATT.ActivateElements = {"s200_stock"}
+
+ARC9.LoadAttachment(ATT, "saa_ak_rpk_polystock")
+
+-- end here
+
+-- start here
+
+ATT = {}
+
 ATT.PrintName = "Helix AS-2 Stock"
 ATT.CompactName = "Helix"
 ATT.Description = [[Multi-stage tube stock with buffer adaptor for AKs. Dampens recoil and eases aim control with a relatively complex surface that renders aiming down sights and running more difficult]]
@@ -737,6 +814,31 @@ ATT.RecoilMultSights = 0.6
 ATT.ActivateElements = {"akm_stock"}
 
 ARC9.LoadAttachment(ATT, "saa_ak_akmstock")
+
+-- end here
+
+-- start here
+
+ATT = {}
+
+ATT.PrintName = "AK74 Tula Stock"
+ATT.CompactName = "AK74"
+ATT.Description = [[Original wooden composite stock produced for use on AKM rifles. Sturdy and moderately heavy, reduces sway and recoil.]]
+
+
+ATT.SortOrder = 1
+ATT.Category = "saa_ak_stock"
+ATT.Sway = 0.9
+ATT.SpeedMult = 0.855/0.91
+ATT.ReloadTimeMult = 1.03
+ATT.RecoilMult = 1/1.5
+ATT.SprintToFireTimeMult = 1.15
+ATT.AimDownSightsTimeMult = 1.2 
+ATT.RecoilMultSights = 0.6
+
+ATT.ActivateElements = {"ak74_stock"}
+
+ARC9.LoadAttachment(ATT, "saa_ak_ak74stock")
 
 -- end here
 
@@ -824,8 +926,31 @@ ARC9.LoadAttachment(ATT, "saa_ak_mgpgp")
 
 ATT = {}
 
-ATT.PrintName = "N Series Gas Port"
-ATT.CompactName = "N-Series"
+ATT.PrintName = "74N Molot Gas Port"
+ATT.CompactName = "74N Molot"
+ATT.Description = [[Handguard produced by private companies. Reduces forward weight.]]
+
+
+ATT.SortOrder = 1
+ATT.Category = "saa_ak_gp"
+ATT.Sway = 0.95
+ATT.SprintToFireTimeMult = 1.05
+ATT.RecoilMult = 0.985
+ATT.HeatCapacityMult = 1.15
+ATT.HeatDissipationMult = 0.8
+
+ATT.ActivateElements = {"74n_gasport"}
+
+ARC9.LoadAttachment(ATT, "saa_ak_74ngp")
+
+-- end here
+
+-- start here
+
+ATT = {}
+
+ATT.PrintName = "Series-100 Gas Port"
+ATT.CompactName = "Series-100"
 ATT.Description = [[Sturdy Gas Port that generates good weight near grip area. Reduces felt recoil and boosts up heat capacity at the cost of a slower dissipation and heavier mass.]]
 
 
@@ -841,6 +966,30 @@ ATT.HeatDissipationMult = 0.60
 ATT.ActivateElements = {"n_gasport"}
 
 ARC9.LoadAttachment(ATT, "saa_ak_n_gp")
+
+-- end here
+
+-- start here
+
+ATT = {}
+
+ATT.PrintName = "VEPR-200 Series Gas Port"
+ATT.CompactName = "VEPR-200"
+ATT.Description = [[Sturdy Gas Port that generates good weight near grip area. Reduces felt recoil and boosts up heat capacity at the cost of a slower dissipation and heavier mass.]]
+
+
+ATT.SortOrder = 0
+ATT.Category = "saa_ak_gp"
+
+ATT.SpeedMult = 0.96
+ATT.HeatCapacityMult = 1.375
+ATT.RecoilMult = 0.945
+ATT.RecoilKickMult = 0.7
+ATT.HeatDissipationMult = 0.60
+
+ATT.ActivateElements = {"s200_gasport"}
+
+ARC9.LoadAttachment(ATT, "saa_ak_s200_gp")
 
 -- end here
 
