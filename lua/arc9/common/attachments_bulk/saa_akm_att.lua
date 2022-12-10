@@ -869,6 +869,52 @@ ARC9.LoadAttachment(ATT, "saa_akms")
 
 ATT = {}
 
+ATT.PrintName = "AKS Sidefolder Stock"
+ATT.CompactName = "AKS"
+ATT.Description = [[Receiver modification that allows use of the AK pattern sidefolder stock. Perfect for a mobility oriented build that seeks for ease of use in CQB.]]
+
+
+ATT.SortOrder = 0
+ATT.Category = "saa_aks74_stock"
+
+ATT.SpeedMult = 0.855/0.86
+ATT.ReloadTimeMult = 1.015
+ATT.RecoilMult = 1/1.2
+ATT.RecoilMultSights = 0.95
+
+ATT.ActivateElements = {"aks74_stock"}
+
+ARC9.LoadAttachment(ATT, "saa_aks74")
+
+-- end here
+
+-- start here
+
+ATT = {}
+
+ATT.PrintName = "AK-74M Sidefolder Stock"
+ATT.CompactName = "AK-74M"
+ATT.Description = [[Receiver modification that allows use of the AK pattern sidefolder stock. Perfect for a mobility oriented build that seeks for ease of use in CQB.]]
+
+
+ATT.SortOrder = 0
+ATT.Category = "saa_aks74_stock"
+
+ATT.SpeedMult = 0.855/0.86
+ATT.ReloadTimeMult = 1.015
+ATT.RecoilMult = 1/1.2
+ATT.RecoilMultSights = 0.95
+
+ATT.ActivateElements = {"aks74m_stock"}
+
+ARC9.LoadAttachment(ATT, "saa_aks74m")
+
+-- end here
+
+-- start here
+
+ATT = {}
+
 ATT.PrintName = "Alpha Rail Gas Port"
 ATT.CompactName = "Alpha"
 ATT.Description = [[Gas port produced by private companies. Longer design allowing for railed accessories to be attached. Its sleek yet elongated aluminum structure enhances the heat capacity and dissipation.]]

@@ -109,7 +109,7 @@ SWEP.VisualRecoilPositionBump = 1.5
 
 SWEP.VisualRecoilHipFire = 1
 
-SWEP.VisualRecoilDampingConst = nil -- How spring will be visual recoil, 120 is default
+SWEP.VisualRecoilDampingConst = 10 -- How spring will be visual recoil, 120 is default
 SWEP.VisualRecoilSpringMagnitude = 1
 
 
@@ -1184,9 +1184,14 @@ SWEP.AttachmentElements = {
             {11, 2},
         },
     },
-    ["akms_stock"] = {
+    ["aks74_stock"] = {
         Bodygroups = {
-            {7, 2},
+            {7, 8},
+        },
+    },
+    ["aks74m_stock"] = {
+        Bodygroups = {
+            {7, 9},
         },
     },
     ["akm_stock"] = {
