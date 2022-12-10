@@ -188,6 +188,9 @@ SWEP.MalfunctionJam = true -- After a malfunction happens, the gun will dryfire 
 SWEP.MalfunctionWait = 0.2 -- The amount of time to wait before playing malfunction animation (or can reload)
 SWEP.MalfunctionMeanShotsToFail = 1000 -- The mean number of shots between malfunctions, will be autocalculated if nil
 
+SWEP.StandardPresets = { -- A table of standard presets, that would be in every player preset menu, undeletable. Just put preset codes in ""
+    "[AK74M]XQAAAQBJAQAAAAAAAAA9iIIiM7tupQCpjtobRJEkdevdtR3kygwZeUq4Mjl2CII+k74pFnLQ3cEx/J6hxuWzwifR6Jgp47LpHNmRnLqYN4aogCQXQWL6NLK/WPOQEmxEbMGMvFayHBik/Su3xfN5XlztF+qCmVjzxQaI9wjWiV0M8AsQ2BGs2b9wPefLao/toYaFCionNckA",
+}
 
 SWEP.Bash = true
 SWEP.PrimaryBash = false
@@ -425,7 +428,8 @@ SWEP.Animations = {
         ShellEjectAt = 0.01,
         EventTable = {
             {s = mechtable,    t = 0, v= 1.0, p = 100, c = cl },
-            {s = akv .. "aks_boltback.wav",    t = 0, v= 0.15, p = 100, c = cl },
+            {s = akv .. "ak74_boltback.wav",    t = 0, v= 0.15, p = 100, c = cl },
+            {s = akv .. "aks_boltback.wav",    t = 0, v= 0.05, p = 100, c = ci },
 
            {
             FOV = -4,
@@ -512,7 +516,8 @@ SWEP.Animations = {
         ShellEjectAt = 0.01,
         EventTable = {
             {s = mechtable,    t = 0, v= 1, p = 100, c = cl },
-            {s = akv .. "aks_boltback.wav",    t = 0, v= 0.2, p = 100, c = cl },
+            {s = akv .. "ak74_boltback.wav",    t = 0, v= 0.15, p = 100, c = cl },
+            {s = akv .. "aks_boltback.wav",    t = 0, v= 0.05, p = 100, c = ci },
 
            {
             FOV = -4,

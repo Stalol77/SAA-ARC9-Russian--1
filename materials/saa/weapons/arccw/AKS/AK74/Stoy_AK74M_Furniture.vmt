@@ -4,7 +4,7 @@
 	"$bumpmap"					"saa\weapons\arccw\AKS\AK74\textures\ak74m\furniture_74m_n"
 	"$phongexponenttexture"		"saa\weapons\arccw\AKS\AK74\textures\ak74m\furniture_74m_e"
 	"$phongwarptexture"			"models\weapons\saa\shared\lightwarps\phongwarp_metal"
-	"$color2"					"[1.05 1 1]"
+	"$color2"					"[1 1 1]"
 
 	"$envmap"					"models\weapons\envmaps\fo4_dith"
 	"$envmaptint"				"[ .13 .13 .13 ]"

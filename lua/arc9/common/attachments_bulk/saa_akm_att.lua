@@ -139,9 +139,9 @@ ARC9.LoadAttachment(ATT, "saa_ak_ironcover")
 
 ATT = {}
 
-ATT.PrintName = "AKM 6P1 Sb.2-1 Ironsights"
+ATT.PrintName = "AK 6P1 Sb.2-1 Ironsights"
 ATT.CompactName = "6P1 Sb.2-1"
-ATT.Description = [[Standard issue AKM rear sight.]]
+ATT.Description = [[Standard issue AK-AK74 rear sight.]]
 
 
 ATT.SortOrder = 0
@@ -900,10 +900,10 @@ ATT.Description = [[Receiver modification that allows use of the AK pattern side
 ATT.SortOrder = 0
 ATT.Category = "saa_aks74_stock"
 
-ATT.SpeedMult = 0.855/0.86
+ATT.SpeedMult = 0.85/0.86
 ATT.ReloadTimeMult = 1.015
-ATT.RecoilMult = 1/1.2
-ATT.RecoilMultSights = 0.95
+ATT.RecoilMult = 1.1/1.7
+ATT.RecoilMultSights = 0.845
 
 ATT.ActivateElements = {"aks74m_stock"}
 
