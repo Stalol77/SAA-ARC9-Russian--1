@@ -935,11 +935,20 @@ ATT.ActivateElements = {"alpha_gasport"}
 ATT.Attachments = {
     {
         PrintName = "Top Barrel",
-        Category = { "picatinny", "SAA_SCOPE_FRONTPOST"},
-        Pos = Vector(-0.225, 5, -0.82),
+        Category = { "saa_rail_tactical"},
+        Pos = Vector(-0.225, 5, -0.3),
         Ang = Angle(0, 270, 0),
         Icon_Offset = Vector(0, 0, 0),
-        Scale = 0.7
+        Scale = 0.8
+    },
+    {
+        PrintName = "Front Sight",
+        Category = { "SAA_SCOPE_XS"},
+        ExcludeElements = {"nodustcoveroptics", "nodovetailoptics"},
+        Pos = Vector(-0.1, 0, -0.55),
+        Ang = Angle(0, 270, 0),
+        Icon_Offset = Vector(0, 0, 0),
+        Scale = 0.9
     },
 }
 
