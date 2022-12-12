@@ -8,9 +8,9 @@ SWEP.UseHands = true
 
 -- Muzzle and shell effects --
 
-SWEP.MuzzleParticle = "muzzleflash_ak47" -- Used for some muzzle effects.
+SWEP.MuzzleParticle = "muzzleflash_ak74" -- Used for some muzzle effects.
 SWEP.ShellModel = "models/weapons/rifleshell.mdl"
-SWEP.ShellScale = 0.8
+SWEP.ShellScale = 0.7
 --SWEP.ShellMaterial = "models/weapons/arcticcw/shell_556"
 SWEP.ShellPitch = 95
 
@@ -54,11 +54,11 @@ SWEP.AnimDraw = false
 -- Damage --
 
 SWEP.DamageMax = 30 -- 3 shot kill
-SWEP.DamageMin = 6 -- 5 shot kill
+SWEP.DamageMin = 9 -- 5 shot kill
 SWEP.RangeMin = 10
-SWEP.RangeMax = 12000*(400/305)
+SWEP.RangeMax = 12000*(500/305)
 SWEP.ArmorPiercing = 0.75
-SWEP.Penetration = 15
+SWEP.Penetration = 6
 SWEP.DamageType = DMG_BULLET
 SWEP.ShootEntity = nil
 SWEP.PhysBulletMuzzleVelocity = (930/715)*28150 -- Physical bullet muzzle velocity in Hammer Units/second. 1 HU != 1 inch.
@@ -72,7 +72,7 @@ SWEP.SecondarySupplyLimit = 3 -- Amount of reserve UBGL magazines you can take.
 
 
 SWEP.Recoil = 0.84
-SWEP.RecoilSide = 1.4
+SWEP.RecoilSide = 0.9
 SWEP.RecoilUp = 1.6
 
 SWEP.RecoilRandomUp = 0.6
@@ -699,286 +699,6 @@ SWEP.Animations = {
             },
         },
     },
-
-
--- gp25
-
-    ["draw_gp25"] = {
-        Source = "gl_draw",
-        EventTable = {
-            {s = "saa/ak2022/ak47_rattle_nvr.wav",    t = 0},
-            {s = "saa/ak2022/ak47_rattle.wav",    t = 0.1, v = 0.3,},
-        },
-    },
-    ["holster_gp25"] = {
-        Source = "gl_holster",
-        EventTable = {
-            {s = "saa/ak2022/ak47_rattle_nvr.wav",    t = 0},
-            {s = "saa/ak2022/ak47_rattle.wav",    t = 0.1, p = 85,},
-        },
-    },
-    ["idle_gp25"] = {
-        Source = "gl_idle",
-    },
-    ["trigger_gp25"] = {
-        Source = "gl_idle",
-        EventTable = {
-            {s = "saa/newsvd/handling/asval_magrelease.wav",  p = 50, v = 0.2, t = 0},
-            {s = "saa/newsvd/handling/svd_fireselect_1.wav",  p = 100, v = 0.8, t = 0}
-           },
-    },
-    ["fire_gp25"] = {
-        Source = "gl_fire",
-        ShellEjectAt = 0.01,
-        EventTable = {
-            {s = mechtable,    t = 0},
-
-           {
-            FOV = -4,
-            FOV_Start = 0.05,
-            FOV_End = 0.8,
-            FOV_FuncStart = ARC9.Ease.OutCirc,
-            FOV_FuncEnd = ARC9.Ease.InCirc,
-            t = 0.0,
-            },
-        },
-    },
-    ["ready_gp25"] = {
-        Source = "gl_ready",
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.75,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 1,
-                lhik = 1,
-                rhik = 1
-            },
-        },
-        SoundTable = {
-        },
-    },
-    ["bash_gp25"] = {
-        Source = "ACT_VM_BASH",
-        SoundTable = {
-        },
-    },
-    ["idle_bipod_gp25"] = {
-        Source = "ACT_VM_IDLE_DEPLOYED",
-        Time = 1.5,
-        SoundTable = {
-        },
-    },
-    ["exit_bipod_gp25"] = {
-        Source = "ACT_VM_DEPLOYED_IN",
-        Time = 1.5,
-        SoundTable = {
-        },
-    },
-    ["enter_bipod_gp25"] = {
-        Source = "ACT_VM_DEPLOYED_OUT",
-        Time = 1.5,
-        MinProgress = 1,
-        SoundTable = {
-        },
-    },
-    ["fire_bipod_gp25"] = {
-        Source = "ACT_VM_ISHOOT_DEPLOYED",
-        Time = 0.8,
-        ShellEjectAt = 0.01,
-        SoundTable = {
-        },
-    },
-    ["fire_iron_gp25"] = {
-        Source = {"gl_iron_fire", "gl_iron_fire_a", "gl_iron_fire_b", "gl_iron_fire_c", "gl_iron_fire_d", "gl_iron_fire_e", "gl_iron_fire_f", },
-        ShellEjectAt = 0.01,
-        EventTable = {
-            {s = mechtable,    t = 0, volume = 0.5,},
-           {
-            FOV = -4,
-            FOV_Start = 0.05,
-            FOV_End = 0.8,
-            FOV_FuncStart = ARC9.Ease.OutCirc,
-            FOV_FuncEnd = ARC9.Ease.InCirc,
-            t = 0.0,
-            },
-        },
-    },
-    ["fire_iron_bipod_gp25"] = {
-        Source = "ACT_VM_ISHOOT_DEPLOYED",
-        Time = 13 / 30,
-        ShellEjectAt = 0.01,
-        SoundTable = {
-        },
-    },
-
-    ["reload_gp25"] = {
-        Source = "gl_reload",
-        MinProgress = 3,
-        EventTable = {
-            {s = foley .. "mag_out.ogg",    t = 0.65},
-            {s = foley .. "mag_in.ogg",    t = 1.9},
-        },
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.25,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.65,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 1,
-                lhik = 1,
-                rhik = 0
-            },
-        },
-    },
-    ["reload_empty_gp25"] = {
-        Source = "gl_reloadempty",
-        Time = 4.7,
-        EventTable = {
-            {s = foley .. "mag_out.ogg",    t = 0.65},
-            {s = foley .. "mag_in.ogg",    t = 1.9},
-            {s = foley .. "charging_handle_pull.ogg",    t = 3.3},
-            {s = foley .. "charging_handle_release.ogg",    t = 3.55},
-        },
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.1,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.25,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.5,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.6,
-                lhik = 1,
-                rhik = 0
-            },
-        },
-    },
-    ["reload_drum_gp25"] = {
-        Source = "base_reload_drum",
-        MinProgress = 3,
-        EventTable = {
-            {s = drum .. "out.ogg",    t = 0.85},
-            {s = drum .. "in.ogg",    t = 2.3, v = 0.2},
-            {s = drum .. "hit.ogg",    t = 2.75},
-        },
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.125,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.7,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.8,
-                lhik = 1,
-                rhik = 0
-            },
-        },
-    },
-    ["reload_empty_drum_gp25"] = {
-        Source = "base_reloadempty_drum",
-        EventTable = {
-            {s = drum .. "out.ogg",    t = 0.85},
-            {s = drum .. "in.ogg",    t = 2.4},
-            {s = drum .. "hit.ogg",    t = 2.85},
-            {s = foley .. "charging_handle_pull.ogg",    t = 4.1},
-            {s = foley .. "charging_handle_release.ogg",    t = 4.4},
-        },
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.125,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.55,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.65 ,
-                lhik = 1,
-                rhik = 0
-            },
-        },
-    },
-
-
--- glsetup
-    ["enter_ubgl"] = {
-        Source = "glsetup_in",
-        Mult = 0.75,
-        EventTable = {
-        },
-    },
-    ["exit_ubgl"] = {
-        Source = "glsetup_out",
-        Mult = 0.75,
-        EventTable = {
-        },
-    },
-    ["idle_glsetup"] = {
-        Source = "glsetup",
-        EventTable = {
-        },
-    },
-    ["fire_glsetup"] = {
-        Source = "ACT_VM_PRIMARYATTACK_GLSETUP",
-        EventTable = {
-        },
-    },
-    ["reload_ubgl"] = {
-        Source = "glsetup_reload",
-        EventTable = {
-        },
-    },
 }
 SWEP.Attachments = {
     {
@@ -1077,6 +797,15 @@ SWEP.Attachments = {
         Bone = "b_wpn",
         Pos = Vector(0, -3.4*1.1, 0.1*1.1),
         Ang = Angle(0, 0, 0),
+        Scale = 1,
+    },
+    {
+        PrintName = "Underbarrel",
+        Category = {"SAA_GP25"},
+        ExcludeElements = {"exclude_ubgl", "exclude_gp25"},
+        Bone = "b_wpn",
+        Pos = Vector(0, 6.8*1.1, -0.6*1.1),
+        Ang = Angle(0, 90, 0),
         Scale = 1,
     },
 }

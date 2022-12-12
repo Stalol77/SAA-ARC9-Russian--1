@@ -210,7 +210,7 @@ SWEP.PostBashTime = 0.5
 
 -- Speed multipliers --
 
-SWEP.Speed = 0.5
+SWEP.Speed = 0.8
 SWEP.SightedSpeedMult = 0.75
 SWEP.SightTime = 0.5
 SWEP.ShootSpeedMult = 0.8

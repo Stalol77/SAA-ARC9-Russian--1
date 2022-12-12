@@ -1073,6 +1073,15 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
         Scale = 1,
     },
+    {
+        PrintName = "Underbarrel",
+        Category = {"SAA_GP25"},
+        ExcludeElements = {"exclude_ubgl", "exclude_gp25"},
+        Bone = "b_wpn",
+        Pos = Vector(0, 6.8*1.1, -0.6*1.1),
+        Ang = Angle(0, 90, 0),
+        Scale = 1,
+    },
 }
 
 SWEP.DefaultBodygroups = "000001000000000"

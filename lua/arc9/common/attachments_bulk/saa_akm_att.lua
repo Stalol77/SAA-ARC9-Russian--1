@@ -301,7 +301,7 @@ ATT.RecoilMult = 1.05
 ATT.RecoilKickMult = 1.085
 ATT.SpeedMult = 1.03
 ATT.SprintToFireTimeMult = 0.95
-ATT.ActivateElements = {"alpha_guard"}
+ATT.ActivateElements = {"alpha_guard", "exclude_gp25"}
 ATT.HeatDissipationMult = 1.50
 
 
@@ -360,7 +360,7 @@ ATT.RecoilMult = 1.05
 ATT.RecoilKickMult = 1.085
 ATT.SpeedMult = 1.03
 ATT.SprintToFireTimeMult = 0.95
-ATT.ActivateElements = {"railed_guard"}
+ATT.ActivateElements = {"railed_guard", "exclude_gp25"}
 ATT.HeatDissipationMult = 1.50
 
 
@@ -394,7 +394,7 @@ ATT.Category = "saa_ak_hg"
 ATT.Sway = 0.8
 ATT.RecoilMult = 0.985
 ATT.SprintToFireTimeMult = 1.05
-ATT.ActivateElements = {"magpul_handguard"}
+ATT.ActivateElements = {"magpul_handguard", "exclude_gp25"}
 
 ARC9.LoadAttachment(ATT, "saa_ak_magpulhandguard")
 
@@ -411,7 +411,7 @@ ATT.Description = [[Handguard produced by private companies. Eases aim and .]]
 
 ATT.SortOrder = 1
 ATT.Category = "saa_ak_hg"
-ATT.ActivateElements = {"romanian"}
+ATT.ActivateElements = {"romanian", "exclude_gp25"}
 
 ATT.Model = "models/saa/upgrades/arc9/a_kac_grip_rail.mdl"
 ATT.ModelAngleOffset = Angle(15, -90, 0)
@@ -452,6 +452,7 @@ ATT.Attachments = {
     {
         PrintName = "Underbarrel",
         Category = {"SAA_FOREGRIP_RAIL"},
+        ExcludeElements = {"gp25flag"},
         Pos = Vector(0, 0, 1.1),
         Ang = Angle(0, 270, 180),
         Icon_Offset = Vector(0, 0, 0),
@@ -484,6 +485,7 @@ ATT.Attachments = {
     {
         PrintName = "Underbarrel",
         Category = {"SAA_FOREGRIP_RAIL"},
+        ExcludeElements = {"gp25flag"},
         Pos = Vector(0, 0, 1.1),
         Ang = Angle(0, 270, 180),
         Icon_Offset = Vector(0, 0, 0),
@@ -531,7 +533,7 @@ ATT.RecoilMult = 1
 ATT.RecoilKickMult = 1.1
 ATT.SpeedMult = 0.95
 ATT.SprintToFireTimeMult = 0.9
-ATT.ActivateElements = {"helix_guard"}
+ATT.ActivateElements = {"helix_guard", "exclude_gp25"}
 ATT.HeatDissipationMult = 1.15
 ATT.HeatCapacityMult = 1.05
 ATT.SwayMult = 1.25
