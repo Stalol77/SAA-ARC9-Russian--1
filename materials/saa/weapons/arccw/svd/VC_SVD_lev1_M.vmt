@@ -14,7 +14,7 @@
 
 	"$rimlight"					"1"
 	"$rimlightexponent"			"33"
-	"$rimlightboost"			"5"
+	"$rimlightboost"			"1"
 	"$rimmask"					"1"
 	"$envmap" 			"models\weapons\envmaps\fo4_dith"
 	"$normalmapalphaenvmapmask" 	"1"
