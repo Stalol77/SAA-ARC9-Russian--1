@@ -157,7 +157,7 @@ SWEP.RumbleDuration = 0.9
 
 SWEP.Sway = 0.86
 SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizePos = Vector(19 , 35, 5)
+SWEP.CustomizePos = Vector(17 , 31, 1)
 SWEP.CustomizeSnapshotFOV = 110
 SWEP.SwayMultMidAir = 2
 SWEP.SwayMultMove = 1.5
@@ -167,7 +167,7 @@ SWEP.FreeAimRadiusSights = 2
 SWEP.FreeAimRadius = 12 / 1.25 
 -- Firerate / Firemodes --
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
-SWEP.TriggerDelayTime = 0.025 -- Time until weapon fires.
+SWEP.TriggerDelayTime = 0.05 -- Time until weapon fires.
 SWEP.TriggerDelayRepeat = false -- Whether to do it for every shot on automatics.
 SWEP.RPM = 500
 SWEP.Num = 1
@@ -189,7 +189,7 @@ SWEP.FreeAimRadiusMultBipod = 0
 
 SWEP.ShootPitch = 100
 SWEP.ShootVolume = 125
-SWEP.ShootPitchVariation = 5
+SWEP.ShootPitchVariation = 0
 
 SWEP.ProceduralRegularFire = false
 SWEP.ProceduralIronFire = false
@@ -288,11 +288,16 @@ SWEP.HoldTypeBlindfire = "pistol"
 local svd = "saa/newsvd/"
 local newfire = svd .. "sandstorm/"
 local shoot = newfire .. "dragunov_core_0"
+local sq = svd .. "custom/"
 local firet = {
-    shoot .. "1.wav",
-    shoot .. "2.wav",
-    shoot .. "3.wav",
-    shoot .. "4.wav",
+    sq .. "svd_fire_initial_1p_01.wav",
+    sq .. "svd_fire_initial_1p_02.wav",
+    sq .. "svd_fire_initial_1p_03.wav",
+    sq .. "svd_fire_initial_1p_04.wav",
+    sq .. "svd_fire_initial_1p_05.wav",
+    sq .. "svd_fire_initial_1p_06.wav",
+    sq .. "svd_fire_initial_1p_07.wav",
+    sq .. "svd_fire_initial_1p_08.wav",
 }
 local shootsup = newfire .. "suppressed_rifle_core_0"
 local firest = {
@@ -303,11 +308,14 @@ local firest = {
 }
 local tail = newfire .. "tail_open_field_close_sniper_0"
 local tailt = {
-    tail .. "1.wav",
-    tail .. "2.wav",
-    tail .. "3.wav",
-    tail .. "4.wav",
-    tail .. "5.wav",
+    sq .. "svd_fire_initial_1p_01-2.wav",
+    sq .. "svd_fire_initial_1p_02-2.wav",
+    sq .. "svd_fire_initial_1p_03-2.wav",
+    sq .. "svd_fire_initial_1p_04-2.wav",
+    sq .. "svd_fire_initial_1p_05-2.wav",
+    sq .. "svd_fire_initial_1p_06-2.wav",
+    sq .. "svd_fire_initial_1p_07-2.wav",
+    sq .. "svd_fire_initial_1p_08-2.wav",
 }
 local tailsup = newfire .. "supp_layer_0"
 local tailsupt = {
@@ -329,6 +337,7 @@ local lsinds = "shared/base/universal/sandstorm_reverb/fromrpg7/lowest/tail_indo
 SWEP.ShootSound = firet
 SWEP.ShootSoundSilenced = firest
 SWEP.ShootSoundIndoor = firet
+SWEP.ShootSoundSilencedIndoor = firest
 SWEP.LayerSound = tailt
 SWEP.LayerSoundSilenced = tailsupt
 SWEP.LayerSoundSilencedIndoor = { 
@@ -421,7 +430,7 @@ SWEP.Animations = {
         Source = "base_idle",
         Time = 0.001,
         EventTable = {
-            {s = triggertable, t = 0, p = 120,}
+            {s = sq .. "svd_trigger_01.wav", t = 0, p = 100,}
         }
     },
     ["fire"] = {
@@ -429,6 +438,7 @@ SWEP.Animations = {
         Mult = (600/650),
         ShellEjectAt = 0.01,
         EventTable = {
+            {s = "saa/akmv2/ak74_boltback.wav", t = 0, p = 100, v = 0.2,},
             {
             FOV = 3,
             FOV_Start = 0.1,
@@ -445,6 +455,7 @@ SWEP.Animations = {
         Mult = (600/650),
         ShellEjectAt = 0.01,
         EventTable = {
+            {s = "saa/akmv2/ak74_boltback.wav", t = 0, p = 100, v = 0.5,},
             {
             FOV = 3,
             FOV_Start = 0.1,
@@ -574,7 +585,7 @@ SWEP.Animations = {
         Source = "deployed_pose",
         Time = 0.01,
         EventTable = {
-            {s = triggertable, t = 0, p = 120,}
+            {s = sq .. "svd_trigger_01.wav", t = 0, p = 100,}
         }
     },
     ["trigger_bipod_empty"] = {
@@ -634,16 +645,25 @@ SWEP.Attachments = {
     {
         PrintName = "MUZZLE",
         Category = {"saa_54r_muz"},
+        InstalledElements = {"muzzleattached"},
         Bone = "Weapon",
         Pos = Vector(0, 26.35, 0.6),
         Ang = Angle(0, 270, 0),
         Scale = 0.8,
     },
     {
+        PrintName = "Handguard",
+        Category = {"saa_svd_handguard"},
+        Bone = "Weapon",
+        Pos = Vector(0, 10, 1),
+        Ang = Angle(0, 270, 0),
+        Scale = 1,
+    },
+    {
         PrintName = "Barrel",
         Category = {"SAA_SVD_BARREL"},
         Bone = "Weapon",
-        Pos = Vector(0, 21.8, 0.85),
+        Pos = Vector(0, 21.8, 0.6),
         Ang = Angle(0, 270, 0),
         Scale = 1,
     },
@@ -656,12 +676,29 @@ SWEP.Attachments = {
         Scale = 0.7,
     },
     {
+        PrintName = "Underbarrel",
+        Category = {"saa_svd_underbarrel", "SAA_FOREGRIP_RAIL"},
+        Bone = "Weapon",
+        Pos = Vector(0, 10, -0.5),
+        Ang = Angle(0, 270, 180),
+        Scale = 1,
+    },
+    {
         PrintName = "Dovetail",
         Category = {"SAA_SVD_DOVETAIL"},
+        ExcludeElements = {"nodovetailoptics"},
         Bone = "Weapon",
         Pos = Vector(0.81, -0.5, 0.1),
         Ang = Angle(0, 270, 0),
         Scale = 0.8,
+    },
+    {
+        PrintName = "Dustcover",
+        Category = {"SAA_SVD_DUSTCOVER"},
+        Bone = "Weapon",
+        Pos = Vector(0.1, 1.3, 1),
+        Ang = Angle(0, 270, 0),
+        Scale = 1,
     },
     {
         PrintName = "Stock",
@@ -669,22 +706,6 @@ SWEP.Attachments = {
         Bone = "Weapon",
         Pos = Vector(0.7, -4, -0.1),
         Ang = Angle(0, 270, 0),
-        Scale = 1,
-    },
-    {
-        PrintName = "Handguard",
-        Category = {"saa_svd_handguard"},
-        Bone = "Weapon",
-        Pos = Vector(0, 10, 1),
-        Ang = Angle(0, 270, 0),
-        Scale = 1,
-    },
-    {
-        PrintName = "Underbarrel",
-        Category = {"saa_svd_underbarrel", "SAA_FOREGRIP_RAIL"},
-        Bone = "Weapon",
-        Pos = Vector(0, 10, -0.5),
-        Ang = Angle(0, 270, 180),
         Scale = 1,
     },
     {
@@ -712,9 +733,19 @@ SWEP.AttachmentElements = {
            {1, 2},
        },
    },
+   ["svds_calstock"] = {
+       Bodygroups = {
+           {1, 3},
+       },
+   },
    ["svdm_handguard"] = {
        Bodygroups = {
            {2, 1},
+       },
+   },
+   ["svds_dc"] = {
+       Bodygroups = {
+           {6, 1},
        },
    },
    ["bipod"] = {
@@ -735,3 +766,10 @@ SWEP.AttachmentElements = {
    },
 }
 
+
+SWEP.Hook_ModifyBodygroups = function(wep, data)
+    local model = data.model
+    if !model then return end
+    if wep:HasElement("muzzleattached") then model:SetBodygroup(4, 2) end
+
+end

@@ -4,7 +4,7 @@
 	"$bumpmap"					"saa\weapons\arccw\SVD\textures\caliber\T_WP_SR-SVDSPN_N"
 	"$phongexponenttexture"		"saa\weapons\arccw\SVD\textures\caliber\T_WP_SR-SVDSPN_MOs"
 	"$phongwarptexture"			"models\weapons\saa\shared\lightwarps\phongwarp_metal"
-	"$color2"					"[0.3 0.3 0.3]"
+	"$color2"					"[0.35 0.35 0.35]"
 	"$blendTintByBaseAlpha"		"1"
 	"$phong"					"1"
 	"$phongboost"				"10"
@@ -19,7 +19,7 @@
 	"$envmap" 			"models\weapons\envmaps\fo4_dith"
 	"$normalmapalphaenvmapmask" 	"1"
 	"$envmaptint"			"[0.5 0.5 0.5]"
-	"$envmapcoefficient"	"0.3" // Lighting will be multiplied by this value
+	"$envmapcoefficient"	"0.1" // Lighting will be multiplied by this value
 	"$colorcoefficient"	"0.3" // Lighting will be multiplied by this value
 Proxies
 {

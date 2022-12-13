@@ -23,6 +23,32 @@ ARC9.LoadAttachment(ATT, "saa_svd_sbarrel")
 
 ATT = {}
 
+ATT.PrintName = "SVD-S Dust Cover"
+ATT.Description = [[Receiver conversion that allows for Sidefolder stocks to be used.]]
+
+
+ATT.SortOrder = 0
+ATT.Category = "SAA_SVD_DUSTCOVER"
+
+
+ATT.Attachments = {
+    {
+        PrintName = "OPTIC",
+        Category = {"SAA_SCOPE_SMALL","SAA_SCOPE_MEDIUM","SAA_SCOPE_LARGE",},
+        Pos = Vector(0, 0, -1),
+        ExcludeElements = {"nodustcoveroptics"},
+        InstalledElements = {"nodovetailoptics", "norearsightoptics"},
+        Ang = Angle(0, 0, 0),
+        Scale = 1,
+    },
+}
+
+ATT.ActivateElements = {"svds_dc"}
+
+ARC9.LoadAttachment(ATT, "saa_svd_sdc")
+
+ATT = {}
+
 ATT.PrintName = "SVD-M Polymer Handguard"
 ATT.Description = [[Receiver conversion that allows for Sidefolder stocks to be used.]]
 
@@ -78,6 +104,25 @@ ATT.AimDownSightsTimeMult = 0.995
 ATT.ActivateElements = {"svds_stock"}
 
 ARC9.LoadAttachment(ATT, "saa_svd_stock")
+
+ATT = {}
+
+ATT.PrintName = "AR-TEL SVD Stock"
+ATT.Description = [[Receiver conversion that allows for Sidefolder stocks to be used.]]
+
+
+ATT.SortOrder = 0
+ATT.Category = "saa_svd_stock"
+
+
+ATT.SprintToFireTimeMult = 1.075
+ATT.SpeedMult = 0.9365
+ATT.RecoilMult = 1.115
+ATT.AimDownSightsTimeMult = 0.995
+
+ATT.ActivateElements = {"svds_calstock"}
+
+ARC9.LoadAttachment(ATT, "saa_svd_ar15stock")
 
 ATT = {}
 
