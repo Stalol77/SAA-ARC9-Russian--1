@@ -32,7 +32,8 @@ SWEP.TracerSize = 1
 
 -- Fake name --
 SWEP.PrintName = "SVD"
-SWEP.Description = [["Thought of as the matrix that spawned the role of the Designated Marksman, the Dragunov Sniper Rifle is a continuation of the Kalashnikov's success, applied to long ranges. Its use is viable for the one of a sniper, but it is mainly intended as a squad long range weapon, helping the comrades fight off any distant targets."]]
+SWEP.Description = [[Thought of as the matrix that spawned the role of the Designated Marksman, the Dragunov Sniper Rifle, colloquially refered to as the "Whip" due to the distinctive sound of the shots, is a continuation of the Kalashnikov's success, applied to long ranges.
+Its use is viable for the one of a sniper, but it is mainly intended as a squad long range weapon, helping the comrades fight off any distant targets.]]
 
 -- Trivia --
 SWEP.Class = "Designated Marksman Rifle"
@@ -433,6 +434,13 @@ SWEP.Animations = {
             {s = sq .. "svd_trigger_01.wav", t = 0, p = 100,}
         }
     },
+    ["trigger_empty"] = {
+        Source = "empty_idle",
+        Time = 0.001,
+        EventTable = {
+            {s = sq .. "svd_trigger_01.wav", t = 0, p = 100,}
+        }
+    },
     ["fire"] = {
         Source = "ACT_VM_PRIMARYATTACK",
         Mult = (600/650),
@@ -588,8 +596,8 @@ SWEP.Animations = {
             {s = sq .. "svd_trigger_01.wav", t = 0, p = 100,}
         }
     },
-    ["trigger_bipod_empty"] = {
-        Source = "deployed_empty",
+    ["trigger_empty_bipod"] = {
+        Source = "deployed_idle_empty",
         Time = 0.01,
         EventTable = {
             {s = triggertable, t = 0, p = 120,}
