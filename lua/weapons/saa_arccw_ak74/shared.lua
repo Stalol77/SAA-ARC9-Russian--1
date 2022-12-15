@@ -602,11 +602,11 @@ SWEP.Animations = {
             {s = foley .. "mag_in.ogg", v = 1.0, t = 1.9},
             {s = "shared/foley/m4_1/m4_magrelease.wav",    t = 2.0, v= 0.6},
             {s = "shared/foley/ak_generic/ak47_rattle.wav",    t = 2.2, v= 0.4, p = 110},
-            {s = foley .. "charging_handle_pull.ogg",    t = 3.3},
-            {s = "shared/foley/ak_generic/ak47_boltback.wav",    t = 3.3, v= 0.6, p = 100},
-            {s = foley .. "charging_handle_release.ogg",    t = 3.55},
-            {s = "shared/foley/ak_generic/ak47_boltrelease.wav",    t = 3.65, v= 0.3, p = 100},
-            {s = "shared/foley/shared/movement_raise.wav",    t = 3.9, v= 0.4, p = 100},
+            {s = foley .. "charging_handle_pull.ogg",    t = 3.1},
+            {s = "shared/foley/ak_generic/ak47_boltback.wav",    t = 3.1, v= 0.6, p = 100},
+            {s = foley .. "charging_handle_release.ogg",    t = 3.25},
+            {s = "shared/foley/ak_generic/ak47_boltrelease.wav",    t = 3.35, v= 0.3, p = 100},
+            {s = "shared/foley/shared/movement_raise.wav",    t = 3.7, v= 0.4, p = 100},
         },
         IKTimeLine = {
             {
@@ -620,17 +620,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.25,
+                t = 0.8,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.5,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.6,
+                t = 0.9,
                 lhik = 1,
                 rhik = 0
             },
