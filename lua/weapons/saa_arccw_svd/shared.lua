@@ -10,7 +10,7 @@ SWEP.UseHands = true
 
 SWEP.MuzzleParticle = "muzzleflash_famas" -- Used for some muzzle effects.
 SWEP.ShellModel = "models/weapons/rifleshell.mdl"
-SWEP.ShellScale = 1
+SWEP.ShellScale = 0.7
 --SWEP.ShellMaterial = "models/weapons/arcticcw/shell_556"
 SWEP.ShellPitch = 100
 local shell = "shared/shells/casing_eject_308_0"
@@ -341,6 +341,7 @@ SWEP.ShootSoundIndoor = firet
 SWEP.ShootSoundSilencedIndoor = firest
 SWEP.LayerSound = tailt
 SWEP.LayerSoundSilenced = tailsupt
+SWEP.Spread = 0.001
 SWEP.LayerSoundSilencedIndoor = { 
     lsinds .. "1.mp3", 
     lsinds .. "2.mp3", 

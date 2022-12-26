@@ -294,13 +294,14 @@ SWEP.LayerSound = {
     ak7v .. "ak74_loop_stereo_default_initial_tail_03.wav",
     ak7v .. "ak74_loop_stereo_default_initial_tail_04.wav",
 }
-SWEP.LayerSoundIndoor = {
-    akm .. "new/akm_indoor_1.wav",
-    akm .. "new/akm_indoor_2.wav",
-    akm .. "new/akm_indoor_3.wav",
-
+local lsind = "shared/base/universal/sandstorm_reverb/fromrpg7/low/tail_indoors_small_close_0"
+SWEP.LayerSoundIndoor = { 
+    lsind .. "1.wav", 
+    lsind .. "2.wav", 
+    lsind .. "3.wav", 
+    lsind .. "4.wav",
+    lsind .. "5.wav",  
 }
-
 SWEP.ShootSoundSilenced = {
     akv2 .. "akm_distant_loop.wav",
     akv2 .. "akm_distant_loop-2.wav",

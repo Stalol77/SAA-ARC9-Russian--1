@@ -4,10 +4,10 @@
 	"$bumpmap"					"saa\weapons\arccw\pkm\sandstorm\t_1p_pkm_n_n"
 	"$phongexponenttexture"		"saa\weapons\arccw\pkm\sandstorm\t_1p_pkm_n_m"
 	"$phongwarptexture"			"models\weapons\saa\shared\lightwarps\phongwarp_metal"
-	"$color2"					"[0.3 0.3 0.3]"
+	"$color2"					"[0.4 0.4 0.4]"
 	"$blendTintByBaseAlpha"		"1"
 	"$phong"					"1"
-	"$phongboost"				"3"
+	"$phongboost"				"15"
 	"$phongfresnelranges"		"[0.32 0.72 0.99]"
 	"$phongalbedotint" 			"1"
 	"$phongalbedoboost"			"99"
@@ -15,12 +15,12 @@
 
 	"$rimlight"					"1"
 	"$rimlightexponent"			"33"
-	"$rimlightboost"			"0.3"
+	"$rimlightboost"			"5"
 	"$rimmask"					"1"
 	"$envmap" 			"models\weapons\envmaps\fo4_dith"
 	"$normalmapalphaenvmapmask" 	"1"
 	"$envmaptint"			"[0.5 0.5 0.5]"
-	"$envmapcoefficient"	"0.2" // Lighting will be multiplied by this value
+	"$envmapcoefficient"	"0.04" // Lighting will be multiplied by this value
 	"$colorcoefficient"	"0.3" // Lighting will be multiplied by this value
 Proxies
 {

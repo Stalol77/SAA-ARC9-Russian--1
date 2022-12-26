@@ -296,11 +296,13 @@ SWEP.LayerSound = {
     akv .. "rpd_fire_initial_1p_tail_03.wav",
     akv .. "rpd_fire_initial_1p_tail_04.wav",
 }
-SWEP.LayerSoundIndoor = {
-    akm .. "new/akm_indoor_1.wav",
-    akm .. "new/akm_indoor_2.wav",
-    akm .. "new/akm_indoor_3.wav",
-
+local lsind = "shared/base/universal/sandstorm_reverb/fromrpg7/low/tail_indoors_small_close_0"
+SWEP.LayerSoundIndoor = { 
+    lsind .. "1.wav", 
+    lsind .. "2.wav", 
+    lsind .. "3.wav", 
+    lsind .. "4.wav",
+    lsind .. "5.wav",  
 }
 
 SWEP.ShootSoundSilenced = {

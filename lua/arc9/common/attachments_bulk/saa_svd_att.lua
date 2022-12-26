@@ -16,6 +16,7 @@ ATT.RecoilMult = 1.7/1.55
 ATT.SwayMult = 0.8
 ATT.AimDownSightsTimeMult = 0.995
 ATT.PhysBulletMuzzleVelocityMult = 810/830
+ATT.SpreadMult = 2
 
 ATT.ActivateElements = {"svdm_barrel"}
 
