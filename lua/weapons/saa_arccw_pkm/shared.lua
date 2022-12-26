@@ -886,7 +886,7 @@ SWEP.Attachments = {
    },
     {
        PrintName = "Pistol Grip",
-       Category = {"saa_pkm_pg"},
+       Category = {"saa_ak_pgrip"},
        Bone = "b_wpn",
        Pos = Vector(0, -8.5, -1),
        Ang = Angle(0, 0, 0),
@@ -963,9 +963,24 @@ SWEP.AttachmentElements = {
             {6, 2},
         },
     },
-    ["pg_tuk"] = {
+    ["wood_grip"] = {
         Bodygroups = {
-            {8, 1},
+            {8, 2},
+        },
+    },
+    ["zenitco_rk3_grip"] = {
+        Bodygroups = {
+            {8, 4},
+        },
+    },
+    ["magpul_grip"] = {
+        Bodygroups = {
+            {8, 3},
+        },
+    },
+    ["s200_grip"] = {
+        Bodygroups = {
+            {8, 5},
         },
     },
 }

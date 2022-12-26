@@ -1067,7 +1067,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Stock",
-        Category = "saa_ak_stock",
+        Category = {"saa_ak_stock", "saa_aks74_stock"},
         Installed = "saa_ak_akmstock",
         Bone = "b_wpn",
         Pos = Vector(0, -7.3, 0),
@@ -1192,9 +1192,14 @@ SWEP.AttachmentElements = {
             {11, 2},
         },
     },
-    ["akms_stock"] = {
+    ["aks74_stock"] = {
         Bodygroups = {
             {7, 2},
+        },
+    },
+    ["aks74m_stock"] = {
+        Bodygroups = {
+            {7,8},
         },
     },
     ["akm_stock"] = {
