@@ -200,6 +200,7 @@ SWEP.NPCWeight = 60
 -------------------------- SPREAD
 
 SWEP.Spread = 0.001
+SWEP.SpreadHot = 0.01
 
 
 SWEP.Ammo = "7.62x54mmR"
@@ -240,7 +241,7 @@ SWEP.SprintAng = Angle(30, -17, -15)
 SWEP.SprintPos = Vector(2, 0, 1)
 -- Length --
 
-SWEP.BarrelLength = 34
+SWEP.BarrelLength = 43
 
 SWEP.BulletBones = { -- the bone that represents bullets in gun/mag
     [1] = "b_wpn_mag_b1",
@@ -288,7 +289,7 @@ SWEP.BarrelOffsetCrouch = Vector(-1, 0, 10)
 
 SWEP.MirrorVMWM = true
 SWEP.WorldModelOffset = {
-    Pos = Vector(-10, 0, -9),
+    Pos = Vector(-3, 3, -6),
     Ang = Angle(-10, -4, 180),
     Scale = 1
 }

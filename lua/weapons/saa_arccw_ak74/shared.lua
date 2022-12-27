@@ -144,6 +144,7 @@ SWEP.Firemodes = {
 }
 
 SWEP.ActivePos = Vector(0, 1.9, 1)
+SWEP.ActivePosMove = Vector(0, 1.9, 0.7)
 SWEP.ActiveAng = Angle(1, 0, 0)
 SWEP.ViewModelFOVBase = 69 -- Set to override viewmodel FOV
 
@@ -216,7 +217,7 @@ SWEP.SprintAng = Angle(40, -15, -30)
 SWEP.SprintPos = Vector(-0, -0.5, 1)
 -- Length --
 
-SWEP.BarrelLength = 34
+SWEP.BarrelLength = 38
 
 -- Ironsights / Customization / Poses --
 

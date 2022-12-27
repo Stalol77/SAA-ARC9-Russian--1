@@ -9,5 +9,6 @@ ATT.RPMMult = 610/632
 ATT.RangeMaxMult = (185/150)
 ATT.SwayMult = 1.3
 ATT.PhysBulletMuzzleVelocityMult = 853/825
+ATT.BarrelLengthAdd = 7
 
 ATT.ActivateElements = {"barrel_pks"}

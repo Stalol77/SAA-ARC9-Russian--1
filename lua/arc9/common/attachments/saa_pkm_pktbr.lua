@@ -12,5 +12,6 @@ ATT.RangeMaxMult = (85/170)
 ATT.RecoilMult = 1.7/1.575
 ATT.SwayMult = 0.8
 ATT.PhysBulletMuzzleVelocityMult = 730/825
+ATT.BarrelLengthAdd = -5
 
 ATT.ActivateElements = {"barrel_pkt"}
