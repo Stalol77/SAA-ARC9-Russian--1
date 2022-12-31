@@ -90,21 +90,24 @@ SWEP.ViewRecoilSideMult = 15 -- 1-20
 
 SWEP.UseVisualRecoil = true
 
-SWEP.VisualRecoilUp = 0.5 -- Vertical tilt for visual recoil.F
-SWEP.VisualRecoilSide = 0.05 -- Horizontal tilt for visual recoil.
-SWEP.VisualRecoilRoll = 0.23 -- Roll tilt for visual recoil.
+SWEP.VisualRecoilUp = 1.2 -- Vertical tilt for visual recoil.F
+SWEP.VisualRecoilSide = 0.5 -- Horizontal tilt for visual recoil.
+SWEP.VisualRecoilRoll = 1 -- Roll tilt for visual recoil.
 
-SWEP.VisualRecoilCenter = Vector(2, 4, 2) -- The "axis" of visual recoil. Where your hand is.
+SWEP.VisualRecoilCenter = Vector(0, 2, 0) -- The "axis" of visual recoil. Where your hand is.
 
 SWEP.VisualRecoilPunch = 1.5 -- How far back visual recoil moves the gun.
 SWEP.VisualRecoilPunchMultSights = 0.1
+SWEP.VisualRecoilPositionBump = 0
+SWEP.VisualRecoilDampingConst = 0.1 -- How spring will be visual recoil, 120 is default
+SWEP.VisualRecoilSpringMagnitude = 0
 
 -- SWEP.VisualRecoilMult = 1
 -- SWEP.VisualRecoilADSMult = 0.1
 -- SWEP.VisualRecoilPunchADSMult = 0.1
 
 SWEP.VisualRecoil = 1
-SWEP.VisualRecoilMultSights = 0.1
+SWEP.VisualRecoilMultSights = 1
 SWEP.VisualRecoilPositionBump = 1.5
 
 SWEP.VisualRecoilHipFire = 1
@@ -231,7 +234,7 @@ SWEP.IronSights = {
         Pos = Vector(0, 15, -4),
         Ang = Angle(0, 0, -45),
     },
-    Magnification = 1.1,
+    Magnification = 1,
 }
 
 
@@ -239,14 +242,14 @@ SWEP.IronSights = {
 SWEP.CrouchPos = Vector(0, 0, 0)
 SWEP.CrouchAng = Angle(0, 0, 0)
 
-SWEP.BarrelOffsetHip = Vector(2, 0, -5)
 
 SWEP.MirrorVMWM = true
 SWEP.WorldModelOffset = {
     Pos = Vector(3, 2.5, -18),
     Ang = Angle(-10, -4, 180),
-    Scale = 1
+    Scale = 1,
 }
+SWEP.NoTPIKVMPos = false
 
 -- Firing sounds --
 local ak = "saa/ak2022/new/akm_eft_"

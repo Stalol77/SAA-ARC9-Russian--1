@@ -153,6 +153,7 @@ SWEP.RPM = 400
 SWEP.Num = 1
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayTime = 0.07 -- Time until weapon fires.
+SWEP.TriggerDelayCancellable = false
 SWEP.TriggerDelayRepeat = false -- Whether to do it for every shot on automatics.
 SWEP.Firemodes = {
     {
