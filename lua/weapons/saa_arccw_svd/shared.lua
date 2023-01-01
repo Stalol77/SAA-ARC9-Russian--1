@@ -273,8 +273,8 @@ SWEP.BarrelOffsetCrouch = Vector(-1, 0, 10)
 
 SWEP.MirrorVMWM = true
 SWEP.WorldModelOffset = {
-    Pos = Vector(-1, 4, -8),
-    Ang = Angle(-10, -4, 180),
+    Pos = Vector(-2.5, 3, -4.5),
+    Ang = Angle(-10, 0, 180),
     Scale = 1
 }
 

@@ -224,8 +224,12 @@ SWEP.BarrelLength = 38
 
 -- Ironsights / Customization / Poses --
 
-SWEP.HoldtypeHolstered = "passive"
-SWEP.HoldtypeActive = "ar2"
+SWEP.HoldType = "ar2"
+SWEP.HoldTypeSprint = "passive"
+SWEP.HoldTypeHolstered = "passive"
+SWEP.HoldTypeSights = "ar2"
+SWEP.HoldTypeCustomize = "slam"
+SWEP.HoldTypeBlindfire = "pistol"
 
 SWEP.IronSights = {
     Pos = Vector(-2.45*1.1, -3*1.1, 1.5*1.1),
@@ -245,7 +249,7 @@ SWEP.CrouchAng = Angle(0, 0, 0)
 
 SWEP.MirrorVMWM = true
 SWEP.WorldModelOffset = {
-    Pos = Vector(3, 2.5, -18),
+    Pos = Vector(-2.5, 3, -6),
     Ang = Angle(-10, -4, 180),
     Scale = 1,
 }
