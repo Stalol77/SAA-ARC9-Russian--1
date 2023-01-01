@@ -89,28 +89,36 @@ SWEP.ViewRecoil = true -- true
 SWEP.ViewRecoilUpMult = 11 -- 40-100
 SWEP.ViewRecoilSideMult = 15 -- 1-20
 
+SWEP.ViewRecoil = true -- true
+SWEP.ViewRecoilUpMult = 10 -- 40-100
+SWEP.ViewRecoilSideMult = 15 -- 1-20
+
 SWEP.UseVisualRecoil = true
 
-SWEP.VisualRecoilUp = 0.01 -- Vertical tilt for visual recoil.F
-SWEP.VisualRecoilSide = 0.05 -- Horizontal tilt for visual recoil.
-SWEP.VisualRecoilRoll = 0.23 -- Roll tilt for visual recoil.
+SWEP.VisualRecoilUp = 1.6 -- Vertical tilt for visual recoil.F
+SWEP.VisualRecoilSide = 0.5 -- Horizontal tilt for visual recoil.
+SWEP.VisualRecoilRoll = 1 -- Roll tilt for visual recoil.
 
-SWEP.VisualRecoilCenter = Vector(2, 4, 2) -- The "axis" of visual recoil. Where your hand is.
+SWEP.VisualRecoilCenter = Vector(0, 2, 0) -- The "axis" of visual recoil. Where your hand is.
 
 SWEP.VisualRecoilPunch = 1.5 -- How far back visual recoil moves the gun.
 SWEP.VisualRecoilPunchMultSights = 0.1
+SWEP.VisualRecoilPositionBump = 0
+SWEP.VisualRecoilDampingConst = 0.1 -- How spring will be visual recoil, 120 is default
+SWEP.VisualRecoilSpringMagnitude = 0
 
 -- SWEP.VisualRecoilMult = 1
 -- SWEP.VisualRecoilADSMult = 0.1
 -- SWEP.VisualRecoilPunchADSMult = 0.1
 
 SWEP.VisualRecoil = 1
-SWEP.VisualRecoilMultSights = 0.1
+SWEP.VisualRecoilMultSights = 1
+SWEP.VisualRecoilSideMultSights = 0.5
 SWEP.VisualRecoilPositionBump = 1.5
 
 SWEP.VisualRecoilHipFire = 1
 
-SWEP.VisualRecoilDampingConst = nil -- How spring will be visual recoil, 120 is default
+SWEP.VisualRecoilDampingConst = 10 -- How spring will be visual recoil, 120 is default
 SWEP.VisualRecoilSpringMagnitude = 1
 
 
