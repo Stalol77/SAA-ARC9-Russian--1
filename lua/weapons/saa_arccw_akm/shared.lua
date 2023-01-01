@@ -100,8 +100,8 @@ SWEP.VisualRecoilCenter = Vector(2, 2, 0) -- The "axis" of visual recoil. Where 
 SWEP.VisualRecoilPunch = 1.5 -- How far back visual recoil moves the gun.
 SWEP.VisualRecoilPunchMultSights = 0.1
 SWEP.VisualRecoilPositionBump = 0
-SWEP.VisualRecoilDampingConst = 50 -- How spring will be visual recoil, 120 is default
-SWEP.VisualRecoilSpringMagnitude = 1
+SWEP.VisualRecoilDampingConst = 70 -- How spring will be visual recoil, 120 is default
+SWEP.VisualRecoilSpringMagnitude = 5
 
 SWEP.VisualRecoil = 1
 SWEP.VisualRecoilMultSights = 1
