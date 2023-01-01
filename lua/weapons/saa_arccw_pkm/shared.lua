@@ -137,7 +137,7 @@ SWEP.VisualRecoilUp = 3.5 -- Vertical tilt for visual recoil.F
 SWEP.VisualRecoilSide = 2 -- Horizontal tilt for visual recoil.
 SWEP.VisualRecoilRoll = 20 -- Roll tilt for visual recoil.
 
-SWEP.VisualRecoilCenter = Vector(2, 2, 0) -- The "axis" of visual recoil. Where your hand is.
+SWEP.VisualRecoilCenter = Vector(2, -2, 0) -- The "axis" of visual recoil. Where your hand is.
 
 SWEP.VisualRecoilPunch = 0.1 -- How far back visual recoil moves the gun.
 SWEP.VisualRecoilPunchMultSights = 0.1
@@ -174,6 +174,7 @@ SWEP.FreeAimRadius = 12 / 1.25
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayTime = 0.07 -- Time until weapon fires.
 SWEP.TriggerDelayRepeat = false -- Whether to do it for every shot on automatics.
+SWEP.TriggerDelayCancellable = false
 SWEP.RPM = 632
 SWEP.Num = 1
 SWEP.Firemodes = {

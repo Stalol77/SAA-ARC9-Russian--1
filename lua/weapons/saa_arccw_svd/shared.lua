@@ -170,6 +170,7 @@ SWEP.FreeAimRadius = 12 / 1.25
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayTime = 0.05 -- Time until weapon fires.
 SWEP.TriggerDelayRepeat = false -- Whether to do it for every shot on automatics.
+SWEP.TriggerDelayCancellable = false -- Whether to do it for every shot on automatics.
 SWEP.RPM = 500
 SWEP.Num = 1
 SWEP.Firemodes = {
