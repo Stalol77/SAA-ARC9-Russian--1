@@ -1,0 +1,36 @@
+"VertexLitGeneric"
+{
+	"$basetexture"				"saa\weapons\arccw\pkm\sandstorm\T_1P_PKM_d"
+	"$bumpmap"					"saa\weapons\arccw\pkm\sandstorm\T_1P_PKM_n"
+	"$phongexponenttexture"		"saa\weapons\arccw\pkm\sandstorm\T_1P_PKM_e"
+	"$phongwarptexture"			"models\weapons\saa\shared\lightwarps\phongwarp_metal"
+	"$color2"					"[0.2 0.2 0.2]"
+
+	$detail						"detail\metal_detail_01"
+	$detailscale				32
+	$detailblendfactor			1
+	$detailblendmode			0
+
+	"$envmap"					"models\weapons\envmaps\hdri_parking"
+	"$envmapfresnel"			"0.25"
+	"$envmaptint"				"[ .8 .4 .1 ]"
+
+	"$phong"					"1"
+	"$phongboost"				"40"
+	"$phongfresnelranges"		"[0.32 0.72 0.99]"
+	"$phongalbedotint"			"1"
+
+	"$rimlight"					"1"
+	"$rimlightexponent"			"33"	
+	"$rimlightboost"			"5"
+	"$rimmask"					"1"
+{
+    SAA_CubemapTintMult
+    {
+        multiplier	$envmapcoefficient // Use our value for default envmap tint
+        resultvar	$envmaptint // Write final output to $envmaptint
+    }
+}
+}
+//Material setup by ShadowRUN 幸運な. 
+//Do NOT edit/modify/redistribute these materials without my explicit permission.
