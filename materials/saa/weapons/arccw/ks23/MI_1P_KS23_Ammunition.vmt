@@ -1,25 +1,27 @@
 "VertexLitGeneric"
 {
-	"$basetexture"				"saa\weapons\arccw\ks23\sandstorm\t_1p_ks-23_ammo_bc"
-	"$bumpmap"					"saa\weapons\arccw\ks23\sandstorm\t_1p_ks-23_ammo_n"
-	"$phongexponenttexture"		"saa\weapons\arccw\ks23\sandstorm\t_1p_ks-23_ammo_m"
+	"$basetexture"				"saa\weapons\arccw\ks23\sandstorm\T_1P_KS23_Ammo_d"
+	"$bumpmap"					"saa\weapons\arccw\ks23\sandstorm\T_1P_KS23_Ammo_n"
+	"$phongexponenttexture"		"saa\weapons\arccw\ks23\sandstorm\T_1P_KS23_Ammo_e"
 	"$phongwarptexture"			"models\weapons\saa\shared\lightwarps\phongwarp_metal"
-	"$color2"					"[0.3 0.3 0.3]"
+	"$color2"					"[0.35 0.35 0.35]"
 	"$blendTintByBaseAlpha"		"1"
+
+	"$envmap" 					"env_cubemap"
+	"$envmaptint"				"[ .13 .13 .13 ]"
+	"$envmapcoefficient"		"0.05" // Lighting will be multiplied by this value
+
 	"$phong"					"1"
-	"$phongboost"				"10"
+	"$phongexponent"			"5"
+	"$phongboost"				"5"
 	"$phongfresnelranges"		"[0.32 0.72 0.99]"
 	"$phongalbedotint" 			"1"
-	"$nocull"					"1"
 
 	"$rimlight"					"1"
 	"$rimlightexponent"			"33"
 	"$rimlightboost"			"0.3"
 	"$rimmask"					"1"
-	"$envmap" 			"env_cubemap"
-	"$normalmapalphaenvmapmask" 	"1"
-	"$envmaptint"			"[0.5 0.5 0.5]"
-	"$envmapcoefficient"	"0.05" // Lighting will be multiplied by this value
+
 Proxies
 {
     SAA_CubemapLightMult
@@ -29,3 +31,5 @@ Proxies
     }
 }
 }
+//Material setup by ShadowRUN 幸運な. 
+//Do NOT edit/modify/redistribute these materials without my explicit permission.

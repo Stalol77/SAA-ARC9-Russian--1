@@ -4,34 +4,32 @@
 	"$bumpmap"					"saa\weapons\arccw\izh43\main\izh 43_izh43_normal"
 	"$phongexponenttexture"		"saa\weapons\arccw\izh43\main\izh 43_izh43_roughness"
 	"$phongwarptexture"			"models\weapons\saa\shared\lightwarps\phongwarp_metal"
-	"$color2"					"[0.5 0.5 0.5]"
-	"$blendTintByBaseAlpha"		"1"
+	"$color2"					"[0.35 0.35 0.35]"
+	"$blendtintbybasealpha"		"1"
+
+	"$envmap"					"models\weapons\envmaps\fo4_dith"
+	"$envmapfresnel"			".5"
+	"$envmaptint"				".5"
+	"$envmapcoefficient"		"0.05" // Lighting will be multiplied by this value
+
 	"$phong"					"1"
-	"$phongboost"				"10"
+	"$phongboost"				"50"
 	"$phongfresnelranges"		"[0.32 0.72 0.99]"
 	"$phongalbedotint" 			"1"
-	"$nocull"					"1"
 
 	"$rimlight"					"1"
 	"$rimlightexponent"			"33"
-	"$rimlightboost"			"0.3"
+	"$rimlightboost"			"2"
 	"$rimmask"					"1"
-	"$envmap" 			"models\weapons\envmaps\metal_generic_004"
-	"$normalmapalphaenvmapmask" 	"1"
-	"$envmaptint"			"[0.5 0.5 0.5]"
-	"$envmapcoefficient"	"0.2" // Lighting will be multiplied by this value
-	"$colorcoefficient"	"0.5" // Lighting will be multiplied by this value
+
 Proxies
 {
-    SAA_CubemapTintMult
+    SAA_CubemapLightMult
     {
         multiplier	$envmapcoefficient // Use our value for default envmap tint
         resultvar	$envmaptint // Write final output to $envmaptint
     }
-    SAA_ColorLightMult
-    {
-        multiplier	$colorcoefficient // Use our value for default envmap tint
-        resultvar	$color2 // Write final output to $envmaptint
-    }
 }
 }
+//Material setup by ShadowRUN 幸運な. 
+//Do NOT edit/modify/redistribute these materials without my explicit permission.
