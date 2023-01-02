@@ -9,6 +9,7 @@ ATT = {}
 ATT.PrintName = "6P1-01 AK"
 ATT.CompactName = "6P1-01"
 ATT.Description = [[Dust cover produced for AKM rifles. Features the classic ribbed design to enhance durability and covers the internals fairly well boosting the weapon's reliability.]]
+ATT.Icon = Material("hud/arc9_saa/rus/akm_dc.png", "mips smooth")
 
 
 ATT.SortOrder = 0
@@ -36,6 +37,7 @@ ATT = {}
 ATT.PrintName = "6P20-01 Smooth Dust Cover"
 ATT.CompactName = "6P20-01"
 ATT.Description = [[Dust cover produced for later AK rifles. Features a sleek design, free of structure-reinforcing ribs and rails for basic bolt covering functionalities.]]
+ATT.Icon = Material("hud/arc9_saa/rus/ak74_dc.png", "mips smooth")
 
 
 ATT.SortOrder = 0
@@ -142,6 +144,7 @@ ATT = {}
 ATT.PrintName = "AK 6P1 Sb.2-1 Ironsights"
 ATT.CompactName = "6P1 Sb.2-1"
 ATT.Description = [[Standard issue AK-AK74 rear sight.]]
+ATT.Icon = Material("hud/arc9_saa/rus/ak_irons.png", "mips smooth")
 
 
 ATT.SortOrder = 0
@@ -251,6 +254,7 @@ ATT = {}
 ATT.PrintName = "VEPR-200 Pistol Grip"
 ATT.CompactName = "VEPR-200"
 ATT.Description = [[Polymer pistol grip built by private companies with ergonomics in mind.]]
+ATT.Icon = Material("hud/arc9_saa/rus/ak_pg.png", "mips smooth")
 
 
 ATT.SortOrder = 1
@@ -407,7 +411,7 @@ ATT = {}
 ATT.PrintName = "Romanian Dong-Grip Handguard"
 ATT.CompactName = "Dong"
 ATT.Description = [[Handguard produced by private companies. Eases aim and .]]
-
+ATT.Icon = Material("hud/arc9_saa/rus/dong.png", "mips smooth")
 
 ATT.SortOrder = 1
 ATT.Category = "saa_ak_hg"
@@ -436,9 +440,10 @@ ARC9.LoadAttachment(ATT, "saa_ak_dong")
 
 ATT = {}
 
-ATT.PrintName = "Series 100 Handguard"
-ATT.CompactName = "S-100"
+ATT.PrintName = "Series-100 Handguard"
+ATT.CompactName = "Series-100"
 ATT.Description = [[Handguard produced by private companies. Eases aim and .]]
+ATT.Icon = Material("hud/arc9_saa/rus/ak74_hg.png", "mips smooth")
 
 
 ATT.SortOrder = 1
@@ -472,6 +477,7 @@ ATT = {}
 ATT.PrintName = "VEPR Series 200 Handguard"
 ATT.CompactName = "VEPR-200"
 ATT.Description = [[Handguard produced by private companies. Eases aim and .]]
+ATT.Icon = Material("hud/arc9_saa/rus/ak74_hg.png", "mips smooth")
 
 
 ATT.SortOrder = 1
@@ -801,6 +807,7 @@ ATT = {}
 ATT.PrintName = "AKM Stock"
 ATT.CompactName = "AKM"
 ATT.Description = [[Original wooden composite stock produced for use on AKM rifles. Sturdy and moderately heavy, reduces sway and recoil.]]
+ATT.Icon = Material("hud/arc9_saa/rus/akm_stock.png", "mips smooth")
 
 
 ATT.SortOrder = 1
@@ -826,6 +833,7 @@ ATT = {}
 ATT.PrintName = "AK74 Tula Stock"
 ATT.CompactName = "AK74"
 ATT.Description = [[Original wooden composite stock produced for use on AKM rifles. Sturdy and moderately heavy, reduces sway and recoil.]]
+ATT.Icon = Material("hud/arc9_saa/rus/ak74_stock.png", "mips smooth")
 
 
 ATT.SortOrder = 1
@@ -851,6 +859,7 @@ ATT = {}
 ATT.PrintName = "AKMS Stock Mod"
 ATT.CompactName = "AKMS"
 ATT.Description = [[Receiver modification that allows use of the AK pattern underfolder stock. Perfect for a mobility oriented build that seeks for ease of use in CQB.]]
+ATT.Icon = Material("hud/arc9_saa/rus/akms.png", "mips smooth")
 
 
 ATT.SortOrder = 0
@@ -986,6 +995,7 @@ ATT = {}
 ATT.PrintName = "74N Molot Gas Port"
 ATT.CompactName = "74N Molot"
 ATT.Description = [[Handguard produced by private companies. Reduces forward weight.]]
+ATT.Icon = Material("hud/arc9_saa/rus/ak74_gp.png", "mips smooth")
 
 
 ATT.SortOrder = 1
@@ -1009,6 +1019,7 @@ ATT = {}
 ATT.PrintName = "Series-100 Gas Port"
 ATT.CompactName = "Series-100"
 ATT.Description = [[Sturdy Gas Port that generates good weight near grip area. Reduces felt recoil and boosts up heat capacity at the cost of a slower dissipation and heavier mass.]]
+ATT.Icon = Material("hud/arc9_saa/rus/ak74_gp.png", "mips smooth")
 
 
 ATT.SortOrder = 0
@@ -1033,6 +1044,7 @@ ATT = {}
 ATT.PrintName = "VEPR-200 Series Gas Port"
 ATT.CompactName = "VEPR-200"
 ATT.Description = [[Sturdy Gas Port that generates good weight near grip area. Reduces felt recoil and boosts up heat capacity at the cost of a slower dissipation and heavier mass.]]
+ATT.Icon = Material("hud/arc9_saa/rus/vepr_gp.png", "mips smooth")
 
 
 ATT.SortOrder = 0
@@ -1078,6 +1090,7 @@ ATT = {}
 ATT.PrintName = "AKM Handguard Gas Port"
 ATT.CompactName = "AKM"
 ATT.Description = [[AKM production Gas Port Cover, increases heat capacity at the cost of a slower dissipation.]]
+ATT.Icon = Material("hud/arc9_saa/rus/akm_gp.png", "mips smooth")
 
 
 ATT.SortOrder = 0
@@ -1101,6 +1114,7 @@ ATT = {}
 ATT.PrintName = [["N" Series Receiver]]
 ATT.CompactName = "DVT"
 ATT.Description = [[Swaps the receiver for a series N one. Features a dovetail plate that allows for dovetail attachments such as external rails and special optics to be attached on the get-go.]]
+ATT.Icon = Material("hud/arc9_saa/att/dovetail.png", "mips smooth")
 
 
 ATT.SortOrder = 0

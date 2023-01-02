@@ -1021,6 +1021,7 @@ SWEP.Attachments = {
     {
         PrintName = "Pistol Grip",
         Category = "saa_ak_pgrip",
+        DefaultIcon = Material("hud/arc9_saa/rus/ak_pg_alt.png", "mips smooth"),
         Bone = "b_wpn",
         Pos = Vector(0, -5.3*1.1, -2*1.1),
         Ang = Angle(0, 0, 0),
@@ -1055,6 +1056,7 @@ SWEP.Attachments = {
     {
         PrintName = "Handguard",
         DefaultName = "AKM Handguard",
+        DefaultIcon = Material("hud/arc9_saa/rus/akm_hg_alt.png", "mips smooth"),
         Category = {"saa_ak_hg", "saa_ak_polyhg", "saa_ak_underbarrel"},
         Bone = "b_wpn",
         Pos = Vector(0, 5*1.1, 0.5*1.1),
