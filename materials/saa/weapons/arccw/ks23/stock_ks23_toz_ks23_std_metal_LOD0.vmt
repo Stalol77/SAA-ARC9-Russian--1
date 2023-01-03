@@ -1,0 +1,30 @@
+"VertexLitGeneric"
+{
+	"$basetexture"				"saa\weapons\arccw\ks23\eft\stock_ks23_toz_ks23_std_metal_LOD0_diff"
+	"$bumpmap"					"saa\weapons\arccw\ks23\eft\stock_ks23_toz_ks23_std_metal_LOD0_nrm"
+	"$phongexponenttexture"		"saa\weapons\arccw\ks23\eft\stock_ks23_toz_ks23_std_metal_LOD0_gloss"
+	"$color2"					"[0.7 0.7 0.7]"
+	"$blendTintByBaseAlpha"		"1"
+	"$phong"					"1"
+	"$phongboost"				"20"
+	"$phongfresnelranges"		"[0.32 0.72 0.99]"
+	"$phongalbedotint" 			"1"
+	"$nocull"					"1"
+
+	"$rimlight"					"1"
+	"$rimlightexponent"			"33"
+	"$rimlightboost"			"0.3"
+	"$rimmask"					"1"
+	"$envmap" 			"env_cubemap"
+	"$normalmapalphaenvmapmask" 	"1"
+	"$envmaptint"			"[0.5 0.5 0.5]"
+	"$envmapcoefficient"	"0.05" // Lighting will be multiplied by this value
+Proxies
+{
+    SAA_CubemapTintMult
+    {
+        multiplier	$envmapcoefficient // Use our value for default envmap tint
+        resultvar	$envmaptint // Write final output to $envmaptint
+    }
+}
+}

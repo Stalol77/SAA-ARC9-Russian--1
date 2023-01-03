@@ -8,155 +8,164 @@ SWEP.UseHands = true
 
 -- Muzzle and shell effects --
 
-SWEP.MuzzleParticle = "muzzleflash_ak74" -- Used for some muzzle effects.
-SWEP.ShellModel = "models/weapons/arccw/ud_shells/556.mdl"
-SWEP.ShellScale = 1.5
---SWEP.ShellMaterial = "models/weapons/arcticcw/shell_556"
-SWEP.ShellPitch = 100
-local shell = "shared/shells/casing_eject_308_0"
-local shellsounds = {
-    shell .. "1.wav",
-    shell .. "2.wav",
-    shell .. "5.wav",
-    shell .. "7.wav"
-}
-SWEP.ShellSounds = shellsounds
+SWEP.MuzzleParticle = "muzzleflash_shotgun" -- Used for some muzzle effects.
+SWEP.ShellModel = "models/weapons/shotgun_shell.mdl"
+SWEP.ShellScale = 0.8
+SWEP.CaseEffectQCA = 2 -- QC Attachment for shell ejection.
+SWEP.ShellPitch = 95
 
 SWEP.MuzzleEffectAttachment = 0
 SWEP.CaseEffectAttachment = 2
+SWEP.CamAttachment = nil
 SWEP.TracerNum = 0
 SWEP.TracerEffect = "ARC9_tracer"
-SWEP.TracerCol = Color(0, 0, 0)
-SWEP.TracerSize = 1
-
+SWEP.TracerCol = Color(255, 0, 0)
+SWEP.TracerSize = 2
 
 -- Fake name --
+SWEP.HideBones = {
+}
 SWEP.PrintName = "KS-23M"
 
--- Trivia --
-SWEP.Description = [["Coming after the AKM, the AK-74 is an other enhancement of the previous Kalashnikov rifle, sporting a smaller projectile boosting up range and rate of fire. Its optimised design makes it a top choice for even the most modern armies of the world."]]
+SWEP.Description = [[Although a trivial sight between most modern semi-automatic shotguns, this dual mode example of Italian engineering brings Benelli's dated yet innovative inertial system to a versatile and capable firearm.
+Allows the user to switch between pump action and semi automatic cycling with ease, fitting the weapon both for civilian, sporting and hunting use as well as law enforcement and head-to-head combat.]]
 
 -- Trivia --
-SWEP.Class = "Assault Rifle"
+SWEP.Class = "Pump-Action Shotgun"
  SWEP.Trivia = {
-     Manufacturer = "Izhevsk Mechanical Plant",
-     Calibre = "5.45x39mm",
-     Mechanism = "Gas-Operated Rotating Bolt",
-     Country = "Soviet Union",
-     Year = 1974,
+     Manufacturer = "Tula Arms",
+     Calibre = "23x75mm",
+     Mechanism = "Pump-Action",
+     Country = "Russia",
+     Year = 1973,
  }
 
 -- Weapon slot --
 
-SWEP.Slot = 2
+SWEP.Slot = 3
 
 -- Viewmodel / Worldmodel / FOV --
 
 SWEP.ViewModel = "models/saa/weapons/arccw/ks23/v_ks23.mdl"
 SWEP.WorldModel = "models/weapons/arccw/c_ud_m16.mdl"
-SWEP.ViewModelFOVBase = 80 -- Set to override viewmodel FOV
+SWEP.ViewModelFOVBase = 78 -- Set to override viewmodel FOV
 SWEP.CustomizeSnapshotFOV = 100
 SWEP.AnimDraw = false
 
 -- Damage --
 
-SWEP.DamageMax = 33 -- 3 shot kill
-SWEP.DamageMin = 12 -- 5 shot kill
-SWEP.ManualActionChamber = 1 -- How many shots we go between needing to cycle again.
-SWEP.ManualAction = true -- Pump/bolt action. Play the "cycle" animation after firing, when the trigger is released.
-SWEP.ManualActionNoLastCycle = true -- Do not cycle on the last shot.
-SWEP.ShotgunReload = true -- Weapon reloads like shotgun. Uses insert_1, insert_2, etc animations instead.
-SWEP.ReloadTime = 1
 
+
+SWEP.DamageMax = 17 -- 3 shot kill
+SWEP.DamageMin = 5 -- 5 shot kill
+SWEP.ImpactForce = 1.5
 SWEP.RangeMin = 10
-SWEP.RangeMax = 13000
-SWEP.ArmorPiercing = 0.75
-SWEP.Penetration = 15
+SWEP.RangeMax = (70/304.8)*12000
+SWEP.ArmorPiercing = 0.1
+SWEP.Penetration = 2
 SWEP.DamageType = DMG_BULLET
 SWEP.ShootEntity = nil
-SWEP.PhysBulletMuzzleVelocity = 28150*(915/715) -- Physical bullet muzzle velocity in Hammer Units/second. 1 HU != 1 inch.
+SWEP.PhysBulletMuzzleVelocity = 28150*(430/715) -- Physical bullet muzzle velocity in Hammer Units/second. 1 HU != 1 inch.
+
+SWEP.ShotgunReload = true -- Weapon reloads like shotgun. Uses insert_1, insert_2, etc animations instead.
+SWEP.HybridReload = false -- Enable on top of Shotgun Reload. If the weapon is completely empty, use the normal reload animation.
+SWEP.ShotgunReloadIncludesChamber = false -- Shotguns reload to full capacity, assuming that the chamber is loaded as part of the animation.
+-- Use SWEP.Hook_TranslateAnimation in order to do custom animation stuff.
+
+SWEP.ManualActionChamber = 1 -- How many shots we go between needing to cycle again.
+SWEP.ManualAction = true -- Pump/bolt action. Play the "cycle" animation after firing, when the trigger is released.
+SWEP.ManualActionNoLastCycle = true
+SWEP.CycleTime = 0.5
+
+
+
+
+ -- Do not cycle on the last shot.
+SWEP.ManualActionEjectAnyway = false -- Eject a shell when firing anyway.
 
 -- Mag size --
 
 SWEP.ChamberSize = 1
-SWEP.ClipSize = 3
+SWEP.ClipSize = 4
 SWEP.SupplyLimit = 6 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 3 -- Amount of reserve UBGL magazines you can take.
 
--- Recoil --
 
-SWEP.Recoil = 1.8
+SWEP.Recoil = 1.5
+SWEP.RecoilSide = 0.85
+SWEP.RecoilUp = 2.98
 
--- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
-SWEP.RecoilUp = 0.96 -- Multiplier for vertical recoil
-SWEP.RecoilSide = 0.7 -- Multiplier for vertical recoil
+SWEP.RecoilRandomUp = 0.6
+SWEP.RecoilRandomSide = 0.4
 
--- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
--- This type of recoil CANNOT be predicted.
-SWEP.RecoilRandomUp = 0.3
-SWEP.RecoilRandomSide = 0.3
+SWEP.RecoilDissipationRate = 40 -- How much recoil dissipates per second.
+SWEP.RecoilResetTime = 0.01 -- How long the gun must go before the recoil pattern starts to reset.
 
-SWEP.RecoilDissipationRate = 50 -- How much recoil dissipates per second.
-SWEP.RecoilResetTime = 0.05 -- How long the gun must go before the recoil pattern starts to reset.
-
-SWEP.RecoilAutoControl = 1.5 * 0.25 -- Multiplier for automatic recoil control.
-
-SWEP.RecoilKick = 2.75
+SWEP.RecoilAutoControl = 0.5
 
 SWEP.UseVisualRecoil = true
 
-SWEP.VisualRecoilUp = 1 -- Vertical tilt for visual recoil.
-SWEP.VisualRecoilSide = 0 -- Horizontal tilt for visual recoil.
-SWEP.VisualRecoilRoll = 1.8 -- Roll tilt for visual recoil.
+SWEP.VisualRecoilUp = 1.6 -- Vertical tilt for visual recoil.F
+SWEP.VisualRecoilSide = 1 -- Horizontal tilt for visual recoil.
+SWEP.VisualRecoilRoll = 1 -- Roll tilt for visual recoil.
 
-SWEP.VisualRecoilCenter = Vector(2, 4, 2) -- The "axis" of visual recoil. Where your hand is.
+SWEP.VisualRecoilCenter = Vector(10, -2.8, -4) -- The "axis" of visual recoil. Where your hand is.
 
-SWEP.VisualRecoilPunch = 1.5 -- How far back visual recoil moves the gun.
+SWEP.VisualRecoilPunch = 20 -- How far back visual recoil moves the gun.
+SWEP.VisualRecoilPunchMultSights = 0.1
+SWEP.VisualRecoilPositionBump = 0
+SWEP.VisualRecoilDampingConst = 0.1 -- How spring will be visual recoil, 120 is default
+SWEP.VisualRecoilSpringMagnitude = 0
 
-SWEP.VisualRecoilMult = 1
+-- SWEP.VisualRecoilMult = 1
+-- SWEP.VisualRecoilADSMult = 0.1
+-- SWEP.VisualRecoilPunchADSMult = 0.1
 
-SWEP.VisualRecoilHipFire = true
+SWEP.VisualRecoil = 1
+SWEP.VisualRecoilMultSights = 1
+SWEP.VisualRecoilSideMultSights = 0.5
+SWEP.VisualRecoilPositionBump = 1.5
 
-SWEP.VisualRecoilDampingConst = nil -- How spring will be visual recoil, 120 is default
+SWEP.VisualRecoilHipFire = 1
 
-SWEP.RecoilKick = 1 -- Camera recoil
-SWEP.RecoilKickDamping = 0 -- Camera recoil damping
+SWEP.VisualRecoilDampingConst = 10 -- How spring will be visual recoil, 120 is default
+SWEP.VisualRecoilSpringMagnitude = 1
 
-SWEP.RumbleHeavy = 3000000
-SWEP.RumbleLight = 30000
-SWEP.RumbleDuration = 0.05
+SWEP.RecoilKick = 4 -- Camera recoil
+SWEP.RecoilKickDamping = 90 -- Camera recoil damping
 
-SWEP.Sway = 0.56
+SWEP.ViewRecoil = true -- true
+SWEP.ViewRecoilUpMult = 10 -- 40-100
+SWEP.ViewRecoilSideMult = 50 -- 1-20
+
+
+SWEP.Sway = 0.6
 SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizePos = Vector(19 , 35, 5)
-SWEP.CustomizeSnapshotFOV = 110
-SWEP.SwayMultMidAir = 2
-SWEP.SwayMultMove = 1.5
-SWEP.SwayMultCrouch = 0.66
-SWEP.SwayMultShooting = 1.2
-SWEP.FreeAimRadiusSights = 2
+SWEP.CustomizePos = Vector(14 , 30, 3.5)
+SWEP.CustomizeSnapshotFOV = 90
+SWEP.FreeAimRadiusSights = 0
 SWEP.FreeAimRadius = 12 / 1.25 
 -- Firerate / Firemodes --
+SWEP.RPM = 400
+SWEP.Num = 8
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayTime = 0.025 -- Time until weapon fires.
 SWEP.TriggerDelayRepeat = false -- Whether to do it for every shot on automatics.
-SWEP.RPM = 650
-SWEP.Num = 1
 SWEP.Firemodes = {
     {
-        Mode = -1,
-    },
-    {
         Mode = 1,
+        RecoilAutoControl = 0.1,    
+        PrintName = "PUMP"
+
     },
 }
 
-SWEP.ActivePos = Vector(-0.5, -4, 0.35)
-SWEP.ActiveAng = Angle(0, 0, 0)
+SWEP.ActivePos = Vector(1, 0, 0)
+SWEP.ActiveAng = Angle(-1, 0, 0)
 
-SWEP.ShootPitch = 105
-SWEP.ShootVolume = 130
-SWEP.ShootPitchVariation = 0
+SWEP.ShootPitch = 107
+SWEP.ShootVolume = 120
+SWEP.ShootPitchVariation = 5
 
 SWEP.ProceduralRegularFire = false
 SWEP.ProceduralIronFire = false
@@ -165,7 +174,7 @@ SWEP.ReloadInSights = false
 
 -- NPC --
 
-SWEP.NPCWeaponType = "weapon_ar2"
+SWEP.NPCWeaponType = "weapon_357"
 SWEP.NPCWeight = 60
 
 -- Accuracy --
@@ -175,8 +184,8 @@ SWEP.HipDispersion = 150
 SWEP.MoveDispersion = 300
 SWEP.JumpDispersion = 700
 
-SWEP.Ammo = "5.45x39mm"
-SWEP.MagID = "ak74"
+SWEP.Ammo = "buckshot"
+SWEP.MagID = "shotgun"
 
 SWEP.Jamming = true
 SWEP.Overheat = true -- Weapon will jam when it overheats, playing the "overheat" animation.
@@ -200,49 +209,28 @@ SWEP.PostBashTime = 0.5
 
 -- Speed multipliers --
 
-SWEP.SpeedMult = 0.89
+SWEP.SpeedMult = 0.86
 SWEP.SightedSpeedMult = 0.75
-SWEP.SightTime = 0.5
+SWEP.SightTime = 0.7
 SWEP.ShootSpeedMult = 0.8
-SWEP.AimDownSightsTime = 0.53 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.AimDownSightsTime = 0.5 -- How long it takes to go from hip fire to aiming down sights.
 SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being able to fire.
 
 
 SWEP.SprintAng = Angle(20, -15, 0)
-SWEP.SprintPos = Vector(2, -6, 1)
+SWEP.SprintPos = Vector(0, -0.5, 0.2)
 -- Length --
 
 SWEP.BarrelLength = 34
 
+SWEP.Spread = 0.03
+SWEP.UsePelletSpread = true -- Multiple bullets fired at once clump up, like for a shotgun. Spread affects which direction they get fired, not their spread relative to one another.
+SWEP.PelletSpread = 0.2
+
+SWEP.RicochetAngleMax = 45 -- Maximum angle at which a ricochet can occur. Between 1 and 90. Angle of 0 is impossible but would theoretically always ricochet.
+SWEP.RicochetChance = 0.1 -- If the angle is right, what is the chance that a ricochet can occur?
+
 -- Ironsights / Customization / Poses --
-SWEP.IronSights = {
-    Pos = Vector(-3.04, -6, 1.75),
-    Ang = Angle(0, -0.15, 0),
-    Midpoint = { -- Where the gun should be at the middle of it's irons
-        Pos = Vector(-1, -7, -4),
-        Ang = Angle(0, 0, -45),
-    },
-    Magnification = 1.1,
-}
-
-SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
-SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_AR2
-SWEP.AnimDraw = false
-
-
-SWEP.CrouchPos = Vector(-1.5, -6, 2)
-SWEP.CrouchAng = Angle(0, 0, 0)
-
-SWEP.BarrelOffsetHip = Vector(2, 0, -5)
-SWEP.BarrelOffsetSighted = Vector(0, 0, -1.7)
-SWEP.BarrelOffsetCrouch = Vector(-1, 0, 10)
-
-SWEP.MirrorVMWM = true
-SWEP.WorldModelOffset = {
-    Pos = Vector(-10, 0, -9),
-    Ang = Angle(-10, -4, 180),
-    Scale = 1
-}
 
 SWEP.HoldType = "ar2"
 SWEP.HoldTypeSprint = "passive"
@@ -251,143 +239,141 @@ SWEP.HoldTypeSights = "ar2"
 SWEP.HoldTypeCustomize = "slam"
 SWEP.HoldTypeBlindfire = "pistol"
 
+
+SWEP.IronSights = {
+    Pos = Vector(-2.8, -3, 1.88),
+    Ang = Angle(0.0, -0,0),
+    Midpoint = { -- Where the gun should be at the middle of it's irons
+        Pos = Vector(0, 15, -4),
+        Ang = Angle(0, 0, -45),
+    },
+    Magnification = 1.1,
+}
+
+
+
+SWEP.CrouchPos = Vector(0, 0, 0)
+SWEP.CrouchAng = Angle(0, 0, 0)
+
+SWEP.BarrelOffsetHip = Vector(2, 0, -5)
+SWEP.BarrelOffsetSighted = Vector(0, 0, -1.7)
+SWEP.BarrelOffsetCrouch = Vector(-1, 0, 10)
+
+SWEP.MirrorVMWM = true
+SWEP.WorldModelOffset = {
+    Pos = Vector(-3, 4, -5),
+    Ang = Angle(-10, 2, 180),
+    Scale = 1
+}
+
 -- Firing sounds --
-local ak = "saa/ak2022/new/ak74/ak74_eft_"
-local firingsound = {
-    ak .. "01.wav",
-    ak .. "02.wav",
-    ak .. "03.wav",
-    ak .. "04.wav",
-    ak .. "05.wav",
-    ak .. "06.wav",
-    ak .. "07.wav",
-}
-local firingsoundsup = {
-    ak .. "s01.wav",
-    ak .. "s02.wav",
-    ak .. "s03.wav",
-    ak .. "s04.wav",
-    ak .. "s05.wav",
-    ak .. "s06.wav",
-    ak .. "s07.wav",
-}
-local firstfire = ak .. "single_0"
+local scar = "saaswat/m590a1/"
+local m3 = "arc9/weapons-eu1/m3/"
+local ak = scar .. "firing/"
+local ks23 = "saa/ks23/"
 
-local path_g3 = "nigga balls"
-local akm = "saa/ak2022/new/remade/akm_eft_"
-SWEP.ShootSound = {
-        "shared/base/ak74/segmented_ak74/ak74_loop_stereo_default_initial_01.wav",
-        "shared/base/ak74/segmented_ak74/ak74_loop_stereo_default_initial_02.wav",
-        "shared/base/ak74/segmented_ak74/ak74_loop_stereo_default_initial_03.wav",
-        "shared/base/ak74/segmented_ak74/ak74_loop_stereo_default_initial_04.wav",
-        "shared/base/ak74/segmented_ak74/ak74_loop_stereo_default_initial_05.wav",
-        "shared/base/ak74/segmented_ak74/ak74_loop_stereo_default_initial_06.wav",
-        "shared/base/ak74/segmented_ak74/ak74_loop_stereo_default_initial_07.wav",
-        "shared/base/ak74/segmented_ak74/ak74_loop_stereo_default_initial_08.wav",
-        "shared/base/ak74/segmented_ak74/ak74_loop_stereo_default_initial_09.wav",
-        "shared/base/ak74/segmented_ak74/ak74_loop_stereo_default_initial_10.wav",
-        "shared/base/ak74/segmented_ak74/ak74_loop_stereo_default_initial_11.wav",
-        "shared/base/ak74/segmented_ak74/ak74_loop_stereo_default_initial_12.wav",
-        "shared/base/ak74/segmented_ak74/ak74_loop_stereo_default_initial_13.wav",
-        "shared/base/ak74/segmented_ak74/ak74_loop_stereo_default_initial_14.wav",
-        "shared/base/ak74/segmented_ak74/ak74_loop_stereo_default_initial_15.wav",
+SWEP.ShootSound = ks23 .. "ks23_alt_1.wav"
+SWEP.LayerSound = {
+    ks23 .. "ks23_1_o1.wav",
+    ks23 .. "ks23_1_o2.wav"
 }
-SWEP.DistantShootSound =  {
-            "shared/base/ak74/segmented_ak74/ak74_loop_stereo_default_initial_tail_01.wav",
-            "shared/base/ak74/segmented_ak74/ak74_loop_stereo_default_initial_tail_02.wav",
-            "shared/base/ak74/segmented_ak74/ak74_loop_stereo_default_initial_tail_03.wav",
-            "shared/base/ak74/segmented_ak74/ak74_loop_stereo_default_initial_tail_04.wav",
-            "shared/base/ak74/segmented_ak74/ak74_loop_stereo_default_initial_tail_05.wav",
-    }
-
--- SWEP.FirstShootSoundSilenced = {"smc/weapons/bocw/m60/M60_S" .. math.random(1, 6) .. ".wav"}
-SWEP.ShootSoundSilenced = firingsoundsup
-SWEP.DistantShootSoundSilenced =
-{
-    firstfire .. "1.wav",
-    firstfire .. "2.wav",
-    firstfire .. "3.wav",
-    firstfire .. "4.wav",
-    firstfire .. "5.wav",
-    firstfire .. "6.wav",
-    
+SWEP.ShootSoundSilenced = ks23 .. "ks23_2.wav"
+SWEP.LayerSoundSilenced = {
+    ks23 .. "ks23_2_o1.wav",
+    ks23 .. "ks23_2_o2.wav"
 }
 
-SWEP.Hook_TranslateAnimation = function(swep, anim)
-    local elements = swep:GetElements()
-
-    if elements["drum_75"] then
-        return anim .. "_drum"
-end
-end
-
-
+SWEP.ShootSoundIndoor = ks23 .. "ks23_1.wav"
+SWEP.LayerSoundIndoor = ks23 .. "ks23_1_i1.wav"
+SWEP.ShootSoundSilencedIndoor = ks23 .. "ks23_2.wav"
+SWEP.LayerSoundSilencedIndoor = ks23 .. "ks23_2_i1.wav"
 -- Animations --
-local foley = "saa/ak2022/aks_foley_"
-local drum = "saa/ak2022/global_drummag_mag_"
-SWEP.RicochetAngleMax = 45 -- Maximum angle at which a ricochet can occur. Between 1 and 90. Angle of 0 is impossible but would theoretically always ricochet.
-SWEP.RicochetChance = 0.1 -- If the angle is right, what is the chance that a ricochet can occur?
-local mech = "saa/ak2022/mech/fnfal_mech_loop_"
-local mechtable = {
-    mech .. "01.ogg",
-    mech .. "02.ogg",
-    mech .. "03.ogg",
-    mech .. "04.ogg",
-    mech .. "05.ogg",
-    mech .. "06.ogg",
-    mech .. "07.ogg",
-    mech .. "08.ogg",
-    mech .. "09.ogg",
-    mech .. "10.ogg",
+local foley = m3 .. "foley/"
+
+
+local trigger = {
+    foley .. "weap_charlie725_fire_first_plr_01.wav",
+    foley .. "weap_charlie725_fire_first_plr_02.wav",
+    foley .. "weap_charlie725_fire_first_plr_03.wav",
+    foley .. "weap_charlie725_fire_first_plr_04.wav",
+    foley .. "weap_charlie725_fire_first_plr_05.wav",
+    foley .. "weap_charlie725_fire_first_plr_06.wav",
+
 }
-local trigger = "saa/ak2022/new/ak74/weap_akilo47_fire_first_plr_"
-local triggertable = {
-    trigger .. "01.wav",
-    trigger .. "02.wav",
-    trigger .. "03.wav",
-    trigger .. "04.wav",
-    trigger .. "05.wav",
-    trigger .. "06.wav",
 
+local pumpback = {
+    foley .. "wfoly_sh_romeo870_rechamber_v2_01" .. "a.wav",
+    foley .. "wfoly_sh_romeo870_rechamber_v2_01" .. "b.wav",
+    foley .. "wfoly_sh_romeo870_rechamber_v2_01" .. "c.wav",
 
+}
+
+local pumpforward = {
+    foley .. "wfoly_sh_romeo870_rechamber_v2_02" .. "a.wav",
+    foley .. "wfoly_sh_romeo870_rechamber_v2_02" .. "b.wav",
+    foley .. "wfoly_sh_romeo870_rechamber_v2_02" .. "c.wav",
+    foley .. "wfoly_sh_romeo870_rechamber_v2_02" .. "d.wav",
+
+}
+
+local shellin_0 = foley .. "m3_ammo_load0.ogg"
+
+local shellin = {
+    foley .. "m3_ammo_load1.ogg",
+    foley .. "m3_ammo_load2.ogg",
+    foley .. "m3_ammo_load3.ogg",
+    foley .. "m3_ammo_load4.ogg",
+}
+local mechs = ak .. "usp_bolt.wav"
+local mechtable = {
+    ")" .. m3 .. "m99_mech_end_01.wav",
 }
 
 SWEP.Hook_TranslateAnimation = function(swep, anim)
     local elements = swep:GetElements()
-
-    if elements["n_handguard"] then
-        return anim .. "_m"
-    elseif elements["ak74m_handguard"] then
-        return anim .. "_m"
-    elseif elements["ak74_handguard"] then
-        return anim .. "_m"
-    end
+    if !IsFirstTimePredicted() then return end
 end
-
 
 SWEP.Animations = {
--- draw holster idle
-    ["idle"] = {
-        Source = "idle",
-    },
-
--- fire & trigger
-
-    ["trigger"] = {
-        Source = "idle",
+    ["draw"] = {
+        Source = "draw",
         EventTable = {
-            {s = triggertable, t = 0, p = 120,}
-        }
+            {s = foley .. "equip_1.ogg",    t = 0},
+        },
+    },
+    ["holster"] = {
+        Source = "base_holster",
+        EventTable = {
+            {s = foley .. "holster_1.ogg",    t = 0},
+        },
+    },
+    ["idle"] = {
+        Source = "base_idle",
+    },
+    ["trigger"] = {
+        Source = "base_idle",
+        EventTable = {
+            {s = trigger,  p = 100, v = 1, t = 0},
+           },
+    },
+    ["trigger_empty"] = {
+        Source = "base_idle_empty",
+        EventTable = {
+            {s = "saa/newsvd/handling/asval_magrelease.wav",  p = 50, v = 0.2, t = 0},
+            {s = "saa/newsvd/handling/svd_fireselect_1.wav",  p = 100, v = 0.8, t = 0}
+           },
     },
     ["fire"] = {
         Source = "fire",
-        Mult = (600/650),
+        Mult = 1,
+        MinProgress = 0.9,
         ShellEjectAt = 0.01,
         EventTable = {
-            {
-            FOV = 2,
+            {s = mechtable,    t = 0, v= 1.0, p = 150},
+           {
+            FOV = -4,
             FOV_Start = 0.05,
-            FOV_End = 0.375,
+            FOV_End = 0.8,
             FOV_FuncStart = ARC9.Ease.OutCirc,
             FOV_FuncEnd = ARC9.Ease.InCirc,
             t = 0.0,
@@ -395,196 +381,169 @@ SWEP.Animations = {
         },
     },
     ["cycle"] = {
-        Source = "cycle",
-        Mult = (600/650),
+        Source = {"cycle", "cycle2"},
+        Mult = 0.7,
+        MinProgress = 0.8,
         ShellEjectAt = 0.01,
         EventTable = {
-            {
-            FOV = 2,
+            {s = pumpback,    t = 0.1, v= 0.7, p = 120},
+            {s = foley .. "pumpback.ogg",    t = 0.15, v= 0.1, p = 100},
+            {s = pumpforward,    t = 0.35, v= 0.9, p = 130},
+            {s = foley .. "pumpforward.ogg",    t = 0.35, v= 0.1, p = 100},
+        },
+    },
+    ["ready"] = {
+        Source = "base_ready",
+        EventTable = {
+            {s = foley .. "equip_1.ogg",    t = 0},
+            {s = pumpback,    t = 0.7, v= 0.7, p = 120},
+            {s = foley .. "pumpback.ogg",    t = 0.75, v= 0.0, p = 100},
+            {s = pumpforward,    t = 1.1, v= 0.9, p = 130},
+            {s = foley .. "pumpforward.ogg",    t = 1.1, v= 0.1, p = 100},
+            {s = foley .. "holster_1.ogg",    t = 1.35, v= 0.1},
+
+        },
+    },
+    ["fire_iron"] = {
+        Source = {"fire"},
+        Mult = 1.4,
+        ShellEjectAt = 0.01,
+        EventTable = {
+            {s = mechtable,    t = 0, v = 1.0,p = 150},
+           {
+            FOV = -4,
             FOV_Start = 0.05,
-            FOV_End = 0.375,
+            FOV_End = 0.8,
             FOV_FuncStart = ARC9.Ease.OutCirc,
             FOV_FuncEnd = ARC9.Ease.InCirc,
             t = 0.0,
             },
         },
     },
--- reloads
-    ["reload_insert"] = {
-        Source = "reload",
-        MinProgress = 0.1,
+    ["cycle_iron"] = {
+        Source = {"cycle", "cycle2" },
+        Mult = 0.6,
+        ShellEjectAt = 0.01,
         EventTable = {
-
+            {s = pumpback,    t = 0.1, v= 0.7, p = 120},
+            {s = scar .. "pumpback.wav",    t = 0.15, v= 0.1, p = 100},
+            {s = pumpforward,    t = 0.35, v= 0.9, p = 130},
+            {s = scar .. "pumpforward.wav",    t = 0.35, v= 0.1, p = 100},
         },
     },
     ["reload_start"] = {
-        Source = "reload_loop",
+        Source = "reload_intro",
+        Mult = 0.98,
+        MinProgress = 3,
         EventTable = {
+            {s = scar .. "wfoly_sh_romeo870_reload_loop_loadportend.wav",    t = 0.1},
+        },
+    },
+    ["reload_insert"] = {
+        Source = "reload_loop",
+        Mult = 0.8,
+        MinProgress = 0.7,
+        EventTable = {
+            {s = shellin,    t = 0.2, v= 1.0},
+            {s = shellin_0,    t = 0.1, v= 0.1, p = 130},
 
         },
-    },  
+    },
     ["reload_finish"] = {
         Source = "reload_outro",
+        Mult = 0.98,
+        MinProgress = 3,
         EventTable = {
-
+            {s = scar .. "wfoly_sh_romeo870_reload_loop_loadportend.wav",    t = 0.17},
         },
     },
     ["reload_finish_empty"] = {
         Source = "reload_outro_empty",
+        Mult = 0.98,
+        MinProgress = 3,
         EventTable = {
-
+            {s = scar .. "wfoly_sh_romeo870_reload_loop_loadportend.wav",    t = 0.17},
+            {s = pumpback,    t = 0.1+0.7, v= 0.7, p = 120},
+            {s = scar .. "pumpback.wav",    t = 0.15+0.7, v= 0.1, p = 100},
+            {s = pumpforward,    t = 0.35+0.8, v= 0.9, p = 130},
+            {s = scar .. "pumpforward.wav",    t = 0.35+0.8, v= 0.1, p = 100},
         },
     },
 }
-
 SWEP.Attachments = {
-    {
-        PrintName = "Muzzle",
-        Category = {"muzzle", "suppressor"},
-        Bone = "body",
-        InstalledElements = {"no_muzzle"},
-        ExcludeElements = {"blockmuzzle"},
-        Pos = Vector(25.9, -2.05, 0),
-        Ang = Angle(0, 0, 270),
-        Scale = 1,
-    },
-    {
-        PrintName = "Dust Cover",
-        Category = {"saa_ak74_dustcover"},
-        Installed = "saa_ak74_dustcover",
-        Bone = "body",
-        Pos = Vector(5, -3.75, 0),
-        Ang = Angle(0, 0, 0),
-        Scale = 1,
-    },
-    {
-        PrintName = "Gas Port",
-        Category = {"saa_ak74_gp"},
-        Installed = "saa_ak74_gasport",
-        Bone = "body",
-        Pos = Vector(14.225, -3.7, 0),
-        Ang = Angle(0, 0, 0),
-        Scale = 1,
-    },
-    {
-        PrintName = "Stock",
-        Category = {"saa_ak74_stock"},
-        Installed = "saa_ak74_stock",
-        Bone = "body",
-        Pos = Vector(-3, -2.5, 0),
-        Ang = Angle(0, 0, 0),
-        Scale = 1,
-    },
-    {
-        PrintName = "Receiver",
-        Category = {"saa_ak74_receiver"},
-        Bone = "body",
-        Pos = Vector(1.8, -2.25, 0),
-        Ang = Angle(0, 0, 0),
-        Scale = 1,
-    },
-    {
-        PrintName = "Ironsights",
-        Category = {"saa_ak74_irons"},
-        Installed = "saa_ak74_ironsights",
-        Bone = "body",
-        Pos = Vector(10.5, -4.5, 0),
-        Ang = Angle(0, 0, 0),
-        Scale = 1,
-    },
-    {
-        PrintName = "Handguard",
-        Category = {"saa_ak74_hg"},
-        Installed = "saa_ak74_handguard",
-        Bone = "body",
-        Pos = Vector(13, -2.35, 0),
-        Ang = Angle(0, 0, 0),
-        Scale = 1,
-    },
-    {
-        PrintName = "Pistol Grip",
-        Category = {"saa_ak74_pg"},
-        Bone = "body",
-        Pos = Vector(0, 0, 0),
-        Ang = Angle(0, 0, 0),
-        Scale = 1,
-    },
+   {
+       PrintName = "MUZZLE",
+       Category = { "suppressor"},
+       InstalledElements = nil,
+       ExcludeElements = {"barrel_change"},
+       Bone = "A_Suppressor",
+       Pos = Vector(-0.2, 0, 0),
+       Ang = Angle(0, 90, 0),
+
+       Scale = 1,
+   },
+   {
+       PrintName = "Barrel",
+       Category = { "saa_ks23_barrel"},
+       DefaultIcon = Material("hud/arc9_saa/rus/ks23_br_alt.png", "mips smooth"),
+       InstalledElements = nil,
+       Bone = "b_wpn",
+       Pos = Vector(-0.2, 0.6, 0.7),
+       Ang = Angle(0, 0, 0),
+
+       Scale = 1,
+   },
+   {
+       PrintName = "Roof Plate",
+       Category = { "saa_ks23_iron"},
+       DefaultIcon = nil,
+       InstalledElements = nil,
+       Bone = "b_wpn",
+       Pos = Vector(0, -4.5, 2),
+       Ang = Angle(0, 0, 0),
+
+       Scale = 1,
+   },
+   {
+       PrintName = "Stock",
+       Category = { "saa_ks23_stock"},
+       DefaultIcon = Material("hud/arc9_saa/rus/ks23_stock.png", "mips smooth"),
+       InstalledElements = nil,
+       Bone = "b_wpn",
+       Pos = Vector(-0.2, -10, 0),
+       Ang = Angle(0, 0, 0),
+
+       Scale = 1,
+   },
 }
 
-SWEP.NoSprintWhenLocked = true
-
-SWEP.DefaultBodygroups = "0000000000"
+SWEP.DefaultBodygroups = "00010000000"
 SWEP.AttachmentElements = {
-    ["no_muzzle"] = {
-        Bodygroups = {
-            {9, 1},
-        },
-    },
-    ["aks74_receiver"] = {
+    ["ks23m"] = {
         Bodygroups = {
             {2, 1},
-            {11, 1},
         },
     },
-    ["ak74_stock"] = {
+    ["irons"] = {
         Bodygroups = {
-            {11, 0},
+            {3, 0},
         },
     },
-    ["ak74_ironsights"] = {
+    ["700mm"] = {
         Bodygroups = {
-            {4, 0},
+            {1, 1},
         },
-    },
-    ["dustcover_ak74"] = {
-        Bodygroups = {
-            {6, 0},
-        },
-    },
-    ["dustcover_ak74m"] = {
-        Bodygroups = {
-            {6, 1},
-        },
-    },
-    ["n_handguard"] = {
-        Bodygroups = {
-            {7, 1},
-        },
-    },
-    ["n_gasport"] = {
-        Bodygroups = {
-            {8, 1},
-        },
-    },
-    ["ak74m_handguard"] = {
-        Bodygroups = {
-            {7, 2},
-        },
-    },
-    ["ak74_handguard"] = {
-        Bodygroups = {
-            {7, 0},
-        },
-    },
-    ["ak74m_gasport"] = {
-        Bodygroups = {
-            {8, 2},
-        },
-    },
-    ["ak74_gasport"] = {
-        Bodygroups = {
-            {8, 0},
-        },
-    },
-    ["dovetail"] = {
-        Bodygroups = {
-            {3, 1},
-        },
-    },
-    ["deuter_dovetail"] = {
-        Bodygroups = {
-            {3, 2},
+        AttPosMods = {
+            [1] = {
+                Pos = Vector(-0.2, -8.5, 0),
+            }
         },
     },
 }
 
+SWEP.Hook_ModifyBodygroups = function(wep, data)
+    local model = data.model
+    if !model then return end
+    if wep:HasElement("ks23m") and wep:HasElement("wire") then model:SetBodygroup(2, 2) end
+
+end

@@ -23,7 +23,7 @@
 
 Proxies
 {
-    SAA_CubemapLightMult
+    SAA_CubemapTintMult
     {
         multiplier	$envmapcoefficient // Use our value for default envmap tint
         resultvar	$envmaptint // Write final output to $envmaptint

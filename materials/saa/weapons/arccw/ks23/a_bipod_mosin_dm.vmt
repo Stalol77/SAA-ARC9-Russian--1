@@ -1,0 +1,33 @@
+"VertexLitGeneric"
+{
+	"$basetexture"				"saa\weapons\arccw\SVD\textures\bipod\a_bipod_mosin_dm"
+	"$bumpmap"					"saa\weapons\arccw\SVD\textures\bipod\a_bipod_mosin_nm"
+	"$phongexponenttexture"		"saa\weapons\arccw\SVD\textures\bipod\a_bipod_mosin_e"
+	"$phongwarptexture"			"models\weapons\saa\shared\lightwarps\phongwarp_metal"
+	"$color2"					"[0. 0. 0.]"
+	"$blendTintByBaseAlpha"		"1"
+	"$phong"					"1"
+	"$phongboost"				"6"
+	"$phongfresnelranges"		"[0.32 0.72 0.99]"
+	"$phongalbedotint" 			"1"
+	"$nocull"					"1"
+
+	"$rimlight"					"1"
+	"$rimlightexponent"			"33"
+	"$rimlightboost"			"0.3"
+	"$rimmask"					"1"
+	"$envmap" 			"models\weapons\envmaps\fo4_dith"
+	"$normalmapalphaenvmapmask" 	"1"
+	"$envmaptint"			"[0.5 0.5 0.5]"
+	"$envmapcoefficient"	"0.2" // Lighting will be multiplied by this value
+	"$colorcoefficient"	"0.3" // Lighting will be multiplied by this value
+Proxies
+{
+    SAA_CubemapTintMult
+    {
+        multiplier	$envmapcoefficient
+        resultvar	$envmaptint
+    }
+
+}
+}
