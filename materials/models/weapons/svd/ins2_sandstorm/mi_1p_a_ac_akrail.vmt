@@ -1,0 +1,13 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models\weapons\svd\ins2_sandstorm\misc\T_1P_A_AC_AKSideRail_D"
+	"$bumpmap" "models\weapons\svd\ins2_sandstorm\misc\T_1P_A_AC_AKSideRail_N"
+	"$phongexponenttexture" "models\weapons\svd\ins2_sandstorm\misc\T_1P_A_AC_AKSideRail_M_Flip_R"
+	"$color2" "[ 0.65 0.65 0.65]"
+	"$phong" "1"
+	"$phongboost" "2"
+	"$phongexponent" "20"		
+	"$phongfresnelranges"	"[0.25 0.5 0.7]"
+	"$normalmapalphaenvmapmask" 	"1"
+}
+

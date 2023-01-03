@@ -662,7 +662,7 @@ SWEP.Attachments = {
         PrintName = "MUZZLE",
         Category = {"saa_54r_muz"},
         InstalledElements = {"muzzleattached"},
-        Bone = "Weapon",
+        Bone = "b_wpn",
         Pos = Vector(0, 26.35, 0.6),
         Ang = Angle(0, 270, 0),
         Scale = 0.8,
@@ -670,7 +670,7 @@ SWEP.Attachments = {
     {
         PrintName = "Handguard",
         Category = {"saa_svd_handguard"},
-        Bone = "Weapon",
+        Bone = "b_wpn",
         Pos = Vector(0, 10, 1),
         Ang = Angle(0, 270, 0),
         Scale = 1,
@@ -678,7 +678,7 @@ SWEP.Attachments = {
     {
         PrintName = "Barrel",
         Category = {"SAA_SVD_BARREL"},
-        Bone = "Weapon",
+        Bone = "b_wpn",
         Pos = Vector(0, 21.8, 0.6),
         Ang = Angle(0, 270, 0),
         Scale = 1,
@@ -686,7 +686,7 @@ SWEP.Attachments = {
     {
         PrintName = "TACTICAL",
         Category = {"clamped"},
-        Bone = "Weapon",
+        Bone = "b_wpn",
         Pos = Vector(-0.025, 19.3, 0.4),
         Ang = Angle(0, 270, 180),
         Scale = 0.7,
@@ -694,7 +694,7 @@ SWEP.Attachments = {
     {
         PrintName = "Underbarrel",
         Category = {"saa_svd_underbarrel", "SAA_FOREGRIP_RAIL"},
-        Bone = "Weapon",
+        Bone = "b_wpn",
         Pos = Vector(0, 10, -0.5),
         Ang = Angle(0, 270, 180),
         Scale = 1,
@@ -703,7 +703,7 @@ SWEP.Attachments = {
         PrintName = "Dovetail",
         Category = {"SAA_SVD_DOVETAIL"},
         ExcludeElements = {"nodovetailoptics"},
-        Bone = "Weapon",
+        Bone = "b_wpn",
         Pos = Vector(0.81, -0.5, 0.1),
         Ang = Angle(0, 270, 0),
         Scale = 0.8,
@@ -711,7 +711,7 @@ SWEP.Attachments = {
     {
         PrintName = "Dustcover",
         Category = {"SAA_SVD_DUSTCOVER"},
-        Bone = "Weapon",
+        Bone = "b_wpn",
         Pos = Vector(0.1, 1.3, 1),
         Ang = Angle(0, 270, 0),
         Scale = 1,
@@ -719,15 +719,24 @@ SWEP.Attachments = {
     {
         PrintName = "Stock",
         Category = {"saa_svd_stock"},
-        Bone = "Weapon",
+        Bone = "b_wpn",
         Pos = Vector(0.7, -4, -0.1),
         Ang = Angle(0, 270, 0),
         Scale = 1,
     },
     {
+        PrintName = "magazine",
+        Category = {"saa_svd_mag"},
+        Bone = "b_wpn_mag",
+        Pos = Vector(0, 0, 4),
+        Ang = Angle(0, 00, 0),
+        Scale = 1,
+    },
+    {
+
        PrintName = "Ammo",
        Category = {"saa_54r_ammo"},
-       Bone = "Magazine",
+       Bone = "b_wpn_mag",
        Pos = Vector(0, 0, 1.9),
        Ang = Angle(0, 0, 0),
 
@@ -744,6 +753,12 @@ SWEP.AttachmentElements = {
            {1, 1},
        },
    },
+   ["svd_20"] = {
+       Bodygroups = {
+           {7, 1},
+       },
+   },
+
    ["svds_stock"] = {
        Bodygroups = {
            {1, 2},

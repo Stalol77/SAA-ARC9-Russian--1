@@ -144,3 +144,29 @@ ATT.AimDownSightsTimeMult = 0.995
 ATT.ActivateElements = {"bipod"}
 
 ARC9.LoadAttachment(ATT, "saa_svd_bipod")
+
+
+-- start here
+
+ATT = {}
+
+ATT.PrintName = "SVD 7.62x54R 20-round magazine"
+ATT.CompactName = "20 SVD MA"
+ATT.Description = [[Classic Steel Magazine. Jams more easily but offers 10 extra rounds compared to the standard issue ones.]]
+
+
+ATT.SortOrder = 0
+ATT.Category = "saa_svd_mag"
+
+ATT.ReloadTimeMult = 1.075
+ATT.RecoilSideMult = 1.1
+ATT.ClipSizeOverride = 20
+ATT.SpeedMult = 0.95
+
+
+ATT.ActivateElements = {"svd_20"}
+
+ARC9.LoadAttachment(ATT, "saa_svd_20_steel")
+
+-- end here
+

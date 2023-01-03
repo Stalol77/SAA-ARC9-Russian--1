@@ -1,0 +1,16 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models\weapons\svd\ins2_sandstorm\svd\T_1P_SVD_D"
+	"$bumpmap" "models\weapons\svd\ins2_sandstorm\svd\T_1P_SVD_N"
+	"$phongexponenttexture" "models\weapons\svd\ins2_sandstorm\svd\T_1P_SVD_M"
+	"$color2"	"[0.8 0.8 0.8]"
+	"$phong" "1"
+	"$phongboost" "3"
+	"$phongexponent" "20"		
+	"$phongfresnelranges"	"[0.4 0.5 0.7]"
+	"$normalmapalphaenvmapmask" 	"1"
+	"$rimmask" 1
+	"$rimlight"               1
+	"$rimlightexponent"       20
+	"$rimlightboost"          0.2
+}
