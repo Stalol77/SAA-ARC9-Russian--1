@@ -1,0 +1,30 @@
+patch
+{
+include "materials\models\weapons\sling\weapon_sling_leather_shared.vmt"
+
+insert
+{
+//MAP INPUT
+	"$basetexture"					"models\weapons\sling\weapon_slingparts_dm"
+	"$bumpmap" 						"models\weapons\sling\weapon_slingparts_nm"
+	
+//CW Tan #1 --Enfield/Bren/Ithaca
+//"$color"						"[ 4 2 .5 ]"
+
+//CW Tan #2 --Sten
+//"$color"						"[ 6 3.5 .9 ]"
+
+//US Green #1 --SPRING/M1/BAR/CARB
+//"$color"						"[ 1.35 1.35 0 ]"
+
+//US Tan #1 --THOMPSON
+//"$color"						"[ 2.2 1.15 .2 ]"
+
+//German Leather #1 --K98/G43
+//"$color"						"[ 1.25 .7 .1 ]"
+
+//German Leather #2 --MP40/STG44/C96
+"$color"						"[ 1.8 1.5 1.1 ]"
+}
+
+}

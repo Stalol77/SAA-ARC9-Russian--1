@@ -1,0 +1,19 @@
+"VertexLitGeneric"
+{
+//BASIC
+	"$model"						"1"
+	
+//PHONG
+	"$phong"                        "1"
+	"$phongtint"                    "[ 1 1 1 ]"
+	"$phongboost"                   "20"
+	"$phongexponent"				"15"
+	"$phongfresnelranges"           "[ 0 .5 1 ]"
+
+//ENVMAP
+	"$envmap"                       "env_cubemap"
+	"$envmapfresnel" 				"1"
+	"$normalmapalphaenvmapmask" 	"1"
+	"$envmaptint"                   "[.06 .06 .06]"
+
+}

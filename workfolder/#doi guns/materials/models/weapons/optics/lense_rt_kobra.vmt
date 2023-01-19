@@ -1,0 +1,22 @@
+"VertexLitGeneric"
+{
+	"$basetexture"	"models\weapons\optics\lense_rt"
+	"$nocull" 	"1"
+	"$model" "1"
+	
+	$selfillum	1
+	$selfillumtint "[0.5 0.5 0.5]"
+	
+	"Proxies"
+	{
+		"Scope"
+		{
+			"textureScrollVar" 	"$baseTextureTransform"
+			"fieldOfView"	"10"
+			"scopeGeometry"	"1" // 1 / sin( arctan( radius / ( 2 * length ) ) )
+			"crosshairTexture"	"models/weapons/lense/crosshair_m14"
+		}
+	}
+}
+
+

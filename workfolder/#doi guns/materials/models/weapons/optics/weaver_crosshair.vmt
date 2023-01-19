@@ -1,0 +1,5 @@
+"UnlitGeneric"
+{
+	"$basetexture"	"models\weapons\optics\weaver_crosshair"
+	"$translucent" 	"1"
+}

@@ -1,0 +1,24 @@
+"UnlitGeneric"
+{
+	"$basetexture"	"models\weapons\optics\parallax_mask"
+	"$translucent" 	"1"
+	"$ignorez"	"1"
+	"$nocull"	"1"
+	"$nodecal"	"1"
+	
+	"Proxies"
+	{
+		"ScopeGeometry"
+		{
+			"textureScrollVar" 		"$basetexturetransform"
+			"scopeGeometry"			".75" // 1 / sin( arctan( radius / ( 2 * length ) ) )
+			"scopeGeometryZoomed"		"1.5"
+			"textureScale"			"1.75"
+			"textureScaleZoomed" 		"0.74"
+			
+			"parallaxAngleX"			"40" // Total degrees difference between scope/eyes for the mask to totally obscure
+			"parallaxAngleY"			"25"
+			"parallaxExponent"			"1" // Exponent applied to parallax angle for non-linear mask translation.
+		}
+	}
+}

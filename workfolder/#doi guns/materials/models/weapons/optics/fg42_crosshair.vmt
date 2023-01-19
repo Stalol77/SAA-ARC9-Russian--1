@@ -1,0 +1,5 @@
+"UnlitGeneric"
+{
+	"$basetexture"	"models\weapons\optics\kar98k_crosshair"
+	"$translucent" 	"1"
+}

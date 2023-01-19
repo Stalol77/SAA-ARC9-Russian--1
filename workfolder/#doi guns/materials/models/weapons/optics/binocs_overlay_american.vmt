@@ -1,0 +1,5 @@
+"UnlitGeneric"
+{
+	"$basetexture"	"models\weapons\optics\binocs_overlay_american"
+	"$translucent" 	"1"
+}

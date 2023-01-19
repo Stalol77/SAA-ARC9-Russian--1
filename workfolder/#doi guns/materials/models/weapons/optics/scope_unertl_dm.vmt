@@ -1,0 +1,17 @@
+"VertexLitGeneric"
+{
+	"$basetexture"				"models\weapons\optics\scope_unertl_dm"
+	"$bumpmap"					"models\weapons\optics\scope_unertl_nm"
+
+	"$phong"  				"1"
+	"$phongexponent" 		"38"
+	"$phongboost" 			"1.75"
+	"$phongfresnelranges"	"[1 2 3]"
+	"$phongtint" 			"[0.6 0.8 1]"
+	"$phongalbedotint" 		"1"	
+
+	"$envmapfresnel"	"0.5"
+	"$envmap"			"env_cubemap"
+	"$envmaptint"		"[0.1 0.1 0.1]"
+	"$normalmapalphaenvmapmask"	"1"
+}
