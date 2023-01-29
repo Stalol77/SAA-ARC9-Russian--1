@@ -1232,6 +1232,11 @@ SWEP.AttachmentElements = {
             {4, 7},
         },
     },
+    ["b19_gasport"] = {
+        Bodygroups = {
+            {3, 8},
+        },
+    },
     ["magpul_grip"] = {
         Bodygroups = {
             {5, 3},

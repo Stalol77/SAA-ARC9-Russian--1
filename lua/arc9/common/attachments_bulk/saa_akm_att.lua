@@ -362,6 +362,7 @@ ATT = {}
 ATT.PrintName = "Zenitco B-11 Handguard"
 ATT.CompactName = "B-11"
 ATT.Description = [[Handguard produced by private companies. Fitted with a sleek steel design, allows for a quicker heat dissipation and underbarrel attachments at the cost of a higher recoil.]]
+ATT.Icon = Material("hud/arc9_saa/rus/b11.png", "mips smooth")
 
 
 ATT.SortOrder = 1
@@ -382,6 +383,14 @@ ATT.Attachments = {
         Ang = Angle(0, 270, 180),
         Icon_Offset = Vector(0, 0, 0),
         Scale = 1
+    },
+    {
+        PrintName = "Right Tactical",
+        Category = {"saa_rail_tactical"},
+        Pos = Vector(1.05, 2., 0.35),
+        Ang = Angle(0, 270, 90),
+        Icon_Offset = Vector(0, 0, 0),
+        Scale = 0.8
     },
 }
 
@@ -1104,6 +1113,41 @@ ATT.Attachments = {
 }
 
 ARC9.LoadAttachment(ATT, "saa_ak_alphagp")
+
+-- end here
+
+-- start here
+
+ATT = {}
+
+ATT.PrintName = "Zenitco B-19 Gas Port"
+ATT.CompactName = "B-19"
+ATT.Description = [[Gas port produced by private companies. Its sleek aluminum structure enhances the heat capacity and dissipation.]]
+ATT.Icon = Material("hud/arc9_saa/rus/b19.png", "mips smooth")
+
+
+ATT.SortOrder = 1
+ATT.Category = "saa_ak_gp"
+ATT.Sway = 1.065
+ATT.SprintToFireTimeMult = 1.05
+ATT.RecoilMult = 0.985
+ATT.HeatCapacityMult = 1.225
+ATT.HeatDissipationMult = 1.15
+ATT.Cons = {"Using a Top Barrel attachment might render aiming", "down sights difficult. High-Profile Optics are ", "very recommended."}
+ATT.ActivateElements = {"b19_gasport"}
+
+ATT.Attachments = {
+    {
+        PrintName = "Top Barrel",
+        Category = { "saa_rail_tactical", "SAA_SCOPE_XS"},
+        Pos = Vector(-0.225, 0, -0.3),
+        Ang = Angle(0, 270, 0),
+        Icon_Offset = Vector(0, 0, 0),
+        Scale = 0.9
+    },
+}
+
+ARC9.LoadAttachment(ATT, "saa_ak_b19")
 
 -- end here
 

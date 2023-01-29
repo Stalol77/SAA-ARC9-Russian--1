@@ -889,6 +889,11 @@ SWEP.AttachmentElements = {
             {2, 1},
         },
     },
+    ["b19_gasport"] = {
+        Bodygroups = {
+            {3, 8},
+        },
+    },
     ["n_gasport"] = {
         Bodygroups = {
             {3, 5},
