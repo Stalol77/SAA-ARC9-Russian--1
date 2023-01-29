@@ -63,6 +63,7 @@ ATT.PrintName = "Zenitco Alpha AK Dustcover"
 ATT.CompactName = "Zenit Alpha Cover"
 ATT.Description = [[Dust cover produced by private companies to allow mainly reflex sight usage. Is not fitted for long range optics.]]
 ATT.Pros = {"Allows for Picatinny Railed Optic use"}
+ATT.Icon = Material("hud/arc9_saa/rus/alpha_cover.png", "mips smooth")
 
 ATT.SortOrder = 1
 ATT.Category = "saa_ak_dustcover"
@@ -98,6 +99,7 @@ ATT.PrintName = "Herax Railed AK Dustcover"
 ATT.CompactName = "Herax Cover"
 ATT.Description = [[Dust cover produced by private companies to allow mainly reflex sight usage. Conflicts with rear ironsights.]]
 ATT.Pros = {"Allows for Picatinny Railed Optic use"}
+ATT.Icon = Material("hud/arc9_saa/rus/AMGP_cover.png", "mips smooth")
 
 ATT.SortOrder = 1
 ATT.Category = "saa_ak_dustcover"
@@ -214,6 +216,7 @@ ATT = {}
 ATT.PrintName = "Zenitco RK-3 Grip"
 ATT.CompactName = "RK-3"
 ATT.Description = [[Polymer pistol grip built by private companies with ergonomics in mind. Padded internals give it a sturdier yet heavier consistency, reducing felt recoil.]]
+ATT.Icon = Material("hud/arc9_saa/rus/RK3_pg.png", "mips smooth")
 
 
 ATT.SortOrder = 1
@@ -234,6 +237,7 @@ ATT = {}
 ATT.PrintName = "Magpul Pistol Grip"
 ATT.CompactName = "MGP"
 ATT.Description = [[Polymer pistol grip built by private companies with ergonomics in mind.]]
+ATT.Icon = Material("hud/arc9_saa/rus/mgp_pg.png", "mips smooth")
 
 
 ATT.SortOrder = 1
@@ -275,6 +279,7 @@ ATT = {}
 ATT.PrintName = "AK Izhevsk Wood Pistol Grip"
 ATT.CompactName = "AK Wood"
 ATT.Description = [[Early AK Wooden Pistol Grip. Sturdy but great for main hand recoil control.]]
+ATT.Icon = Material("hud/arc9_saa/rus/Wood_PG.png", "mips smooth")
 
 
 ATT.SortOrder = 1
@@ -297,6 +302,7 @@ ATT = {}
 ATT.PrintName = "Zenitco Alpha-L Handguard"
 ATT.CompactName = "Alpha-L"
 ATT.Description = [[Handguard produced by private companies. Fitted with a sleek steel design, allows for a quicker heat dissipation and underbarrel attachments at the cost of a higher recoil.]]
+ATT.Icon = Material("hud/arc9_saa/rus/Alpha_handguard.png", "mips smooth")
 
 
 ATT.SortOrder = 1
@@ -391,6 +397,7 @@ ATT = {}
 ATT.PrintName = "Magpul Handguard"
 ATT.CompactName = "MGP"
 ATT.Description = [[Handguard produced by private companies. Eases aim and .]]
+ATT.Icon = Material("hud/arc9_saa/rus/mgp_handguard.png", "mips smooth")
 
 
 ATT.SortOrder = 1
@@ -593,6 +600,7 @@ ATT = {}
 ATT.PrintName = "7.62x39mm 75 Round Drum Magazine"
 ATT.CompactName = "75 DRUM"
 ATT.Description = [[Popular 75 round design mag mostly used in RPK support rifles. Notably prone to misfeeding jams and logically heavy.]]
+ATT.Icon = Material("hud/arc9_saa/rus/AKM_75rnd.png", "mips smooth")
 
 
 ATT.SortOrder = 0
@@ -612,9 +620,134 @@ ARC9.LoadAttachment(ATT, "saa_akm_75_steel")
 
 ATT = {}
 
+ATT.PrintName = "5.45x39mm 95 Round Promag Drum Magazine"
+ATT.CompactName = "95 PROMAG"
+ATT.Description = [[US production drum magazine that promises a somewhat reliable feeding system along a massive round capacity.]]
+ATT.Icon = Material("hud/arc9_saa/rus/AK74_Promag.png", "mips smooth")
+
+
+ATT.SortOrder = 0
+ATT.Category = "saa_ak74_mag"
+
+ATT.MalfunctionMeanShotsToFailMult = 600/800
+ATT.RecoilSideMult = 1.3
+ATT.ClipSizeOverride = 95
+ATT.SpeedMult = 0.75
+
+ATT.ActivateElements = {"drum_95"}
+
+ARC9.LoadAttachment(ATT, "saa_ak74_promag_95")
+
+-- end here
+
+-- start here
+
+ATT = {}
+
+ATT.PrintName = "5.45x39mm 30-Rounder Polymer Magazine"
+ATT.CompactName = "30-Poly"
+ATT.Description = [[Lighter magazine designed for later 5.45 pattern AK rifles. Less reliable than old-fashion bakelite mags.]]
+ATT.Icon = Material("hud/arc9_saa/rus/AK74_mag.png", "mips smooth")
+
+
+ATT.SortOrder = 0
+ATT.Category = "saa_ak74_mag"
+
+ATT.MalfunctionMeanShotsToFailMult = 700/800
+ATT.RecoilSideMult = 1.1
+ATT.ClipSizeOverride = 30
+ATT.SpeedMult = 5/4.91
+ATT.ReloadTimeMult = 5/5.2
+
+ATT.ActivateElements = {"poly_30"}
+
+ARC9.LoadAttachment(ATT, "saa_ak74_30_poly")
+
+-- end here
+
+-- start here
+
+ATT = {}
+
+ATT.PrintName = "5.45x39mm 45-Rounder Molot Polymer Magazine"
+ATT.CompactName = "45-Molot"
+ATT.Description = [[Lighter magazine designed for later 5.45 pattern AK rifles. Less reliable than old-fashion bakelite mags.]]
+ATT.Icon = Material("hud/arc9_saa/rus/AK74_45_RND.png", "mips smooth")
+
+
+ATT.SortOrder = 0
+ATT.Category = "saa_ak74_mag"
+
+ATT.MalfunctionMeanShotsToFailMult = 750/800
+ATT.RecoilSideMult = 1.3
+ATT.ClipSizeOverride = 45
+ATT.SpeedMult = 5/5.1
+ATT.ReloadTimeMult = 5.3/5
+
+ATT.ActivateElements = {"poly_45"}
+
+ARC9.LoadAttachment(ATT, "saa_ak74_45_poly")
+
+-- end here
+
+-- start here
+
+ATT = {}
+
+ATT.PrintName = "5.45x39mm 45-Rounder RPK Bakelite Magazine"
+ATT.CompactName = "45-RPK"
+ATT.Description = [[Lighter magazine designed for later 5.45 pattern AK rifles. Less reliable than old-fashion bakelite mags.]]
+ATT.Icon = Material("hud/arc9_saa/rus/AK74_45_RND.png", "mips smooth")
+
+
+ATT.SortOrder = 0
+ATT.Category = "saa_ak74_mag"
+
+ATT.MalfunctionMeanShotsToFailMult = 780/800
+ATT.RecoilSideMult = 1.25
+ATT.ClipSizeOverride = 45
+ATT.SpeedMult = 5/5.15
+ATT.ReloadTimeMult = 5.4/5
+
+ATT.ActivateElements = {"bake_45"}
+
+ARC9.LoadAttachment(ATT, "saa_ak74_45_bake")
+
+-- end here
+
+-- start here
+
+ATT = {}
+
+ATT.PrintName = "5.45x39mm 60-Rounder Polymer Casket Magazine"
+ATT.CompactName = "60 Casket"
+ATT.Description = [[Lighter magazine designed for later 5.45 pattern AK rifles. Less reliable than old-fashion bakelite mags.]]
+ATT.Icon = Material("hud/arc9_saa/rus/AK74_60rnd.png", "mips smooth")
+
+
+ATT.SortOrder = 0
+ATT.Category = "saa_ak74_mag"
+
+ATT.MalfunctionMeanShotsToFailMult = 670/800
+ATT.RecoilSideMult = 1.5
+ATT.ClipSizeOverride = 60
+ATT.SpeedMult = 5/5.26
+ATT.ReloadTimeMult = 5.8/5
+
+ATT.ActivateElements = {"casket"}
+
+ARC9.LoadAttachment(ATT, "saa_ak74_60_casket")
+
+-- end here
+
+-- start here
+
+ATT = {}
+
 ATT.PrintName = "7.62x39mm 30 Round Bakelite Magazine"
 ATT.CompactName = "BKL"
 ATT.Description = [[Bakelite Magazine produced in the later years of the cold war. Comes at an easier reload drill and lower weight with a simpler structure that causes the shooter to feel a heavier horizontal recoil.]]
+ATT.Icon = Material("hud/arc9_saa/rus/AKM_30rnd.png", "mips smooth")
 
 
 ATT.SortOrder = 0
@@ -639,6 +772,7 @@ ATT.PrintName = "7.62x39mm 20 Round Steel Magazine"
 ATT.CompactName = "20-RND"
 ATT.Description = [[Lower-Capacity Steel Magazine produced for Civilian usage. 
 Commonly Found in Sporter type rifles such as VPOs and SKS, this magazine can only allot up to 20 rounds, rendering it a lighter choice for quicker reloading speeds.]]
+ATT.Icon = Material("hud/arc9_saa/rus/AKM_20rnd.png", "mips smooth")
 
 
 ATT.SortOrder = 0
@@ -662,6 +796,7 @@ ATT = {}
 ATT.PrintName = "7.62x39mm 35 Round PMAG Magazine"
 ATT.CompactName = "35-PMAG"
 ATT.Description = [[35-Round Capacity Magpul Magazine produced by private companies. Comes at an easier reload drill and lower weight with a simpler structure that causes the shooter to feel a heavier horizontal recoil.]]
+ATT.Icon = Material("hud/arc9_saa/rus/pmag_30rnd.png", "mips smooth")
 
 
 ATT.SortOrder = 0
@@ -685,6 +820,7 @@ ATT = {}
 ATT.PrintName = "7.62x39mm 40 Round Steel Magazine"
 ATT.CompactName = "40 STL"
 ATT.Description = [[Classic Steel Magazine produced for sustained fire. Jams more easily but offers 10 extra rounds compared to the standard issue ones.]]
+ATT.Icon = Material("hud/arc9_saa/rus/AKM_40rnd.png", "mips smooth")
 
 
 ATT.SortOrder = 0
@@ -709,6 +845,7 @@ ATT = {}
 ATT.PrintName = "Magpul Stock"
 ATT.CompactName = "MGP"
 ATT.Description = [[Polymer stock built by private companies.]]
+ATT.Icon = Material("hud/arc9_saa/rus/mgp_stock1.png", "mips smooth")
 
 
 ATT.SortOrder = 1
@@ -733,7 +870,7 @@ ATT = {}
 ATT.PrintName = "Series-100 Polymer Stock"
 ATT.CompactName = "S-100"
 ATT.Description = [[Polymer stock built by private companies.]]
-
+ATT.Icon = Material("hud/arc9_saa/rus/S100_STOCK.png", "mips smooth")
 
 ATT.SortOrder = 1
 ATT.Category = "saa_ak_stock"
@@ -756,6 +893,7 @@ ATT = {}
 ATT.PrintName = "VEPR Clubfoot Polymer Stock"
 ATT.CompactName = "VEPR-200"
 ATT.Description = [[Polymer stock built by private companies.]]
+ATT.Icon = Material("hud/arc9_saa/rus/vepr_stock.png", "mips smooth")
 
 
 ATT.SortOrder = 1
@@ -781,6 +919,7 @@ ATT = {}
 ATT.PrintName = "Helix AS-2 Stock"
 ATT.CompactName = "Helix"
 ATT.Description = [[Multi-stage tube stock with buffer adaptor for AKs. Dampens recoil and eases aim control with a relatively complex surface that renders aiming down sights and running more difficult]]
+ATT.Icon = Material("hud/arc9_saa/rus/Alpha_Stock.png", "mips smooth")
 
 
 ATT.SortOrder = 1
@@ -883,6 +1022,7 @@ ATT = {}
 ATT.PrintName = "AKS Sidefolder Stock"
 ATT.CompactName = "AKS"
 ATT.Description = [[Receiver modification that allows use of the AK pattern sidefolder stock. Perfect for a mobility oriented build that seeks for ease of use in CQB.]]
+ATT.Icon = Material("hud/arc9_saa/rus/aks74.png", "mips smooth")
 
 
 ATT.SortOrder = 0
@@ -906,6 +1046,7 @@ ATT = {}
 ATT.PrintName = "AK-74M Sidefolder Stock"
 ATT.CompactName = "AK-74M"
 ATT.Description = [[Receiver modification that allows use of the AK pattern sidefolder stock. Perfect for a mobility oriented build that seeks for ease of use in CQB.]]
+ATT.Icon = Material("hud/arc9_saa/rus/aks74m.png", "mips smooth")
 
 
 ATT.SortOrder = 0
@@ -929,6 +1070,7 @@ ATT = {}
 ATT.PrintName = "Alpha Rail Gas Port"
 ATT.CompactName = "Alpha"
 ATT.Description = [[Gas port produced by private companies. Longer design allowing for railed accessories to be attached. Its sleek yet elongated aluminum structure enhances the heat capacity and dissipation.]]
+ATT.Icon = Material("hud/arc9_saa/rus/alpha_gasport.png", "mips smooth")
 
 
 ATT.SortOrder = 1
@@ -972,6 +1114,7 @@ ATT = {}
 ATT.PrintName = "Magpul Gas Port"
 ATT.CompactName = "MGP"
 ATT.Description = [[Handguard produced by private companies. Reduces forward weight.]]
+ATT.Icon = Material("hud/arc9_saa/rus/mgp_gp.png", "mips smooth")
 
 
 ATT.SortOrder = 1

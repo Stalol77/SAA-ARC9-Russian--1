@@ -88,9 +88,13 @@ SWEP.ViewRecoil = true -- true
 SWEP.ViewRecoilUpMult = 10 -- 40-100
 SWEP.ViewRecoilSideMult = 15 -- 1-20
 
+SWEP.ViewRecoil = true -- true
+SWEP.ViewRecoilUpMult = 10 -- 40-100
+SWEP.ViewRecoilSideMult = 15 -- 1-20
+
 SWEP.UseVisualRecoil = true
 
-SWEP.VisualRecoilUp = 1.2 -- Vertical tilt for visual recoil.F
+SWEP.VisualRecoilUp = 1.6 -- Vertical tilt for visual recoil.F
 SWEP.VisualRecoilSide = 0.5 -- Horizontal tilt for visual recoil.
 SWEP.VisualRecoilRoll = 1 -- Roll tilt for visual recoil.
 
@@ -101,6 +105,20 @@ SWEP.VisualRecoilPunchMultSights = 0.1
 SWEP.VisualRecoilPositionBump = 0
 SWEP.VisualRecoilDampingConst = 0.1 -- How spring will be visual recoil, 120 is default
 SWEP.VisualRecoilSpringMagnitude = 0
+
+-- SWEP.VisualRecoilMult = 1
+-- SWEP.VisualRecoilADSMult = 0.1
+-- SWEP.VisualRecoilPunchADSMult = 0.1
+
+SWEP.VisualRecoil = 1
+SWEP.VisualRecoilMultSights = 1
+SWEP.VisualRecoilSideMultSights = 0.5
+SWEP.VisualRecoilPositionBump = 1.5
+
+SWEP.VisualRecoilHipFire = 1
+
+SWEP.VisualRecoilDampingConst = 10 -- How spring will be visual recoil, 120 is default
+SWEP.VisualRecoilSpringMagnitude = 1
 
 -- SWEP.VisualRecoilMult = 1
 -- SWEP.VisualRecoilADSMult = 0.1
@@ -252,7 +270,12 @@ SWEP.WorldModelOffset = {
     Pos = Vector(-2.5, 3, -6),
     Ang = Angle(-10, -4, 180),
     Scale = 1,
+    TPIKPos = Vector(-9, -2, -3),
+    TPIKAng = Angle(-20, -5, 175)
 }
+
+
+
 SWEP.NoTPIKVMPos = false
 
 -- Firing sounds --
@@ -365,7 +388,7 @@ SWEP.Hook_TranslateAnimation = function (self, anim)
         if self:GetUBGL() then
             suffix = "_glsetup"
         end
-    elseif attached["drum_75"] then
+    elseif attached["drum_95"] then
         suffix = "_drum"
     else
         suffix = ""
@@ -757,6 +780,7 @@ SWEP.Attachments = {
     {
         PrintName = "Magazine",
         Category = "saa_ak74_mag",
+        DefaultIcon = Material("hud/arc9_saa/rus/AK74_magDF.png", "mips smooth"),
         Bone = "b_wpn_mag",
         Pos = Vector(0, 0.5, 0),
         Ang = Angle(0, 0, 0),
@@ -920,9 +944,29 @@ SWEP.AttachmentElements = {
             {11, 3},
         },
     },
-    ["drum_75"] = {
+    ["drum_95"] = {
+        Bodygroups = {
+            {11, 5},
+        },
+    },
+    ["poly_30"] = {
+        Bodygroups = {
+            {11, 1},
+        },
+    },
+    ["poly_45"] = {
+        Bodygroups = {
+            {11, 3},
+        },
+    },
+    ["bake_45"] = {
         Bodygroups = {
             {11, 2},
+        },
+    },
+    ["casket"] = {
+        Bodygroups = {
+            {11, 4},
         },
     },
     ["aks74_stock"] = {

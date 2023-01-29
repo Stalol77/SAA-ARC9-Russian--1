@@ -99,7 +99,7 @@ SWEP.VisualRecoilUp = 1.6 -- Vertical tilt for visual recoil.F
 SWEP.VisualRecoilSide = 0.5 -- Horizontal tilt for visual recoil.
 SWEP.VisualRecoilRoll = 1 -- Roll tilt for visual recoil.
 
-SWEP.VisualRecoilCenter = Vector(0, 2, 0) -- The "axis" of visual recoil. Where your hand is.
+SWEP.VisualRecoilCenter = Vector(2, 2, 0) -- The "axis" of visual recoil. Where your hand is.
 
 SWEP.VisualRecoilPunch = 1.5 -- How far back visual recoil moves the gun.
 SWEP.VisualRecoilPunchMultSights = 0.1
@@ -254,6 +254,8 @@ SWEP.WorldModelOffset = {
     Pos = Vector(-2.5, 3, -6),
     Ang = Angle(-10, -4, 180),
     Scale = 1,
+    TPIKPos = Vector(-9, -2, -3),
+    TPIKAng = Angle(-20, -5, 175)
 }
 
 -- Firing sounds --
@@ -1039,6 +1041,7 @@ SWEP.Attachments = {
     {
         PrintName = "Magazine",
         Category = "saa_akm_mag",
+        DefaultIcon = Material("hud/arc9_saa/rus/AKM_30rndDF.png", "mips smooth"),
         Bone = "b_wpn_mag",
         Pos = Vector(0, 0.5, 0),
         Ang = Angle(0, 0, 0),

@@ -1,9 +1,9 @@
 "VertexLitGeneric"
 {
-	"$basetexture"				"models\weapons\vickers\weapon_vickers_dm"
-	"$bumpmap"					"models\weapons\vickers\weapon_vickers_nm"
-	"$phongexponenttexture"		"models\weapons\vickers\weapon_vickers_spec"
-	"$phongwarptexture"			"models\weapons\generic\phongwarp_metal"
+	"$basetexture"				"saa\weapons\arc9\doi\vickers\weapon_vickers_dm"
+	"$bumpmap"					"saa\weapons\arc9\doi\vickers\weapon_vickers_nm"
+	"$phongexponenttexture"		"saa\weapons\arc9\doi\vickers\weapon_vickers_spec"
+	"$phongwarptexture"			"saa\weapons\arc9\doi\generic\phongwarp_metal"
 	"$color2"					"[0.35 0.35 0.35]"
 	"$blendTintByBaseAlpha"		"1"
 

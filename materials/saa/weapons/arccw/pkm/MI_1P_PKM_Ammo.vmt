@@ -14,6 +14,7 @@
 	"$envmap"					"models\weapons\envmaps\hdri_parking"
 	"$envmapfresnel"			"0.25"
 	"$envmaptint"				"[ .8 .4 .1 ]"
+	"$envmapcoefficient"		"0.5"
 
 	"$phong"					"1"
 	"$phongboost"				"40"

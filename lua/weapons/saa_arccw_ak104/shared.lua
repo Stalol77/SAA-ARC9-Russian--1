@@ -255,6 +255,8 @@ SWEP.WorldModelOffset = {
     Pos = Vector(-2.5, 3, -6),
     Ang = Angle(-10, -4, 180),
     Scale = 1,
+    TPIKPos = Vector(-9, -2, -3),
+    TPIKAng = Angle(-20, -5, 175)
 }
 
 -- Firing sounds --
