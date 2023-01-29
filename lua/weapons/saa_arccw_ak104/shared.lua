@@ -33,7 +33,7 @@ SWEP.Description = [[Coming in with the Kalashnikov Century Program, the AK-104 
 -- Trivia --
 SWEP.Class = "Assault Rifle"
  SWEP.Trivia = {
-     Manufacturer = "Izhevsk Mechanical Plant",
+     Manufacturer = "Kalashnikov Concern",
      Calibre = "7.62x39mm M43",
      Mechanism = "Gas-Operated Rotating Bolt",
      Country = "Russia",

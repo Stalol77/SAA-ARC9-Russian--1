@@ -1316,3 +1316,15 @@ SWEP.AttachmentElements = {
         },
     },
 }
+
+SWEP.HookP_NameChange = function(self, name) 
+name = "AKM"
+    local attached = self:GetElements()
+    if attached["akmn_dovetail"] and attached["akms_stock"] then name = "AKMSN"
+    elseif attached["akmn_dovetail"] then name = "AKMN"
+    elseif attached["akms_stock"] then name = "AKMS"
+    else name = "AKM"
+    end
+
+return name 
+end
