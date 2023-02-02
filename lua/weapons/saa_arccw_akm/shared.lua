@@ -551,12 +551,12 @@ SWEP.Animations = {
         MinProgress = 3,
         EventTable = {
             {s = "shared/foley/shared/ads-up.wav", t= 0, v= 0.5, p = 100},
-            {s = "saa/pkm/handling/pkm_foley_lid_release.wav", t= 0.4, v= 0.5, p = 150},
+            {s = "shared/foley/fal/weapon_fidget.wav", t= 0.2, v= 0.2, p = 100},
             {s = foley .. "mag_out.ogg", v = 1.0, t = 0.65},
             {s = "shared/foley/ak_val/stock_unlock.wav",    t = 0.75, v= 0.2},
             {s = foley .. "mag_in.ogg", v = 1.0, t = 1.9},
             {s = "shared/foley/m4_1/m4_magrelease.wav",    t = 2.0, v= 0.6},
-            {s = "shared/foley/ak_generic/ak47_rattle.wav",    t = 2.2, v= 0.4, p = 110},
+            {s = "shared/foley/fal/weapon_regrip.wav",    t = 2.2, v= 0.4, p = 110},
         },
         IKTimeLine = {
             {
@@ -605,7 +605,7 @@ SWEP.Animations = {
         Source = "base_reloadempty",
         EventTable = {
             {s = "shared/foley/shared/ads-up.wav", t= 0, v= 0.5, p = 100},
-            {s = "saa/pkm/handling/pkm_foley_lid_release.wav", t= 0.4, v= 0.5, p = 150},
+            {s = "shared/foley/fal/weapon_fidget.wav", t= 0.2, v= 0.2, p = 100},
             {s = foley .. "mag_out.ogg", v = 1.0, t = 0.65},
             {s = "shared/foley/ak_val/stock_unlock.wav", t = 0.75, v= 0.2},
             {s = foley .. "mag_in.ogg", v = 1.0, t = 1.9},

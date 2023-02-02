@@ -98,7 +98,7 @@ SWEP.VisualRecoilUp = 1.6 -- Vertical tilt for visual recoil.F
 SWEP.VisualRecoilSide = 0.5 -- Horizontal tilt for visual recoil.
 SWEP.VisualRecoilRoll = 1 -- Roll tilt for visual recoil.
 
-SWEP.VisualRecoilCenter = Vector(0, 2, 0) -- The "axis" of visual recoil. Where your hand is.
+SWEP.VisualRecoilCenter = Vector(2, 10, 2) -- The "axis" of visual recoil. Where your hand is.
 
 SWEP.VisualRecoilPunch = 1.5 -- How far back visual recoil moves the gun.
 SWEP.VisualRecoilPunchMultSights = 0.1
@@ -575,12 +575,12 @@ SWEP.Animations = {
         MinProgress = 3,
         EventTable = {
             {s = "shared/foley/shared/ads-up.wav", t= 0, v= 0.5, p = 100},
-            {s = "saa/pkm/handling/pkm_foley_lid_release.wav", t= 0.4, v= 0.5, p = 150},
+            {s = "shared/foley/fal/weapon_fidget.wav", t= 0.2, v= 0.2, p = 100},
             {s = foley .. "mag_out.ogg", v = 1.0, t = 0.65},
             {s = "shared/foley/ak_val/stock_unlock.wav",    t = 0.75, v= 0.2},
             {s = foley .. "mag_in.ogg", v = 1.0, t = 1.9},
             {s = "shared/foley/m4_1/m4_magrelease.wav",    t = 2.0, v= 0.6},
-            {s = "shared/foley/ak_generic/ak47_rattle.wav",    t = 2.2, v= 0.4, p = 110},
+            {s = "shared/foley/fal/weapon_rotate.wav",    t = 2.3, v= 0.1, p = 100},
         },
         IKTimeLine = {
             {
@@ -616,9 +616,10 @@ SWEP.Animations = {
         Source = "fix",
         Mult = 30/55,
         EventTable = {
-            {s = foley .. "charging_handle_pull.ogg",    t = 1.0},
-            {s = "saa/ak2022/ak47_empty.wav",    t = 1.15},
+            {s = "shared/foley/ak_generic/bolt_back_1.mp3",    t = 1.0},
+            {s = "shared/foley/ak_generic/bolt_release_1.mp3",    t = 1.15},
             {s = foley .. "charging_handle_release.ogg",    t = 1.55},
+            {s = "shared/foley/ak_generic/ak47_empty.wav",    t = 1.2, v= 0.4},
         },
     },
     ["cycle"] = {
@@ -629,17 +630,17 @@ SWEP.Animations = {
         Source = "base_reloadempty",
         EventTable = {
             {s = "shared/foley/shared/ads-up.wav", t= 0, v= 0.5, p = 100},
-            {s = "saa/pkm/handling/pkm_foley_lid_release.wav", t= 0.4, v= 0.5, p = 150},
+            {s = "shared/foley/fal/weapon_fidget.wav", t= 0.2, v= 0.2, p = 100},
             {s = foley .. "mag_out.ogg", v = 1.0, t = 0.65},
             {s = "shared/foley/ak_val/stock_unlock.wav", t = 0.75, v= 0.2},
             {s = foley .. "mag_in.ogg", v = 1.0, t = 1.9},
             {s = "shared/foley/m4_1/m4_magrelease.wav",    t = 2.0, v= 0.6},
             {s = "shared/foley/ak_generic/ak47_rattle.wav",    t = 2.2, v= 0.4, p = 110},
-            {s = foley .. "charging_handle_pull.ogg",    t = 3.1},
+            {s = "shared/foley/ak_generic/bolt_release_1.mp3",    t = 3.1},
             {s = "shared/foley/ak_generic/ak47_boltback.wav",    t = 3.1, v= 0.6, p = 100},
-            {s = foley .. "charging_handle_release.ogg",    t = 3.25},
-            {s = "shared/foley/ak_generic/ak47_boltrelease.wav",    t = 3.35, v= 0.3, p = 100},
-            {s = "shared/foley/shared/movement_raise.wav",    t = 3.7, v= 0.4, p = 100},
+            {s = "shared/foley/ak_generic/bolt_release_1.mp3",    t = 3.25},
+            {s = "shared/foley/ak_generic/ak47_boltrelease.wav",    t = 3.25, v= 0.25, p = 100},
+            {s = "shared/foley/fal/weapon_rotate.wav",    t = 3.7, v= 0.1, p = 100},
         },
         IKTimeLine = {
             {
@@ -1073,3 +1074,7 @@ SWEP.AttachmentElements = {
         },
     },
 }
+
+SWEP.Hook_Think = function(self, vm)
+if 1 > 0 then
+self:SetMaterial("saa/weapons/arccw/AKS/AKM/F-AKM-Main-105.vmt")end end

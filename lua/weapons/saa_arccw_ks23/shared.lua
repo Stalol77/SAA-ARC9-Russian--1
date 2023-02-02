@@ -11,11 +11,10 @@ SWEP.UseHands = true
 SWEP.MuzzleParticle = "muzzleflash_shotgun" -- Used for some muzzle effects.
 SWEP.ShellModel = "models/weapons/shotgun_shell.mdl"
 SWEP.ShellScale = 0.8
-SWEP.CaseEffectQCA = 2 -- QC Attachment for shell ejection.
+SWEP.CaseEffectQCA = 3 -- QC Attachment for shell ejection.
 SWEP.ShellPitch = 95
 
 SWEP.MuzzleEffectAttachment = 0
-SWEP.CaseEffectAttachment = 2
 SWEP.CamAttachment = nil
 SWEP.TracerNum = 0
 SWEP.TracerEffect = "ARC9_tracer"
@@ -105,11 +104,11 @@ SWEP.RecoilAutoControl = 0.5
 
 SWEP.UseVisualRecoil = true
 
-SWEP.VisualRecoilUp = 1.6 -- Vertical tilt for visual recoil.F
+SWEP.VisualRecoilUp = 3 -- Vertical tilt for visual recoil.F
 SWEP.VisualRecoilSide = 1 -- Horizontal tilt for visual recoil.
 SWEP.VisualRecoilRoll = 1 -- Roll tilt for visual recoil.
 
-SWEP.VisualRecoilCenter = Vector(10, -2.8, -4) -- The "axis" of visual recoil. Where your hand is.
+SWEP.VisualRecoilCenter = Vector(2, 20, 2) -- The "axis" of visual recoil. Where your hand is.
 
 SWEP.VisualRecoilPunch = 20 -- How far back visual recoil moves the gun.
 SWEP.VisualRecoilPunchMultSights = 0.1
@@ -149,7 +148,7 @@ SWEP.FreeAimRadius = 12 / 1.25
 SWEP.RPM = 400
 SWEP.Num = 8
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
-SWEP.TriggerDelayTime = 0.025 -- Time until weapon fires.
+SWEP.TriggerDelayTime = 0.05 -- Time until weapon fires.
 SWEP.TriggerDelayRepeat = false -- Whether to do it for every shot on automatics.
 SWEP.Firemodes = {
     {
@@ -261,9 +260,11 @@ SWEP.BarrelOffsetCrouch = Vector(-1, 0, 10)
 
 SWEP.MirrorVMWM = true
 SWEP.WorldModelOffset = {
-    Pos = Vector(-3, 4, -5),
-    Ang = Angle(-10, 2, 180),
-    Scale = 1
+    Pos = Vector(-3, 9, -4),
+    Ang = Angle(-52, 0, 180),
+    Scale = 1,
+    TPIKAng = Angle(-20, 0, 180),
+    TPIKPos = Vector(-3, 3, -4)
 }
 
 -- Firing sounds --
@@ -274,8 +275,8 @@ local ks23 = "saa/ks23/"
 
 SWEP.ShootSound = ks23 .. "ks23_alt_1.wav"
 SWEP.LayerSound = {
-    ks23 .. "ks23_1_o1.wav",
-    ks23 .. "ks23_1_o2.wav"
+    ks23 .. "ks23_et_1.wav",
+    ks23 .. "ks23_et_2.wav"
 }
 SWEP.ShootSoundSilenced = ks23 .. "ks23_2.wav"
 SWEP.LayerSoundSilenced = {
@@ -283,51 +284,31 @@ SWEP.LayerSoundSilenced = {
     ks23 .. "ks23_2_o2.wav"
 }
 
-SWEP.ShootSoundIndoor = ks23 .. "ks23_1.wav"
+SWEP.ShootSoundIndoor = ks23 .. "ks23_alt_1.wav"
 SWEP.LayerSoundIndoor = ks23 .. "ks23_1_i1.wav"
 SWEP.ShootSoundSilencedIndoor = ks23 .. "ks23_2.wav"
 SWEP.LayerSoundSilencedIndoor = ks23 .. "ks23_2_i1.wav"
 -- Animations --
-local foley = m3 .. "foley/"
-
-
-local trigger = {
-    foley .. "weap_charlie725_fire_first_plr_01.wav",
-    foley .. "weap_charlie725_fire_first_plr_02.wav",
-    foley .. "weap_charlie725_fire_first_plr_03.wav",
-    foley .. "weap_charlie725_fire_first_plr_04.wav",
-    foley .. "weap_charlie725_fire_first_plr_05.wav",
-    foley .. "weap_charlie725_fire_first_plr_06.wav",
-
+local foley = ks23 .. "handling/"
+local pb = {
+    foley .. "ks23_pb_1.mp3",
+    foley .. "ks23_pb_2.mp3",
+}
+local pf = {
+    foley .. "ks23_pf_1.mp3",
+    foley .. "ks23_pf_2.mp3",
+}
+local insert = {
+    foley .. "ks23_si_1.mp3",
+    foley .. "ks23_si_2.mp3",
+    foley .. "ks23_si_3.mp3",
+}
+local port = {
+    foley .. "shellport_1.mp3",
+    foley .. "shellport_2.mp3",
+    foley .. "shellport_3.mp3",
 }
 
-local pumpback = {
-    foley .. "wfoly_sh_romeo870_rechamber_v2_01" .. "a.wav",
-    foley .. "wfoly_sh_romeo870_rechamber_v2_01" .. "b.wav",
-    foley .. "wfoly_sh_romeo870_rechamber_v2_01" .. "c.wav",
-
-}
-
-local pumpforward = {
-    foley .. "wfoly_sh_romeo870_rechamber_v2_02" .. "a.wav",
-    foley .. "wfoly_sh_romeo870_rechamber_v2_02" .. "b.wav",
-    foley .. "wfoly_sh_romeo870_rechamber_v2_02" .. "c.wav",
-    foley .. "wfoly_sh_romeo870_rechamber_v2_02" .. "d.wav",
-
-}
-
-local shellin_0 = foley .. "m3_ammo_load0.ogg"
-
-local shellin = {
-    foley .. "m3_ammo_load1.ogg",
-    foley .. "m3_ammo_load2.ogg",
-    foley .. "m3_ammo_load3.ogg",
-    foley .. "m3_ammo_load4.ogg",
-}
-local mechs = ak .. "usp_bolt.wav"
-local mechtable = {
-    ")" .. m3 .. "m99_mech_end_01.wav",
-}
 
 SWEP.Hook_TranslateAnimation = function(swep, anim)
     local elements = swep:GetElements()
@@ -342,7 +323,7 @@ SWEP.Animations = {
         },
     },
     ["holster"] = {
-        Source = "base_holster",
+        Source = "holster",
         EventTable = {
             {s = foley .. "holster_1.ogg",    t = 0},
         },
@@ -353,7 +334,7 @@ SWEP.Animations = {
     ["trigger"] = {
         Source = "base_idle",
         EventTable = {
-            {s = trigger,  p = 100, v = 1, t = 0},
+            {s = "saa/izh/dbsg_prefire.wav",  p = 100, v = 1.0, t = 0},
            },
     },
     ["trigger_empty"] = {
@@ -366,7 +347,7 @@ SWEP.Animations = {
     ["fire"] = {
         Source = "fire",
         Mult = 1,
-        MinProgress = 0.9,
+        MinProgress = 0.8,
         ShellEjectAt = 0.01,
         EventTable = {
             {s = mechtable,    t = 0, v= 1.0, p = 150},
@@ -382,26 +363,23 @@ SWEP.Animations = {
     },
     ["cycle"] = {
         Source = {"cycle", "cycle2"},
-        Mult = 0.7,
-        MinProgress = 0.8,
+        Mult = 1,
+        MinProgress = 0.4,
         ShellEjectAt = 0.01,
         EventTable = {
-            {s = pumpback,    t = 0.1, v= 0.7, p = 120},
-            {s = foley .. "pumpback.ogg",    t = 0.15, v= 0.1, p = 100},
-            {s = pumpforward,    t = 0.35, v= 0.9, p = 130},
-            {s = foley .. "pumpforward.ogg",    t = 0.35, v= 0.1, p = 100},
+            {s = pb,    t = 0.1, v= 0.3, p = 80},
+            {s = foley .. "ks23_pb.mp3",    t = 0.1, v= 1, p = 100},
+            {s = pf,    t = 0.45, v= 1, p = 80},
+            {s = foley .. "pf.mp3",    t = 0.45, v= 0.3, p = 100},
         },
     },
     ["ready"] = {
-        Source = "base_ready",
+        Source = "ready",
         EventTable = {
-            {s = foley .. "equip_1.ogg",    t = 0},
-            {s = pumpback,    t = 0.7, v= 0.7, p = 120},
-            {s = foley .. "pumpback.ogg",    t = 0.75, v= 0.0, p = 100},
-            {s = pumpforward,    t = 1.1, v= 0.9, p = 130},
-            {s = foley .. "pumpforward.ogg",    t = 1.1, v= 0.1, p = 100},
-            {s = foley .. "holster_1.ogg",    t = 1.35, v= 0.1},
-
+            {s = pb,    t = 0.1+2, v= 0.3, p = 80},
+            {s = foley .. "ks23_pb.mp3",    t = 0.1+2, v= 1, p = 100},
+            {s = pf,    t = 0.45+2, v= 1, p = 80},
+            {s = foley .. "pf.mp3",    t = 0.45+2, v= 0.3, p = 100},
         },
     },
     ["fire_iron"] = {
@@ -422,13 +400,14 @@ SWEP.Animations = {
     },
     ["cycle_iron"] = {
         Source = {"cycle", "cycle2" },
-        Mult = 0.6,
+        Mult = 1,
+        MinProgress = 0.4,
         ShellEjectAt = 0.01,
         EventTable = {
-            {s = pumpback,    t = 0.1, v= 0.7, p = 120},
-            {s = scar .. "pumpback.wav",    t = 0.15, v= 0.1, p = 100},
-            {s = pumpforward,    t = 0.35, v= 0.9, p = 130},
-            {s = scar .. "pumpforward.wav",    t = 0.35, v= 0.1, p = 100},
+            {s = pb,    t = 0.1, v= 0.3, p = 80},
+            {s = foley .. "ks23_pb.mp3",    t = 0.1, v= 1, p = 100},
+            {s = pf,    t = 0.45, v= 1, p = 80},
+            {s = foley .. "pf.mp3",    t = 0.45, v= 0.3, p = 100},
         },
     },
     ["reload_start"] = {
@@ -444,8 +423,8 @@ SWEP.Animations = {
         Mult = 0.8,
         MinProgress = 0.7,
         EventTable = {
-            {s = shellin,    t = 0.2, v= 1.0},
-            {s = shellin_0,    t = 0.1, v= 0.1, p = 130},
+            {s = insert,    t = 0.1, v= 0.1, p = 80},
+            {s = port,    t = 0.4, v= 0.2, p = 110},
 
         },
     },
@@ -454,7 +433,8 @@ SWEP.Animations = {
         Mult = 0.98,
         MinProgress = 3,
         EventTable = {
-            {s = scar .. "wfoly_sh_romeo870_reload_loop_loadportend.wav",    t = 0.17},
+            {s = foley .. "arm_rotate.mp3",    t = 0, p = 115, v = 0.1},
+            {s = "shared/foley/fal/weapon_fidget.wav",    t = 0, p = 100, v = 0.1},
         },
     },
     ["reload_finish_empty"] = {
@@ -462,11 +442,12 @@ SWEP.Animations = {
         Mult = 0.98,
         MinProgress = 3,
         EventTable = {
-            {s = scar .. "wfoly_sh_romeo870_reload_loop_loadportend.wav",    t = 0.17},
-            {s = pumpback,    t = 0.1+0.7, v= 0.7, p = 120},
-            {s = scar .. "pumpback.wav",    t = 0.15+0.7, v= 0.1, p = 100},
-            {s = pumpforward,    t = 0.35+0.8, v= 0.9, p = 130},
-            {s = scar .. "pumpforward.wav",    t = 0.35+0.8, v= 0.1, p = 100},
+            {s = "shared/foley/fal/weapon_rotate.wav",    t = 0.1, v= 0.1, p = 85},
+            {s = pb,    t = 0.1+0.65, v= 0.2, p = 80},
+            {s = foley .. "ks23_pb.mp3",    t = 0.1+0.65, v= 0.5, p = 100},
+            {s = pf,    t = 0.45+0.65, v= 0.3, p = 100},
+            {s = foley .. "pf.mp3",    t = 0.45+0.65, v= 0.6, p = 100},
+            {s = "shared/foley/fal/weapon_rotate.wav",    t = 0.8+0.65, v= 0.1, p = 60},
         },
     },
 }
@@ -496,10 +477,21 @@ SWEP.Attachments = {
    {
        PrintName = "Roof Plate",
        Category = { "saa_ks23_iron"},
+       Installed = "saa_ks23_irons",
        DefaultIcon = nil,
        InstalledElements = nil,
        Bone = "b_wpn",
        Pos = Vector(0, -4.5, 2),
+       Ang = Angle(0, 0, 0),
+
+       Scale = 1,
+   },
+   {
+       PrintName = "Ammo",
+       Category = { "saa_ks23_ammo"},
+       InstalledElements = nil,
+       Bone = "b_wpn",
+       Pos = Vector(0, -4.5, -1),
        Ang = Angle(0, 0, 0),
 
        Scale = 1,

@@ -21,6 +21,7 @@
 	"$envmaptint"			"[0.5 0.5 0.5]"
 	"$envmapcoefficient"	"0.1" // Lighting will be multiplied by this value
 	"$colorcoefficient"	"0.8" //Lighting will be multiplied by this value
+
 Proxies
 {
     SAA_CubemapTintMult

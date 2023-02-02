@@ -75,7 +75,7 @@ ATT.Category = "saa_ks23_barrel"
 
 ATT.RecoilMult = 0.885
 ATT.SwayMult = 1.6
-ATT.SpreadMult = 1/3
+ATT.SpreadMult = 1/4.5
 ATT.PhysBulletMuzzleVelocityMult = 490/450
 ATT.RangeMaxMult = 490/450
 
@@ -155,5 +155,72 @@ ATT.RTScopeNoPP = true
 ATT.ActivateElements = {"puscope"}
 
 ARC9.LoadAttachment(ATT, "saa_ks23_puscope")
+
+-- end here
+
+-- start here
+
+ATT = {}
+
+ATT.PrintName = [[23x75mm Flashbang Special Purpose Round]]
+ATT.CompactName = "23x75mm Flash"
+ATT.Description = [[Flashbang round intended for Riot-Suppression purposes void of murder.]]
+ATT.Icon = Material("hud/arc9_saa/rus/ks23_iron.png", "mips smooth")
+
+ATT.SortOrder = 1
+ATT.Category = "saa_ks23_ammo"
+
+ATT.Num = 0
+
+ATT.Hook_PrimaryAttack = function(self)
+    local flashorigin = self:GetShootPos()
+    local flashpower = 1000
+    local targets = ents.FindInSphere(flashorigin, flashpower)
+
+    for _, k in pairs(targets) do
+        if k:IsPlayer() then
+            local dist = k:EyePos():Distance(flashorigin)
+            local dp = (k:EyePos() - flashorigin):Dot(k:EyeAngles():Forward())
+
+            local time = Lerp( dp, 1, 0.25 )
+
+            time = Lerp( dist / flashpower, time, 0 )
+
+            if k:VisibleVec( flashorigin ) and k != self:GetOwner() then
+                k:ScreenFade( SCREENFADE.IN, Color( 255, 255, 255, 255 ), 0.5, time )
+            else
+                k:ScreenFade( SCREENFADE.IN, Color( 255, 255, 255, 255 ), 0.25, 0 )
+            end
+
+            k:SetDSP( 37, false )
+        end
+    end
+end
+
+
+ARC9.LoadAttachment(ATT, "saa_ks23_flash")
+
+-- end here
+
+-- start here
+
+ATT = {}
+
+ATT.PrintName = [[23x75mm "Barrikada" Steel Slug]]
+ATT.CompactName = "23x75mm Barrikada"
+ATT.Description = [[Solid-Steel slug purposed for long range targets.]]
+ATT.Icon = Material("hud/arc9_saa/rus/ks23_iron.png", "mips smooth")
+
+ATT.SortOrder = 1
+ATT.Category = "saa_ks23_ammo"
+
+ATT.Num = 1
+
+ATT.DamageMinMult = 8
+ATT.DamageMaxMult = 8
+ATT.RangeMaxMult = 150/125
+
+
+ARC9.LoadAttachment(ATT, "saa_ks23_slug")
 
 -- end here

@@ -1,0 +1,35 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "saa/weapons/arccw/vz65/v61_custom_d"
+	"$bumpmap" "saa/weapons/arccw/vz65/v61_custom_n"
+	"$phongexponenttexture"		"saa/weapons/arccw/vz65/v61_custom_e"
+	"$phongwarptexture"			"models\weapons\saa\shared\lightwarps\phongwarp_metal"
+	"$color2"					"[.225 .225 .225]"
+	"$blendTintByBaseAlpha" "1"
+
+	"$envmap"					"models\weapons\envmaps\fo4_dith"
+	"$envmapfresnel"			".25"
+	"$envmaptint"				".5"
+	"$envmapcoefficient"		"0.025" // Lighting will be multiplied by this value
+
+	"$phong"					"1"
+	"$phongboost"				"20"
+	"$phongfresnelranges"		"[0.32 0.72 0.99]"
+	"$phongalbedotint" 			"1"
+
+	"$rimlight"					"1"
+	"$rimlightexponent"			"33"
+	"$rimlightboost"			"10"
+	"$rimmask"					"1"
+
+Proxies
+{
+    SAA_CubemapTintMult
+    {
+        multiplier	$envmapcoefficient // Use our value for default envmap tint
+        resultvar	$envmaptint // Write final output to $envmaptint
+    }
+}
+}
+//Material setup by ShadowRUN 幸運な. 
+//Do NOT edit/modify/redistribute these materials without my explicit permission.
