@@ -3,7 +3,7 @@
 	"$basetexture"				"saa\weapons\arccw\AKS\AK74\textures\magazines\bak_40_d"
 	"$bumpmap"					"saa\weapons\arccw\AKS\AK74\textures\magazines\bak_40_n"
 	"$phongexponenttexture"		"saa\weapons\arccw\AKS\AK74\textures\magazines\bak_40_e"
-	"$phongwarptexture"			"models\weapons\saa\shared\phongwarp_metal"
+	"$phongwarptexture"			"models\weapons\saa\shared\lightwarps\phongwarp_metal"
 //	"$color2"					"[0.75 0.75 0.75]"
 
 	"$envmap"					"env_cubemap"

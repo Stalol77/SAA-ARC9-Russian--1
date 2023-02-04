@@ -389,6 +389,19 @@ local mechtable = {
     mech .. "6.wav",
 }
 
+SWEP.Hook_TranslateAnimation = function (self, anim)
+    local attached = self:GetElements()
+
+    local suffix = ""
+
+    if self:GetJammed() then suffix = "_empty"
+    else suffix = ""
+    end
+
+    return anim .. suffix
+end
+
+
 SWEP.Animations = {
     ["draw"] = {
         Source = "ACT_VM_DRAW",
@@ -419,9 +432,6 @@ SWEP.Animations = {
     ["idle_empty"] = {
         Source = "empty_idle",
     },
-    ["idle_jammed"] = {
-        Source = "empty_idle",
-    },
     ["firemode_1"] = {
         Source = "base_fireselect",
         MinProgress = 1,
@@ -432,6 +442,11 @@ SWEP.Animations = {
     },
     ["trigger"] = {
         Source = "base_idle",
+        EventTable = {
+           },
+    },
+    ["trigger_empty"] = {
+        Source = "empty_idle",
         EventTable = {
            },
     },
