@@ -1,26 +1,28 @@
 "VertexLitGeneric"
 {
-	"$basetexture" "saa/weapons/arccw/vz65/v61_custom_d"
-	"$bumpmap" "saa/weapons/arccw/vz65/v61_custom_n"
-	"$phongexponenttexture"		"saa/weapons/arccw/vz65/v61_custom_e"
+	"$basetexture"				"saa\weapons\arccw\vz65\v61_custom_d"
+	"$bumpmap"					"saa\weapons\arccw\vz65\v61_custom_n"
+	"$phongexponenttexture"		"saa\weapons\arccw\vz65\v61_custom_e"
 	"$phongwarptexture"			"models\weapons\saa\shared\lightwarps\phongwarp_metal"
-	"$color2"					"[.225 .225 .225]"
-	"$blendTintByBaseAlpha" "1"
+	"$color2"					"[0.35 0.35 0.35]"
+	"$blendTintByBaseAlpha"		"1"
 
-	"$envmap"					"models\weapons\envmaps\fo4_dith"
-	"$envmapfresnel"			".25"
+	"$envmap" 					"models\weapons\envmaps\fo4_dith"
+	"$envmapfresnel" 			".5"
 	"$envmaptint"				".5"
-	"$envmapcoefficient"		"0.025" // Lighting will be multiplied by this value
+	"$envmapcoefficient"		"0.3" // Lighting will be multiplied by this value
 
 	"$phong"					"1"
-	"$phongboost"				"20"
+	"$phongboost"				"15"
 	"$phongfresnelranges"		"[0.32 0.72 0.99]"
 	"$phongalbedotint" 			"1"
 
 	"$rimlight"					"1"
 	"$rimlightexponent"			"33"
-	"$rimlightboost"			"10"
+	"$rimlightboost"			"1"
 	"$rimmask"					"1"
+
+	"$nocull"					"1"
 
 Proxies
 {
