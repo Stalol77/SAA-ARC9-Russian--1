@@ -480,6 +480,12 @@ SWEP.Animations = {
     },
     ["ready"] = {
         Source = "ACT_VM_READY",
+        EventTable = {
+        {s = "shared/foley/metal_pistol/rattle.wav", t= 0, p = 100, v = 0.1},
+        {s = "shared/foley/metal_pistol/pullback_short.mp3", t= 0.1, p = 100, v = 0.2},
+        {s = "shared/foley/metal_pistol/release_short.mp3", t= 0.55, p = 90, v = 0.4},
+        {s = "shared/foley/shared/ads-up.wav", t= 0.7, p = 100, v = 0.1},        
+        },
         IKTimeLine = {
             {
                 t = 0,
@@ -497,9 +503,7 @@ SWEP.Animations = {
                 rhik = 1
             },
         },
-        Mult = 90/30,
-        EventTable = {
-        },
+        Mult = 1.3,
     },
     ["fire_iron"] = {
         Source = "ACT_VM_ISHOOT",

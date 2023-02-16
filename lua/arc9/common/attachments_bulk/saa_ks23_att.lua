@@ -163,9 +163,9 @@ ARC9.LoadAttachment(ATT, "saa_ks23_puscope")
 ATT = {}
 
 ATT.PrintName = [[23x75mm Flashbang Special Purpose Round]]
-ATT.CompactName = "23x75mm Flash"
+ATT.CompactName = "Flashbang"
 ATT.Description = [[Flashbang round intended for Riot-Suppression purposes void of murder.]]
-ATT.Icon = Material("hud/arc9_saa/rus/ks23_iron.png", "mips smooth")
+ATT.Icon = Material("hud/arc9_saa/rus/flash_sh.png", "mips smooth")
 
 ATT.SortOrder = 1
 ATT.Category = "saa_ks23_ammo"
@@ -174,7 +174,7 @@ ATT.Num = 0
 
 ATT.Hook_PrimaryAttack = function(self)
     local flashorigin = self:GetShootPos()
-    local flashpower = 1000
+    local flashpower = 2500
     local targets = ents.FindInSphere(flashorigin, flashpower)
 
     for _, k in pairs(targets) do
@@ -207,9 +207,9 @@ ARC9.LoadAttachment(ATT, "saa_ks23_flash")
 ATT = {}
 
 ATT.PrintName = [[23x75mm "Barrikada" Steel Slug]]
-ATT.CompactName = "23x75mm Barrikada"
+ATT.CompactName = "Barrikada"
 ATT.Description = [[Solid-Steel slug purposed for long range targets.]]
-ATT.Icon = Material("hud/arc9_saa/rus/ks23_iron.png", "mips smooth")
+ATT.Icon = Material("hud/arc9_saa/att/sg-slug.png", "mips smooth")
 
 ATT.SortOrder = 1
 ATT.Category = "saa_ks23_ammo"

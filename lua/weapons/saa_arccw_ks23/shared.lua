@@ -26,8 +26,9 @@ SWEP.HideBones = {
 }
 SWEP.PrintName = "KS-23M"
 
-SWEP.Description = [[Although a trivial sight between most modern semi-automatic shotguns, this dual mode example of Italian engineering brings Benelli's dated yet innovative inertial system to a versatile and capable firearm.
-Allows the user to switch between pump action and semi automatic cycling with ease, fitting the weapon both for civilian, sporting and hunting use as well as law enforcement and head-to-head combat.]]
+SWEP.Description = [[Although a somewhat rare sight, the "Karabin Spetsialniy" - 23, named like this for its model, purpose and chambering in 23x75mm, gave anti-air barrels a second chance.
+Mind the denomination, Carbine, implying the weapon indeed features a rifled barrel instead of a smooth-bore tube like in most pump-action guns.
+Originally intended for stakeout situation support, the KS-23 has seen use in far more applications, becoming, over time, more of a riot-control gun, being employed to the police, with a multitude of special purpose munitions, and inevitably to insurgents across the East.]]
 
 -- Trivia --
 SWEP.Class = "Pump-Action Shotgun"
@@ -85,7 +86,7 @@ SWEP.ManualActionEjectAnyway = false -- Eject a shell when firing anyway.
 -- Mag size --
 
 SWEP.ChamberSize = 1
-SWEP.ClipSize = 4
+SWEP.ClipSize = 3
 SWEP.SupplyLimit = 6 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 3 -- Amount of reserve UBGL magazines you can take.
 
@@ -141,7 +142,7 @@ SWEP.ViewRecoilSideMult = 50 -- 1-20
 SWEP.Sway = 0.6
 SWEP.CustomizeAng = Angle(90, 0, 0)
 SWEP.CustomizePos = Vector(14 , 30, 3.5)
-SWEP.CustomizeSnapshotFOV = 90
+SWEP.CustomizeSnapshotFOV = 110
 SWEP.FreeAimRadiusSights = 0
 SWEP.FreeAimRadius = 12 / 1.25 
 -- Firerate / Firemodes --
@@ -152,8 +153,7 @@ SWEP.TriggerDelayTime = 0.05 -- Time until weapon fires.
 SWEP.TriggerDelayRepeat = false -- Whether to do it for every shot on automatics.
 SWEP.Firemodes = {
     {
-        Mode = 1,
-        RecoilAutoControl = 0.1,    
+        Mode = 1,   
         PrintName = "PUMP"
 
     },
@@ -318,6 +318,7 @@ end
 SWEP.Animations = {
     ["draw"] = {
         Source = "draw",
+        MinProgress = 0.5,
         EventTable = {
             {s = foley .. "equip_1.ogg",    t = 0},
         },
@@ -370,7 +371,7 @@ SWEP.Animations = {
             {s = pb,    t = 0.1, v= 0.3, p = 80},
             {s = foley .. "ks23_pb.mp3",    t = 0.1, v= 1, p = 100},
             {s = pf,    t = 0.45, v= 1, p = 80},
-            {s = foley .. "pf.mp3",    t = 0.45, v= 0.3, p = 100},
+            {s = foley .. "ks23_pf.mp3",    t = 0.45, v= 0.3, p = 100},
         },
     },
     ["ready"] = {
@@ -407,7 +408,7 @@ SWEP.Animations = {
             {s = pb,    t = 0.1, v= 0.3, p = 80},
             {s = foley .. "ks23_pb.mp3",    t = 0.1, v= 1, p = 100},
             {s = pf,    t = 0.45, v= 1, p = 80},
-            {s = foley .. "pf.mp3",    t = 0.45, v= 0.3, p = 100},
+            {s = foley .. "ks23_pf.mp3",    t = 0.45, v= 0.3, p = 100},
         },
     },
     ["reload_start"] = {
@@ -446,7 +447,7 @@ SWEP.Animations = {
             {s = pb,    t = 0.1+0.65, v= 0.2, p = 80},
             {s = foley .. "ks23_pb.mp3",    t = 0.1+0.65, v= 0.5, p = 100},
             {s = pf,    t = 0.45+0.65, v= 0.3, p = 100},
-            {s = foley .. "pf.mp3",    t = 0.45+0.65, v= 0.6, p = 100},
+            {s = foley .. "ks23_pf.mp3",    t = 0.45+0.65, v= 0.6, p = 100},
             {s = "shared/foley/fal/weapon_rotate.wav",    t = 0.8+0.65, v= 0.1, p = 60},
         },
     },
@@ -490,6 +491,7 @@ SWEP.Attachments = {
        PrintName = "Ammo",
        Category = { "saa_ks23_ammo"},
        InstalledElements = nil,
+       DefaultIcon = Material("hud/arc9_saa/att/sg-sh-df.png", "mips smooth"),
        Bone = "b_wpn",
        Pos = Vector(0, -4.5, -1),
        Ang = Angle(0, 0, 0),
