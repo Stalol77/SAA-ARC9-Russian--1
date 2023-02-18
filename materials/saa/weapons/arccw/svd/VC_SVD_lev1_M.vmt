@@ -8,12 +8,12 @@
 	"$blendTintByBaseAlpha"		"1"
 
 	"$envmap" 					"models\weapons\envmaps\fo4_dith"
-	"$envmapfresnel" 			".5"
+	"$envmapfresnel" 			".75"
 	"$envmaptint"				".5"
 	"$envmapcoefficient"		"0.3" // Lighting will be multiplied by this value
 
 	"$phong"					"1"
-	"$phongboost"				"15"
+	"$phongboost"				"10"
 	"$phongfresnelranges"		"[0.32 0.72 0.99]"
 	"$phongalbedotint" 			"1"
 
