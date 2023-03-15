@@ -3,14 +3,14 @@
 	"$basetexture"				"saa\weapons\arccw\SVD\textures\svdmain\svd_d"
 	"$bumpmap"					"saa\weapons\arccw\SVD\textures\svdmain\svd_n"
 	"$phongexponenttexture"		"saa\weapons\arccw\SVD\textures\svdmain\svd_e"
-	"$phongwarptexture"			"models\weapons\saa\shared\lightwarps\phongwarp_metal"
+	"$phongwarptexture"			"models\weapons\saa\shared\lightwarps\phongwarp_metal2"
 	"$color2"					"[0.35 0.35 0.35]"
 	"$blendTintByBaseAlpha"		"1"
 
 	"$envmap" 					"models\weapons\envmaps\fo4_dith"
 	"$envmapfresnel" 			".75"
 	"$envmaptint"				".5"
-	"$envmapcoefficient"		"0.3" // Lighting will be multiplied by this value
+	"$envmapcoefficient"		".75" // Lighting will be multiplied by this value
 
 	"$phong"					"1"
 	"$phongboost"				"10"

@@ -9,8 +9,7 @@
 
 	"$envmap" 					"models\weapons\envmaps\fo4_dith"
 	"$envmapfresnel" 			".5"
-	"$envmaptint"				".5"
-	"$envmapcoefficient"		"0.3" // Lighting will be multiplied by this value
+	"$envmapcoefficient"		".75" 
 
 	"$phong"					"1"
 	"$phongboost"				"15"
@@ -34,4 +33,3 @@ Proxies
 }
 }
 //Material setup by ShadowRUN 幸運な. 
-//Do NOT edit/modify/redistribute these materials without my explicit permission.

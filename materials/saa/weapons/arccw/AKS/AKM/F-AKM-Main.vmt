@@ -18,9 +18,8 @@
 	"$rimmask"					"1"
 	"$envmap" 			"models\weapons\envmaps\fo4_dith"
 	"$normalmapalphaenvmapmask" 	"1"
-	"$envmaptint"			"[0.5 0.5 0.5]"
-	"$envmapcoefficient"	"0.1" // Lighting will be multiplied by this value
-	"$colorcoefficient"	"0.8" //Lighting will be multiplied by this value
+	"$envmapfresnel"			".5"
+	"$envmapcoefficient"		".1"
 
 Proxies
 {
