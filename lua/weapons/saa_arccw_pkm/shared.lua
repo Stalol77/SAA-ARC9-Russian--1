@@ -206,7 +206,7 @@ SWEP.NPCWeight = 60
 -------------------------- SPREAD
 
 SWEP.Spread = 0.001
-SWEP.SpreadHot = 0.01
+SWEP.SpreadAddHot = 0.0025
 
 
 SWEP.Ammo = "7.62x54mmR"
@@ -215,7 +215,7 @@ SWEP.MagID = "pkm"
 SWEP.Jamming = true
 SWEP.Overheat = true -- Weapon will jam when it overheats, playing the "overheat" animation.
 SWEP.HeatPerShot = 1
-SWEP.HeatCapacity = 800 -- rounds that can be fired non-stop before the gun jams, playing the "fix" animation
+SWEP.HeatCapacity = 220 -- rounds that can be fired non-stop before the gun jams, playing the "fix" animation
 SWEP.HeatDissipation = 3 -- rounds' worth of heat lost per second
 SWEP.HeatLockout = true -- overheating means you cannot fire until heat has been fully depleted
 SWEP.HeatDelayTime = 2 -- Amount of time that passes before heat begins to dissipate.

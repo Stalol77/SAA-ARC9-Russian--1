@@ -135,7 +135,7 @@ SWEP.RecoilKick = 4 -- Camera recoil
 SWEP.RecoilKickDamping = 90 -- Camera recoil damping
 
 SWEP.ViewRecoil = true -- true
-SWEP.ViewRecoilUpMult = 10 -- 40-100
+SWEP.ViewRecoilUpMult = 5 -- 40-100
 SWEP.ViewRecoilSideMult = 50 -- 1-20
 
 

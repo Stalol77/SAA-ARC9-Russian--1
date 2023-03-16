@@ -88,10 +88,6 @@ SWEP.ViewRecoil = true -- true
 SWEP.ViewRecoilUpMult = 10 -- 40-100
 SWEP.ViewRecoilSideMult = 15 -- 1-20
 
-SWEP.ViewRecoil = true -- true
-SWEP.ViewRecoilUpMult = 10 -- 40-100
-SWEP.ViewRecoilSideMult = 15 -- 1-20
-
 SWEP.UseVisualRecoil = true
 
 SWEP.VisualRecoilUp = 1.6 -- Vertical tilt for visual recoil.F
