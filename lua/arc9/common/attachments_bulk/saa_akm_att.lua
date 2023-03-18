@@ -34,8 +34,36 @@ ARC9.LoadAttachment(ATT, "saa_ak_ribbedcover")
 
 ATT = {}
 
-ATT.PrintName = "6P20-01 Smooth Dust Cover"
+ATT.PrintName = "6P20-01 AK"
 ATT.CompactName = "6P20-01"
+ATT.Description = [[Dust cover produced for AK74 rifles. Features the classic ribbed design to enhance durability and covers the internals fairly well boosting the weapon's reliability.]]
+ATT.Icon = Material("hud/arc9_saa/rus/akm_dc.png", "mips smooth")
+
+
+ATT.SortOrder = 0
+ATT.Category = "saa_ak_dustcover"
+
+
+ATT.SprintToFireTimeMult = 0.95
+ATT.SpeedMult = 0.98
+ATT.AimDownSightsTimeMult = 1.02
+ATT.HeatDissipationMult = 0.98
+ATT.MalfunctionMeanShotsToFailMult = 1.225
+ATT.MalfunctionWaitMult = 3
+
+
+ATT.ActivateElements = {"dustcover_ak74"}
+
+ARC9.LoadAttachment(ATT, "saa_ak74_ribbedcover")
+
+-- end here
+
+-- start here
+
+ATT = {}
+
+ATT.PrintName = "6P34 0-1 Smooth Dust Cover"
+ATT.CompactName = "6P34 0-1"
 ATT.Description = [[Dust cover produced for later AK rifles. Features a sleek design, free of structure-reinforcing ribs and rails for basic bolt covering functionalities.]]
 ATT.Icon = Material("hud/arc9_saa/rus/ak74_dc.png", "mips smooth")
 
@@ -145,7 +173,7 @@ ATT = {}
 
 ATT.PrintName = "AK 6P1 Sb.2-1 Ironsights"
 ATT.CompactName = "6P1 Sb.2-1"
-ATT.Description = [[Standard issue AK-AK74 rear sight.]]
+ATT.Description = [[Standard issue AKM rear sight.]]
 ATT.Icon = Material("hud/arc9_saa/rus/ak_irons.png", "mips smooth")
 
 
@@ -162,13 +190,32 @@ ARC9.LoadAttachment(ATT, "saa_ak_akmiron")
 
 ATT = {}
 
+ATT.PrintName = "AK 6P20 Sb.2 Ironsights"
+ATT.CompactName = "6P20 Sb.2"
+ATT.Description = [[Standard issue AK74 rear sight.]]
+ATT.Icon = Material("hud/arc9_saa/rus/ak_irons.png", "mips smooth")
+
+
+ATT.SortOrder = 0
+ATT.Category = "saa_ak74_iron"
+ATT.GivesFlags = {"iron"}
+ATT.ActivateElements = {"ak74_iron"}
+
+ARC9.LoadAttachment(ATT, "saa_ak_ak74iron")
+
+-- end here
+
+-- start here
+
+ATT = {}
+
 ATT.PrintName = "TULA Tactical Picatinny Rear Sight"
 ATT.CompactName = "TULA Tac"
 ATT.Description = [[Custom Ironsight fabricated for later models, including as earliest versions the M43 chambered RPK family.]]
 
 
 ATT.SortOrder = 0
-ATT.Category = "saa_ak_iron"
+ATT.Category = {"saa_akm_iron", "saa_ak74_iron"}
 ATT.GivesFlags = {"iron"}
 ATT.ActivateElements = {"iron_akmb"}
 
@@ -198,7 +245,7 @@ ATT.Description = [[Custom Ironsight fabricated for later models, including as e
 
 
 ATT.SortOrder = 0
-ATT.Category = "saa_ak_iron"
+ATT.Category = {"saa_akm_iron", "saa_ak74_iron"}
 ATT.GivesFlags = {"iron"}
 ATT.ActivateElements = {"iron_alpha"}
 

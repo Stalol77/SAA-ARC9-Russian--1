@@ -46,7 +46,7 @@ SWEP.Slot = 2
 
 -- Viewmodel / Worldmodel / FOV --
 
-SWEP.ViewModel = "models/saa/weapons/arccw/akpack/ak74/v_ak74_v1.mdl"
+SWEP.ViewModel = "models/saa/weapons/arccw/akpack/ak74/v_ak74_v2.mdl"
 SWEP.WorldModel = "models/weapons/arccw/c_ud_m16.mdl"
 SWEP.CustomizeSnapshotFOV = 100
 SWEP.AnimDraw = false
@@ -731,7 +731,7 @@ SWEP.Attachments = {
         Bone = "b_wpn",
         ExcludeElements = {"blockmuzzle"},
         InstalledElements = {"plainmuzzle"},
-        Pos = Vector(0, 15.05*1.1, 0.35*1.1),
+        Pos = Vector(0, 14.9*1.1, 0.3*1.1),
         Ang = Angle(0, -90, 0),
 
         Scale = 0.8,
@@ -749,7 +749,7 @@ SWEP.Attachments = {
     {
         PrintName = "Dust Cover",
         Category = "saa_ak_dustcover",
-        Installed = "saa_ak_ribbedcover",
+        Installed = "saa_ak74_ribbedcover",
         Bone = "b_wpn",
         Pos = Vector(0, -2.5*1.1, 1*1.1),
         Ang = Angle(0, 0, 0),
@@ -766,8 +766,8 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Rear Sight",
-        Category = {"saa_ak_iron", "saa_akm_iron"},
-        Installed = "saa_ak_akmiron",
+        Category = {"saa_ak_iron", "saa_ak74_iron"},
+        Installed = "saa_ak_ak74iron",
         Bone = "b_wpn",
         Pos = Vector(0, 2.8, 2),
         Ang = Angle(0, 0, 0),
@@ -837,21 +837,16 @@ SWEP.Attachments = {
     },
 }
 
-SWEP.DefaultBodygroups = "000081000000000"
+SWEP.DefaultBodygroups = "00010000011100000000"
 SWEP.AttachmentElements = {
-    ["gp25"] = {
-        Bodygroups = {
-            {12, 1},
-        },
-    },
     ["plainmuzzle"] = {
         Bodygroups = {
-            {9, 1},
+            {10, 0},
         },
     },
-    ["dustcover_akm"] = {
+    ["dustcover_ak74"] = {
         Bodygroups = {
-            {6, 1},
+            {7, 1},
         },
     },
     ["dustcover_6p20"] = {
@@ -871,7 +866,7 @@ SWEP.AttachmentElements = {
     },
     ["gasport_akm"] = {
         Bodygroups = {
-            {3, 1},
+            {4, 3},
         },
     },
     ["magpul_gasport"] = {
@@ -892,12 +887,12 @@ SWEP.AttachmentElements = {
     },
     ["n_gasport"] = {
         Bodygroups = {
-            {3, 5},
+            {4, 5},
         },
     },
     ["74n_gasport"] = {
         Bodygroups = {
-            {3, 7},
+            {4, 1},
         },
     },
     ["s200_gasport"] = {
@@ -915,19 +910,19 @@ SWEP.AttachmentElements = {
             {11, 1},
         },
     },
-    ["akm_iron"] = {
+    ["ak74_iron"] = {
         Bodygroups = {
-            {10, 1},
+            {8, 1},
         },
     },
     ["iron_akmb"] = {
         Bodygroups = {
-            {10, 2},
+            {8, 2},
         },
     },
     ["iron_alpha"] = {
         Bodygroups = {
-            {10, 3},
+            {8, 3},
         },
     },
     ["steel_20"] = {
@@ -987,7 +982,7 @@ SWEP.AttachmentElements = {
     },
     ["ak74_stock"] = {
         Bodygroups = {
-            {7, 7},
+            {6, 1},
         },
     },
     ["magpul_grip"] = {
@@ -1032,32 +1027,32 @@ SWEP.AttachmentElements = {
     },
     ["alpha_guard"] = {
         Bodygroups = {
-            {4, 3},
+            {3, 7},
         },
     },
     ["magpul_handguard"] = {
         Bodygroups = {
-            {4, 1},
+            {3, 5},
         },
     },
     ["romanian"] = {
         Bodygroups = {
-            {4, 6},
+            {3, 3},
         },
     },
     ["s100_handguard"] = {
         Bodygroups = {
-            {4, 2},
+            {3, 4},
         },
     },
     ["s200_handguard"] = {
         Bodygroups = {
-            {4, 7},
+            {3, 6},
         },
     },
     ["railed_guard"] = {
         Bodygroups = {
-            {4, 4},
+            {3, 8},
         },
     },
     ["helix_guard"] = {
@@ -1067,7 +1062,7 @@ SWEP.AttachmentElements = {
     },
     ["akmn_dovetail"] = {
         Bodygroups = {
-            {8, 1},
+            {1, 1},
         },
     },
     ["zenit_chargehandle"] = {
