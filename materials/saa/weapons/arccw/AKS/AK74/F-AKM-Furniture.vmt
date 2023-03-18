@@ -1,0 +1,30 @@
+"VertexLitGeneric"
+{
+	"$basetexture"				"saa\weapons\arccw\AKS\AKM\frimenitnet-new\AKM AKMS DVT Basemat_secondary_BaseColor"
+	"$bumpmap"					"saa\weapons\arccw\AKS\AKM\frimenitnet-new\AKM AKMS DVT Basemat_secondary_Normal"
+	"$phongexponenttexture"		"saa\weapons\arccw\AKS\AKM\frimenitnet-new\AKM AKMS DVT Basemat_secondary_Roughness"
+	"$phongwarptexture"			"models\weapons\saa\shared\lightwarps\phongwarp_metal"
+	"$color2"					"[0.5 0.5 0.5]"
+	"$blendTintByBaseAlpha"		"1"
+	"$phong"					"1"
+	"$phongboost"				"5"
+	"$phongfresnelranges"		"[0.32 0.72 0.99]"
+	"$phongalbedotint" 			"1"
+
+	"$rimlight"					"1"
+	"$rimlightexponent"			"33"
+	"$rimlightboost"			"0.3"
+	"$rimmask"					"1"
+	"$envmap" 			"models\weapons\envmaps\fo4_dith"
+	"$normalmapalphaenvmapmask" 	"1"
+	"$envmaptint"			"[0.5 0.5 0.5]"
+	"$envmapcoefficient"	"0.1" // Lighting will be multiplied by this value
+Proxies
+{
+    SAA_CubemapTintMult
+    {
+        multiplier	$envmapcoefficient // Use our value for default envmap tint
+        resultvar	$envmaptint // Write final output to $envmaptint
+    }
+}
+}
