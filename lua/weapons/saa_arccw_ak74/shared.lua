@@ -113,8 +113,10 @@ SWEP.VisualRecoilPositionBump = 1.5
 
 SWEP.VisualRecoilHipFire = 1
 
-SWEP.VisualRecoilDampingConst = 10 -- How spring will be visual recoil, 120 is default
+SWEP.VisualRecoilDampingConst = 1 -- How spring will be visual recoil, 120 is default
 SWEP.VisualRecoilSpringMagnitude = 1
+SWEP.VisualRecoilSpringPunchDamping = 3 -- ehh another val for "eft" recoil, 6 is default
+
 
 -- SWEP.VisualRecoilMult = 1
 -- SWEP.VisualRecoilADSMult = 0.1
@@ -849,19 +851,24 @@ SWEP.AttachmentElements = {
             {7, 1},
         },
     },
+    ["dustcover_akm"] = {
+        Bodygroups = {
+            {7, 3},
+        },
+    },
     ["dustcover_6p20"] = {
         Bodygroups = {
-            {6, 4},
+            {7, 2},
         },
     },
     ["alpha_dustcover"] = {
         Bodygroups = {
-            {6, 2},
+            {7, 4},
         },
     },
     ["bastion_dustcover"] = {
         Bodygroups = {
-            {6, 3},
+            {7, 5},
         },
     },
     ["gasport_akm"] = {
@@ -871,18 +878,17 @@ SWEP.AttachmentElements = {
     },
     ["magpul_gasport"] = {
         Bodygroups = {
-            {3, 4},
+            {4, 6},
         },
     },
     ["alpha_gasport"] = {
         Bodygroups = {
-            {3, 3},
-            {2, 1},
+            {4, 7},
         },
     },
     ["b19_gasport"] = {
         Bodygroups = {
-            {3, 8},
+            {4, 8},
         },
     },
     ["n_gasport"] = {
@@ -897,12 +903,12 @@ SWEP.AttachmentElements = {
     },
     ["s200_gasport"] = {
         Bodygroups = {
-            {3, 6},
+            {4, 4},
         },
     },
     ["hun_gasport"] = {
         Bodygroups = {
-            {2, 1},
+            {4, 2},
         },
     },
     ["bakelite_30"] = {
@@ -942,42 +948,42 @@ SWEP.AttachmentElements = {
     },
     ["drum_95"] = {
         Bodygroups = {
-            {11, 5},
+            {11, 6},
         },
     },
     ["poly_30"] = {
         Bodygroups = {
-            {11, 1},
+            {11, 2},
         },
     },
     ["poly_45"] = {
         Bodygroups = {
-            {11, 3},
+            {11, 4},
         },
     },
     ["bake_45"] = {
         Bodygroups = {
-            {11, 2},
+            {11, 3},
         },
     },
     ["casket"] = {
         Bodygroups = {
-            {11, 4},
+            {11, 5},
         },
     },
     ["aks74_stock"] = {
         Bodygroups = {
-            {7, 8},
+            {6, 3},
         },
     },
     ["aks74m_stock"] = {
         Bodygroups = {
-            {7, 9},
+            {6, 4},
         },
     },
     ["akm_stock"] = {
         Bodygroups = {
-            {7, 1},
+            {6, 9},
         },
     },
     ["ak74_stock"] = {
@@ -987,42 +993,42 @@ SWEP.AttachmentElements = {
     },
     ["magpul_grip"] = {
         Bodygroups = {
-            {5, 3},
+            {5, 2},
         },
     },
     ["s200_grip"] = {
         Bodygroups = {
-            {5, 4},
+            {5, 3},
         },
     },
     ["wood_grip"] = {
         Bodygroups = {
-            {5, 0},
+            {5, 1},
         },
     },
     ["zenitco_rk3_grip"] = {
         Bodygroups = {
-            {5, 2},
+            {5, 4},
         },
     },
     ["magpul_stock"] = {
         Bodygroups = {
-            {7, 3},
+            {6, 7},
         },
     },
     ["alpha_stock"] = {
         Bodygroups = {
-            {7, 4},
+            {6, 8},
         },
     },
     ["s100_stock"] = {
         Bodygroups = {
-            {7, 5},
+            {6, 6},
         },
     },
     ["s200_stock"] = {
         Bodygroups = {
-            {7, 6},
+            {6, 5},
         },
     },
     ["alpha_guard"] = {
