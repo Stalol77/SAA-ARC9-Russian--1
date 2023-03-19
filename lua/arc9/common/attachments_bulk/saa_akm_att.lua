@@ -158,7 +158,7 @@ ATT.SpeedMult = 0.98
 ATT.AimDownSightsTimeMult = 1.02
 ATT.HeatDissipationMult = 0.98
 
-ATT.ExcludeElements = {"akm_iron","iron_akmb","ak_iron", "iron_alpha"}
+ATT.ExcludeElements = {"akm_iron", "ak74_iron","iron_akmb","ak_iron", "iron_alpha"}
 ATT.ActivateElements = {"bastion_dustcover"}
 
 ARC9.LoadAttachment(ATT, "saa_ak_ironcover")

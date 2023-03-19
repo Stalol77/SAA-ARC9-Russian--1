@@ -94,7 +94,7 @@ SWEP.VisualRecoilUp = 1.6 -- Vertical tilt for visual recoil.F
 SWEP.VisualRecoilSide = 0.5 -- Horizontal tilt for visual recoil.
 SWEP.VisualRecoilRoll = 1 -- Roll tilt for visual recoil.
 
-SWEP.VisualRecoilCenter = Vector(0, 2, 0) -- The "axis" of visual recoil. Where your hand is.
+SWEP.VisualRecoilCenter = Vector(2, 4, 2) -- The "axis" of visual recoil. Where your hand is.
 
 SWEP.VisualRecoilPunch = 1.5 -- How far back visual recoil moves the gun.
 SWEP.VisualRecoilPunchMultSights = 0.1
@@ -1034,6 +1034,7 @@ SWEP.AttachmentElements = {
     ["alpha_guard"] = {
         Bodygroups = {
             {3, 7},
+            {9, 0},
         },
     },
     ["magpul_handguard"] = {
