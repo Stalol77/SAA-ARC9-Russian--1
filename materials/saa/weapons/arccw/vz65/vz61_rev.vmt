@@ -8,11 +8,11 @@
 	"$blendTintByBaseAlpha"		"1"
 
 	"$envmap" 					"models\weapons\envmaps\fo4_dith"
-	"$envmapfresnel" 			".5"
+	"$envmapfresnel" 			".25"
 	"$envmapcoefficient"		".75" 
 
 	"$phong"					"1"
-	"$phongboost"				"15"
+	"$phongboost"				"30"
 	"$phongfresnelranges"		"[0.32 0.72 0.99]"
 	"$phongalbedotint" 			"1"
 
