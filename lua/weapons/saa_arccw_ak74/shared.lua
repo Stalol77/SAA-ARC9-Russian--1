@@ -82,10 +82,10 @@ SWEP.RecoilDissipationRate = 40 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0.01 -- How long the gun must go before the recoil pattern starts to reset.
 
 SWEP.RecoilAutoControl = 0
-SWEP.RecoilKick = 2
+SWEP.RecoilKick = 1
 
 SWEP.ViewRecoil = true -- true
-SWEP.ViewRecoilUpMult = 10 -- 40-100
+SWEP.ViewRecoilUpMult = 3 -- 40-100
 SWEP.ViewRecoilSideMult = 15 -- 1-20
 
 SWEP.UseVisualRecoil = true
@@ -404,12 +404,15 @@ SWEP.RicochetAngleMax = 45 -- Maximum angle at which a ricochet can occur. Betwe
 SWEP.RicochetChance = 0.1 -- If the angle is right, what is the chance that a ricochet can occur?
 local mech = akm .. "akm_mech_"
 local mechtable = {
-    mech .. "1.wav",
-    mech .. "2.wav",
-    mech .. "3.wav",
-    mech .. "4.wav",
-    mech .. "5.wav",
-    mech .. "6.wav",
+    "saa/ak2022/sandstorm/rpk/RPK_mech_loop_01.wav",
+    "saa/ak2022/sandstorm/rpk/RPK_mech_loop_02.wav",
+    "saa/ak2022/sandstorm/rpk/RPK_mech_loop_03.wav",
+    "saa/ak2022/sandstorm/rpk/RPK_mech_loop_04.wav",
+    "saa/ak2022/sandstorm/rpk/RPK_mech_loop_05.wav",
+    "saa/ak2022/sandstorm/rpk/RPK_mech_loop_06.wav",
+    "saa/ak2022/sandstorm/rpk/RPK_mech_loop_07.wav",
+    "saa/ak2022/sandstorm/rpk/RPK_mech_loop_08.wav",
+    "saa/ak2022/sandstorm/rpk/RPK_mech_loop_09.wav",
 }
 
 SWEP.Animations = {
@@ -458,7 +461,7 @@ SWEP.Animations = {
         Source = "ACT_VM_PRIMARYATTACK",
         ShellEjectAt = 0.01,
         EventTable = {
-            {s = mechtable,    t = 0, v= 1.0, p = 100, c = cl },
+            {s = mechtable,    t = 0, v= 0.8, p = 100*(650/600), c = cl },
             {s = akv .. "ak74_boltback.wav",    t = 0, v= 0.15, p = 100, c = cl },
             {s = akv .. "aks_boltback.wav",    t = 0, v= 0.05, p = 100, c = ci },
 
@@ -546,7 +549,7 @@ SWEP.Animations = {
         Source = "ACT_VM_ISHOOT",
         ShellEjectAt = 0.01,
         EventTable = {
-            {s = mechtable,    t = 0, v= 1, p = 100, c = cl },
+            {s = mechtable,    t = 0, v= 0.8, p = 100*(650/600), c = cl },
             {s = akv .. "ak74_boltback.wav",    t = 0, v= 0.15, p = 100, c = cl },
             {s = akv .. "aks_boltback.wav",    t = 0, v= 0.05, p = 100, c = ci },
 
@@ -646,7 +649,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.1,
+                t = 0.15,
                 lhik = 0,
                 rhik = 0
             },

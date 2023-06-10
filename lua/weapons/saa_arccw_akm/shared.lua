@@ -118,7 +118,7 @@ SWEP.VisualRecoilPositionBump = 1.5
 
 SWEP.VisualRecoilHipFire = 1
 
-SWEP.VisualRecoilDampingConst = 10 -- How spring will be visual recoil, 120 is default
+SWEP.VisualRecoilDampingConst = 30 -- How spring will be visual recoil, 120 is default
 SWEP.VisualRecoilSpringMagnitude = 1
 
 
@@ -995,6 +995,7 @@ SWEP.Attachments = {
         Category = {"saa_m43_muz"},
         Bone = "b_wpn",
         ExcludeElements = {"blockmuzzle"},
+        InstallSound = "shared/foley/new/att/muzzle_on.mp3",
         InstalledElements = {"plainmuzzle"},
         Pos = Vector(0, 15.05*1.1, 0.35*1.1),
         Ang = Angle(0, -90, 0),
@@ -1015,6 +1016,7 @@ SWEP.Attachments = {
         PrintName = "Dust Cover",
         Category = "saa_ak_dustcover",
         Installed = "saa_ak_ribbedcover",
+        InstallSound = "shared/foley/new/att/dustcover_remove.mp3",
         Bone = "b_wpn",
         Pos = Vector(0, -2.5*1.1, 1*1.1),
         Ang = Angle(0, 0, 0),
@@ -1077,6 +1079,7 @@ SWEP.Attachments = {
     {
         PrintName = "Stock",
         Category = {"saa_ak_stock", "saa_akm_stock"},
+        InstallSound = "shared/foley/new/att/stock_attach.mp3",
         Installed = "saa_ak_akmstock",
         Bone = "b_wpn",
         Pos = Vector(0, -7.3*1.1, 0),

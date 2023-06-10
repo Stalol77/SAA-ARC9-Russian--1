@@ -136,8 +136,9 @@ SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilUp = 3.5 -- Vertical tilt for visual recoil.F
 SWEP.VisualRecoilSide = 2 -- Horizontal tilt for visual recoil.
 SWEP.VisualRecoilRoll = 20 -- Roll tilt for visual recoil.
+SWEP.VisualRecoilBipodMult = 0.1
 
-SWEP.VisualRecoilCenter = Vector(2, -2, 0) -- The "axis" of visual recoil. Where your hand is.
+SWEP.VisualRecoilCenter = Vector(2, 4, 2) -- The "axis" of visual recoil. Where your hand is.
 
 SWEP.VisualRecoilPunch = 0.1 -- How far back visual recoil moves the gun.
 SWEP.VisualRecoilPunchMultSights = 0.1
@@ -154,21 +155,24 @@ SWEP.VisualRecoilHipFire = 1
 
 SWEP.VisualRecoilDampingConst = nil -- How spring will be visual recoil, 120 is default
 SWEP.VisualRecoilSpringMagnitude = 1
+SWEP.VisualRecoilMultBipod = 0.1
+
 
 SWEP.RecoilKick = 1.7 -- Camera recoil
 SWEP.RecoilKickDamping = 70.151 -- Camera recoil damping
 
 
 
-SWEP.Sway = 0.56
+SWEP.Sway = 0.9
+SWEP.SwayMultSights = 0.2/0.9
 SWEP.CustomizeAng = Angle(90, 0, 0)
 SWEP.CustomizePos = Vector(19 , 35, 5)
 SWEP.CustomizeSnapshotFOV = 110
 SWEP.SwayMultMidAir = 2
 SWEP.SwayMultMove = 1.5
 SWEP.SwayMultCrouch = 0.66
-SWEP.SwayMultShooting = 1.2
-SWEP.FreeAimRadiusSights = 2
+SWEP.SwayMultShooting = 1
+SWEP.FreeAimRadiusSights = 0
 SWEP.FreeAimRadius = 12 / 1.25 
 -- Firerate / Firemodes --
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.

@@ -13,13 +13,14 @@
 
 	"$envmap"					"models\weapons\envmaps\hdri_parking"
 	"$envmapfresnel"			"0.25"
-	"$envmaptint"				"[ .8 .4 .1 ]"
-	"$envmapcoefficient"		"0.5"
+	"$envmaptint"				"[ .01 .01 .005 ]"
+	"$envmapcoefficient"		"0.1"
 
 	"$phong"					"1"
 	"$phongboost"				"40"
 	"$phongfresnelranges"		"[0.32 0.72 0.99]"
 	"$phongalbedotint"			"1"
+
 
 	"$rimlight"					"1"
 	"$rimlightexponent"			"33"	

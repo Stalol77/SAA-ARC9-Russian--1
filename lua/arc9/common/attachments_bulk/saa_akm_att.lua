@@ -1187,6 +1187,7 @@ ATT.Attachments = {
     {
         PrintName = "Top Barrel",
         Category = { "saa_rail_tactical", "SAA_SCOPE_XS"},
+        InstalledElements = {"nodovetailoptics", "nodustcoveroptics"},
         Pos = Vector(-0.225, 0, -0.3),
         Ang = Angle(0, 270, 0),
         Icon_Offset = Vector(0, 0, 0),
@@ -1360,6 +1361,7 @@ ATT.Attachments = {
     {
         PrintName = "Dovetail",
         Category = "SAA_AK_DOVETAIL",
+        InstalledElements = {"nodustcoveroptics",},
         Pos = Vector(-1*1.1, 0.8*1.1, 0),
         Ang = Angle(0, 270, 0),
         Scale = 0.8*1.1,

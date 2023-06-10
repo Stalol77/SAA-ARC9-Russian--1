@@ -89,23 +89,17 @@ SWEP.ViewRecoil = true -- true
 SWEP.ViewRecoilUpMult = 11 -- 40-100
 SWEP.ViewRecoilSideMult = 15 -- 1-20
 
-SWEP.ViewRecoil = true -- true
-SWEP.ViewRecoilUpMult = 10 -- 40-100
-SWEP.ViewRecoilSideMult = 15 -- 1-20
-
 SWEP.UseVisualRecoil = true
 
-SWEP.VisualRecoilUp = 1.6 -- Vertical tilt for visual recoil.F
+SWEP.VisualRecoilUp = 1.2 -- Vertical tilt for visual recoil.F
 SWEP.VisualRecoilSide = 0.5 -- Horizontal tilt for visual recoil.
 SWEP.VisualRecoilRoll = 1 -- Roll tilt for visual recoil.
 
-SWEP.VisualRecoilCenter = Vector(0, 2, 0) -- The "axis" of visual recoil. Where your hand is.
+SWEP.VisualRecoilCenter = Vector(2, 4, 2) -- The "axis" of visual recoil. Where your hand is.
 
 SWEP.VisualRecoilPunch = 1.5 -- How far back visual recoil moves the gun.
 SWEP.VisualRecoilPunchMultSights = 0.1
 SWEP.VisualRecoilPositionBump = 0
-SWEP.VisualRecoilDampingConst = 0.1 -- How spring will be visual recoil, 120 is default
-SWEP.VisualRecoilSpringMagnitude = 0
 
 -- SWEP.VisualRecoilMult = 1
 -- SWEP.VisualRecoilADSMult = 0.1
@@ -120,6 +114,18 @@ SWEP.VisualRecoilHipFire = 1
 
 SWEP.VisualRecoilDampingConst = 10 -- How spring will be visual recoil, 120 is default
 SWEP.VisualRecoilSpringMagnitude = 1
+SWEP.VisualRecoilSpringPunchDamping = 2 -- ehh another val for "eft" recoil, 6 is default
+
+
+-- SWEP.VisualRecoilMult = 1
+-- SWEP.VisualRecoilADSMult = 0.1
+-- SWEP.VisualRecoilPunchADSMult = 0.1
+
+SWEP.VisualRecoil = 1
+SWEP.VisualRecoilMultSights = 1
+SWEP.VisualRecoilPositionBump = 1.5
+
+SWEP.VisualRecoilHipFire = 1
 
 
 
@@ -1099,207 +1105,228 @@ SWEP.Attachments = {
     },
 }
 
-SWEP.DefaultBodygroups = "000001001000000"
+
+SWEP.DefaultBodygroups = "01020000011100000000"
 SWEP.AttachmentElements = {
-    ["gp25"] = {
-        Bodygroups = {
-            {12, 1},
-        },
-    },
     ["plainmuzzle"] = {
         Bodygroups = {
-            {9, 1},
+            {10, 0},
         },
     },
-    ["dustcover_akm"] = {
-        Bodygroups = {
-            {6, 1},
-        },
-    },
-    ["dustcover_6p20"] = {
-        Bodygroups = {
-            {6, 4},
-        },
-    },
-    ["alpha_dustcover"] = {
-        Bodygroups = {
-            {6, 2},
-        },
-    },
-    ["bastion_dustcover"] = {
-        Bodygroups = {
-            {6, 3},
-        },
-    },
-    ["gasport_akm"] = {
-        Bodygroups = {
-            {3, 1},
-        },
-    },
-    ["magpul_gasport"] = {
-        Bodygroups = {
-            {3, 4},
-        },
-    },
-    ["alpha_gasport"] = {
-        Bodygroups = {
-            {3, 3},
-            {2, 1},
-        },
-    },
-    ["n_gasport"] = {
-        Bodygroups = {
-            {3, 5},
-        },
-    },
-    ["hun_gasport"] = {
-        Bodygroups = {
-            {2, 1},
-        },
-    },
-    ["bakelite_30"] = {
-        Bodygroups = {
-            {11, 1},
-        },
-    },
-    ["ak74_stock"] = {
-        Bodygroups = {
-            {7, 7},
-        },
-    },
-    ["74n_gasport"] = {
-        Bodygroups = {
-            {3, 7},
-        },
-    },
-    ["steel_20"] = {
-        Bodygroups = {
-            {11, 5},
-        },
-    },
-    ["akm_iron"] = {
-        Bodygroups = {
-            {10, 1},
-        },
-    },
-    ["iron_akmb"] = {
-        Bodygroups = {
-            {10, 2},
-        },
-    },
-    ["iron_alpha"] = {
-        Bodygroups = {
-            {10, 3},
-        },
-    },
-    ["steel_40"] = {
-        Bodygroups = {
-            {11, 4},
-        },
-    },
-    ["pmag_30"] = {
-        Bodygroups = {
-            {11, 3},
-        },
-    },
-    ["drum_75"] = {
-        Bodygroups = {
-            {11, 2},
-        },
-    },
-    ["aks74_stock"] = {
-        Bodygroups = {
-            {7, 2},
-        },
-    },
-    ["aks74m_stock"] = {
-        Bodygroups = {
-            {7,8},
-        },
-    },
-    ["akm_stock"] = {
+    ["dustcover_ak74"] = {
         Bodygroups = {
             {7, 1},
         },
     },
-    ["s200_gasport"] = {
+    ["dustcover_akm"] = {
         Bodygroups = {
-            {3, 6},
+            {7, 3},
         },
     },
-    ["s200_handguard"] = {
+    ["dustcover_6p20"] = {
+        Bodygroups = {
+            {7, 2},
+        },
+    },
+    ["alpha_dustcover"] = {
+        Bodygroups = {
+            {7, 4},
+        },
+    },
+    ["bastion_dustcover"] = {
+        Bodygroups = {
+            {7, 5},
+        },
+    },
+    ["gasport_akm"] = {
+        Bodygroups = {
+            {4, 3},
+        },
+    },
+    ["magpul_gasport"] = {
+        Bodygroups = {
+            {4, 6},
+        },
+    },
+    ["alpha_gasport"] = {
         Bodygroups = {
             {4, 7},
         },
     },
     ["b19_gasport"] = {
         Bodygroups = {
-            {3, 8},
+            {4, 8},
+        },
+    },
+    ["n_gasport"] = {
+        Bodygroups = {
+            {4, 5},
+        },
+    },
+    ["74n_gasport"] = {
+        Bodygroups = {
+            {4, 1},
+        },
+    },
+    ["s200_gasport"] = {
+        Bodygroups = {
+            {4, 4},
+        },
+    },
+    ["hun_gasport"] = {
+        Bodygroups = {
+            {4, 2},
+        },
+    },
+    ["bakelite_30"] = {
+        Bodygroups = {
+            {11, 2},
+        },
+    },
+    ["akm_iron"] = {
+        Bodygroups = {
+            {8, 1},
+        },
+    },
+    ["iron_akmb"] = {
+        Bodygroups = {
+            {8, 2},
+        },
+    },
+    ["iron_alpha"] = {
+        Bodygroups = {
+            {8, 3},
+        },
+    },
+    ["steel_20"] = {
+        Bodygroups = {
+            {11, 6},
+        },
+    },
+    ["steel_40"] = {
+        Bodygroups = {
+            {11, 5},
+        },
+    },
+    ["pmag_30"] = {
+        Bodygroups = {
+            {11, 4},
+        },
+    },
+    ["drum_75"] = {
+        Bodygroups = {
+            {11, 3},
+        },
+    },
+    ["poly_30"] = {
+        Bodygroups = {
+            {11, 2},
+        },
+    },
+    ["poly_45"] = {
+        Bodygroups = {
+            {11, 4},
+        },
+    },
+    ["bake_45"] = {
+        Bodygroups = {
+            {11, 3},
+        },
+    },
+    ["casket"] = {
+        Bodygroups = {
+            {11, 5},
+        },
+    },
+    ["aks74_stock"] = {
+        Bodygroups = {
+            {6, 3},
+        },
+    },
+    ["aks74m_stock"] = {
+        Bodygroups = {
+            {6, 4},
+        },
+    },
+    ["akm_stock"] = {
+        Bodygroups = {
+            {6, 9},
+        },
+    },
+    ["ak74_stock"] = {
+        Bodygroups = {
+            {6, 1},
         },
     },
     ["magpul_grip"] = {
+        Bodygroups = {
+            {5, 2},
+        },
+    },
+    ["s200_grip"] = {
         Bodygroups = {
             {5, 3},
         },
     },
     ["wood_grip"] = {
         Bodygroups = {
-            {5, 0},
-        },
-    },
-    ["s200_grip"] = {
-        Bodygroups = {
-            {5, 4},
+            {5, 1},
         },
     },
     ["zenitco_rk3_grip"] = {
         Bodygroups = {
-            {5, 2},
+            {5, 4},
         },
     },
     ["magpul_stock"] = {
         Bodygroups = {
-            {7, 3},
+            {6, 7},
         },
     },
     ["alpha_stock"] = {
         Bodygroups = {
-            {7, 4},
-        },
-    },
-    ["s200_stock"] = {
-        Bodygroups = {
-            {7, 6},
+            {6, 8},
         },
     },
     ["s100_stock"] = {
         Bodygroups = {
-            {7, 5},
+            {6, 6},
+        },
+    },
+    ["s200_stock"] = {
+        Bodygroups = {
+            {6, 5},
         },
     },
     ["alpha_guard"] = {
         Bodygroups = {
-            {4, 3},
-        },
-    },
-    ["romanian"] = {
-        Bodygroups = {
-            {4, 6},
-        },
-    },
-    ["s100_handguard"] = {
-        Bodygroups = {
-            {4, 2},
+            {3, 7},
+            {9, 0},
         },
     },
     ["magpul_handguard"] = {
         Bodygroups = {
-            {4, 1},
+            {3, 5},
+        },
+    },
+    ["romanian"] = {
+        Bodygroups = {
+            {3, 3},
+        },
+    },
+    ["s100_handguard"] = {
+        Bodygroups = {
+            {3, 4},
+        },
+    },
+    ["s200_handguard"] = {
+        Bodygroups = {
+            {3, 6},
         },
     },
     ["railed_guard"] = {
         Bodygroups = {
-            {4, 4},
+            {3, 8},
         },
     },
     ["helix_guard"] = {
@@ -1309,7 +1336,7 @@ SWEP.AttachmentElements = {
     },
     ["akmn_dovetail"] = {
         Bodygroups = {
-            {8, 1},
+            {1, 1},
         },
     },
     ["zenit_chargehandle"] = {
