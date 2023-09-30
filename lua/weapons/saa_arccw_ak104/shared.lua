@@ -28,7 +28,12 @@ SWEP.HideBones = {
 }
 SWEP.PrintName = "AK-104"
 
-SWEP.Description = [[Coming in with the Kalashnikov Century Program, the AK-104 offers the AKM's firepower and purpose to a compact package, featuring a shorter 12.4" barrel and a slightly greater rate of fire.]]
+SWEP.Description = [[The AK-104 is a compact assault rifle derived from the famous Kalashnikov AK-74 design.
+Part of the AK-100 series, it was developed as part of the Century renewal program to modernize the Kalashnikov family of firearms.
+Short barreled and chambered for the 7.62x39mm cartridge, the AK-104 is a powerful choice for close-quarters engagements. 
+
+As part of the AK-100 series, the AK-104 incorporates ergonomic improvements and modern materials for better handling and durability. 
+The renewal program aimed to update the classic AK platform, providing soldiers with a more reliable and efficient firearm while maintaining the iconic reliability that has made the AK series legendary.]]
 
 -- Trivia --
 SWEP.Class = "Assault Rifle"
@@ -91,11 +96,11 @@ SWEP.ViewRecoilSideMult = 15 -- 1-20
 
 SWEP.UseVisualRecoil = true
 
-SWEP.VisualRecoilUp = 1.2 -- Vertical tilt for visual recoil.F
-SWEP.VisualRecoilSide = 0.5 -- Horizontal tilt for visual recoil.
+SWEP.VisualRecoilUp = 3 -- Vertical tilt for visual recoil.F
+SWEP.VisualRecoilSide = 3 -- Horizontal tilt for visual recoil.
 SWEP.VisualRecoilRoll = 1 -- Roll tilt for visual recoil.
 
-SWEP.VisualRecoilCenter = Vector(2, 4, 2) -- The "axis" of visual recoil. Where your hand is.
+SWEP.VisualRecoilCenter = Vector(2, 7, 2) -- The "axis" of visual recoil. Where your hand is.
 
 SWEP.VisualRecoilPunch = 1.5 -- How far back visual recoil moves the gun.
 SWEP.VisualRecoilPunchMultSights = 0.1
@@ -130,7 +135,7 @@ SWEP.VisualRecoilHipFire = 1
 
 
 
-SWEP.Sway = 0.42
+SWEP.Sway = 0.9
 SWEP.CustomizeAng = Angle(90, 0, 0)
 SWEP.CustomizePos = Vector(10 , 31, 4)
 SWEP.CustomizeSnapshotFOV = 100
@@ -199,7 +204,7 @@ SWEP.HeatFix = true -- when the "overheat" animation is played, all heat is rest
 SWEP.Malfunction = true
 SWEP.MalfunctionJam = true -- After a malfunction happens, the gun will dryfire until reload is pressed. If unset, instead plays animation right after.
 SWEP.MalfunctionWait = 1 -- The amount of time to wait before playing malfunction animation (or can reload)
-SWEP.MalfunctionMeanShotsToFail = 900 -- The mean number of shots between malfunctions, will be autocalculated if nil
+SWEP.MalfunctionMeanShotsToFail = 350 -- The mean number of shots between malfunctions, will be autocalculated if nil
 SWEP.HeatCapacity = 70 -- rounds that can be fired non-stop before the gun jams, playing the "fix" animation
 
 
@@ -247,7 +252,14 @@ SWEP.IronSights = {
     Magnification = 1.1,
 }
 
-
+SWEP.EnterSightsSound = {
+    "shared/foley/new/cloth/short_cry_01.wav",
+    "shared/foley/new/cloth/short_cry_02.wav",
+}
+SWEP.ExitSightsSound = {
+    "shared/foley/new/cloth/short_movement_02.wav",
+    "shared/foley/new/cloth/raise_weapon_01.wav",
+}
 
 SWEP.CrouchPos = Vector(0, 0, 0)
 SWEP.CrouchAng = Angle(0, 0, 0)
@@ -377,12 +389,21 @@ SWEP.Hook_TranslateAnimation = function (self, anim)
         end
     elseif attached["drum_75"] then
         suffix = "_drum"
+    elseif attached["bakelite_30"] or attached["pmag_30"] then
+        suffix = "_plastic"
     else
         suffix = ""
     end
 
     return anim .. suffix
 end
+
+local release = {
+    "shared/foley/hops/ak/magrel_1.ogg",
+    "shared/foley/hops/ak/magrel_2.ogg",
+    "shared/foley/hops/ak/magrel_3.ogg",
+    "shared/foley/hops/ak/magrel_4.ogg",
+}
 
 SWEP.ExtraSightDist = -10
 -- Animations --
@@ -433,10 +454,18 @@ SWEP.Animations = {
     },
     ["firemode_1"] = {
         Source = "base_fireselect",
+        EventTable = {
+            {s = "shared/foley/new/cloth/fast_movement_01.wav",    t = 0, v = 1.0, p = 100},
+            {s = "shared/foley/new/ak_foley/ak_rof2.wav",    t = 0.3, v = 1.0, p = 100},
+        },
         MinProgress = 1,
     },
     ["firemode_2"] = {
         Source = "base_fireselect",
+        EventTable = {
+            {s = "shared/foley/new/cloth/fast_movement_01.wav",    t = 0, v = 1.0, p = 100},
+            {s = "shared/foley/new/ak_foley/ak_rof2.wav",    t = 0.3, v = 1.0, p = 100},
+        },
         MinProgress = 1,
     },
     ["trigger"] = {
@@ -564,12 +593,51 @@ SWEP.Animations = {
         MinProgress = 3,
         EventTable = {
             {s = "shared/foley/shared/ads-up.wav", t= 0, v= 0.5, p = 100},
-            {s = "saa/pkm/handling/pkm_foley_lid_release.wav", t= 0.4, v= 0.5, p = 150},
-            {s = foley .. "mag_out.ogg", v = 1.0, t = 0.65},
+            {s = "shared/foley/fal/weapon_fidget.wav", t= 0.2, v= 0.2, p = 100},
+            {s = release, v = 0.5, t = 0.5},
+            {s = "shared/foley/hops/ak/metal_mout.ogg", v = 0.75, t = 0.65},
             {s = "shared/foley/ak_val/stock_unlock.wav",    t = 0.75, v= 0.2},
-            {s = foley .. "mag_in.ogg", v = 1.0, t = 1.9},
+            {s = release, v = 0.5, t = 1.85},
+            {s = "shared/foley/hops/ak/metal_min.ogg", v = 1.0, t = 2},
             {s = "shared/foley/m4_1/m4_magrelease.wav",    t = 2.0, v= 0.6},
-            {s = "shared/foley/ak_generic/ak47_rattle.wav",    t = 2.2, v= 0.4, p = 110},
+            {s = "shared/foley/fal/weapon_regrip.wav",    t = 2.2, v= 0.1, p = 110},
+        },
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.25,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.65,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 0
+            },
+        },
+    },
+    ["reload_plastic"] = {
+        Source = "base_reload",
+        MinProgress = 3,
+        EventTable = {
+            {s = "shared/foley/shared/ads-up.wav", t= 0, v= 0.5, p = 100},
+            {s = "shared/foley/fal/weapon_fidget.wav", t= 0.2, v= 0.2, p = 100},
+            {s = release, v = 0.5, t = 0.5},
+            {s = "shared/foley/hops/ak/plasticU_out.ogg", v = 0.5, t = 0.65},
+            {s = "shared/foley/ak_val/stock_unlock.wav",    t = 0.75, v= 0.2},
+            {s = release, v = 0.5, t = 1.85},
+            {s = "shared/foley/hops/ak/plasticU_in.ogg", v = 0.6, t = 2},
+            {s = "shared/foley/m4_1/m4_magrelease.wav",    t = 2.0, v= 0.6},
+            {s = "shared/foley/fal/weapon_regrip.wav",    t = 2.2, v= 0.1, p = 110},
         },
         IKTimeLine = {
             {
@@ -599,15 +667,17 @@ SWEP.Animations = {
         Time = 0.5,
         EventTable = {
             {s = "saa/ak2022/ak47_empty.wav",    t = 0.5},
+            {s = "shared/foley/hops/ak/spring_layer.ogg",    t = 0},
         },
     },
     ["fix"] = {
         Source = "fix",
         Mult = 30/55,
         EventTable = {
-            {s = foley .. "charging_handle_pull.ogg",    t = 1.0},
+            {s = "shared/foley/hops/ak/ak74_boltback.ogg",    t = 1.0},
             {s = "saa/ak2022/ak47_empty.wav",    t = 1.15},
-            {s = foley .. "charging_handle_release.ogg",    t = 1.55},
+            {s = "shared/foley/hops/ak/akm_boltrel.ogg",    t = 1.55},
+            {s = "shared/foley/hops/ak/spring_layer.ogg",    t = 1.6},
         },
     },
     ["cycle"] = {
@@ -618,16 +688,66 @@ SWEP.Animations = {
         Source = "base_reloadempty",
         EventTable = {
             {s = "shared/foley/shared/ads-up.wav", t= 0, v= 0.5, p = 100},
-            {s = "saa/pkm/handling/pkm_foley_lid_release.wav", t= 0.4, v= 0.5, p = 150},
-            {s = foley .. "mag_out.ogg", v = 1.0, t = 0.65},
-            {s = "shared/foley/ak_val/stock_unlock.wav", t = 0.75, v= 0.2},
-            {s = foley .. "mag_in.ogg", v = 1.0, t = 1.9},
+            {s = "shared/foley/fal/weapon_fidget.wav", t= 0.2, v= 0.2, p = 100},
+            {s = release, v = 0.5, t = 0.5},
+            {s = "shared/foley/hops/ak/metal_mout.ogg", v = 0.75, t = 0.65},
+            {s = "shared/foley/ak_val/stock_unlock.wav",    t = 0.75, v= 0.2},
+            {s = release, v = 0.5, t = 1.85},
+            {s = "shared/foley/hops/ak/metal_min.ogg", v = 1.0, t = 2},
             {s = "shared/foley/m4_1/m4_magrelease.wav",    t = 2.0, v= 0.6},
-            {s = "shared/foley/ak_generic/ak47_rattle.wav",    t = 2.2, v= 0.4, p = 110},
-            {s = foley .. "charging_handle_pull.ogg",    t = 3.3},
-            {s = "shared/foley/ak_generic/ak47_boltback.wav",    t = 3.3, v= 0.6, p = 100},
-            {s = foley .. "charging_handle_release.ogg",    t = 3.55},
-            {s = "shared/foley/ak_generic/ak47_boltrelease.wav",    t = 3.65, v= 0.3, p = 100},
+            {s = "shared/foley/fal/weapon_regrip.wav",    t = 2.2, v= 0.1, p = 110},
+            {s = "shared/foley/hops/ak/cloth_3.ogg",    t = 2.2, v= 0.3, p = 100},
+            {s = "shared/foley/hops/ak/ak74_boltback.ogg",    t = 3.2},
+            {s = "shared/foley/ak_generic/ak47_boltback.wav",    t = 3.3, v= 0.1, p = 100},
+            {s = "shared/foley/hops/ak/ak74_boltrel.ogg",    t = 3.55},
+            {s = "shared/foley/ak_generic/ak47_boltrelease.wav",    t = 3.65, v= 0.1, p = 100},
+            {s = "shared/foley/shared/movement_raise.wav",    t = 3.9, v= 0.4, p = 100},
+        },
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.25,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.6,
+                lhik = 1,
+                rhik = 0
+            },
+        },
+    },
+    ["reload_empty_plastic"] = {
+        Source = "base_reloadempty",
+        EventTable = {
+            {s = "shared/foley/shared/ads-up.wav", t= 0, v= 0.5, p = 100},
+            {s = "shared/foley/fal/weapon_fidget.wav", t= 0.2, v= 0.2, p = 100},
+            {s = release, v = 0.5, t = 0.5},
+            {s = "shared/foley/hops/ak/plasticU_out.ogg", v = 0.5, t = 0.65},
+            {s = "shared/foley/ak_val/stock_unlock.wav",    t = 0.75, v= 0.2},
+            {s = release, v = 0.5, t = 1.85},
+            {s = "shared/foley/hops/ak/plasticU_in.ogg", v = 0.6, t = 2},
+            {s = "shared/foley/m4_1/m4_magrelease.wav",    t = 2.0, v= 0.6},
+            {s = "shared/foley/fal/weapon_regrip.wav",    t = 2.2, v= 0.1, p = 110},
+            {s = "shared/foley/hops/ak/cloth_3.ogg",    t = 2.2, v= 0.3, p = 100},
+            {s = "shared/foley/hops/ak/ak74_boltback.ogg",    t = 3.2},
+            {s = "shared/foley/ak_generic/ak47_boltback.wav",    t = 3.3, v= 0.1, p = 100},
+            {s = "shared/foley/hops/ak/ak74_boltrel.ogg",    t = 3.55},
+            {s = "shared/foley/ak_generic/ak47_boltrelease.wav",    t = 3.65, v= 0.1, p = 100},
             {s = "shared/foley/shared/movement_raise.wav",    t = 3.9, v= 0.4, p = 100},
         },
         IKTimeLine = {
@@ -662,9 +782,13 @@ SWEP.Animations = {
         Source = "base_reload_drum",
         MinProgress = 3,
         EventTable = {
-            {s = drum .. "out.ogg",    t = 0.85},
-            {s = drum .. "in.ogg",    t = 2.3, v = 0.2},
+            {s = "shared/foley/hops/ak/cloth_2.ogg",    t = 0, v = 0.5},
+            {s = release,    t = 0.65, v = 0.5},
+            {s = "shared/foley/hops/ak/drum_out.ogg",    t = 0.85},
+            {s = "shared/foley/hops/ak/cloth_1.ogg",    t = 1.2, v = 0.5},
+            {s = "shared/foley/hops/ak/drum_in.ogg",    t = 2.5, v = 0.5},
             {s = drum .. "hit.ogg",    t = 2.75},
+            {s = "shared/foley/hops/ak/fid_3.ogg",    t = 3.1, v = 0.5},
         },
         IKTimeLine = {
             {
@@ -692,11 +816,18 @@ SWEP.Animations = {
     ["reload_empty_drum"] = {
         Source = "base_reloadempty_drum",
         EventTable = {
-            {s = drum .. "out.ogg",    t = 0.85},
-            {s = drum .. "in.ogg",    t = 2.4},
-            {s = drum .. "hit.ogg",    t = 2.85},
+            {s = "shared/foley/hops/ak/cloth_2.ogg",    t = 0, v = 0.5},
+            {s = release,    t = 0.65, v = 0.5},
+            {s = "shared/foley/hops/ak/drum_out.ogg",    t = 0.85},
+            {s = "shared/foley/hops/ak/cloth_1.ogg",    t = 1.2, v = 0.5},
+            {s = "shared/foley/hops/ak/drum_in.ogg",    t = 2.5, v = 0.5},
+            {s = drum .. "hit.ogg",    t = 2.75},          
+            {s = "shared/foley/hops/ak/cloth_4.ogg",    t = 2.75},          
             {s = foley .. "charging_handle_pull.ogg",    t = 4.1},
-            {s = foley .. "charging_handle_release.ogg",    t = 4.4},
+            {s = "shared/foley/hops/ak/ak74_boltback.ogg",    t = 4},
+            {s = "shared/foley/ak_generic/ak47_boltback.wav",    t = 4, v= 0.1, p = 100},
+            {s = "shared/foley/hops/ak/ak74_boltrel.ogg",    t = 4.35},
+            {s = "shared/foley/ak_generic/ak47_boltrelease.wav",    t = 4.45, v= 0.1, p = 100},
         },
         IKTimeLine = {
             {
@@ -1009,6 +1140,8 @@ SWEP.Attachments = {
         Bone = "b_wpn",
         ExcludeElements = {"blockmuzzle"},
         InstalledElements = {"plainmuzzle"},
+        DefaultIcon = Material("hud/arc9_saa/rus/74umuz.png", "mips smooth"),
+        InstallSound = "shared/foley/new/att/muzzle_on.mp3",
         Pos = Vector(0, 11.5*1.1, 0.35*1.1),
         Ang = Angle(0, -90, 0),
 
@@ -1028,6 +1161,7 @@ SWEP.Attachments = {
         PrintName = "Dust Cover",
         Category = "saa_ak_dustcover",
         Installed = "saa_ak_dc6p20",
+        InstallSound = "shared/foley/new/att/dustcover_remove.mp3",
         Bone = "b_wpn",
         Pos = Vector(0, -2.5*1.1, 1*1.1),
         Ang = Angle(0, 0, 0),

@@ -134,7 +134,7 @@ SWEP.VisualRecoilUp = 3.5 -- Vertical tilt for visual recoil.F
 SWEP.VisualRecoilSide = 2 -- Horizontal tilt for visual recoil.
 SWEP.VisualRecoilRoll = 20 -- Roll tilt for visual recoil.
 
-SWEP.VisualRecoilCenter = Vector(2, -2, 0) -- The "axis" of visual recoil. Where your hand is.
+SWEP.VisualRecoilCenter = Vector(2, 9, 2) -- The "axis" of visual recoil. Where your hand is.
 
 SWEP.VisualRecoilPunch = 0.1 -- How far back visual recoil moves the gun.
 SWEP.VisualRecoilPunchMultSights = 0.1
@@ -146,11 +146,9 @@ SWEP.VisualRecoil = 1
 SWEP.VisualRecoilMultSights = 0.1
 SWEP.VisualRecoilUpMultSights = 3.5 -- Vertical tilt for visual recoil.F
 SWEP.VisualRecoilPositionBump = 1.5
+SWEP.VisualRecoilSpringPunchDamping = 05 -- ehh another val for "eft" recoil, 6 is default
 
 SWEP.VisualRecoilHipFire = 1
-
-SWEP.VisualRecoilDampingConst = nil -- How spring will be visual recoil, 120 is default
-SWEP.VisualRecoilSpringMagnitude = 1
 
 
 SWEP.RecoilKick = 1 -- Camera recoil
@@ -174,7 +172,7 @@ SWEP.FreeAimRadiusSights = 2
 SWEP.FreeAimRadius = 12 / 1.25 
 -- Firerate / Firemodes --
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
-SWEP.TriggerDelayTime = 0.05 -- Time until weapon fires.
+SWEP.TriggerDelayTime = 0.03 -- Time until weapon fires.
 SWEP.TriggerDelayRepeat = false -- Whether to do it for every shot on automatics.
 SWEP.TriggerDelayCancellable = false -- Whether to do it for every shot on automatics.
 SWEP.RPM = 500
@@ -196,8 +194,8 @@ SWEP.FreeAimRadiusMultBipod = 0
 
 
 SWEP.ShootPitch = 100
-SWEP.ShootVolume = 125
-SWEP.ShootPitchVariation = 0
+SWEP.ShootVolume = 100
+SWEP.ShootPitchVariation = 8
 
 SWEP.ProceduralRegularFire = false
 SWEP.ProceduralIronFire = false
@@ -241,10 +239,9 @@ SWEP.PostBashTime = 0.5
 
 -- Speed multipliers --
 
-SWEP.SpeedMult = 0.89
-SWEP.SightedSpeedMult = 0.75
+SWEP.SpeedMult = 0.83
+SWEP.SpeedMultSights = 0.5
 SWEP.SightTime = 0.5
-SWEP.ShootSpeedMult = 0.8
 SWEP.AimDownSightsTime = 0.53 -- How long it takes to go from hip fire to aiming down sights.
 SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being able to fire.
 
@@ -342,35 +339,33 @@ local distantt = {
 }
 local lsinds = "shared/base/universal/sandstorm_reverb/fromrpg7/lowest/tail_indoors_small_close_0"
 
-SWEP.ShootSound = firet
-SWEP.ShootSoundSilenced = firest
-SWEP.ShootSoundIndoor = firet
-SWEP.ShootSoundSilencedIndoor = firest
-SWEP.LayerSound = tailt
-SWEP.LayerSoundSilenced = tailsupt
+SWEP.ShootSound = "saa/newsvd/2023aug/svd_fp.wav"
+SWEP.ShootSoundSilenced = {
+    "saa/newsvd/2023aug/svd_s_fp1.wav",
+    "saa/newsvd/2023aug/svd_s_fp2.wav",
+}
+SWEP.ShootSoundIndoor = "saa/newsvd/2023aug/svd_fp.wav"
+SWEP.ShootSoundSilencedIndoor = "saa/newsvd/2023aug/svd_s_fp.wav"
+SWEP.LayerSound = {
+    "saa/newsvd/2023aug/svd_tpo3.wav",
+    "saa/newsvd/2023aug/svd_tpo3.wav",
+    "saa/newsvd/2023aug/svd_tpo3.wav",
+}
+SWEP.LayerSoundSilenced = "saa/newsvd/2023aug/svd_s_tpo1.wav"
 SWEP.Spread = 0.001
-SWEP.LayerSoundSilencedIndoor = { 
-    lsinds .. "1.mp3", 
-    lsinds .. "2.mp3", 
-    lsinds .. "3.mp3", 
-    lsinds .. "4.mp3",
-    lsinds .. "5.mp3",  
-}
-local lsind = "shared/base/universal/sandstorm_reverb/fromrpg7/low/tail_indoors_small_close_0"
-SWEP.LayerSoundIndoor = { 
-    lsind .. "1.wav", 
-    lsind .. "2.wav", 
-    lsind .. "3.wav", 
-    lsind .. "4.wav",
-    lsind .. "5.wav",  
-}
+SWEP.LayerSoundSilencedIndoor = "saa/newsvd/2023aug/svd_s_tpi1.wav"
 
-SWEP.DistantShootSound = distantt
+local lsind = "shared/base/universal/sandstorm_reverb/fromrpg7/low/tail_indoors_small_close_0"
+SWEP.LayerSoundIndoor = "saa/newsvd/2023aug/svd_tpi1.wav"
+
+
+SWEP.DistantShootSound = "saa/newsvd/2023aug/svd_far.wav"
 --SWEP.DistantShootSoundIndoor = distantit
 -- SWEP.FirstShootSoundSilenced = {"smc/weapons/bocw/m60/M60_S" .. math.random(1, 6) .. ".wav"}
 SWEP.DistantShootSoundSilenced = "ahahahahhaahahah"
 
-
+SWEP.DryFireSound = "shared/foley/shared/dryfire_generic.ogg"
+SWEP.DryFireSingleAction = true -- Play dryfire sound only once
 -- Animations --
 local foley = svd .. "handling/"
 SWEP.RicochetAngleMax = 45 -- Maximum angle at which a ricochet can occur. Between 1 and 90. Angle of 0 is impossible but would theoretically always ricochet.
@@ -454,7 +449,7 @@ SWEP.Animations = {
         Mult = (600/650),
         ShellEjectAt = 0.01,
         EventTable = {
-            {s = "saa/akmv2/ak74_boltback.wav", t = 0, p = 100, v = 0.2,},
+            {s = "saa/newsvd/2023aug/svd_mp.wav", t = 0, p = {120, 130}, v = 1.0,},
             {
             FOV = 3,
             FOV_Start = 0.1,
@@ -471,7 +466,7 @@ SWEP.Animations = {
         Mult = (600/650),
         ShellEjectAt = 0.01,
         EventTable = {
-            {s = "saa/akmv2/ak74_boltback.wav", t = 0, p = 100, v = 0.5,},
+            {s = "saa/newsvd/2023aug/svd_mp.wav", t = 0, p = {120, 130}, v = 1.0,},
             {
             FOV = 3,
             FOV_Start = 0.1,
@@ -488,15 +483,7 @@ SWEP.Animations = {
         Mult = (600/650),
         ShellEjectAt = 0.01,
         EventTable = {
-            {
-            FOV = 3,
-            FOV_Start = 0.1,
-            FOV_End = 0.375,
-            FOV_FuncStart = ARC9.Ease.OutCirc,
-            FOV_FuncEnd = ARC9.Ease.InCirc,
-            t = 0.0,
-            },
-        {s = nil, t = 0, p = 85, v = 0.5}
+            {s = "saa/newsvd/2023aug/svd_mp.wav", t = 0, p = {120, 130}, v = 1.0,},
         },
     },
     ["fire_iron"] = {
@@ -504,15 +491,7 @@ SWEP.Animations = {
         Mult = (600/650),
         ShellEjectAt = 0.01,
         EventTable = {
-            {
-            FOV = 3,
-            FOV_Start = 0.05,
-            FOV_End = 0.3,
-            FOV_FuncStart = ARC9.Ease.OutCirc,
-            FOV_FuncEnd = ARC9.Ease.InCirc,
-            t = 0.0,
-            },
-        {s = nil, t = 0, p = 85, v = 0.5}
+            {s = "saa/newsvd/2023aug/svd_mp.wav", t = 0, p = {120, 130}, v = 1.0,},
         },
     },
 -- reloads
@@ -642,15 +621,27 @@ SWEP.Animations = {
     },
     ["fire_bipod"] = {
         Source = "deployed_fire",
+        EventTable = {
+            {s = "saa/newsvd/2023aug/svd_mp.wav", t = 0, p = {120, 130}, v = 1.0,},
+        }
     },
     ["fire_iron_bipod"] = {
         Source = "deployed_iron_fire",
+        EventTable = {
+            {s = "saa/newsvd/2023aug/svd_mp.wav", t = 0, p = {120, 130}, v = 1.0,},
+        }
     },
     ["fire_bipod_empty"] = {
         Source = "deployed_firelast",
+        EventTable = {
+            {s = "saa/newsvd/2023aug/svd_mp.wav", t = 0, p = {120, 130}, v = 1.0,},
+        }
     },
     ["fire_iron_bipod_empty"] = {
         Source = "deployed_iron_firelast",
+        EventTable = {
+            {s = "saa/newsvd/2023aug/svd_mp.wav", t = 0, p = {120, 130}, v = 1.0,},
+        }
     },
     ["idle_bipod_empty"] = {
         Source = "deployed_idle_empty",
@@ -662,6 +653,7 @@ SWEP.Attachments = {
         PrintName = "MUZZLE",
         Category = {"saa_54r_muz"},
         InstalledElements = {"muzzleattached"},
+        InstallSound = "shared/foley/new/att/muzzle_on.mp3",
         Bone = "Weapon",
         Pos = Vector(0, 26.35, 0.6),
         Ang = Angle(0, 270, 0),
@@ -670,6 +662,8 @@ SWEP.Attachments = {
     {
         PrintName = "Handguard",
         Category = {"saa_svd_handguard"},
+        InstallSound = "shared/foley/new/att/stock_attach.mp3",
+        DefaultIcon = Material("hud/arc9_saa/rus/ao/svd_hg.png", "mips smooth"),
         Bone = "Weapon",
         Pos = Vector(0, 10, 1),
         Ang = Angle(0, 270, 0),
@@ -678,6 +672,7 @@ SWEP.Attachments = {
     {
         PrintName = "Barrel",
         Category = {"SAA_SVD_BARREL"},
+        DefaultIcon = Material("hud/arc9_saa/rus/ao/svd_br.png", "mips smooth"),
         Bone = "Weapon",
         Pos = Vector(0, 21.8, 0.6),
         Ang = Angle(0, 270, 0),
@@ -695,8 +690,19 @@ SWEP.Attachments = {
         PrintName = "Underbarrel",
         Category = {"saa_svd_underbarrel", "SAA_FOREGRIP_RAIL"},
         Bone = "Weapon",
+        ExcludeElements = {"svdr_handguard"},
         Pos = Vector(0, 10, -0.5),
         Ang = Angle(0, 270, 180),
+        Scale = 1,
+    },
+    {
+        PrintName = "Dustcover",
+        Category = {"SAA_SVD_DUSTCOVER"},
+        InstallSound = "shared/foley/new/att/dustcover_remove.mp3",
+        DefaultIcon = Material("hud/arc9_saa/rus/ao/svd_dc.png", "mips smooth"),
+        Bone = "Weapon",
+        Pos = Vector(0.1, 1.3, 1),
+        Ang = Angle(0, 270, 0),
         Scale = 1,
     },
     {
@@ -709,16 +715,10 @@ SWEP.Attachments = {
         Scale = 0.8,
     },
     {
-        PrintName = "Dustcover",
-        Category = {"SAA_SVD_DUSTCOVER"},
-        Bone = "Weapon",
-        Pos = Vector(0.1, 1.3, 1),
-        Ang = Angle(0, 270, 0),
-        Scale = 1,
-    },
-    {
         PrintName = "Stock",
         Category = {"saa_svd_stock"},
+        InstallSound = "shared/foley/new/att/stock_attach.mp3",
+        DefaultIcon = Material("hud/arc9_saa/rus/ao/svd_stock.png", "mips smooth"),
         Bone = "Weapon",
         Pos = Vector(0.7, -4, -0.1),
         Ang = Angle(0, 270, 0),
@@ -735,13 +735,13 @@ SWEP.Attachments = {
    },
 }
 
-SWEP.NoSprintWhenLocked = true
+SWEP.NoSprintWhenLocked = false
 
 SWEP.DefaultBodygroups = "000000000"
 SWEP.AttachmentElements = {
    ["svdm_stock"] = {
        Bodygroups = {
-           {1, 1},
+           {1, 4},
        },
    },
    ["svds_stock"] = {
@@ -759,9 +759,14 @@ SWEP.AttachmentElements = {
            {2, 1},
        },
    },
+   ["svdr_handguard"] = {
+       Bodygroups = {
+           {2, 2},
+       },
+   },
    ["svds_dc"] = {
        Bodygroups = {
-           {6, 1},
+           {6, 2},
        },
    },
    ["bipod"] = {
@@ -780,6 +785,17 @@ SWEP.AttachmentElements = {
             }
         },
    },
+   ["svdk_barrel"] = {
+       Bodygroups = {
+           {3, 2},
+           {4, 3},
+       },
+        AttPosMods = {
+            [1] = {
+                Pos = Vector(0, 21, 0.6),
+            }
+        },
+   },
 }
 
 
@@ -787,5 +803,6 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
     if !model then return end
     if wep:HasElement("muzzleattached") then model:SetBodygroup(4, 2) end
+    if wep:HasElement("svds_dc_optic") then model:SetBodygroup(6, 1) end
 
 end

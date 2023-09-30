@@ -1,6 +1,7 @@
 ATT.PrintName = "PKS Long Range Barrel"
 ATT.CompactName = "PKS Barrel"
 ATT.Description = [[Barrel designed for use against distant targets. Its comparatively higher length boosts the range rendering it ideal for sniping, but also worsens gas recovery and thus rate of fire.]]
+ATT.Icon = Material("hud/arc9_saa/rus/ao/pks_br.png", "mips smooth")
 
 
 ATT.SortOrder = 0

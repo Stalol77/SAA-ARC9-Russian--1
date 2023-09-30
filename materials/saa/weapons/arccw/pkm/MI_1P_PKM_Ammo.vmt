@@ -11,10 +11,10 @@
 	$detailblendfactor			1
 	$detailblendmode			0
 
-	"$envmap"					"models\weapons\envmaps\hdri_parking"
+	"$envmap"					"models\weapons\envmaps\hdri_parking_brass"
 	"$envmapfresnel"			"0.25"
-	"$envmaptint"				"[ .01 .01 .005 ]"
-	"$envmapcoefficient"		"0.1"
+	"$envmaptint"				"[ .01 .01 .01 ]"
+	"$envmapcoefficient"		"0.6"
 
 	"$phong"					"1"
 	"$phongboost"				"40"
@@ -26,6 +26,8 @@
 	"$rimlightexponent"			"33"	
 	"$rimlightboost"			"5"
 	"$rimmask"					"1"
+
+Proxies
 {
     SAA_CubemapTintMult
     {

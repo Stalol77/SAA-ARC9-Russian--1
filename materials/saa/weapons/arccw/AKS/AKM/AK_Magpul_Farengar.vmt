@@ -8,9 +8,10 @@
 	"$color2"					"[0.85 0.85 0.85]"
 	"$blendTintByBaseAlpha"		"1"
 	"$phong"					"1"
-	"$phongboost"				"50"
+	"$phongboost"				"1"
 	"$phongfresnelranges"		"[0.32 0.72 0.99]"
 	"$phongalbedotint" 			"1"
+	"$phongalbedoboost"			"150"
 
 	"$rimlight"					"1"
 	"$rimlightexponent"			"33"

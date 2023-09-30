@@ -9,19 +9,19 @@ ATT = {}
 ATT.PrintName = "6P1-01 AK"
 ATT.CompactName = "6P1-01"
 ATT.Description = [[Dust cover produced for AKM rifles. Features the classic ribbed design to enhance durability and covers the internals fairly well boosting the weapon's reliability.]]
-ATT.Icon = Material("hud/arc9_saa/rus/akm_dc.png", "mips smooth")
+ATT.Icon = Material("hud/arc9_saa/rus/ao/akm_dc.png", "mips smooth")
 
 
 ATT.SortOrder = 0
 ATT.Category = "saa_ak_dustcover"
 
 
-ATT.SprintToFireTimeMult = 0.95
-ATT.SpeedMult = 0.98
-ATT.AimDownSightsTimeMult = 1.02
-ATT.HeatDissipationMult = 0.98
-ATT.MalfunctionMeanShotsToFailMult = 1.225
-ATT.MalfunctionWaitMult = 3
+ATT.SprintToFireTimeMult = 35/33
+ATT.SpeedMult = 34.5/35
+ATT.AimDownSightsTimeMult = 0.35/(1/3)
+ATT.HeatDissipationMult = 0.975
+ATT.MalfunctionMeanShotsToFailMult = 450/300
+ATT.MalfunctionWaitMult = 1.9
 
 
 ATT.ActivateElements = {"dustcover_akm"}
@@ -37,19 +37,19 @@ ATT = {}
 ATT.PrintName = "6P20-01 AK"
 ATT.CompactName = "6P20-01"
 ATT.Description = [[Dust cover produced for AK74 rifles. Features the classic ribbed design to enhance durability and covers the internals fairly well boosting the weapon's reliability.]]
-ATT.Icon = Material("hud/arc9_saa/rus/akm_dc.png", "mips smooth")
+ATT.Icon = Material("hud/arc9_saa/rus/ao/74_dc.png", "mips smooth")
 
 
 ATT.SortOrder = 0
 ATT.Category = "saa_ak_dustcover"
 
 
-ATT.SprintToFireTimeMult = 0.95
-ATT.SpeedMult = 0.98
-ATT.AimDownSightsTimeMult = 1.02
-ATT.HeatDissipationMult = 0.98
-ATT.MalfunctionMeanShotsToFailMult = 1.225
-ATT.MalfunctionWaitMult = 3
+ATT.SprintToFireTimeMult = 35/33
+ATT.SpeedMult = 34.5/35
+ATT.AimDownSightsTimeMult = 0.35/(1/3)
+ATT.HeatDissipationMult = 0.99
+ATT.MalfunctionMeanShotsToFailMult = 450/300
+ATT.MalfunctionWaitMult = 2
 
 
 ATT.ActivateElements = {"dustcover_ak74"}
@@ -72,10 +72,11 @@ ATT.SortOrder = 0
 ATT.Category = "saa_ak_dustcover"
 
 
-ATT.SprintToFireTimeMult = 0.965
-ATT.SpeedMult = 0.985
-ATT.AimDownSightsTimeMult = 1.015
-ATT.HeatDissipationMult = 0.975
+ATT.SprintToFireTimeMult = 35/33
+ATT.SpeedMult = 34.5/35
+ATT.AimDownSightsTimeMult = 0.37/(1/3)
+ATT.HeatDissipationMult = 0.95
+ATT.MalfunctionMeanShotsToFailMult = 500/300
 
 ATT.ActivateElements = {"dustcover_6p20"}
 
@@ -87,12 +88,17 @@ ARC9.LoadAttachment(ATT, "saa_ak_dc6p20")
 
 ATT = {}
 
-ATT.PrintName = "Zenitco Alpha AK Dustcover"
-ATT.CompactName = "Zenit Alpha Cover"
+ATT.PrintName = "FAB Defense PDC Dust Cover"
+ATT.CompactName = "FAB PDC"
 ATT.Description = [[Dust cover produced by private companies to allow mainly reflex sight usage. Is not fitted for long range optics.]]
 ATT.Pros = {"Allows for Picatinny Railed Optic use"}
 ATT.Icon = Material("hud/arc9_saa/rus/alpha_cover.png", "mips smooth")
-
+ATT.CustomPros = {
+    ["Optic rail"] = "",
+}
+ATT.CustomCons = {
+    ["Incompatible with other optic rails"] = "",
+}
 ATT.SortOrder = 1
 ATT.Category = "saa_ak_dustcover"
 
@@ -108,10 +114,11 @@ ATT.Attachments = {
     },
 }
 
-ATT.SprintToFireTimeMult = 0.95
-ATT.SpeedMult = 0.98
-ATT.AimDownSightsTimeMult = 1.02
-ATT.HeatDissipationMult = 0.98
+ATT.SprintToFireTimeMult = 39/33
+ATT.SpeedMult = 34.5/37
+ATT.AimDownSightsTimeMult = 0.4/(1/3)
+ATT.HeatDissipationMult = 0.925
+ATT.MalfunctionMeanShotsToFailMult = 370/300
 
 ATT.ActivateElements = {"alpha_dustcover"}
 
@@ -123,12 +130,17 @@ ARC9.LoadAttachment(ATT, "saa_ak_alphacover")
 
 ATT = {}
 
-ATT.PrintName = "Herax Railed AK Dustcover"
-ATT.CompactName = "Herax Cover"
+ATT.PrintName = "TWS Dog Leg Dust Cover"
+ATT.CompactName = "Dog Leg"
 ATT.Description = [[Dust cover produced by private companies to allow mainly reflex sight usage. Conflicts with rear ironsights.]]
 ATT.Pros = {"Allows for Picatinny Railed Optic use"}
 ATT.Icon = Material("hud/arc9_saa/rus/AMGP_cover.png", "mips smooth")
-
+ATT.CustomPros = {
+    ["Optic rail"] = "",
+}
+ATT.CustomCons = {
+    ["Incompatible with ironsights"] = "",
+}
 ATT.SortOrder = 1
 ATT.Category = "saa_ak_dustcover"
 ATT.IronSightsOverride = {
@@ -153,10 +165,11 @@ ATT.Attachments = {
     },
 }
 
-ATT.SprintToFireTimeMult = 0.95
-ATT.SpeedMult = 0.98
-ATT.AimDownSightsTimeMult = 1.02
+ATT.SprintToFireTimeMult = 35/33
+ATT.SpeedMult = 34.5/35
+ATT.AimDownSightsTimeMult = 0.38/(1/3)
 ATT.HeatDissipationMult = 0.98
+ATT.MalfunctionMeanShotsToFailMult = 425/300
 
 ATT.ExcludeElements = {"akm_iron", "ak74_iron","iron_akmb","ak_iron", "iron_alpha"}
 ATT.ActivateElements = {"bastion_dustcover"}
@@ -211,7 +224,8 @@ ATT = {}
 
 ATT.PrintName = "TULA Tactical Picatinny Rear Sight"
 ATT.CompactName = "TULA Tac"
-ATT.Description = [[Custom Ironsight fabricated for later models, including as earliest versions the M43 chambered RPK family.]]
+ATT.Description = [[Custom ghost ring ironsight with short picatinny slot, good for reflex and holographic optics.]]
+ATT.Icon = Material("hud/arc9_saa/rus/TULAs.png", "mips smooth")
 
 
 ATT.SortOrder = 0
@@ -239,9 +253,11 @@ ARC9.LoadAttachment(ATT, "saa_ak_bsight")
 
 ATT = {}
 
-ATT.PrintName = "Zenitco TSiK Rear Sight Cap"
-ATT.CompactName = "TSiK RSC"
-ATT.Description = [[Custom Ironsight fabricated for later models, including as earliest versions the M43 chambered RPK family.]]
+ATT.PrintName = "FAB Defense Rear Sight Cap"
+ATT.CompactName = "FAB Cap"
+ATT.Description = [[Custom AK platform sight that lowers the profile, all the while occupying the sight trunnion slot.
+Proves useless as a sight, but keeps the weapon clean and reduces overall occupied view when aiming down sights.]]
+ATT.Icon = Material("hud/arc9_saa/rus/tsiik.png", "mips smooth")
 
 
 ATT.SortOrder = 0
@@ -281,7 +297,7 @@ ARC9.LoadAttachment(ATT, "saa_zenitco_rk3")
 
 ATT = {}
 
-ATT.PrintName = "Magpul Pistol Grip"
+ATT.PrintName = "Magpul MOE Pistol Grip"
 ATT.CompactName = "MGP"
 ATT.Description = [[Polymer pistol grip built by private companies with ergonomics in mind.]]
 ATT.Icon = Material("hud/arc9_saa/rus/mgp_pg.png", "mips smooth")
@@ -346,20 +362,30 @@ ARC9.LoadAttachment(ATT, "saa_ak_woodgrip")
 
 ATT = {}
 
-ATT.PrintName = "Zenitco Alpha-L Handguard"
-ATT.CompactName = "Alpha-L"
+ATT.PrintName = "Zenitco B-30 Handguard"
+ATT.CompactName = "B-30"
 ATT.Description = [[Handguard produced by private companies. Fitted with a sleek steel design, allows for a quicker heat dissipation and underbarrel attachments at the cost of a higher recoil.]]
 ATT.Icon = Material("hud/arc9_saa/rus/Alpha_handguard.png", "mips smooth")
-
-
+ATT.CustomCons = {
+    ["Does not support Underbarrel Weapons"] = "",
+}
+ATT.CustomPros = {
+    ["Can attach underbarrel foregrips"] = "",
+    ["Can attach left-side Tactical devices"] = "",
+    ["Can attach right-side Tactical devices"] = "",
+}
 ATT.SortOrder = 1
 ATT.Category = "saa_ak_hg"
-ATT.RecoilMult = 1.05
-ATT.RecoilKickMult = 1.085
-ATT.SpeedMult = 1.03
-ATT.SprintToFireTimeMult = 0.95
+ATT.RecoilMult = 1.03
+ATT.VisualRecoilUpMult = 1.085
+ATT.SpeedMult = 0.99
+ATT.SprintToFireTimeMult = 1.025
+ATT.HeatDissipationMult = 1.30
+ATT.SwayMult = 0.62/0.56
+
+
 ATT.ActivateElements = {"alpha_guard", "exclude_gp25"}
-ATT.HeatDissipationMult = 1.50
+
 
 
 ATT.Attachments = {
@@ -410,17 +436,23 @@ ATT.PrintName = "Zenitco B-11 Handguard"
 ATT.CompactName = "B-11"
 ATT.Description = [[Handguard produced by private companies. Fitted with a sleek steel design, allows for a quicker heat dissipation and underbarrel attachments at the cost of a higher recoil.]]
 ATT.Icon = Material("hud/arc9_saa/rus/b11.png", "mips smooth")
-
+ATT.CustomPros = {
+    ["Can attach underbarrel foregrips"] = "",
+    ["Can attach right-side Tactical devices"] = "",
+}
+ATT.CustomCons = {
+    ["Does not support Underbarrel Weapons"] = "",
+}
 
 ATT.SortOrder = 1
 ATT.Category = "saa_ak_hg"
-ATT.RecoilMult = 1.05
-ATT.RecoilKickMult = 1.085
-ATT.SpeedMult = 1.03
-ATT.SprintToFireTimeMult = 0.95
-ATT.ActivateElements = {"railed_guard", "exclude_gp25"}
+ATT.RecoilMult = 1.03
+ATT.SpeedMult = 0.99
+ATT.SprintToFireTimeMult = 1.025
 ATT.HeatDissipationMult = 1.50
+ATT.SwayMult = 0.66/0.56
 
+ATT.ActivateElements = {"railed_guard", "exclude_gp25"}
 
 ATT.Attachments = {
     {
@@ -450,17 +482,21 @@ ARC9.LoadAttachment(ATT, "saa_ak_b11handguard")
 
 ATT = {}
 
-ATT.PrintName = "Magpul Handguard"
+ATT.PrintName = "Magpul MOE Handguard"
 ATT.CompactName = "MGP"
 ATT.Description = [[Handguard produced by private companies. Eases aim and .]]
-ATT.Icon = Material("hud/arc9_saa/rus/mgp_handguard.png", "mips smooth")
-
+ATT.Icon = Material("hud/arc9_saa/rus/ao/magpul_hg.png", "mips smooth")
+ATT.CustomCons = {
+    ["Does not support Underbarrel Weapons"] = "",
+}
 
 ATT.SortOrder = 1
 ATT.Category = "saa_ak_hg"
-ATT.Sway = 0.8
-ATT.RecoilMult = 0.985
-ATT.SprintToFireTimeMult = 1.05
+ATT.Sway = 0.98
+ATT.RecoilMult = 1.065
+ATT.RecoilKickMult = 1.39/1.2
+ATT.SprintToFireTimeMult = 0.27/0.33
+
 ATT.ActivateElements = {"magpul_handguard", "exclude_gp25"}
 
 ARC9.LoadAttachment(ATT, "saa_ak_magpulhandguard")
@@ -471,11 +507,14 @@ ARC9.LoadAttachment(ATT, "saa_ak_magpulhandguard")
 
 ATT = {}
 
-ATT.PrintName = "Romanian Dong-Grip Handguard"
+ATT.PrintName = "Cugir Arms CAF Foregrip Handguard"
 ATT.CompactName = "Dong"
-ATT.Description = [[Handguard produced by private companies. Eases aim and .]]
+ATT.Description = [[Iconic handguard of the Romanian foregripped AKs.
+Rendered popular by the original AMD-63/65 AKM variants produced by Cugir Arms Company, sold in WASR-10/63 models in the civilian market.]]
 ATT.Icon = Material("hud/arc9_saa/rus/dong.png", "mips smooth")
-
+ATT.CustomCons = {
+    ["Does not support Underbarrel Weapons"] = "",
+}
 ATT.SortOrder = 1
 ATT.Category = "saa_ak_hg"
 ATT.ActivateElements = {"romanian", "exclude_gp25"}
@@ -489,10 +528,11 @@ ATT.SortOrder = 0
 ATT.LHIK_Priority = 10
 ATT.LHIK = true
 
-ATT.Sway = 0.8
+ATT.Sway = 0.65
 ATT.RecoilUpMult = 0.875
-ATT.RecoilMult = 0.915
-ATT.SprintToFireTimeMult = 1.05
+ATT.VisualRecoilUpMult = 489/579
+ATT.RecoilMult = 0.995
+ATT.SprintToFireTimeMult = 1.25
 
 ARC9.LoadAttachment(ATT, "saa_ak_dong")
 
@@ -506,14 +546,18 @@ ATT = {}
 ATT.PrintName = "Series-100 Handguard"
 ATT.CompactName = "Series-100"
 ATT.Description = [[Handguard produced by private companies. Eases aim and .]]
-ATT.Icon = Material("hud/arc9_saa/rus/ak74_hg.png", "mips smooth")
-
+ATT.Icon = Material("hud/arc9_saa/rus/ao/74m_hg.png", "mips smooth")
+ATT.CustomPros = {
+    ["Can attach underbarrel foregrips"] = "",
+}
 
 ATT.SortOrder = 1
 ATT.Category = "saa_ak_polyhg"
-ATT.Sway = 0.75
-ATT.RecoilMult = 0.965
-ATT.SprintToFireTimeMult = 1.1
+ATT.Sway = 0.85
+ATT.RecoilMult = 1.045
+ATT.VisualRecoilUpMult = 1.075
+ATT.SprintToFireTimeMult = 0.295/0.33
+
 ATT.ActivateElements = {"s100_handguard"}
 
 ATT.Attachments = {
@@ -540,14 +584,18 @@ ATT = {}
 ATT.PrintName = "VEPR Series 200 Handguard"
 ATT.CompactName = "VEPR-200"
 ATT.Description = [[Handguard produced by private companies. Eases aim and .]]
-ATT.Icon = Material("hud/arc9_saa/rus/ak74_hg.png", "mips smooth")
-
+ATT.Icon = Material("hud/arc9_saa/rus/ao/vepr_hg.png", "mips smooth")
+ATT.CustomPros = {
+    ["Can attach underbarrel foregrips"] = "",
+}
 
 ATT.SortOrder = 1
 ATT.Category = "saa_ak_polyhg"
-ATT.Sway = 0.75
-ATT.RecoilMult = 0.965
-ATT.SprintToFireTimeMult = 1.1
+ATT.Sway = 0.85
+ATT.RecoilMult = 1.045
+ATT.VisualRecoilUpMult = 1.075
+ATT.SprintToFireTimeMult = 0.295/0.33
+
 ATT.ActivateElements = {"s200_handguard"}
 
 ATT.Attachments = {
@@ -898,7 +946,7 @@ ARC9.LoadAttachment(ATT, "saa_akm_40_steel")
 
 ATT = {}
 
-ATT.PrintName = "Magpul Stock"
+ATT.PrintName = "Magpul MOE Series-1 Stock"
 ATT.CompactName = "MGP"
 ATT.Description = [[Polymer stock built by private companies.]]
 ATT.Icon = Material("hud/arc9_saa/rus/mgp_stock1.png", "mips smooth")
@@ -906,11 +954,16 @@ ATT.Icon = Material("hud/arc9_saa/rus/mgp_stock1.png", "mips smooth")
 
 ATT.SortOrder = 1
 ATT.Category = "saa_ak_stock"
-ATT.Sway = 0.9
+ATT.Sway = 0.56
 ATT.SpeedMult = 0.855/0.88
 ATT.ReloadTimeMult = 1.015
 ATT.RecoilMult = 1/1.32
 ATT.RecoilMultSights = 0.825
+
+ATT.AimDownSightsTimeMult = 0.43/0.33
+ATT.VisualRecoilUpMult = 1.85/3
+ATT.VisualRecoilSideMult = 0.75/3
+ATT.VisualRecoilMultSights = 0.5
 
 
 ATT.ActivateElements = {"magpul_stock"}
@@ -923,8 +976,8 @@ ARC9.LoadAttachment(ATT, "saa_ak_magpulstock")
 
 ATT = {}
 
-ATT.PrintName = "Series-100 Polymer Stock"
-ATT.CompactName = "S-100"
+ATT.PrintName = "AK Tula Polymer Stock"
+ATT.CompactName = "Tula"
 ATT.Description = [[Polymer stock built by private companies.]]
 ATT.Icon = Material("hud/arc9_saa/rus/S100_STOCK.png", "mips smooth")
 
@@ -935,6 +988,13 @@ ATT.SpeedMult = 0.855/0.88
 ATT.ReloadTimeMult = 1.015
 ATT.RecoilMult = 1/1.32
 ATT.RecoilMultSights = 0.675
+
+
+ATT.AimDownSightsTimeMult = 0.435/0.33
+ATT.VisualRecoilUpMult = 1.7/3
+ATT.VisualRecoilSideMult = 0.5/3
+ATT.VisualRecoilMultSights = 0.5
+
 
 ATT.ActivateElements = {"s100_stock"}
 
@@ -962,6 +1022,11 @@ ATT.SprintToFireTimeMult = 1.15
 ATT.AimDownSightsTimeMult = 1.2 
 ATT.RecoilMultSights = 0.6
 
+ATT.AimDownSightsTimeMult = 2
+ATT.VisualRecoilUpMult = 1/3
+ATT.VisualRecoilSideMult = 0.35/3
+ATT.VisualRecoilMultSights = 0.2
+
 ATT.ActivateElements = {"s200_stock"}
 
 ARC9.LoadAttachment(ATT, "saa_ak_rpk_polystock")
@@ -983,11 +1048,14 @@ ATT.Category = "saa_ak_stock"
 ATT.Sway = 0.91
 ATT.SpeedMult = 0.855/0.87
 ATT.RecoilMult = 1/1.41
-ATT.AimDownSightsTimeMult = 1.065
-ATT.SprintToFireTimeMult = 1.05
-ATT.RecoilKickMult = 1.075
+ATT.SprintToFireTimeMult = 0.4/0.33
+ATT.RecoilKickMult = 1.5
 ATT.RecoilMultSights = 0.85
 
+ATT.AimDownSightsTimeMult = 0.42/0.33
+ATT.VisualRecoilUpMult = 1/3
+ATT.VisualRecoilSideMult = 1.2/3
+ATT.VisualRecoilMultSights = 0.75
 
 ATT.ActivateElements = {"alpha_stock"}
 
@@ -999,7 +1067,7 @@ ARC9.LoadAttachment(ATT, "saa_ak_alphastock")
 
 ATT = {}
 
-ATT.PrintName = "AKM Stock"
+ATT.PrintName = "AKM Wooden Stock"
 ATT.CompactName = "AKM"
 ATT.Description = [[Original wooden composite stock produced for use on AKM rifles. Sturdy and moderately heavy, reduces sway and recoil.]]
 ATT.Icon = Material("hud/arc9_saa/rus/akm_stock.png", "mips smooth")
@@ -1008,12 +1076,18 @@ ATT.Icon = Material("hud/arc9_saa/rus/akm_stock.png", "mips smooth")
 ATT.SortOrder = 1
 ATT.Category = "saa_ak_stock"
 ATT.Sway = 0.9
-ATT.SpeedMult = 0.855/0.91
+ATT.SpeedMult = 0.865/0.91
 ATT.ReloadTimeMult = 1.03
 ATT.RecoilMult = 1/1.5
-ATT.SprintToFireTimeMult = 1.15
-ATT.AimDownSightsTimeMult = 1.2 
+ATT.SprintToFireTimeMult = 0.35/0.33
+ATT.AimDownSightsTimeMult = 0.45/0.33
 ATT.RecoilMultSights = 0.6
+
+ATT.RecoilKickMult = 1.65
+ATT.VisualRecoilUpMult = 1.5/3
+ATT.VisualRecoilUpMultSights = 2
+ATT.VisualRecoilSideMult = 0.5/3
+ATT.VisualRecoilMultSights = 0.5
 
 ATT.ActivateElements = {"akm_stock"}
 
@@ -1037,9 +1111,14 @@ ATT.Sway = 0.9
 ATT.SpeedMult = 0.855/0.91
 ATT.ReloadTimeMult = 1.03
 ATT.RecoilMult = 1/1.5
-ATT.SprintToFireTimeMult = 1.15
-ATT.AimDownSightsTimeMult = 1.2 
+ATT.SprintToFireTimeMult = 0.38/0.33
+ATT.AimDownSightsTimeMult = 0.47/0.33 
 ATT.RecoilMultSights = 0.6
+
+ATT.RecoilKickMult = 1.4
+ATT.VisualRecoilUpMult = 1.5/3
+ATT.VisualRecoilSideMult = 0.5/3
+ATT.VisualRecoilMultSights = 0.5
 
 ATT.ActivateElements = {"ak74_stock"}
 
@@ -1063,7 +1142,11 @@ ATT.Category = "saa_akm_stock"
 ATT.SpeedMult = 0.855/0.86
 ATT.ReloadTimeMult = 1.015
 ATT.RecoilMult = 1/1.2
-ATT.RecoilMultSights = 0.95
+ATT.RecoilMultSights = 0.8
+
+ATT.VisualRecoilUpMult = 2/3
+ATT.VisualRecoilSideMult = 0.6/3
+ATT.VisualRecoilMultSights = 0.5
 
 ATT.ActivateElements = {"akms_stock"}
 
@@ -1087,7 +1170,11 @@ ATT.Category = "saa_aks74_stock"
 ATT.SpeedMult = 0.855/0.86
 ATT.ReloadTimeMult = 1.015
 ATT.RecoilMult = 1/1.2
-ATT.RecoilMultSights = 0.95
+ATT.RecoilMultSights = 0.8
+
+ATT.VisualRecoilUpMult = 2/3
+ATT.VisualRecoilSideMult = 0.6/3
+ATT.VisualRecoilMultSights = 0.5
 
 ATT.ActivateElements = {"aks74_stock"}
 
@@ -1112,6 +1199,11 @@ ATT.SpeedMult = 0.85/0.86
 ATT.ReloadTimeMult = 1.015
 ATT.RecoilMult = 1.1/1.7
 ATT.RecoilMultSights = 0.845
+ATT.AimDownSightsTimeMult = 0.45/0.33
+
+ATT.VisualRecoilUpMult = 1.7/3
+ATT.VisualRecoilSideMult = 0.5/3
+ATT.VisualRecoilMultSights = 0.5
 
 ATT.ActivateElements = {"aks74m_stock"}
 
@@ -1123,11 +1215,16 @@ ARC9.LoadAttachment(ATT, "saa_aks74m")
 
 ATT = {}
 
-ATT.PrintName = "Alpha Rail Gas Port"
-ATT.CompactName = "Alpha"
+ATT.PrintName = "Zenitco B-31S Upper Handguard Rail"
+ATT.CompactName = "B-31S"
 ATT.Description = [[Gas port produced by private companies. Longer design allowing for railed accessories to be attached. Its sleek yet elongated aluminum structure enhances the heat capacity and dissipation.]]
 ATT.Icon = Material("hud/arc9_saa/rus/alpha_gasport.png", "mips smooth")
-
+ATT.CustomPros = {
+    ["Optic rail"] = "",
+}
+ATT.CustomCons = {
+    ["Incompatible with other optic rails"] = "",
+}
 
 ATT.SortOrder = 1
 ATT.Category = "saa_ak_gp"
@@ -1171,7 +1268,12 @@ ATT.PrintName = "Zenitco B-19 Gas Port"
 ATT.CompactName = "B-19"
 ATT.Description = [[Gas port produced by private companies. Its sleek aluminum structure enhances the heat capacity and dissipation.]]
 ATT.Icon = Material("hud/arc9_saa/rus/b19.png", "mips smooth")
-
+ATT.CustomPros = {
+    ["Optic-Tactical device rail"] = "",
+}
+ATT.CustomCons = {
+    ["Incompatible with other optic rails"] = "",
+}
 
 ATT.SortOrder = 1
 ATT.Category = "saa_ak_gp"
@@ -1203,7 +1305,7 @@ ARC9.LoadAttachment(ATT, "saa_ak_b19")
 
 ATT = {}
 
-ATT.PrintName = "Magpul Gas Port"
+ATT.PrintName = "Magpul MOE Gas Port"
 ATT.CompactName = "MGP"
 ATT.Description = [[Handguard produced by private companies. Reduces forward weight.]]
 ATT.Icon = Material("hud/arc9_saa/rus/mgp_gp.png", "mips smooth")
@@ -1279,7 +1381,7 @@ ATT = {}
 ATT.PrintName = "VEPR-200 Series Gas Port"
 ATT.CompactName = "VEPR-200"
 ATT.Description = [[Sturdy Gas Port that generates good weight near grip area. Reduces felt recoil and boosts up heat capacity at the cost of a slower dissipation and heavier mass.]]
-ATT.Icon = Material("hud/arc9_saa/rus/vepr_gp.png", "mips smooth")
+ATT.Icon = Material("hud/arc9_saa/rus/ao/vepr_gb.png", "mips smooth")
 
 
 ATT.SortOrder = 0
@@ -1301,9 +1403,10 @@ ARC9.LoadAttachment(ATT, "saa_ak_s200_gp")
 
 ATT = {}
 
-ATT.PrintName = "Hungarian Long Bare Port"
+ATT.PrintName = "Hungarian Gas Tube"
 ATT.CompactName = "Hungarian GP"
 ATT.Description = [[Gasport based upon the Hungaro-Romanian designs. Reduces forward weight.]]
+ATT.Icon = Material("hud/arc9_saa/rus/AMD.png", "mips smooth")
 
 
 ATT.SortOrder = 1

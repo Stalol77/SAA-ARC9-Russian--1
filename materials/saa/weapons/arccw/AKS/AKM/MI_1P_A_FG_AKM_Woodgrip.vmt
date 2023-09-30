@@ -6,12 +6,12 @@
 	"$phongwarptexture"			"models\weapons\saa\shared\lightwarps\phongwarp_metal"
 	"$color2"					"[1.6 1.1 1.3]"
 
-	"$envmap"					"env_cubemap"
+	"$envmap" 			"models\weapons\envmaps\fo4_dith"
 	"$envmaptint"				"[ .04 .04 .04 ]"
 	"$normalmapalphaenvmapmask"	"1"
 
 	"$phong"					"1"
-	"$phongboost"				"15"
+	"$phongboost"				"25"
 	"$phongfresnelranges"		"[0.32 0.72 0.99]"
 	"$phongalbedotint" 			"1"
 
@@ -19,6 +19,19 @@
 	"$rimlightexponent"			"33"	
 	"$rimlightboost"			"3"
 	"$rimmask"					"1"
+
+	"$envmapcoefficient"	"0.5" // Lighting will be multiplied by this value
+
+Proxies
+{
+    SAA_CubemapTintMult
+    {
+        multiplier	$envmapcoefficient // Use our value for default envmap tint
+        resultvar	$envmaptint // Write final output to $envmaptint
+    }
+}
 }
 //Material setup by ShadowRUN 幸運な, using various parts from Thanez' and 4Echo's materials. 
 //You are NOT allowed to edit/modify/redistribute these materials without my explicit permission.
+
+//edited

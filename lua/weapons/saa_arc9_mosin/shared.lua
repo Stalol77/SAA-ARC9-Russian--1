@@ -117,7 +117,7 @@ SWEP.VisualRecoilRoll = 0.5 -- Roll tilt for visual recoil.
 
 SWEP.VisualRecoilCenter = Vector(2, 4, 2) -- The "axis" of visual recoil. Where your hand is.
 
-SWEP.VisualRecoilPunch = 1 -- How far back visual recoil moves the gun.
+SWEP.VisualRecoilPunch = 20 -- How far back visual recoil moves the gun.
 SWEP.VisualRecoilPunchMultSights = 0.1
 
 SWEP.VisualRecoil = 1
@@ -137,15 +137,16 @@ SWEP.ViewRecoilUpMult = 5 -- 40-100
 SWEP.ViewRecoilSideMult = 1 -- 1-20
 
 
-SWEP.Sway = 2
-SWEP.SwayMultSights = 0.4/2
+SWEP.Sway = 0.56
+SWEP.SwayMultSights = 0.38/0.56
 SWEP.CustomizeAng = Angle(90, 0, 0)
 SWEP.CustomizePos = Vector(22 , 36, 5)
 SWEP.CustomizeSnapshotFOV = 110
 SWEP.SwayMultMidAir = 2
-SWEP.SwayMultMove = 1.5
+SWEP.SwayMultMove = 4
 SWEP.SwayMultCrouch = 0.66
-SWEP.SwayMultShooting = 1.2
+SWEP.SwayMultShooting = 5
+SWEP.SwayMultReload = 10
 SWEP.FreeAimRadiusSights = 2
 SWEP.FreeAimRadius = 12 / 1.25 
 -- Firerate / Firemodes --
@@ -226,10 +227,7 @@ SWEP.SprintPos = Vector(0, -0.5, 0.2)
 SWEP.BarrelLength = 34
 
 SWEP.Spread = 0.00085
-SWEP.SpreadAddHipFire = 0.02
-SWEP.SpreadAddMove = 0.015
-SWEP.SpreadAddMidAir = 0.05
-SWEP.UsePelletSpread = true -- Multiple bullets fired at once clump up, like for a shotgun. Spread affects which direction they get fired, not their spread relative to one another.
+SWEP.UsePelletSpread = false -- Multiple bullets fired at once clump up, like for a shotgun. Spread affects which direction they get fired, not their spread relative to one another.
 SWEP.PelletSpread = 0.2
 
 -- Ironsights / Customization / Poses --

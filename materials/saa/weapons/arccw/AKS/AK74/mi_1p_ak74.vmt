@@ -1,10 +1,10 @@
 "VertexLitGeneric"
 {
-	"$basetexture"				"saa\weapons\arccw\AKS\AK74\textures\ssak74\AK74_d"
-	"$bumpmap"					"saa\weapons\arccw\AKS\AK74\textures\ssak74\AK74_n"
-	"$phongexponenttexture"		"saa\weapons\arccw\AKS\AK74\textures\ssak74\AK74_e"
+	"$basetexture"				"saa\weapons\arccw\AKS\AK74\textures\aks-ak74\ak74_texturing_MI_1P_AK74_BaseColor"
+	"$bumpmap"					"saa\weapons\arccw\AKS\AK74\textures\aks-ak74\ak74_texturing_MI_1P_AK74_Normal"
+	"$phongexponenttexture"		"saa\weapons\arccw\AKS\AK74\textures\aks-ak74\ak74_texturing_MI_1P_AK74_Roughness"
 	"$phongwarptexture"			"models\weapons\saa\shared\lightwarps\phongwarp_metal"
-	"$color2"					"[0.55 0.55 0.55]"
+	"$color2"					"[0.35 0.35 0.35]"
 	"$blendTintByBaseAlpha"		"1"
 
 	"$envmap"					"models\weapons\envmaps\fo4_dith"
@@ -12,13 +12,14 @@
 	"$normalmapalphaenvmapmask"	"1"
 
 	"$phong"					"1"
-	"$phongboost"				"20"
+	"$phongboost"				"1"
+	"$phongalbedoboost"			"30"
 	"$phongfresnelranges"		"[0.32 0.72 0.99]"
 	"$phongalbedotint" 			"1"
 
 	"$rimlight"					"1"
 	"$rimlightexponent"			"33"
-	"$rimlightboost"			"1"
+	"$rimlightboost"			"0.25"
 	"$rimmask"					"1"
 
 	"$nocull"					"1"

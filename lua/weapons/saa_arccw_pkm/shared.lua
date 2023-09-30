@@ -10,7 +10,7 @@ SWEP.UseHands = true
 
 SWEP.MuzzleParticle = "muzzleflash_famas" -- Used for some muzzle effects.
 SWEP.ShellModel = "models/weapons/rifleshell.mdl"
-SWEP.ShellScale = 1
+SWEP.ShellScale = 0.75
 --SWEP.ShellMaterial = "models/weapons/arcticcw/shell_556"
 SWEP.ShellPitch = 93
 local shell = "shared/shells/casing_eject_308_0"
@@ -45,7 +45,7 @@ SWEP.Description = [[This hunk of steel has accompanied squads for over 60 years
 SWEP.Class = "Medium Machinegun"
  SWEP.Trivia = {
      Manufacturer = "Izhevsk Mechanical Plant",
-     Calibre = "7.62x51mm Rimmed",
+     Calibre = "7.62x54mm Rimmed",
      Mechanism = "Gas-Operated Rotating Bolt",
      Country = "Soviet Union",
      Year = 1961,
@@ -68,7 +68,7 @@ SWEP.AnimDraw = false
 SWEP.DamageMax = 83 -- 3 shot kill
 SWEP.DamageMin = 21 -- 5 shot kill
 SWEP.RangeMin = 10
-SWEP.RangeMax = 13000*(170/330)
+SWEP.RangeMax = 13000*(200/330)
 SWEP.ArmorPiercing = 0.8
 SWEP.Penetration = 23
 SWEP.DamageType = DMG_BULLET
@@ -100,24 +100,22 @@ SWEP.RecoilLookupTable = nil -- Use to set specific values for predictible recoi
 SWEP.RecoilLookupTableOverrun = nil -- Repeatedly take values from this table if we run out in the main table
 
 -- General recoil multiplier
-SWEP.Recoil = 1
+SWEP.Recoil = 2
+SWEP.RecoilMultRecoil = 1+5/85
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 0.9 -- Multiplier for vertical recoil
 SWEP.RecoilSide = 1.2 -- Multiplier for vertical recoil
-
--- This is for EFT-like recoil, where gun shoots where sights at. Adds aditional movement to player view
-SWEP.EFTRecoil = false -- true
-SWEP.EFTRecoilUpMult = 0 -- 40-100
-SWEP.EFTRecoilSideMult = 15 -- 1-20
-SWEP.FirstShootRecoilUp = 1 -- eft too
+SWEP.RecoilAddRecoil = 1/30
+SWEP.VisualRecoilMultRecoil = 1-5/70
+SWEP.RecoilModifierCap = 15
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
 SWEP.RecoilRandomUp = 0.1
 SWEP.RecoilRandomSide = 0.1
 
-SWEP.RecoilDissipationRate = 10 -- How much recoil dissipates per second.
+SWEP.RecoilDissipationRate = 100 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0.1 -- How long the gun must go before the recoil pattern starts to reset.
 
 SWEP.RecoilAutoControl = 0.2 -- Multiplier for automatic recoil control.
@@ -133,21 +131,22 @@ SWEP.RumbleDuration = 0.12
 
 SWEP.UseVisualRecoil = true
 
-SWEP.VisualRecoilUp = 3.5 -- Vertical tilt for visual recoil.F
-SWEP.VisualRecoilSide = 2 -- Horizontal tilt for visual recoil.
+SWEP.VisualRecoilUp = 1 -- Vertical tilt for visual recoil.F
+SWEP.VisualRecoilSide = 1 -- Horizontal tilt for visual recoil.
 SWEP.VisualRecoilRoll = 20 -- Roll tilt for visual recoil.
 SWEP.VisualRecoilBipodMult = 0.1
 
-SWEP.VisualRecoilCenter = Vector(2, 4, 2) -- The "axis" of visual recoil. Where your hand is.
+SWEP.VisualRecoilCenter = Vector(2, 10, 2) -- The "axis" of visual recoil. Where your hand is.
 
-SWEP.VisualRecoilPunch = 0.1 -- How far back visual recoil moves the gun.
+SWEP.VisualRecoilPunch = 3 -- How far back visual recoil moves the gun.
 SWEP.VisualRecoilPunchMultSights = 0.1
 SWEP.VisualRecoilPositionBump = 1
 SWEP.VisualRecoilDampingConst = 50 -- How spring will be visual recoil, 120 is default
 SWEP.VisualRecoilSpringMagnitude = 1
 
 SWEP.VisualRecoil = 1
-SWEP.VisualRecoilMultSights = 0.1
+SWEP.VisualRecoilMultSights = 1
+SWEP.VisualRecoilMultBipod = 0.1
 SWEP.VisualRecoilUpMultSights = 3.5 -- Vertical tilt for visual recoil.F
 SWEP.VisualRecoilPositionBump = 1.5
 
@@ -155,18 +154,18 @@ SWEP.VisualRecoilHipFire = 1
 
 SWEP.VisualRecoilDampingConst = nil -- How spring will be visual recoil, 120 is default
 SWEP.VisualRecoilSpringMagnitude = 1
-SWEP.VisualRecoilMultBipod = 0.1
+SWEP.VisualRecoilMultBipod = 0.02
 
 
-SWEP.RecoilKick = 1.7 -- Camera recoil
-SWEP.RecoilKickDamping = 70.151 -- Camera recoil damping
+SWEP.RecoilKick = 2.5 -- Camera recoil
+SWEP.RecoilKickDamping = 40 -- Camera recoil damping
 
 
 
 SWEP.Sway = 0.9
 SWEP.SwayMultSights = 0.2/0.9
 SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizePos = Vector(19 , 35, 5)
+SWEP.CustomizePos = Vector(19 , 27, 5)
 SWEP.CustomizeSnapshotFOV = 110
 SWEP.SwayMultMidAir = 2
 SWEP.SwayMultMove = 1.5
@@ -191,11 +190,11 @@ SWEP.Firemodes = {
 }
 
 SWEP.ActivePos = Vector(-0, -1, 0.35)
-SWEP.ActiveAng = Angle(2, 2, -4)
+SWEP.ActiveAng = Angle(0, 0, -3)
 
-SWEP.ShootPitch = 130
-SWEP.ShootVolume = 130
-SWEP.ShootPitchVariation = 130/132
+SWEP.ShootPitch = 100
+SWEP.ShootVolume = 110
+SWEP.ShootPitchVariation = 10
 
 SWEP.ProceduralRegularFire = false
 SWEP.ProceduralIronFire = false
@@ -219,8 +218,8 @@ SWEP.MagID = "pkm"
 SWEP.Jamming = true
 SWEP.Overheat = true -- Weapon will jam when it overheats, playing the "overheat" animation.
 SWEP.HeatPerShot = 1
-SWEP.HeatCapacity = 220 -- rounds that can be fired non-stop before the gun jams, playing the "fix" animation
-SWEP.HeatDissipation = 3 -- rounds' worth of heat lost per second
+SWEP.HeatCapacity = 250 -- rounds that can be fired non-stop before the gun jams, playing the "fix" animation
+SWEP.HeatDissipation = 7 -- rounds' worth of heat lost per second
 SWEP.HeatLockout = true -- overheating means you cannot fire until heat has been fully depleted
 SWEP.HeatDelayTime = 2 -- Amount of time that passes before heat begins to dissipate.
 
@@ -238,12 +237,13 @@ SWEP.PostBashTime = 0.5
 -- Speed multipliers --
 
 SWEP.SpeedMult = 0.68
-SWEP.SightedSpeedMult = 0.75
+SWEP.SpeedMultSights = 0.4
+SWEP.SpeedMultReload = 0.5
 SWEP.SightTime = 0.75
-SWEP.ShootSpeedMult = 0.2
+SWEP.SpeedMultShooting = 0.2
 SWEP.AimDownSightsTime = 0.53 -- How long it takes to go from hip fire to aiming down sights.
 SWEP.SprintToFireTime = 0.9 -- How long it takes to go from sprinting to being able to fire.
-SWEP.NoSprintWhenLocked = true
+SWEP.NoSprintWhenLocked = false
 
 
 
@@ -301,7 +301,7 @@ SWEP.MirrorVMWM = true
 SWEP.WorldModelOffset = {
     Pos = Vector(-3, 3, -6),
     Ang = Angle(-10, -4, 180),
-    Scale = 1
+    Scale = 1.2
 }
 
 SWEP.HoldType = "ar2"
@@ -315,13 +315,22 @@ SWEP.HoldTypeBlindfire = "pistol"
 local pkm = "saa/pkm/"
 local pkm_far = "^" .. pkm
 local firingsound = {
-    pkm .. "Bruen Mk9_fire_plr_01.wav",
-    pkm .. "Bruen Mk9_fire_plr_02.wav",
-    pkm .. "Bruen Mk9_fire_plr_03.wav",
-    pkm .. "Bruen Mk9_fire_plr_04.wav",
-    pkm .. "Bruen Mk9_fire_plr_05.wav",
-    pkm .. "Bruen Mk9_fire_plr_06.wav",
-
+    pkm .. "2023aug/f2000_distant_oneshot_01.ogg",
+    pkm .. "2023aug/f2000_distant_oneshot_02.ogg",
+    pkm .. "2023aug/f2000_distant_oneshot_03.ogg",
+    pkm .. "2023aug/f2000_distant_oneshot_04.ogg",
+    pkm .. "2023aug/f2000_distant_oneshot_05.ogg",
+    pkm .. "2023aug/f2000_distant_oneshot_06.ogg",
+    pkm .. "2023aug/f2000_distant_oneshot_07.ogg",
+    pkm .. "2023aug/f2000_distant_oneshot_08.ogg",
+    pkm .. "2023aug/f2000_distant_oneshot_09.ogg",
+    pkm .. "2023aug/f2000_distant_oneshot_10.ogg",
+    pkm .. "2023aug/f2000_distant_oneshot_11.ogg",
+    pkm .. "2023aug/f2000_distant_oneshot_12.ogg",
+    pkm .. "2023aug/f2000_distant_oneshot_13.ogg",
+    pkm .. "2023aug/f2000_distant_oneshot_14.ogg",
+    pkm .. "2023aug/f2000_distant_oneshot_15.ogg",
+    pkm .. "2023aug/f2000_distant_oneshot_16.ogg",
 }
 local distantsound = {
     pkm .. "weap_lmg_fire_plr_atmo_ext2_01.wav",
@@ -333,16 +342,34 @@ local distantsound = {
 }
 SWEP.ShootSound = firingsound
 SWEP.ShootSoundIndoor = firingsound
-SWEP.LayerSound = distantsound
+SWEP.LayerSound = pkm .. "2023aug/f2000_tail.wav"
 local lsind = "shared/base/universal/sandstorm_reverb/fromrpg7/tail_indoors_small_close_0"
 SWEP.LayerSoundIndoor = { 
-    lsind .. "1.wav", 
-    lsind .. "2.wav", 
-    lsind .. "3.wav", 
-    lsind .. "4.wav",
-    lsind .. "5.wav",  
+    pkm .. "2023aug/mutant_indoor_close.ogg",
+    pkm .. "2023aug/mutant_indoor_close-2.ogg",
+    pkm .. "2023aug/mutant_indoor_close-3.ogg",
+    pkm .. "2023aug/mutant_indoor_close-4.ogg",
+    pkm .. "2023aug/mutant_indoor_close-5.ogg",
+    pkm .. "2023aug/mutant_indoor_close-6.ogg",
+    pkm .. "2023aug/mutant_indoor_close-7.ogg",
+
 }
-SWEP.DistantShootSound = nil 
+SWEP.DistantShootSound = {
+    pkm .. "2023aug/scarh_far_loop.ogg",
+    pkm .. "2023aug/scarh_far_loop-2.ogg",
+    pkm .. "2023aug/scarh_far_loop-3.ogg",
+    pkm .. "2023aug/scarh_far_loop-4.ogg",
+    pkm .. "2023aug/scarh_far_loop-5.ogg",
+    pkm .. "2023aug/scarh_far_loop-6.ogg",
+}
+SWEP.DistantShootSoundIndoor = {
+    pkm .. "2023aug/indoor/scarh_far_loop.ogg",
+    pkm .. "2023aug/indoor/scarh_far_loop-2.ogg",
+    pkm .. "2023aug/indoor/scarh_far_loop-3.ogg",
+    pkm .. "2023aug/indoor/scarh_far_loop-4.ogg",
+    pkm .. "2023aug/indoor/scarh_far_loop-5.ogg",
+    pkm .. "2023aug/indoor/scarh_far_loop-6.ogg",
+} 
 
 local firingsound_s = {
     pkm .. "weap_scharlie_sup_npc_01.wav",
@@ -370,8 +397,24 @@ SWEP.LayerSoundSilenced = distant_s
 SWEP.LayerSoundSilencedIndoor = distant_s
 SWEP.DistantShootSoundSilenced = nil
 
-
-
+local firelayer = {
+    pkm .. "2023aug/f2000_close_oneshot_01.ogg",
+    pkm .. "2023aug/f2000_close_oneshot_02.ogg",
+    pkm .. "2023aug/f2000_close_oneshot_03.ogg",
+    pkm .. "2023aug/f2000_close_oneshot_04.ogg",
+    pkm .. "2023aug/f2000_close_oneshot_05.ogg",
+    pkm .. "2023aug/f2000_close_oneshot_06.ogg",
+    pkm .. "2023aug/f2000_close_oneshot_07.ogg",
+    pkm .. "2023aug/f2000_close_oneshot_08.ogg",
+    pkm .. "2023aug/f2000_close_oneshot_09.ogg",
+    pkm .. "2023aug/f2000_close_oneshot_10.ogg",
+    pkm .. "2023aug/f2000_close_oneshot_11.ogg",
+    pkm .. "2023aug/f2000_close_oneshot_12.ogg",
+    pkm .. "2023aug/f2000_close_oneshot_13.ogg",
+    pkm .. "2023aug/f2000_close_oneshot_14.ogg",
+    pkm .. "2023aug/f2000_close_oneshot_15.ogg",
+    pkm .. "2023aug/f2000_close_oneshot_16.ogg",
+}
 
 -- Animations --
 local foley = "saa/pkm/handling/"
@@ -443,17 +486,10 @@ SWEP.Animations = {
         ShellEjectAt = 0.01,
         Mult = 0.55,
         EventTable = {
-            {s = mech,    t = 0, v=0.4, p=100,},
-            {s = belt,    t = 0, v=0.2, p=100, l=60},
-            {s = belt_final,    t = 0, v=0.2, p=100, l=60},
-            {
-            FOV = -4,
-            FOV_Start = 0.05,
-            FOV_End = 0.5,
-            FOV_FuncStart = ARC9.Ease.OutCirc,
-            FOV_FuncEnd = ARC9.Ease.InCirc,
-            t = 0.0,
-            },
+            {s = firelayer,    t = 0, v=0.3, p=100,},
+            {s = mech,    t = 0, v=0.8, p=100, l = 60},
+            {s = belt,    t = 0, v=0.1, p=100, l=60},
+            {s = belt_final,    t = 0.1, v=0.1, p=100, l=60},
         },
     },
     ["fire_iron"] = {
@@ -461,51 +497,10 @@ SWEP.Animations = {
         ShellEjectAt = 0.01,
         Mult = 0.63,
         EventTable = {
-            {s = mech,    t = 0, v=0.55, p=100,},
-            {s = belt,    t = 0, v=0.2, p=100, l=60},
-            {s = belt_final,    t = 0, v=0.2, p=100, l=60},
-            {
-            FOV = -3,
-            FOV_Start = 0.05,
-            FOV_End = 0.5,
-            FOV_FuncStart = ARC9.Ease.OutCirc,
-            FOV_FuncEnd = ARC9.Ease.InCirc,
-            t = 0.0,
-            },
-        },
-    },
-    ["fire_supp"] = {
-        Source = {"base_fire_1", "base_fire_2"},
-        ShellEjectAt = 0.01,
-        Mult = 0.55,
-        EventTable = {
-            {s = belt,    t = 0, v=0.2, p=100, l=60},
-            {s = belt_final,    t = 0, v=0.2, p=100, l=60},
-            {
-            FOV = -4,
-            FOV_Start = 0.05,
-            FOV_End = 0.5,
-            FOV_FuncStart = ARC9.Ease.OutCirc,
-            FOV_FuncEnd = ARC9.Ease.InCirc,
-            t = 0.0,
-            },
-        },
-    },
-    ["fire_iron_supp"] = {
-        Source = "ACT_VM_ISHOOT",
-        ShellEjectAt = 0.01,
-        Mult = 0.63,
-        EventTable = {
-            {s = belt,    t = 0, v=0.2, p=100, l=60},
-            {s = belt_final,    t = 0, v=0.2, p=100, l=60},
-            {
-            FOV = -3,
-            FOV_Start = 0.05,
-            FOV_End = 0.5,
-            FOV_FuncStart = ARC9.Ease.OutCirc,
-            FOV_FuncEnd = ARC9.Ease.InCirc,
-            t = 0.0,
-            },
+            {s = firelayer,    t = 0, v=0.3, p=100,},
+            {s = mech,    t = 0, v=0.8, p=100, l = 60},
+            {s = belt,    t = 0, v=0.1, p=100, l=60},
+            {s = belt_final,    t = 0.1, v=0.1, p=100, l=60},
         },
     },
     ["ready"] = {
@@ -549,15 +544,6 @@ SWEP.Animations = {
             {s = foley .. "pkm_foley_belt_pull.wav", t = 7.6, p=100, v=1},
             {s = foley .. "linkrattle.wav", t = 9.1, p=70, v=0.5},
             {s = foley .. "lid_close.wav", t = 8.85, p=90, v=1},
-
-            {
-            FOV = -2,
-            FOV_Start = 0.3,
-            FOV_End = 7.5,
-            FOV_FuncStart = ARC9.Ease.InBack,
-            FOV_FuncEnd =  ARC9.Ease.OutBack,
-            t = 0,
-            },
         },
             IKTimeLine = {
             {
@@ -566,7 +552,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.09,
+                t = 0.15,
                 lhik = 0,
                 rhik = 0
             },
@@ -576,7 +562,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.9,
+                t = 0.95,
                 lhik = 1,
                 rhik = 0
             },
@@ -602,14 +588,6 @@ SWEP.Animations = {
             {s = foley .. "chargeback.wav", t = 10.4, p=100, v=0.3},
             {s = foley .. "linkrattle.wav", t = 10.8, p=75, v=1.0},
             {s = foley .. "chargeforward.wav", t = 10.9, p=95, v=0.3},
-            {
-            FOV = -2,
-            FOV_Start = 0.3,
-            FOV_End = 9.5,
-            FOV_FuncStart = ARC9.Ease.InBack,
-            FOV_FuncEnd =  ARC9.Ease.OutBack,
-            t = 0,
-            },
         },
         IKTimeLine = {
             {
@@ -618,15 +596,11 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.1,
+                t = 0.15,
                 lhik = 0,
                 rhik = 0
             },
-            {
-                t = 0.25,
-                lhik = 0,
-                rhik = 0
-            },
+
             {
                 t = 0.72,
                 lhik = 0,
@@ -679,9 +653,10 @@ SWEP.Animations = {
         ShellEjectAt = 0.01,
         Mult = 0.55,
         EventTable = {
-            {s = mech,    t = 0, v=0.4, p=100,},
-            {s = belt,    t = 0, v=0.2, p=100, l=60},
-            {s = belt_final,    t = 0, v=0.2, p=100, l=60},
+            {s = firelayer,    t = 0, v=0.3, p=100,},
+            {s = mech,    t = 0, v=0.8, p=100, l = 60},
+            {s = belt,    t = 0, v=0.1, p=100, l=60},
+            {s = belt_final,    t = 0.1, v=0.1, p=100, l=60},
             {
             FOV = -4,
             FOV_Start = 0.05,
@@ -697,9 +672,10 @@ SWEP.Animations = {
         ShellEjectAt = 0.01,
         Mult = 0.55,
         EventTable = {
-            {s = mech,    t = 0, v=0.4, p=100,},
-            {s = belt,    t = 0, v=0.2, p=100, l=60},
-            {s = belt_final,    t = 0, v=0.2, p=100, l=60},
+            {s = firelayer,    t = 0, v=0.3, p=100,},
+            {s = mech,    t = 0, v=0.8, p=100, l = 60},
+            {s = belt,    t = 0, v=0.5, p=100, l=60},
+            {s = belt_final,    t = 0, v=0.5, p=100, l=60},
             {
             FOV = -4,
             FOV_Start = 0.05,
@@ -715,9 +691,10 @@ SWEP.Animations = {
         ShellEjectAt = 0.01,
         Mult = 0.63,
         EventTable = {
-            {s = mech,    t = 0, v=0.6, p=100,},
-            {s = belt,    t = 0, v=0.2, p=100, l=60},
-            {s = belt_final,    t = 0, v=0.2, p=100, l=60},
+            {s = firelayer,    t = 0, v=0.3, p=100,},
+            {s = mech,    t = 0, v=0.8, p=100, l = 60},
+            {s = belt,    t = 0, v=0.5, p=100, l=60},
+            {s = belt_final,    t = 0, v=0.5, p=100, l=60},
             {
             FOV = -3,
             FOV_Start = 0.05,
@@ -733,9 +710,10 @@ SWEP.Animations = {
         ShellEjectAt = 0.01,
         Mult = 0.63,
         EventTable = {
-            {s = mech,    t = 0, v=0.7, p=100,},
-            {s = belt,    t = 0, v=0.2, p=100, l=60},
-            {s = belt_final,    t = 0, v=0.2, p=100, l=60},
+            {s = firelayer,    t = 0, v=0.3, p=100,},
+            {s = mech,    t = 0, v=0.8, p=100, l = 60},
+            {s = belt,    t = 0, v=0.5, p=100, l=60},
+            {s = belt_final,    t = 0, v=0.5, p=100, l=60},
             {
             FOV = -3,
             FOV_Start = 0.05,
@@ -871,7 +849,7 @@ SWEP.Attachments = {
        Category = {"SAA_SCOPE_SMALL","SAA_SCOPE_MEDIUM"},
        Bone = "b_wpn_lid",
        InstalledElements = {"railed_lid"},
-       Pos = Vector(0.11, -4, 1.45),
+       Pos = Vector(0.11, -4, 2.1),
        Ang = Angle(0, 270, 0),
 
        Scale = 0.9,
@@ -879,6 +857,7 @@ SWEP.Attachments = {
     {
        PrintName = "Barrel",
        Category = {"saa_pkm_barrel"},
+       DefaultIcon = Material("hud/arc9_saa/rus/ao/pkm_barrel.png", "mips smooth"),
        Bone = "b_wpn",
        Pos = Vector(0, 13.22, 1.9),
        Ang = Angle(0, 0, 0),
@@ -888,16 +867,18 @@ SWEP.Attachments = {
     {
        PrintName = "Underbarrel",
        Category = {"saa_pkm_ub","clamped"},
+       DefaultIcon = Material("hud/arc9_saa/rus/ao/pk_bipod.png", "mips smooth"),
        Bone = "b_wpn",
        Pos = Vector(-0.2, 7.1, 0.45),
-       Ang = Angle(90, 270, 0),
+       Ang = Angle(180, 90, 90),
        Icon_Offset = Vector(0.2, 0, -0.2),
 
-       Scale = 0.6,
+       Scale = 1.0,
    },
     {
        PrintName = "Pistol Grip",
        Category = {"saa_ak_pgrip"},
+       DefaultIcon = Material("hud/arc9_saa/rus/mgp_pg.png", "mips smooth"),
        Bone = "b_wpn",
        Pos = Vector(0, -8.5, -1),
        Ang = Angle(0, 0, 0),
@@ -907,6 +888,7 @@ SWEP.Attachments = {
     {
        PrintName = "Stock",
        Category = {"saa_pkm_stock"},
+       DefaultIcon = Material("hud/arc9_saa/rus/ao/pkm_stock.png", "mips smooth"),
        Bone = "b_wpn",
        Pos = Vector(0, -12, 1.3),
        Ang = Angle(0, 0, 0),
@@ -931,7 +913,7 @@ SWEP.DefaultBodygroups = "00000000000"
 SWEP.AttachmentElements = {
     ["railed_lid"] = {
         Bodygroups = {
-            {5, 1},
+            {10, 1},
         },
     },
     ["barrel_pkp"] = {
@@ -971,7 +953,7 @@ SWEP.AttachmentElements = {
     },
     ["stock_ps"] = {
         Bodygroups = {
-            {6, 2},
+            {6, 3},
         },
     },
     ["wood_grip"] = {
