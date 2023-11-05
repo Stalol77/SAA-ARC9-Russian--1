@@ -12,7 +12,7 @@ ATT.Category = "SAA_SVD_BARREL"
 
 
 ATT.SprintToFireTimeMult = 0.975
-ATT.SpeedMult = 1.7365
+ATT.SpeedMult = 4.98/4.77
 ATT.RecoilMult = 1.7/1.55
 ATT.SwayMult = 0.8
 ATT.AimDownSightsTimeMult = 0.995
@@ -88,7 +88,7 @@ ATT.Category = "saa_svd_handguard"
 
 
 ATT.SprintToFireTimeMult = 0.32/0.33
-ATT.SpeedMultMult = 4.85/4.6
+ATT.SpeedMultMult = 4.85/4.75
 ATT.RecoilMult = 1.035
 ATT.VisualRecoilUpMult = 4950/4870
 ATT.AimDownSightsTimeMult = 0.985

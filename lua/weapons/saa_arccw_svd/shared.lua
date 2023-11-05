@@ -162,8 +162,8 @@ SWEP.RumbleDuration = 0.9
 
 SWEP.Sway = 0.86
 SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizePos = Vector(17 , 31, 1)
-SWEP.CustomizeSnapshotFOV = 110
+SWEP.CustomizePos = Vector(17 , 50, 1)
+SWEP.CustomizeSnapshotFOV = 60
 SWEP.SwayMultMidAir = 2
 SWEP.SwayMultMove = 1.5
 SWEP.SwayMultCrouch = 0.66
@@ -185,6 +185,9 @@ SWEP.Firemodes = {
 
 SWEP.ActivePos = Vector(0.5, 1.2, -1)
 SWEP.ActiveAng = Angle(0, 1.5, 0)
+
+SWEP.BobSettingsMove =  {2, 2, 3,    2, 10, 2}
+SWEP.BobSettingsSpeed = {0.2, 1, 0.92,    1, 1.02, 0.9}
 
 SWEP.BipodPos = Vector(0.5, 1.2, -2)
 SWEP.BipodAng = Angle(0, 2, 0)

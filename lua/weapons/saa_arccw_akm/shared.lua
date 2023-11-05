@@ -128,8 +128,8 @@ SWEP.VisualRecoilSpringMagnitude = 1
 SWEP.RPMMultFirstShot = 1
 SWEP.Sway = 1.2
 SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizePos = Vector(14 , 31, 4)
-SWEP.CustomizeSnapshotFOV = 100
+SWEP.CustomizePos = Vector(14 , 45, 4)
+SWEP.CustomizeSnapshotFOV = 60
 SWEP.SwayMultMidAir = 2
 SWEP.SwayMultMove = 1.5
 SWEP.SwayMultCrouch = 0.66
@@ -156,6 +156,9 @@ SWEP.Firemodes = {
 
 SWEP.ActivePos = Vector(0, 2, 1)
 SWEP.ActiveAng = Angle(1, 0, 0)
+
+SWEP.BobSettingsMove =  {2, 2, 3,    2, -7, 2}
+SWEP.BobSettingsSpeed = {0.2, 1, 0.92,    1, 1.02, 0.9}
 
 SWEP.ShootPitch = 100
 SWEP.ShootVolume = 120
@@ -263,7 +266,7 @@ SWEP.WorldModelOffset = {
     Pos = Vector(-2.5, 3, -6),
     Ang = Angle(-10, -4, 180),
     Scale = 1,
-    TPIKPos = Vector(-9, -2, -3),
+    TPIKPos = Vector(-4, 1.5, -3),
     TPIKAng = Angle(-20, -5, 175)
 }
 

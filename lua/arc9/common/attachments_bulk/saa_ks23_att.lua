@@ -216,8 +216,8 @@ ATT.Category = "saa_ks23_ammo"
 
 ATT.Num = 1
 
-ATT.DamageMinMult = 8
-ATT.DamageMaxMult = 8
+ATT.DamageMinMult = 9
+ATT.DamageMaxMult = 12
 ATT.RangeMaxMult = 150/125
 
 

@@ -1,5 +1,56 @@
 local ATT = {}
 
+-- start here
+
+ATT = {}
+
+ATT.PrintName = "330mm SBR AK-12U 2011 Barrel"
+ATT.CompactName = "330mm"
+ATT.Description = [[Shorter Barrel-Gas block configuration that compromises the AK-12's design into a carbine setup, very much like what an AKS-74U is to an AKS-74.]]
+ATT.Icon = Material("hud/arc9_saa/rus/ao/12u.png", "mips smooth")
+
+
+ATT.SortOrder = 1
+ATT.Category = "saa_ak12_br"
+ATT.RangeMaxMult = 302.5/400
+ATT.PhysBulletMuzzleVelocityMult = 600/715
+ATT.SwayMult = 0.45/0.56
+ATT.RPMMult = 702/650
+ATT.BarrelLengthAdd = -6
+
+ATT.MuzzleParticle = "muzzleflash_ak47"
+ATT.MuzzleDevice_Priority = 2
+
+ATT.ActivateElements = {"aku"}
+
+ARC9.LoadAttachment(ATT, "saa_ak12_u")
+
+-- end here
+
+-- start here
+
+ATT = {}
+
+ATT.PrintName = "370mm SBR AK-12P 2011 Barrel"
+ATT.CompactName = "370mm"
+ATT.Description = [[Barrel configuration similar to the AK-100's series SBR variants. Slightly raises the sights to allow for the placement on the gas port.]]
+ATT.Icon = Material("hud/arc9_saa/rus/ao/12sbr.png", "mips smooth")
+
+
+ATT.SortOrder = 0
+ATT.Category = "saa_ak12_br"
+ATT.RangeMaxMult = 345/400
+ATT.PhysBulletMuzzleVelocityMult = 630/715
+ATT.SwayMult = 0.5/0.56
+ATT.RPMMult = 665/650
+ATT.BarrelLengthAdd = -4
+
+ATT.ActivateElements = {"sbr"}
+
+ARC9.LoadAttachment(ATT, "saa_ak12_sbr")
+
+-- end here
+
 --dust cover
 
 -- start here
@@ -17,7 +68,7 @@ ATT.Category = "saa_ak_dustcover"
 
 
 ATT.SprintToFireTimeMult = 35/33
-ATT.SpeedMult = 34.5/35
+ATT.SpeedMultMult = 34.5/35
 ATT.AimDownSightsTimeMult = 0.35/(1/3)
 ATT.HeatDissipationMult = 0.975
 ATT.MalfunctionMeanShotsToFailMult = 450/300
@@ -45,7 +96,7 @@ ATT.Category = "saa_ak_dustcover"
 
 
 ATT.SprintToFireTimeMult = 35/33
-ATT.SpeedMult = 34.5/35
+ATT.SpeedMultMult = 34.5/35
 ATT.AimDownSightsTimeMult = 0.35/(1/3)
 ATT.HeatDissipationMult = 0.99
 ATT.MalfunctionMeanShotsToFailMult = 450/300
@@ -73,7 +124,7 @@ ATT.Category = "saa_ak_dustcover"
 
 
 ATT.SprintToFireTimeMult = 35/33
-ATT.SpeedMult = 34.5/35
+ATT.SpeedMultMult = 34.5/35
 ATT.AimDownSightsTimeMult = 0.37/(1/3)
 ATT.HeatDissipationMult = 0.95
 ATT.MalfunctionMeanShotsToFailMult = 500/300
@@ -115,7 +166,7 @@ ATT.Attachments = {
 }
 
 ATT.SprintToFireTimeMult = 39/33
-ATT.SpeedMult = 34.5/37
+ATT.SpeedMultMult = 34.5/37
 ATT.AimDownSightsTimeMult = 0.4/(1/3)
 ATT.HeatDissipationMult = 0.925
 ATT.MalfunctionMeanShotsToFailMult = 370/300
@@ -166,7 +217,7 @@ ATT.Attachments = {
 }
 
 ATT.SprintToFireTimeMult = 35/33
-ATT.SpeedMult = 34.5/35
+ATT.SpeedMultMult = 34.5/35
 ATT.AimDownSightsTimeMult = 0.38/(1/3)
 ATT.HeatDissipationMult = 0.98
 ATT.MalfunctionMeanShotsToFailMult = 425/300
@@ -286,7 +337,7 @@ ATT.SortOrder = 1
 ATT.Category = "saa_ak_pgrip"
 ATT.Sway = 0.5
 ATT.RecoilKickMult = 0.85
-ATT.SpeedMult = 0.855/0.84
+ATT.SpeedMultMult = 0.855/0.84
 ATT.ActivateElements = {"zenitco_rk3_grip"}
 
 ARC9.LoadAttachment(ATT, "saa_zenitco_rk3")
@@ -306,7 +357,7 @@ ATT.Icon = Material("hud/arc9_saa/rus/mgp_pg.png", "mips smooth")
 ATT.SortOrder = 1
 ATT.Category = "saa_ak_pgrip"
 ATT.Sway = 0.5
-ATT.SpeedMult = 0.855/0.86
+ATT.SpeedMultMult = 0.855/0.86
 ATT.ReloadTimeMult = 1.005
 ATT.ActivateElements = {"magpul_grip"}
 
@@ -327,7 +378,7 @@ ATT.Icon = Material("hud/arc9_saa/rus/ak_pg.png", "mips smooth")
 ATT.SortOrder = 1
 ATT.Category = "saa_ak_pgrip"
 ATT.Sway = 0.5
-ATT.SpeedMult = 0.855/0.86
+ATT.SpeedMultMult = 0.855/0.86
 ATT.ReloadTimeMult = 1.005
 ATT.ActivateElements = {"s200_grip"}
 
@@ -348,7 +399,7 @@ ATT.Icon = Material("hud/arc9_saa/rus/Wood_PG.png", "mips smooth")
 ATT.SortOrder = 1
 ATT.Category = "saa_ak_pgrip"
 ATT.Sway = 0.85
-ATT.SpeedMult = 0.855/0.86
+ATT.SpeedMultMult = 0.855/0.86
 ATT.VisualRecoilMult = 0.75
 ATT.ActivateElements = {"wood_grip"}
 
@@ -378,7 +429,7 @@ ATT.SortOrder = 1
 ATT.Category = "saa_ak_hg"
 ATT.RecoilMult = 1.03
 ATT.VisualRecoilUpMult = 1.085
-ATT.SpeedMult = 0.99
+ATT.SpeedMultMult = 0.99
 ATT.SprintToFireTimeMult = 1.025
 ATT.HeatDissipationMult = 1.30
 ATT.SwayMult = 0.62/0.56
@@ -447,7 +498,7 @@ ATT.CustomCons = {
 ATT.SortOrder = 1
 ATT.Category = "saa_ak_hg"
 ATT.RecoilMult = 1.03
-ATT.SpeedMult = 0.99
+ATT.SpeedMultMult = 0.99
 ATT.SprintToFireTimeMult = 1.025
 ATT.HeatDissipationMult = 1.50
 ATT.SwayMult = 0.66/0.56
@@ -648,7 +699,7 @@ ATT.SortOrder = 1
 ATT.Category = "saa_ak_hg"
 ATT.RecoilMult = 1
 ATT.RecoilKickMult = 1.1
-ATT.SpeedMult = 0.95
+ATT.SpeedMultMult = 0.95
 ATT.SprintToFireTimeMult = 0.9
 ATT.ActivateElements = {"helix_guard", "exclude_gp25"}
 ATT.HeatDissipationMult = 1.15
@@ -712,7 +763,7 @@ ATT.Category = "saa_akm_mag"
 
 ATT.RecoilSideMult = 1.3
 ATT.ClipSizeOverride = 75
-ATT.SpeedMult = 0.85
+ATT.SpeedMultMult = 0.85
 
 ATT.ActivateElements = {"drum_75"}
 
@@ -736,7 +787,7 @@ ATT.Category = "saa_ak74_mag"
 ATT.MalfunctionMeanShotsToFailMult = 600/800
 ATT.RecoilSideMult = 1.3
 ATT.ClipSizeOverride = 95
-ATT.SpeedMult = 0.75
+ATT.SpeedMultMult = 0.75
 
 ATT.ActivateElements = {"drum_95"}
 
@@ -760,7 +811,7 @@ ATT.Category = "saa_ak74_mag"
 ATT.MalfunctionMeanShotsToFailMult = 700/800
 ATT.RecoilSideMult = 1.1
 ATT.ClipSizeOverride = 30
-ATT.SpeedMult = 5/4.91
+ATT.SpeedMultMult = 5/4.91
 ATT.ReloadTimeMult = 5/5.2
 
 ATT.ActivateElements = {"poly_30"}
@@ -785,7 +836,7 @@ ATT.Category = "saa_ak74_mag"
 ATT.MalfunctionMeanShotsToFailMult = 750/800
 ATT.RecoilSideMult = 1.3
 ATT.ClipSizeOverride = 45
-ATT.SpeedMult = 5/5.1
+ATT.SpeedMultMult = 5/5.1
 ATT.ReloadTimeMult = 5.3/5
 
 ATT.ActivateElements = {"poly_45"}
@@ -810,7 +861,7 @@ ATT.Category = "saa_ak74_mag"
 ATT.MalfunctionMeanShotsToFailMult = 780/800
 ATT.RecoilSideMult = 1.25
 ATT.ClipSizeOverride = 45
-ATT.SpeedMult = 5/5.15
+ATT.SpeedMultMult = 5/5.15
 ATT.ReloadTimeMult = 5.4/5
 
 ATT.ActivateElements = {"bake_45"}
@@ -835,7 +886,7 @@ ATT.Category = "saa_ak74_mag"
 ATT.MalfunctionMeanShotsToFailMult = 670/800
 ATT.RecoilSideMult = 1.5
 ATT.ClipSizeOverride = 60
-ATT.SpeedMult = 5/5.26
+ATT.SpeedMultMult = 5/5.26
 ATT.ReloadTimeMult = 5.8/5
 
 ATT.ActivateElements = {"casket"}
@@ -860,7 +911,7 @@ ATT.Category = "saa_akm_mag"
 ATT.ReloadTimeMult = 0.95
 ATT.RecoilSideMult = 1.03
 ATT.ClipSizeOverride = 30
-ATT.SpeedMult = 1.075
+ATT.SpeedMultMult = 1.075
 
 ATT.ActivateElements = {"bakelite_30"}
 
@@ -885,7 +936,7 @@ ATT.Category = "saa_akm_mag"
 ATT.ReloadTimeMult = 0.91
 ATT.RecoilSideMult = 0.975
 ATT.ClipSizeOverride = 20
-ATT.SpeedMult = 1.1
+ATT.SpeedMultMult = 1.1
 
 ATT.ActivateElements = {"steel_20"}
 
@@ -909,7 +960,7 @@ ATT.Category = "saa_akm_mag"
 ATT.ReloadTimeMult = 1.05
 ATT.RecoilSideMult = 1.075
 ATT.ClipSizeOverride = 35
-ATT.SpeedMult = 0.975
+ATT.SpeedMultMult = 0.975
 
 ATT.ActivateElements = {"pmag_30"}
 
@@ -933,7 +984,7 @@ ATT.Category = "saa_akm_mag"
 ATT.ReloadTimeMult = 1.075
 ATT.RecoilSideMult = 1.1
 ATT.ClipSizeOverride = 40
-ATT.SpeedMult = 0.95
+ATT.SpeedMultMult = 0.95
 
 
 ATT.ActivateElements = {"steel_40"}
@@ -955,7 +1006,7 @@ ATT.Icon = Material("hud/arc9_saa/rus/mgp_stock1.png", "mips smooth")
 ATT.SortOrder = 1
 ATT.Category = "saa_ak_stock"
 ATT.Sway = 0.56
-ATT.SpeedMult = 0.855/0.88
+ATT.SpeedMultMult = 0.855/0.88
 ATT.ReloadTimeMult = 1.015
 ATT.RecoilMult = 1/1.32
 ATT.RecoilMultSights = 0.825
@@ -984,7 +1035,7 @@ ATT.Icon = Material("hud/arc9_saa/rus/S100_STOCK.png", "mips smooth")
 ATT.SortOrder = 1
 ATT.Category = "saa_ak_stock"
 ATT.Sway = 0.9
-ATT.SpeedMult = 0.855/0.88
+ATT.SpeedMultMult = 0.855/0.88
 ATT.ReloadTimeMult = 1.015
 ATT.RecoilMult = 1/1.32
 ATT.RecoilMultSights = 0.675
@@ -1015,7 +1066,7 @@ ATT.Icon = Material("hud/arc9_saa/rus/vepr_stock.png", "mips smooth")
 ATT.SortOrder = 1
 ATT.Category = "saa_ak_stock"
 ATT.Sway = 0.9
-ATT.SpeedMult = 0.855/0.91
+ATT.SpeedMultMult = 0.855/0.91
 ATT.ReloadTimeMult = 1.03
 ATT.RecoilMult = 1/1.5
 ATT.SprintToFireTimeMult = 1.15
@@ -1044,9 +1095,9 @@ ATT.Icon = Material("hud/arc9_saa/rus/Alpha_Stock.png", "mips smooth")
 
 
 ATT.SortOrder = 1
-ATT.Category = "saa_ak_stock"
+ATT.Category = {"saa_ak_stock", "saa_ak12_stock"}
 ATT.Sway = 0.91
-ATT.SpeedMult = 0.855/0.87
+ATT.SpeedMultMult = 0.855/0.87
 ATT.RecoilMult = 1/1.41
 ATT.SprintToFireTimeMult = 0.4/0.33
 ATT.RecoilKickMult = 1.5
@@ -1076,7 +1127,7 @@ ATT.Icon = Material("hud/arc9_saa/rus/akm_stock.png", "mips smooth")
 ATT.SortOrder = 1
 ATT.Category = "saa_ak_stock"
 ATT.Sway = 0.9
-ATT.SpeedMult = 0.865/0.91
+ATT.SpeedMultMult = 0.865/0.91
 ATT.ReloadTimeMult = 1.03
 ATT.RecoilMult = 1/1.5
 ATT.SprintToFireTimeMult = 0.35/0.33
@@ -1108,7 +1159,7 @@ ATT.Icon = Material("hud/arc9_saa/rus/ak74_stock.png", "mips smooth")
 ATT.SortOrder = 1
 ATT.Category = "saa_ak_stock"
 ATT.Sway = 0.9
-ATT.SpeedMult = 0.855/0.91
+ATT.SpeedMultMult = 0.855/0.91
 ATT.ReloadTimeMult = 1.03
 ATT.RecoilMult = 1/1.5
 ATT.SprintToFireTimeMult = 0.38/0.33
@@ -1139,7 +1190,7 @@ ATT.Icon = Material("hud/arc9_saa/rus/akms.png", "mips smooth")
 ATT.SortOrder = 0
 ATT.Category = "saa_akm_stock"
 
-ATT.SpeedMult = 0.855/0.86
+ATT.SpeedMultMult = 0.855/0.86
 ATT.ReloadTimeMult = 1.015
 ATT.RecoilMult = 1/1.2
 ATT.RecoilMultSights = 0.8
@@ -1167,7 +1218,7 @@ ATT.Icon = Material("hud/arc9_saa/rus/aks74.png", "mips smooth")
 ATT.SortOrder = 0
 ATT.Category = "saa_aks74_stock"
 
-ATT.SpeedMult = 0.855/0.86
+ATT.SpeedMultMult = 0.855/0.86
 ATT.ReloadTimeMult = 1.015
 ATT.RecoilMult = 1/1.2
 ATT.RecoilMultSights = 0.8
@@ -1195,7 +1246,7 @@ ATT.Icon = Material("hud/arc9_saa/rus/aks74m.png", "mips smooth")
 ATT.SortOrder = 0
 ATT.Category = "saa_aks74_stock"
 
-ATT.SpeedMult = 0.85/0.86
+ATT.SpeedMultMult = 0.85/0.86
 ATT.ReloadTimeMult = 1.015
 ATT.RecoilMult = 1.1/1.7
 ATT.RecoilMultSights = 0.845
@@ -1208,6 +1259,35 @@ ATT.VisualRecoilMultSights = 0.5
 ATT.ActivateElements = {"aks74m_stock"}
 
 ARC9.LoadAttachment(ATT, "saa_aks74m")
+
+-- end here
+
+-- start here
+
+ATT = {}
+
+ATT.PrintName = "AK-12 EVO Systems Stock"
+ATT.CompactName = "EVO AK-12"
+ATT.Description = [[Receiver modification that allows use of the AK pattern sidefolder stock. Perfect for a mobility oriented build that seeks for ease of use in CQB.]]
+ATT.Icon = Material("hud/arc9_saa/rus/ao/12evo.png", "mips smooth")
+
+
+ATT.SortOrder = 0
+ATT.Category = "saa_ak12_stock"
+
+ATT.SpeedMultMult = 0.85/0.86
+ATT.ReloadTimeMult = 1.015
+ATT.RecoilMult = 1.1/1.7
+ATT.RecoilMultSights = 0.845
+ATT.AimDownSightsTimeMult = 0.45/0.33
+
+ATT.VisualRecoilUpMult = 1.7/3
+ATT.VisualRecoilSideMult = 0.5/3
+ATT.VisualRecoilMultSights = 0.5
+
+ATT.ActivateElements = {"evo_stock"}
+
+ARC9.LoadAttachment(ATT, "saa_ak12_evo")
 
 -- end here
 
@@ -1362,7 +1442,7 @@ ATT.Icon = Material("hud/arc9_saa/rus/ak74_gp.png", "mips smooth")
 ATT.SortOrder = 0
 ATT.Category = "saa_ak_gp"
 
-ATT.SpeedMult = 0.96
+ATT.SpeedMultMult = 0.96
 ATT.HeatCapacityMult = 1.375
 ATT.RecoilMult = 0.945
 ATT.RecoilKickMult = 0.7
@@ -1387,7 +1467,7 @@ ATT.Icon = Material("hud/arc9_saa/rus/ao/vepr_gb.png", "mips smooth")
 ATT.SortOrder = 0
 ATT.Category = "saa_ak_gp"
 
-ATT.SpeedMult = 0.96
+ATT.SpeedMultMult = 0.96
 ATT.HeatCapacityMult = 1.375
 ATT.RecoilMult = 0.945
 ATT.RecoilKickMult = 0.7
@@ -1412,7 +1492,7 @@ ATT.Icon = Material("hud/arc9_saa/rus/AMD.png", "mips smooth")
 ATT.SortOrder = 1
 ATT.Category = "saa_ak_gp"
 ATT.SwayMult = 0.995
-ATT.SpeedMult = 1.005
+ATT.SpeedMultMult = 1.005
 
 
 ATT.ActivateElements = {"hun_gasport"}
@@ -1434,7 +1514,7 @@ ATT.Icon = Material("hud/arc9_saa/rus/akm_gp.png", "mips smooth")
 ATT.SortOrder = 0
 ATT.Category = "saa_ak_gp"
 
-ATT.SpeedMult = 0.985
+ATT.SpeedMultMult = 0.985
 ATT.HeatCapacityMult = 1.25
 ATT.RecoilMult = 0.965
 ATT.HeatDissipationMult = 0.75

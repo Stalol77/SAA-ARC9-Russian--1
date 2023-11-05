@@ -163,6 +163,10 @@ SWEP.Firemodes = {
 SWEP.ActivePos = Vector(0, 1, 0)
 SWEP.ActivePosMove = Vector(0, 2, -0.5)
 SWEP.ActiveAng = Angle(1, 0, 0)
+
+SWEP.BobSettingsMove =  {2, 2, 3,    2, -7, 2}
+SWEP.BobSettingsSpeed = {0.2, 1, 0.92,    1, 1.02, 0.9}
+
 SWEP.ViewModelFOVBase = 69 -- Set to override viewmodel FOV
 
 SWEP.ShootPitch = 100

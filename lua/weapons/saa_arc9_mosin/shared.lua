@@ -117,8 +117,8 @@ SWEP.VisualRecoilRoll = 0.5 -- Roll tilt for visual recoil.
 
 SWEP.VisualRecoilCenter = Vector(2, 4, 2) -- The "axis" of visual recoil. Where your hand is.
 
-SWEP.VisualRecoilPunch = 20 -- How far back visual recoil moves the gun.
-SWEP.VisualRecoilPunchMultSights = 0.1
+SWEP.VisualRecoilPunch = 30 -- How far back visual recoil moves the gun.
+SWEP.VisualRecoilPunchMultSights = 3
 
 SWEP.VisualRecoil = 1
 SWEP.VisualRecoilMultSights = 0.1
@@ -126,7 +126,7 @@ SWEP.VisualRecoilPositionBump = 1
 
 SWEP.VisualRecoilHipFire = 1
 
-SWEP.VisualRecoilDampingConst = 420 -- How spring will be visual recoil, 120 is default
+SWEP.VisualRecoilDampingConst = 70 -- How spring will be visual recoil, 120 is default
 SWEP.VisualRecoilSpringMagnitude = 0.5
 
 SWEP.RecoilKick = 3 -- Camera recoil
@@ -165,6 +165,9 @@ SWEP.Firemodes = {
 
 SWEP.ActivePos = Vector(-0.2, 0, 0.5)
 SWEP.ActiveAng = Angle(-1, 0, 0)
+
+SWEP.BobSettingsMove =  {2, 2, 3,    2, -15, 2}
+SWEP.BobSettingsSpeed = {0.2, 1, 0.92,    1, 0.7, 0.9}
 
 SWEP.ShootPitch = 107
 SWEP.ShootVolume = 125+(math.log(math.pi*6))

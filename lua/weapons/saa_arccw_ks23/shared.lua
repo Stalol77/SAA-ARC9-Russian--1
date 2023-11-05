@@ -56,7 +56,7 @@ SWEP.AnimDraw = false
 
 
 
-SWEP.DamageMax = 17 -- 3 shot kill
+SWEP.DamageMax = 22 -- 3 shot kill
 SWEP.DamageMin = 5 -- 5 shot kill
 SWEP.ImpactForce = 1.5
 SWEP.RangeMin = 10
@@ -145,7 +145,7 @@ SWEP.FreeAimRadiusSights = 0
 SWEP.FreeAimRadius = 12 / 1.25 
 -- Firerate / Firemodes --
 SWEP.RPM = 400
-SWEP.Num = 8
+SWEP.Num = 12
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayTime = 0.05 -- Time until weapon fires.
 SWEP.TriggerDelayRepeat = false -- Whether to do it for every shot on automatics.

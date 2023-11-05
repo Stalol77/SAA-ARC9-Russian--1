@@ -137,8 +137,8 @@ SWEP.VisualRecoilHipFire = 1
 
 SWEP.Sway = 0.9
 SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizePos = Vector(10 , 31, 4)
-SWEP.CustomizeSnapshotFOV = 100
+SWEP.CustomizePos = Vector(10 , 45, 4)
+SWEP.CustomizeSnapshotFOV = 60
 SWEP.SwayMultMidAir = 2
 SWEP.SwayMultMove = 1.5
 SWEP.SwayMultCrouch = 0.66
@@ -165,6 +165,9 @@ SWEP.Firemodes = {
 
 SWEP.ActivePos = Vector(0, 2, 1)
 SWEP.ActiveAng = Angle(1, 0, 0)
+
+SWEP.BobSettingsMove =  {2, 2, 3,    2, -7, 2}
+SWEP.BobSettingsSpeed = {0.2, 1, 0.92,    1, 1.02, 0.9}
 
 SWEP.ShootPitch = 100
 SWEP.ShootVolume = 115
