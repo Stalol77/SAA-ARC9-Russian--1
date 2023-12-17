@@ -156,9 +156,18 @@ ATT.Category = "saa_ak_dustcover"
 ATT.Attachments = {
     {
         PrintName = "OPTIC",
-        Category = {"SAA_SCOPE_IRONSIGHT","SAA_SCOPE_SMALL","SAA_SCOPE_MEDIUM"},
-        Pos = Vector(-0.2, 0, -1.1),
+        Category = {"SAA_SCOPE_SMALL","SAA_SCOPE_MEDIUM"},
+        Pos = Vector(-0.2, 0.6, -1.1),
         ExcludeElements = {"nodustcoveroptics"},
+        InstalledElements = {"nodovetailoptics", "norearsightoptics"},
+        Ang = Angle(0, 270, 0),
+        Scale = 0.9,
+    },
+    {
+        PrintName = "BACKUP",
+        Category = {"SAA_SCOPE_IRONSIGHT"},
+        Pos = Vector(-0.2, -2, -1.1),
+        ExcludeElements = {""},
         InstalledElements = {"nodovetailoptics", "norearsightoptics"},
         Ang = Angle(0, 270, 0),
         Scale = 0.9,
@@ -208,8 +217,17 @@ ATT.Attachments = {
     {
         PrintName = "OPTIC",
         Category = {"SAA_SCOPE_SMALL","SAA_SCOPE_MEDIUM"},
-        Pos = Vector(-0.2, 0, -1.2),
+        Pos = Vector(-0.2, 1, -1.2),
         ExcludeElements = {"nodustcoveroptics"},
+        InstalledElements = {"nodovetailoptics", "norearsightoptics"},
+        Ang = Angle(0, 270, 0),
+        Scale = 0.9,
+    },
+    {
+        PrintName = "BACKUP",
+        Category = {"SAA_SCOPE_IRONSIGHT"},
+        Pos = Vector(-0.2, -1.7, -1.1),
+        ExcludeElements = {""},
         InstalledElements = {"nodovetailoptics", "norearsightoptics"},
         Ang = Angle(0, 270, 0),
         Scale = 0.9,
@@ -1320,16 +1338,29 @@ ATT.Attachments = {
     {
         PrintName = "Top Barrel",
         Category = { "saa_rail_tactical"},
+        InstalledElements = {"fronttac"},
+        ExcludeElements = {"frontpost"},
         Pos = Vector(-0.225, 5, -0.3),
         Ang = Angle(0, 270, 0),
         Icon_Offset = Vector(0, 0, 0),
         Scale = 0.8
     },
     {
-        PrintName = "Front Sight",
+        PrintName = "Front Tactical",
         Category = { "SAA_SCOPE_XS"},
+        InstalledElements = {""},
         ExcludeElements = {"nodustcoveroptics", "nodovetailoptics"},
         Pos = Vector(-0.1, 0, -0.55),
+        Ang = Angle(0, 270, 0),
+        Icon_Offset = Vector(0, 0, 0),
+        Scale = 0.9
+    },
+    {
+        PrintName = "Front Sight",
+        Category = { "SAA_SCOPE_FRONTPOST"},
+        InstalledElements = {"frontpost"},
+        ExcludeElements = {"fronttac"},
+        Pos = Vector(-0.22, 5, -0.55),
         Ang = Angle(0, 270, 0),
         Icon_Offset = Vector(0, 0, 0),
         Scale = 0.9

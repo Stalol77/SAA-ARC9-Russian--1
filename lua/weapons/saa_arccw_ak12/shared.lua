@@ -848,6 +848,18 @@ SWEP.Attachments = {
     },
 }
 
+SWEP.AttachmentElements = {
+    ["test_handguard"] = {
+        Models = {
+            Pos = Vector(0,0,0),
+            Ang = Angle(0,0,0),
+            Bone = "b_wpn",
+            Model = "models/saa/upgrades/arc9/a_sf_rk1b25u.mdl",
+        }
+    }
+}
+
+
 SWEP.DefaultBodygroups = "001201100000"
 SWEP.AttachmentElements = {
     ["poly_30"] = {
