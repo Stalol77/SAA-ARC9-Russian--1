@@ -576,6 +576,56 @@ ARC9.LoadAttachment(ATT, "saa_ak_magpulhandguard")
 
 ATT = {}
 
+ATT.PrintName = "AKM Factory Handguard"
+ATT.CompactName = "AKM"
+ATT.Description = [[Original Wooden Handguard produced for Russian AKM-series rifles.]]
+ATT.Icon = Material("hud/arc9_saa/rus/ao/akmhandgua.png", "mips smooth")
+ATT.CustomPros = {
+    ["Sway"] = "-10%",
+}
+
+ATT.SortOrder = -010
+ATT.Category = "saa_ak_hg"
+--ATT.Sway = 0.98
+--ATT.RecoilMult = 1.065
+--ATT.RecoilKickMult = 1.39/1.2
+--ATT.SprintToFireTimeMult = 0.27/0.33
+
+ATT.ActivateElements = {"akmhg"}
+
+ARC9.LoadAttachment(ATT, "saa_ak_akmhg")
+
+-- end here
+
+-- start here
+
+ATT = {}
+
+ATT.PrintName = "AK-74 Factory Handguard"
+ATT.CompactName = "AK-74"
+ATT.Description = [[Original Wooden Handguard produced for Russian AKM-series rifles.]]
+ATT.Icon = Material("hud/arc9_saa/rus/ao/ak74handgua.png", "mips smooth")
+ATT.CustomPros = {
+    ["Sway"] = "-10%",
+}
+
+ATT.SortOrder = -09
+ATT.Category = "saa_ak_hg"
+--ATT.Sway = 0.98
+--ATT.RecoilMult = 1.065
+--ATT.RecoilKickMult = 1.39/1.2
+--ATT.SprintToFireTimeMult = 0.27/0.33
+
+ATT.ActivateElements = {"ak74hg"}
+
+ARC9.LoadAttachment(ATT, "saa_ak_ak74hg")
+
+-- end here
+
+-- start here
+
+ATT = {}
+
 ATT.PrintName = "Cugir Arms CAF Foregrip Handguard"
 ATT.CompactName = "Dong"
 ATT.Description = [[Iconic handguard of the Romanian foregripped AKs.
@@ -681,26 +731,6 @@ ATT.Attachments = {
 
 
 ARC9.LoadAttachment(ATT, "saa_ak_s200hg")
-
--- end here
-
--- start here
-
-ATT = {}
-
-ATT.PrintName = "AKM Ribbed Handguard"
-ATT.CompactName = "AKM"
-ATT.Description = [[Handguard produced by private companies. Eases aim and .]]
-
-
-ATT.SortOrder = 1
-ATT.Category = "saa_ak_akmhg"
-ATT.Sway = 0.75
-ATT.RecoilMult = 0.965
-ATT.SprintToFireTimeMult = 1.1
-ATT.ActivateElements = {"akm_handguard"}
-
-ARC9.LoadAttachment(ATT, "saa_ak_akmhg")
 
 -- end here
 

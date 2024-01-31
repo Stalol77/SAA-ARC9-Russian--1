@@ -99,7 +99,8 @@ SWEP.UseVisualRecoil = true
 
 SWEP.VisualRecoilUp = 3 -- Vertical tilt for visual recoil.F
 SWEP.VisualRecoilSide = 3 -- Horizontal tilt for visual recoil.
-SWEP.VisualRecoilRoll = 1 -- Roll tilt for visual recoil.
+SWEP.VisualRecoilRoll = 5 -- Roll tilt for visual recoil.
+SWEP.VisualRecoilRollMultSights = 10 -- Roll tilt for visual recoil.
 
 SWEP.VisualRecoilCenter = Vector(2, 10, 2) -- The "axis" of visual recoil. Where your hand is.
 
@@ -1186,6 +1187,8 @@ SWEP.Attachments = {
         DefaultName = "AKM Handguard",
         DefaultIcon = Material("hud/arc9_saa/rus/akm_hg_alt.png", "mips smooth"),
         InstallSound = "shared/foley/new/att/stock_attach.mp3",
+        Integral = true,
+        Installed = "saa_ak_akmhg",
         Category = {"saa_ak_hg", "saa_ak_polyhg", "saa_ak_underbarrel"},
         Bone = "b_wpn",
         Pos = Vector(0, 5*1.1, 0.5*1.1),
@@ -1285,6 +1288,11 @@ SWEP.AttachmentElements = {
     ["n_gasport"] = {
         Bodygroups = {
             {3, 5},
+        },
+    },
+    ["ak74hg"] = {
+        Bodygroups = {
+            {4, 8},
         },
     },
     ["s200_gasport"] = {

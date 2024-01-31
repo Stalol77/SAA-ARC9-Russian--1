@@ -2,7 +2,7 @@
 {
 	"$basetexture"				"saa\weapons\arccw\izh43\main\izh 43_izh43_basecolor"
 	"$bumpmap"					"saa\weapons\arccw\izh43\main\izh 43_izh43_normal"
-	"$phongexponenttexture"		"saa\weapons\arccw\izh43\main\izh 43_izh43_roughness"
+	"$phongexponenttexture"		"saa\weapons\arccw\izh43\main\IZH 43_izh43_Metallic"
 	"$phongwarptexture"			"models\weapons\saa\shared\lightwarps\phongwarp_metal"
 	"$color2"					"[0.35 0.35 0.35]"
 	"$blendtintbybasealpha"		"1"
@@ -13,13 +13,14 @@
 	"$envmapcoefficient"		"0.05" // Lighting will be multiplied by this value
 
 	"$phong"					"1"
-	"$phongboost"				"50"
+	"$phongboost"				"1"
+	"$phongalbedoboost"			"30"
 	"$phongfresnelranges"		"[0.32 0.72 0.99]"
 	"$phongalbedotint" 			"1"
 
 	"$rimlight"					"1"
 	"$rimlightexponent"			"33"
-	"$rimlightboost"			"2"
+	"$rimlightboost"			"0.2"
 	"$rimmask"					"1"
 
 Proxies

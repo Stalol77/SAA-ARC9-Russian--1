@@ -839,8 +839,9 @@ SWEP.Attachments = {
         DefaultName = "AKM Handguard",
         DefaultIcon = Material("hud/arc9_saa/rus/ak74_hg_alt.png", "mips smooth"),
         Category = {"saa_ak_hg", "saa_ak_polyhg", "saa_ak_underbarrel"},
+        Integral = true,
+        Installed = "s100_handguard",
         Bone = "b_wpn",
-        Installed = "saa_ak_s100hg",
         Pos = Vector(0, 5*1.1, 0.5*1.1),
         Ang = Angle(0, 0, 0),
         Scale = 1,
@@ -902,6 +903,11 @@ SWEP.AttachmentElements = {
     ["bastion_dustcover"] = {
         Bodygroups = {
             {7, 5},
+        },
+    },
+    ["akmhg"] = {
+        Bodygroups = {
+            {3, 2},
         },
     },
     ["gasport_akm"] = {
