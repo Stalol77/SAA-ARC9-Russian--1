@@ -24,12 +24,15 @@ SWEP.TracerSize = 1
 
 
 -- Fake name --
-SWEP.PrintName = "IZh-43"
+SWEP.PrintName = "IZh-58"
 
 -- Trivia --
-SWEP.Description = [[The Baikal IZH 43 is a reliable and robust double-barreled shotgun renowned for its versatility and durability. Manufactured by the Russian company Baikal, this break-action shotgun features side-by-side barrels, offering a classic design for both hunting and sport shooting enthusiasts. The IZH 43 boasts a solid construction, with a walnut stock and forend, providing a comfortable grip and timeless aesthetic. Its 12-gauge chambers deliver potent firepower, making it suitable for various game and shooting disciplines.
+SWEP.Description = [[The IZh 58 is a double-barreled side-by-side shotgun renowned for its simplicity and reliability.
 
-Whether used in the field or on the range, the Baikal IZH 43 stands as a testament to Russian craftsmanship, embodying simplicity, strength, and performance in a compact and well-balanced firearm.]]
+Produced by the Russian firearms manufacturer Izhmash, it features a break-action design, allowing easy loading and unloading of shells.
+The shotgun typically comes in various gauges, with 12 and 20 gauge being common.
+Its walnut wood stock and forend provide a traditional aesthetic, while the blued steel barrels contribute to durability. The twin triggers allow for selective firing of either barrel, catering to different shooting preferences. Widely utilized for hunting and sport shooting, the IZh 58 is favored for its affordability, robust construction, and straightforward functionality, making it a popular choice among shotgun enthusiasts.
+]]
 
 -- Trivia --
 SWEP.Class = "SxS Shotgun"
@@ -38,7 +41,7 @@ SWEP.Class = "SxS Shotgun"
      Calibre = "12 Gauge",
      Mechanism = "Gas-Operated Rotating Bolt",
      Country = "Soviet Union",
-     Year = 1943,
+     Year = 1958,
  }
 
 -- Weapon slot --
@@ -138,6 +141,7 @@ SWEP.Firemodes = {
     },
     {
         Mode = 1,
+        PrintName = "DOUBLE",
         NumMult = 2,
         VisualRecoilMult = 1.6,
         RecoilUp = 5,
@@ -150,6 +154,9 @@ SWEP.Firemodes = {
 
 SWEP.ActivePos = Vector(0.6, -2, 0.15)
 SWEP.ActiveAng = Angle(0, 0, 0)
+
+SWEP.PeekPos = Vector(-1.5, 3, -4.5)
+SWEP.PeekAng = Angle(-1, 0.4, -35)
 
 SWEP.BobSettingsMove =  {1, 3, 1,    2, -7, 2}
 SWEP.BobSettingsSpeed = {0.2, 1, 0.92,    1, 1.02, 0.9}
@@ -354,21 +361,33 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "base_draw",
+        EventTable = {
+            {s = "saa/ak2022/ak47_rattle_nvr.wav",    t = 0},
+            {s = "saa/ak2022/ak47_rattle.wav",    t = 0.1, v = 0.3,},
+        }
     },
     ["ready"] = {
         Source = "base_ready",
         EventTable = {
+            {s = "saa/ak2022/ak47_rattle_nvr.wav",    t = 0},
+            {s = "saa/ak2022/ak47_rattle.wav",    t = 0.1, v = 0.3,},
             {s = "shared/foley/m4_2/m4_boltrelease.wav",  p = 105, v = 0.7, t = 0.5},
                      },
     },
     ["ready2"] = {
         Source = "base_ready2",
         EventTable = {
+            {s = "saa/ak2022/ak47_rattle_nvr.wav",    t = 0},
+            {s = "saa/ak2022/ak47_rattle.wav",    t = 0.1, v = 0.3,},
             {s = "shared/foley/m4_2/m4_boltrelease.wav",  p = 105, v = 0.7, t = 0.5},
                      },
     },
     ["holster"] = {
         Source = "base_holster",
+        EventTable = {
+            {s = "saa/ak2022/ak47_rattle_nvr.wav",    t = 0},
+            {s = "saa/ak2022/ak47_rattle.wav",    t = 0.1, v = 0.3,},
+        }
     },
     ["fire"] = {
         Source = "base_fire",
