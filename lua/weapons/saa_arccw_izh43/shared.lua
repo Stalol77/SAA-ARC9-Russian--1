@@ -39,7 +39,7 @@ SWEP.Class = "SxS Shotgun"
  SWEP.Trivia = {
      Manufacturer = "Izhevsk Mechanical Plant",
      Calibre = "12 Gauge",
-     Mechanism = "Gas-Operated Rotating Bolt",
+     Mechanism = "Break-Action",
      Country = "Soviet Union",
      Year = 1958,
  }
