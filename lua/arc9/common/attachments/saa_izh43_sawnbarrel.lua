@@ -18,6 +18,9 @@ ATT.SpreadAdd = 0.08
 ATT.VisualRecoilDampingConstMult = 3
 ATT.VisualRecoilSpringMagnitudeMult = 5
 ATT.HeatCapacityMult = 15/20
+ATT.BashRangeMult = 37/55
+ATT.PostBashTimeMult = 5/7
+ATT.BarrelLengthAdd = -22
 
 
 ATT.ActivateElements = {"sawnbarrel", "barrel_change"}

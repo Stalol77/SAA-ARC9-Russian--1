@@ -55,8 +55,8 @@ SWEP.AnimDraw = false
 
 -- Damage --
 
-SWEP.DamageMax = 9 -- 3 shot kill
-SWEP.DamageMin = 2 -- 5 shot kill
+SWEP.DamageMax = 18 -- 3 shot kill
+SWEP.DamageMin = 4 -- 5 shot kill
 SWEP.ManualActionChamber = 1 -- How many shots we go between needing to cycle again.
 SWEP.ManualAction = false -- Pump/bolt action. Play the "cycle" animation after firing, when the trigger is released.
 SWEP.ManualActionNoLastCycle = false -- Do not cycle on the last shot.
@@ -75,8 +75,8 @@ SWEP.PhysBulletMuzzleVelocity = 28150*(250/715) -- Physical bullet muzzle veloci
 
 SWEP.ChamberSize = 0
 SWEP.ClipSize = 2
-SWEP.SupplyLimit = 6 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
-SWEP.SecondarySupplyLimit = 3 -- Amount of reserve UBGL magazines you can take.
+SWEP.SupplyLimit = 15 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
+SWEP.SecondarySupplyLimit = 2 -- Amount of reserve UBGL magazines you can take.
 
 -- Recoil --
 
@@ -108,16 +108,17 @@ SWEP.VisualRecoilRoll = 30 -- Roll tilt for visual recoil.
 SWEP.VisualRecoilPunch = 4
 
 SWEP.VisualRecoilDampingConst = 10
+SWEP.VisualRecoilDampingConstMultSights = 0.1
 SWEP.VisualRecoilSpringMagnitude = 2
-SWEP.VisualRecoilSpringPunchDamping = 6 -- ehh another val for "eft" recoil, 6 is default
+SWEP.VisualRecoilSpringPunchDamping = 3 -- ehh another val for "eft" recoil, 6 is default
 
 SWEP.UsePelletSpread = true -- Multiple bullets fired at once clump up, like for a shotgun. Spread affects which direction they get fired, not their spread relative to one another.
 SWEP.PelletSpread = 0.2
 
 SWEP.Sway = 1.56
 SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizePos = Vector(10 , 35, 0)
-SWEP.CustomizeSnapshotFOV = 120
+SWEP.CustomizePos = Vector(20 , 45, 1)
+SWEP.CustomizeSnapshotFOV = 80
 SWEP.SwayMultMidAir = 2
 SWEP.SwayMultMove = 1.5
 SWEP.SwayMultCrouch = 0.66
@@ -130,7 +131,7 @@ SWEP.TriggerDelayTime = 0.04 -- Time until weapon fires.
 SWEP.TriggerDelayRepeat = false -- Whether to do it for every shot on automatics.
 SWEP.TriggerDelayCancellable = false
 SWEP.RPM = 450
-SWEP.Num = 16
+SWEP.Num = 8
 SWEP.Firemodes = {
     {
         Mode = 1,
@@ -138,6 +139,7 @@ SWEP.Firemodes = {
     {
         Mode = 1,
         NumMult = 2,
+        VisualRecoilMult = 1.6,
         RecoilUp = 5,
         AmmoPerShot = 2,
         ShootPitch = 100,
@@ -148,6 +150,10 @@ SWEP.Firemodes = {
 
 SWEP.ActivePos = Vector(0.6, -2, 0.15)
 SWEP.ActiveAng = Angle(0, 0, 0)
+
+SWEP.BobSettingsMove =  {1, 3, 1,    2, -7, 2}
+SWEP.BobSettingsSpeed = {0.2, 1, 0.92,    1, 1.02, 0.9}
+
 
 SWEP.ShootPitch = 100
 SWEP.ShootVolume = 130
@@ -170,8 +176,8 @@ SWEP.HipDispersion = 150
 SWEP.MoveDispersion = 300
 SWEP.JumpDispersion = 700
 
-SWEP.Ammo = "5.45x39mm"
-SWEP.MagID = "ak74"
+SWEP.Ammo = "12 BS"
+SWEP.MagID = "12gauge"
 
 SWEP.Jamming = true
 SWEP.Overheat = true -- Weapon will jam when it overheats, playing the "overheat" animation.
@@ -190,9 +196,9 @@ SWEP.PrimaryBash = false
 
 SWEP.BashDamage = 50
 SWEP.BashLungeRange = 128
-SWEP.BashRange = 64
+SWEP.BashRange = 55
 SWEP.PreBashTime = 0.25
-SWEP.PostBashTime = 0.5
+SWEP.PostBashTime = 0.7
 
 -- Speed multipliers --
 
@@ -208,17 +214,17 @@ SWEP.SprintAng = Angle(20, -15, 0)
 SWEP.SprintPos = Vector(2, -4, 1)
 -- Length --
 
-SWEP.BarrelLength = 34
+SWEP.BarrelLength = 55
 
 -- Ironsights / Customization / Poses --
 SWEP.IronSights = {
     Pos = Vector(-1.952, -6, 1.65),
     Ang = Angle(0, -0.15, 0),
-    Midpoint = { -- Where the gun should be at the middle of it's irons
-        Pos = Vector(-1, -7, -4),
-        Ang = Angle(0, 0, -45),
-    },
     Magnification = 1.1,
+}
+SWEP.SightMidPoint = { -- Where the gun should be at the middle of it's irons
+    Pos = Vector(-3, 15, -10),
+    Ang = Angle(-10, 10, -90),
 }
 
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
@@ -237,6 +243,8 @@ SWEP.MirrorVMWM = true
 SWEP.WorldModelOffset = {
     Pos = Vector(-4, 3, -4.5),
     Ang = Angle(-10, -1, 180),
+    TPIKPos = Vector(-4, 3, -4.5), -- arc9_tpik 1, you can make cool poses with it
+    TPIKAng = Angle(-20, -10, 180),
     Scale = 1
 }
 
@@ -311,33 +319,11 @@ SWEP.DistantShootSoundSilenced =
     
 }
 
-SWEP.Hook_TranslateAnimation = function(swep, anim)
-    local elements = swep:GetElements()
-
-    if elements["drum_75"] then
-        return anim .. "_drum"
-end
-end
-
 
 -- Animations --
-local foley = "saa/ak2022/aks_foley_"
-local drum = "saa/ak2022/global_drummag_mag_"
 SWEP.RicochetAngleMax = 45 -- Maximum angle at which a ricochet can occur. Between 1 and 90. Angle of 0 is impossible but would theoretically always ricochet.
 SWEP.RicochetChance = 0.1 -- If the angle is right, what is the chance that a ricochet can occur?
-local mech = "saa/ak2022/mech/fnfal_mech_loop_"
-local mechtable = {
-    mech .. "01.ogg",
-    mech .. "02.ogg",
-    mech .. "03.ogg",
-    mech .. "04.ogg",
-    mech .. "05.ogg",
-    mech .. "06.ogg",
-    mech .. "07.ogg",
-    mech .. "08.ogg",
-    mech .. "09.ogg",
-    mech .. "10.ogg",
-}
+
 local trigger = {
     "saa/izh/24/izh43-8.wav",
     "saa/izh/24/izh43-9.wav",
@@ -352,6 +338,12 @@ local trigger = {
 
 SWEP.Hook_TranslateAnimation = function(swep, anim)
     local elements = swep:GetElements()
+    if anim == "ready" then
+        if math.Rand(2, 3) == 2 then return "ready"
+        else return "ready2"
+        end
+    end
+
 end
 
 
@@ -362,6 +354,18 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "base_draw",
+    },
+    ["ready"] = {
+        Source = "base_ready",
+        EventTable = {
+            {s = "shared/foley/m4_2/m4_boltrelease.wav",  p = 105, v = 0.7, t = 0.5},
+                     },
+    },
+    ["ready2"] = {
+        Source = "base_ready2",
+        EventTable = {
+            {s = "shared/foley/m4_2/m4_boltrelease.wav",  p = 105, v = 0.7, t = 0.5},
+                     },
     },
     ["holster"] = {
         Source = "base_holster",
@@ -400,13 +404,12 @@ SWEP.Animations = {
     },
     ["reload_empty"] = {
         Source = "base_reloadempty",
-        EjectAt = 1,
-        EjectAt = 1.2,
         EventTable = {
             {s = "shared/foley/ar10/rof2.wav",  p = 100, v = 0.3, t = 0.15},
             {s = "shared/foley/m4_2/m4_slashout.wav",  p = 90, v = 0.2, t = 0.3},
             {s = "saa/izh/24/hnd/unlatch_01.ogg",  p = 120, v = 0.1, t = 0.33},
-            {s = "shared/foley/m4_2/m4_rof.wav",  p = 90, v = 0.05, t = 1},
+            {s = "shared/foley/m4_2/m4_rof.wav",  p = 90, v = 0.05, t = 1, shelleject = true},
+            { shelleject = true, t = 1},
             {s = "shared/foley/m4_2/m4_rof.wav",  p = 90, v = 0.05, t = 2.4},
             {s = "shared/foley/m4_2/m4_empty.wav",  p = 90, v = 0.05, t = 2.4},
             {s = "shared/foley/m4_2/m4_rof.wav",  p = 105, v = 0.05, t = 3.1},
@@ -430,6 +433,14 @@ SWEP.Attachments = {
         Category = {"saa_izh43_stock"},
         Bone = "WeaponBase",
         Pos = Vector(0, 7, 0),
+        Ang = Angle(0, 0, 0),
+        Scale = 1,
+    },
+    {
+        PrintName = "AMMO",
+        Category = {"saa_12ga"},
+        Bone = "BarrelTube",
+        Pos = Vector(0, 0, 1),
         Ang = Angle(0, 0, 0),
         Scale = 1,
     },
