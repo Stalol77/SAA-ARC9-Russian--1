@@ -22,5 +22,9 @@ ATT.BashRangeMult = 37/55
 ATT.PostBashTimeMult = 5/7
 ATT.BarrelLengthAdd = -22
 
+ATT.CustomizePosHook = function(wep, vec)
+    return vec + Vector(-5, 0, 0)
+end
+
 
 ATT.ActivateElements = {"sawnbarrel", "barrel_change"}

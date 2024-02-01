@@ -89,6 +89,7 @@ SWEP.RecoilUp = 3
 
 SWEP.RecoilRandomUp = 0.6
 SWEP.RecoilRandomSide = 0.4
+SWEP.RecoilMultSights = 1
 
 SWEP.RecoilDissipationRate = 40 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0.01 -- How long the gun must go before the recoil pattern starts to reset.
@@ -457,7 +458,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "AMMO",
-        Category = {"saa_12ga"},
+        Category = {"saa_12ga", "saa_12ga_special"},
         Bone = "BarrelTube",
         Pos = Vector(0, 0, 1),
         Ang = Angle(0, 0, 0),
