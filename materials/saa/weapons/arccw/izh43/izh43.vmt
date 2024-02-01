@@ -14,7 +14,7 @@
 
 	"$phong"					"1"
 	"$phongboost"				"1"
-	"$phongalbedoboost"			"30"
+	"$phongalbedoboost"			"20"
 	"$phongfresnelranges"		"[0.32 0.72 0.99]"
 	"$phongalbedotint" 			"1"
 

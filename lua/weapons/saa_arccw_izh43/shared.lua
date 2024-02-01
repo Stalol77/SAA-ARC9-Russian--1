@@ -24,14 +24,14 @@ SWEP.TracerSize = 1
 
 
 -- Fake name --
-SWEP.PrintName = "IZh-58"
+SWEP.PrintName = "IZh-54"
 
 -- Trivia --
-SWEP.Description = [[The IZh 58 is a double-barreled side-by-side shotgun renowned for its simplicity and reliability.
+SWEP.Description = [[Known for its elegant design and reliable performance, this break-action shotgun has gained popularity among hunters and sports shooters.
+It is available in various gauges, including 12 and 16 gauge (as the IZh-57).
 
-Produced by the Russian firearms manufacturer Izhmash, it features a break-action design, allowing easy loading and unloading of shells.
-The shotgun typically comes in various gauges, with 12 and 20 gauge being common.
-Its walnut wood stock and forend provide a traditional aesthetic, while the blued steel barrels contribute to durability. The twin triggers allow for selective firing of either barrel, catering to different shooting preferences. Widely utilized for hunting and sport shooting, the IZh 58 is favored for its affordability, robust construction, and straightforward functionality, making it a popular choice among shotgun enthusiasts.
+The IZh 54 features a wooden stock and forend, contributing to its traditional appearance and comfortable grip.
+The blued steel barrels enhance durability and corrosion resistance. With double triggers, users can selectively fire each barrel to suit different shooting scenarios. The IZh 54 is celebrated for its simplicity, affordability, and effectiveness in the field, making it a favored choice for those seeking a dependable side-by-side shotgun.
 ]]
 
 -- Trivia --
@@ -41,7 +41,7 @@ SWEP.Class = "SxS Shotgun"
      Calibre = "12 Gauge",
      Mechanism = "Break-Action",
      Country = "Soviet Union",
-     Year = 1958,
+     Year = 1954,
  }
 
 -- Weapon slot --
