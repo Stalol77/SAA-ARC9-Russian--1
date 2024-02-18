@@ -14,7 +14,7 @@ SWEP.ShellScale = 0.6
 SWEP.CaseEffectQCA = 2
 SWEP.EjectDelay = 0.7
 --SWEP.ShellMaterial = "models/weapons/arcticcw/shell_556"
-SWEP.ShellPitch = 95
+SWEP.ShellPitch = 90
 
 SWEP.MuzzleEffectAttachment = 0
 SWEP.CaseEffectAttachment = 2
@@ -56,7 +56,7 @@ SWEP.Slot = 3
 SWEP.ViewModel = "models/saa/weapons/arccw/mosin/v_mosin_fix.mdl"
 SWEP.WorldModel = "models/weapons/arccw/c_ud_m16.mdl"
 SWEP.ViewModelFOVBase = 78 -- Set to override viewmodel FOV
-SWEP.CustomizeSnapshotFOV = 100
+SWEP.CustomizeSnapshotFOV = 70
 SWEP.AnimDraw = false
 
 -- Damage --
@@ -76,6 +76,8 @@ SWEP.PhysBulletMuzzleVelocity = 28150*(950/715) -- Physical bullet muzzle veloci
 
 SWEP.ShotgunReload = true -- Weapon reloads like shotgun. Uses insert_1, insert_2, etc animations instead.
 SWEP.HybridReload = false -- Enable on top of Shotgun Reload. If the weapon is completely empty, use the normal reload animation.
+SWEP.CanReloadWhileUnCycled = false
+
 -- Use SWEP.Hook_TranslateAnimation in order to do custom animation stuff.
 
 SWEP.ManualActionChamber = 1 -- How many shots we go between needing to cycle again.
@@ -111,22 +113,22 @@ SWEP.RecoilAutoControl = 0.5
 
 SWEP.UseVisualRecoil = true
 
-SWEP.VisualRecoilUp = 1 -- Vertical tilt for visual recoil.F
+SWEP.VisualRecoilUp = 10 -- Vertical tilt for visual recoil.F
 SWEP.VisualRecoilSide = 0.5 -- Horizontal tilt for visual recoil.
 SWEP.VisualRecoilRoll = 0.5 -- Roll tilt for visual recoil.
 
-SWEP.VisualRecoilCenter = Vector(2, 4, 2) -- The "axis" of visual recoil. Where your hand is.
+SWEP.VisualRecoilCenter = Vector(2, 6, 2) -- The "axis" of visual recoil. Where your hand is.
 
-SWEP.VisualRecoilPunch = 30 -- How far back visual recoil moves the gun.
-SWEP.VisualRecoilPunchMultSights = 3
+SWEP.VisualRecoilPunch = 10 -- How far back visual recoil moves the gun.
+SWEP.VisualRecoilPunchMultSights = 0.5
 
 SWEP.VisualRecoil = 1
-SWEP.VisualRecoilMultSights = 0.1
+SWEP.VisualRecoilMultSights = 1
 SWEP.VisualRecoilPositionBump = 1
 
 SWEP.VisualRecoilHipFire = 1
 
-SWEP.VisualRecoilDampingConst = 70 -- How spring will be visual recoil, 120 is default
+SWEP.VisualRecoilDampingConst = 60 -- How spring will be visual recoil, 120 is default
 SWEP.VisualRecoilSpringMagnitude = 0.5
 
 SWEP.RecoilKick = 3 -- Camera recoil
@@ -140,13 +142,12 @@ SWEP.ViewRecoilSideMult = 1 -- 1-20
 SWEP.Sway = 0.56
 SWEP.SwayMultSights = 0.38/0.56
 SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizePos = Vector(22 , 36, 5)
-SWEP.CustomizeSnapshotFOV = 110
+SWEP.CustomizePos = Vector(22 , 50, 5)
 SWEP.SwayMultMidAir = 2
-SWEP.SwayMultMove = 4
+SWEP.SwayMultMove = 5
 SWEP.SwayMultCrouch = 0.66
 SWEP.SwayMultShooting = 5
-SWEP.SwayMultReload = 10
+SWEP.SwayMultReload = 2
 SWEP.FreeAimRadiusSights = 2
 SWEP.FreeAimRadius = 12 / 1.25 
 -- Firerate / Firemodes --
@@ -223,8 +224,8 @@ SWEP.AimDownSightsTime = 0.65 -- How long it takes to go from hip fire to aiming
 SWEP.SprintToFireTime = 0.65 -- How long it takes to go from sprinting to being able to fire.
 
 
-SWEP.SprintAng = Angle(30, -25, 0)
-SWEP.SprintPos = Vector(0, -0.5, 0.2)
+SWEP.SprintAng = Angle(20, -25, 0)
+SWEP.SprintPos = Vector(2, 1, 0.6)
 -- Length --
 
 SWEP.BarrelLength = 34
@@ -235,12 +236,7 @@ SWEP.PelletSpread = 0.2
 
 -- Ironsights / Customization / Poses --
 
-SWEP.HoldType = "ar2"
-SWEP.HoldTypeSprint = "passive"
-SWEP.HoldTypeHolstered = "passive"
-SWEP.HoldTypeSights = "ar2"
-SWEP.HoldTypeCustomize = "slam"
-SWEP.HoldTypeBlindfire = "pistol"
+
 
 
 
@@ -253,8 +249,18 @@ SWEP.IronSights = {
     },
     Magnification = 1.1,
 }
-
-
+SWEP.EnterSightsSound = {
+    "shared/foley/new/cloth/short_cry_01.wav",
+    "shared/foley/new/cloth/short_cry_02.wav",
+}
+SWEP.ExitSightsSound = {
+    "shared/foley/new/cloth/short_movement_02.wav",
+    "shared/foley/new/cloth/raise_weapon_01.wav",
+}
+SWEP.SightMidPoint = { -- Where the gun should be at the middle of it's irons
+        Pos = Vector(0, 25, -4),
+        Ang = Angle(30, 10, -45),
+}
 
 SWEP.CrouchPos = Vector(0, 0, 0)
 SWEP.CrouchAng = Angle(0, 0, 0)
@@ -268,14 +274,17 @@ SWEP.WorldModelOffset = {
 
 -- Firing sounds --
 local scar = "saaswat/m590a1/"
-local ak = scar .. "firing/"
 local mn = "saa/mosin/"
 local firingsound = {
     mn .. "C14_body_0" .. "1.wav",
     mn .. "C14_body_0" .. "2.wav",
     mn .. "C14_body_0" .. "3.wav",
     mn .. "C14_body_0" .. "4.wav",
+}
 
+local firingsup = {
+    mn .. "mosin_sp.wav",
+    mn .. "mosin_sp-2.wav",
 }
 
 local tail1 = {
@@ -288,35 +297,24 @@ local tail1 = {
 local tail2 = {
     mn .. "indoor_tail_0" .. "1.wav",
     mn .. "indoor_tail_0" .. "2.wav",
-
 }
-
-local firingsoundsup = {
-    ")" .. ak .. "weap_kilo98_sup_bang_plr_0" .. "1.wav",
-    ")" .. ak .. "weap_kilo98_sup_bang_plr_0" .. "2.wav",
-    ")" .. ak .. "weap_kilo98_sup_bang_plr_0" .. "3.wav",
-    ")" .. ak .. "weap_kilo98_sup_bang_plr_0" .. "4.wav",
-    ")" .. ak .. "weap_kilo98_sup_bang_plr_0" .. "5.wav",
-    ")" .. ak .. "weap_kilo98_sup_bang_plr_0" .. "6.wav",
-}
-
 
 SWEP.ShootSound = firingsound
 SWEP.LayerSound = tail1
 SWEP.ShootSoundIndoor = firingsound
 SWEP.LayerSoundIndoor = tail2
 local trigger = mn .. "trigger_0070.wav"
--- SWEP.FirstShootSoundSilenced = {"smc/weapons/bocw/m60/M60_S" .. math.random(1, 6) .. ".wav"}
-SWEP.ShootSoundSilenced = firingsoundsup
-SWEP.DistantShootSoundSilenced =
-{
-    ")" .. ak .. "weap_shotgunsup_fire_plr_atmo_ext1_0" .. "1.wav",
-    ")" .. ak .. "weap_shotgunsup_fire_plr_atmo_ext1_0" .. "2.wav",
-    ")" .. ak .. "weap_shotgunsup_fire_plr_atmo_ext1_0" .. "3.wav",
-    ")" .. ak .. "weap_shotgunsup_fire_plr_atmo_ext1_0" .. "4.wav",
-    ")" .. ak .. "weap_shotgunsup_fire_plr_atmo_ext1_0" .. "5.wav",
-    ")" .. ak .. "weap_shotgunsup_fire_plr_atmo_ext1_0" .. "6.wav",
-
+SWEP.ShootSoundSilenced = firingsup
+SWEP.ShootSoundSilencedIndoor = firingsup
+SWEP.LayerSoundSilenced = {
+    mn .. "mosin_sp-3.wav",
+    mn .. "mosin_sp-4.wav",
+}
+SWEP.LayerSoundSilencedIndoor = {
+    mn .. "2/p_0.wav",
+    mn .. "2/p_1.wav",
+    mn .. "2/p_2.wav",
+    mn .. "2/p_3.wav",
 }
 
 SWEP.Hook_TranslateAnimation = function (self, anim)
@@ -327,6 +325,9 @@ SWEP.Hook_TranslateAnimation = function (self, anim)
     else
         suffix = ""
     end
+        if self:Clip1() > 0 and anim == "reload_start" then
+        self:SetClip1(self:Clip1()-1)
+        end
     return anim .. suffix
 
 end
@@ -349,7 +350,7 @@ local shellin = {
 
 SWEP.Animations = {
     ["draw"] = {
-        Source = "base_holster",
+        Source = "base_draw",
         Reverse = true,
         EventTable = {
             {s = "saa/ak2022/ak47_rattle_nvr.wav",    t = 0},
@@ -489,7 +490,7 @@ SWEP.Animations = {
         Source = "reload_start",
         Mult = 1.2,
         MinProgress = 3,
-        EjectAt = 0.7,
+        EjectAt = 0.5,
         EventTable = {
             {s = foley .. "mosin_foley_bolt_unlatch.wav", t = 0.3, v = 0.4},
             {s = foley .. "mosin_foley_bolt_back_reload_start.wav", t = 0.45, v = 0.4},
@@ -499,6 +500,7 @@ SWEP.Animations = {
         Source = "reload_start_ext",
         Mult = 1.2,
         MinProgress = 3,
+        EjectAt = 0.5,
         EventTable = {
             {s = foley .. "mosin_foley_bolt_unlatch.wav",    t = 0.3, v = 0.4},
             {s = foley .. "mosin_foley_bolt_back_reload_start.wav",    t = 0.45, v = 0.4},

@@ -178,6 +178,7 @@ ATT.RangeMaxMult = 315/400
 ATT.RecoilUpMult = 1.35
 ATT.ShootVolumeMult = 131/127
 
+
 ATT.SwayMult = 0.75
 ATT.SprintToFireTimeMult = 440/700
 
@@ -204,6 +205,7 @@ ATT.RangeMaxMult = 120/400
 ATT.SpreadMult = 8
 ATT.RecoilUpMult = 1.55
 ATT.ShootVolumeMult = 134/127
+ATT.CycleTimeMult = 1.7/2
 
 ATT.SwayMult = 0.45
 ATT.SprintToFireTimeMult = 335/700

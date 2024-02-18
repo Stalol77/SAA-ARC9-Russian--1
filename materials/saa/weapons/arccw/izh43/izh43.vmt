@@ -19,7 +19,7 @@
 	"$phongalbedotint" 			"1"
 
 	"$rimlight"					"1"
-	"$rimlightexponent"			"33"
+	"$rimlightexponent"			"55"
 	"$rimlightboost"			"0.2"
 	"$rimmask"					"1"
 
