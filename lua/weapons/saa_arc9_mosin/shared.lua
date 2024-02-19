@@ -26,13 +26,11 @@ SWEP.TracerSize = 2
 
 -- Fake name --
 SWEP.BulletBones  = {
-    [1] = "b_wpn_mag_b2",
-    [2] = "b_wpn_mag_b3",
-    [3] = "b_wpn_mag_b4",
-    [4] = "b_wpn_mag_b5",
-    [5] = "b_wpn_mag_b6",
-    [6] = "b_wpn_mag_b7",
+    [2] = "b_wpn_mag_b6",
+    [1] = "b_wpn_mag_b7",
 }
+
+SWEP.HideBones = {"b_wpn_mag_b1"} -- bones to hide in third person and customize menu. {"list", "of", "bones"}
 SWEP.PrintName = "Mosin Nagant 1891/30"
 
 SWEP.Description = [["The most produced and exported gun in the globe, the AKM is the famous AK-47's direct evolution that went into main service for the Red Army for over 30 years. Its enhanced design rendered the production ever-lasting, placing it all around the globe as an extremely viable rifle."]]
@@ -541,7 +539,7 @@ SWEP.Attachments = {
        Category = { "saa_54r_muz"},
        InstalledElements = nil,
        Bone = "A_Suppressor",
-       Pos = Vector(0.1, -5.4, 0.1),
+       Pos = Vector(0, -5.4, 0.1),
        Ang = Angle(0, 90, 0),
 
        Scale = 1,
@@ -629,7 +627,7 @@ SWEP.AttachmentElements = {
         },
         AttPosMods = {
             [1] = {
-                Pos = Vector(0.1, 0, 0.1),
+                Pos = Vector(0, 0, 0.1),
             }
         }
     },
@@ -639,7 +637,7 @@ SWEP.AttachmentElements = {
         },
         AttPosMods = {
             [1] = {
-                Pos = Vector(0.1, 11.2, 0.1),
+                Pos = Vector(0, 11.2, 0.1),
             },
             [5] = {
                 Pos = Vector(0, 6.5, 1.45),
