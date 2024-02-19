@@ -351,7 +351,7 @@ local shellin = {
 SWEP.Animations = {
     ["draw"] = {
         Source = "base_draw",
-        Reverse = true,
+        Reverse = false,
         EventTable = {
             {s = "saa/ak2022/ak47_rattle_nvr.wav",    t = 0},
             {s = "saa/ak2022/ak47_rattle.wav",    t = 0.1, v = 0.3,},
