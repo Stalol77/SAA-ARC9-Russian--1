@@ -33,7 +33,14 @@ SWEP.BulletBones  = {
 SWEP.HideBones = {"b_wpn_mag_b1"} -- bones to hide in third person and customize menu. {"list", "of", "bones"}
 SWEP.PrintName = "Mosin Nagant 1891/30"
 
-SWEP.Description = [["The most produced and exported gun in the globe, the AKM is the famous AK-47's direct evolution that went into main service for the Red Army for over 30 years. Its enhanced design rendered the production ever-lasting, placing it all around the globe as an extremely viable rifle."]]
+SWEP.Description = [[Chambered in 7.62x54mmR, the Mosin rifle boasts a five-round magazine and a long barrel, offering respectable accuracy and range.
+
+Despite its age, the Mosin-Nagant still holds relevance in modern combat scenarios. Its powerful cartridge ensures effectiveness at longer ranges, suitable for engagements encountered in various terrains. 
+Additionally, its robust construction allows it to endure harsh conditions, making it dependable in adverse environments. 
+
+While modern firearms offer advancements in technology and ergonomics, the Mosin-Nagant's simplicity and effectiveness make it a viable option in situations where resources are scarce or in asymmetric warfare environments. 
+Furthermore, its historical significance and widespread availability ensure its continued use and adaptation for modern combat applications.
+]]
 
 -- Trivia --
 SWEP.Class = "Bolt-Action Rifle"
@@ -56,16 +63,21 @@ SWEP.WorldModel = "models/weapons/arccw/c_ud_m16.mdl"
 SWEP.ViewModelFOVBase = 78 -- Set to override viewmodel FOV
 SWEP.CustomizeSnapshotFOV = 70
 SWEP.AnimDraw = false
-
+SWEP.HoldType = "ar2"
+SWEP.HoldTypeSprint = "passive"
+SWEP.HoldTypeHolstered = "passive"
+SWEP.HoldTypeSights = "ar2"
+SWEP.HoldTypeCustomize = "slam"
+SWEP.HoldTypeBlindfire = "pistol"
 -- Damage --
 
 
 
-SWEP.DamageMax = 105 -- 3 shot kill
+SWEP.DamageMax = 138 -- 1 shot kill
 SWEP.DamageMin = 39 -- 5 shot kill
 SWEP.ImpactForce = 10
 SWEP.RangeMin = 10
-SWEP.RangeMax = (400/304.8)*12000
+SWEP.RangeMax = (550/304.8)*12000
 SWEP.ArmorPiercing = 0.67
 SWEP.Penetration = 13
 SWEP.DamageType = DMG_BULLET
@@ -226,7 +238,7 @@ SWEP.SprintAng = Angle(20, -25, 0)
 SWEP.SprintPos = Vector(2, 1, 0.6)
 -- Length --
 
-SWEP.BarrelLength = 34
+SWEP.BarrelLength = 55
 
 SWEP.Spread = 0.00085
 SWEP.UsePelletSpread = false -- Multiple bullets fired at once clump up, like for a shotgun. Spread affects which direction they get fired, not their spread relative to one another.
@@ -515,7 +527,8 @@ SWEP.Animations = {
     ["reload_finish"] = {
         Source = "reload_end",
         Mult = 1.2,
-        MinProgress = 3,
+        MinProgress = 0.8,
+        FireASAP = true,
         EventTable = {
             {s = scar .. "wfoly_sh_romeo870_reload_loop_loadportend.wav", t = 0.2, v = 0.4},
             {s = foley .. "mosin_foley_bolt_unlatch.wav", t = 0.25, v = 0.4},
@@ -525,7 +538,8 @@ SWEP.Animations = {
     ["reload_finish_ext"] = {
         Source = "reload_end_ext",
         Mult = 1.2,
-        MinProgress = 3,
+        MinProgress = 0.8,
+        FireASAP = true,
         EventTable = {
             {s = scar .. "wfoly_sh_romeo870_reload_loop_loadportend.wav", t = 0.2, v = 0.4},
             {s = foley .. "mosin_foley_bolt_unlatch.wav", t = 0.25, v = 0.4},
@@ -547,6 +561,7 @@ SWEP.Attachments = {
    {
        PrintName = "FURNITURE",
        Category = { "saa_mosin_stock"},
+       DefaultIcon = Material("hud/arc9_saa/rus/ao/mosin__stock.png", "mips smooth"),
        InstalledElements = nil,
        Bone = "b_wpn",
        Pos = Vector(0, -10, 0),

@@ -9,7 +9,7 @@ ATT = {}
 ATT.PrintName = "ATI Montecarlo Polymer Stock"
 ATT.CompactName = "ATI Stock"
 ATT.Description = [[Mosin Polymer furniture piece used in modern hunting and civilian variants.]]
-
+ATT.Icon = Material("hud/arc9_saa/rus/ao/mosin__ati.png", "mips smooth")
 
 ATT.SortOrder = 2
 ATT.Category = "saa_mosin_stock"
@@ -29,6 +29,7 @@ ATT = {}
 ATT.PrintName = "Mosin Nagant 91/30 Sniper Stock"
 ATT.CompactName = "MN91/30 Sniper"
 ATT.Description = [[Wooden stock with side slot. Leaves space for Receiver-Mounted optics.]]
+ATT.Icon = Material("hud/arc9_saa/rus/ao/mosin__sniper.png", "mips smooth")
 
 
 ATT.SortOrder = 0
@@ -62,6 +63,7 @@ ATT.PrintName = "M38 Generalized Carbine Stock"
 ATT.CompactName = "M38 Carbine"
 ATT.Description = [[Early World War II production Stock. Features a shorter design, with side slot included.]]
 ATT.AimDownSightsTimeMult = 0.65
+ATT.Icon = Material("hud/arc9_saa/rus/ao/mosin__carbine.png", "mips smooth")
 
 
 ATT.SortOrder = 1
@@ -92,6 +94,7 @@ ATT = {}
 ATT.PrintName = "Obrez Stock"
 ATT.Description = [[Stock that's had many sides sawn off for mobility purposes.]]
 ATT.AimDownSightsTimeMult = 0.45
+ATT.Icon = Material("hud/arc9_saa/rus/ao/mosin_obrezstock.png", "mips smooth")
 
 
 ATT.SortOrder = 3
@@ -124,7 +127,7 @@ ATT = {}
 ATT.PrintName = "Mosin Rear Sight"
 ATT.CompactName = "Mosin RS"
 ATT.Description = [[Rear Sight employed onto targets of all ranges.]]
-
+ATT.Icon = Material("hud/arc9_saa/rus/ao/mosin_iron.png", "mips smooth")
 
 ATT.SortOrder = 0
 ATT.Category = "saa_mosin_iron"
@@ -145,7 +148,7 @@ ATT = {}
 ATT.PrintName = "TOZ TacRail Rear Sight"
 ATT.CompactName = "TOZ Tac RS"
 ATT.Description = [[Optic rail that takes advantage of the Mosin's rear sight structure. Allows for Optics of all ranges to be mounted.]]
-
+ATT.Icon = Material("hud/arc9_saa/rus/ao/mosin_ironrail.png", "mips smooth")
 
 ATT.SortOrder = 0
 ATT.Category = "saa_mosin_iron"
@@ -177,6 +180,7 @@ ATT.SpreadMult = 1.35
 ATT.RangeMaxMult = 315/400
 ATT.RecoilUpMult = 1.35
 ATT.ShootVolumeMult = 131/127
+ATT.BarrelLengthAdd = -7
 
 
 ATT.SwayMult = 0.75
@@ -206,7 +210,7 @@ ATT.SpreadMult = 8
 ATT.RecoilUpMult = 1.55
 ATT.ShootVolumeMult = 134/127
 ATT.CycleTimeMult = 1.7/2
-
+ATT.BarrelLengthAdd = -20
 ATT.SwayMult = 0.45
 ATT.SprintToFireTimeMult = 335/700
 
