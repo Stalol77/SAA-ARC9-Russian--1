@@ -26,7 +26,11 @@ SWEP.TracerSize = 2
 
 -- Fake name --
 SWEP.BulletBones  = {
-    [2] = "b_wpn_mag_b6",
+    [1] = "b_wpn_mag_b2",
+    [1] = "b_wpn_mag_b3",
+    [1] = "b_wpn_mag_b4",
+    [1] = "b_wpn_mag_b5",
+    [1] = "b_wpn_mag_b6",
     [1] = "b_wpn_mag_b7",
 }
 
@@ -64,9 +68,9 @@ SWEP.ViewModelFOVBase = 78 -- Set to override viewmodel FOV
 SWEP.CustomizeSnapshotFOV = 70
 SWEP.AnimDraw = false
 SWEP.HoldType = "ar2"
-SWEP.HoldTypeSprint = "passive"
-SWEP.HoldTypeHolstered = "passive"
-SWEP.HoldTypeSights = "ar2"
+SWEP.HoldTypeSprint = "shotgun"
+SWEP.HoldTypeHolstered = "shotgun"
+SWEP.HoldTypeSights = "rpg"
 SWEP.HoldTypeCustomize = "slam"
 SWEP.HoldTypeBlindfire = "pistol"
 -- Damage --
@@ -235,7 +239,7 @@ SWEP.SprintToFireTime = 0.65 -- How long it takes to go from sprinting to being 
 
 
 SWEP.SprintAng = Angle(20, -25, 0)
-SWEP.SprintPos = Vector(2, 1, 0.6)
+SWEP.SprintPos = Vector(2, 3, 0.6)
 -- Length --
 
 SWEP.BarrelLength = 55
@@ -520,6 +524,7 @@ SWEP.Animations = {
         Source = "reload_insert",
         Mult = 1,
         MinProgress = 0.4,
+        MagSwapTime = 2.5,
         EventTable = {
             {s = shellin,    t = 0.2, v= 0.1, p = 95},
         },

@@ -27,6 +27,10 @@ SWEP.BipodAng = Angle(0, 0, 0)
 
 SWEP.ImpactEffect = nil
 
+SWEP.CamCoolView = true -- Enable to use procedural camera movement. Set CamQCA to muzzle QCA or something.
+SWEP.CamQCA = 1
+SWEP.CamQCA_Mult = -1
+
 SWEP.MuzzleEffectAttachment = 0
 SWEP.CaseEffectAttachment = 2
 SWEP.TracerNum = 0
@@ -178,6 +182,22 @@ SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayTime = 0.07 -- Time until weapon fires.
 SWEP.TriggerDelayRepeat = false -- Whether to do it for every shot on automatics.
 SWEP.TriggerDelayCancellable = false
+SWEP.TriggerDownSound = {
+"shared/base/mw19/various/trigger/weap_delta_fire_first_plr_01.wav",
+"shared/base/mw19/various/trigger/weap_delta_fire_first_plr_02.wav",
+"shared/base/mw19/various/trigger/weap_delta_fire_first_plr_03.wav",
+"shared/base/mw19/various/trigger/weap_delta_fire_first_plr_04.wav",
+"shared/base/mw19/various/trigger/weap_delta_fire_first_plr_05.wav",
+"shared/base/mw19/various/trigger/weap_delta_fire_first_plr_06.wav",
+}
+SWEP.TriggerUpSound = {
+"shared/base/mw19/various/trigger/FAL_disconnector_plr_01.wav",
+"shared/base/mw19/various/trigger/FAL_disconnector_plr_02.wav",
+"shared/base/mw19/various/trigger/FAL_disconnector_plr_03.wav",
+"shared/base/mw19/various/trigger/FAL_disconnector_plr_04.wav",
+"shared/base/mw19/various/trigger/FAL_disconnector_plr_05.wav",
+"shared/base/mw19/various/trigger/FAL_disconnector_plr_06.wav",
+}
 SWEP.RPM = 632
 SWEP.Num = 1
 SWEP.Firemodes = {
@@ -358,21 +378,22 @@ SWEP.LayerSoundIndoor = {
 
 }
 SWEP.DistantShootSound = {
-    pkm .. "2023aug/scarh_far_loop.ogg",
-    pkm .. "2023aug/scarh_far_loop-2.ogg",
-    pkm .. "2023aug/scarh_far_loop-3.ogg",
-    pkm .. "2023aug/scarh_far_loop-4.ogg",
-    pkm .. "2023aug/scarh_far_loop-5.ogg",
-    pkm .. "2023aug/scarh_far_loop-6.ogg",
+    "shared/base/universal/reflection/huge_rif-01.wav",
+    "shared/base/universal/reflection/huge_rif-02.wav",
+    "shared/base/universal/reflection/huge_rif-03.wav",
+    "shared/base/universal/reflection/huge_rif-04.wav",
+    "shared/base/universal/reflection/huge_rif-05.wav",
 }
-SWEP.DistantShootSoundIndoor = {
-    pkm .. "2023aug/indoor/scarh_far_loop.ogg",
-    pkm .. "2023aug/indoor/scarh_far_loop-2.ogg",
-    pkm .. "2023aug/indoor/scarh_far_loop-3.ogg",
-    pkm .. "2023aug/indoor/scarh_far_loop-4.ogg",
-    pkm .. "2023aug/indoor/scarh_far_loop-5.ogg",
-    pkm .. "2023aug/indoor/scarh_far_loop-6.ogg",
-} 
+SWEP.DistantShootSoundSilenced = {
+    "shared/base/universal/reflection/suppressed_rif-01.wav",
+    "shared/base/universal/reflection/suppressed_rif-02.wav",
+    "shared/base/universal/reflection/suppressed_rif-03.wav",
+    "shared/base/universal/reflection/suppressed_rif-04.wav",
+    "shared/base/universal/reflection/suppressed_rif-05.wav",
+    "shared/base/universal/reflection/suppressed_rif-06.wav",
+}
+SWEP.DistantShootSoundIndoor = "sas"
+SWEP.DistantShootSoundSilencedIndoor = "sas"
 
 local firingsound_s = {
     pkm .. "weap_scharlie_sup_npc_01.wav",
@@ -398,7 +419,6 @@ local distant_s = {
 SWEP.ShootSoundSilenced = firingsound_s
 SWEP.LayerSoundSilenced = distant_s
 SWEP.LayerSoundSilencedIndoor = distant_s
-SWEP.DistantShootSoundSilenced = nil
 
 local firelayer = {
     pkm .. "2023aug/f2000_close_oneshot_01.ogg",

@@ -15,6 +15,9 @@ SWEP.NoShellEject = true
 SWEP.ShellPitch = 100
 SWEP.ShellSounds = ArcCW.ShotgunShellSoundsTable
 
+SWEP.CamCoolView = true -- Enable to use procedural camera movement. Set CamQCA to muzzle QCA or something.
+SWEP.CamQCA = 1
+SWEP.CamQCA_Mult = -1
 SWEP.MuzzleEffectAttachment = 0
 SWEP.CaseEffectQCA = 4
 SWEP.TracerNum = 0
@@ -134,6 +137,23 @@ SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayTime = 0.04 -- Time until weapon fires.
 SWEP.TriggerDelayRepeat = false -- Whether to do it for every shot on automatics.
 SWEP.TriggerDelayCancellable = false
+SWEP.TriggerDownSound = {
+"shared/base/mw19/various/trigger/Model 680_fire_plr_mech_ads_01.wav",
+"shared/base/mw19/various/trigger/Model 680_fire_plr_mech_ads_02.wav",
+"shared/base/mw19/various/trigger/Model 680_fire_plr_mech_ads_03.wav",
+"shared/base/mw19/various/trigger/Model 680_fire_plr_mech_ads_04.wav",
+"shared/base/mw19/various/trigger/Model 680_fire_plr_mech_ads_05.wav",
+"shared/base/mw19/various/trigger/Model 680_fire_plr_mech_ads_06.wav",
+}
+SWEP.TriggerUpSound = {
+"shared/base/mw19/various/trigger/weap_delta_disconnector_plr_01.wav",
+"shared/base/mw19/various/trigger/weap_delta_disconnector_plr_02.wav",
+"shared/base/mw19/various/trigger/weap_delta_disconnector_plr_03.wav",
+"shared/base/mw19/various/trigger/weap_delta_disconnector_plr_04.wav",
+"shared/base/mw19/various/trigger/weap_delta_disconnector_plr_05.wav",
+"shared/base/mw19/various/trigger/weap_delta_disconnector_plr_06.wav",
+}
+
 SWEP.RPM = 450
 SWEP.Num = 8
 SWEP.Firemodes = {

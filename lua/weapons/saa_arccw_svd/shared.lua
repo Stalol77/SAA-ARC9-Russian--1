@@ -12,15 +12,11 @@ SWEP.MuzzleParticle = "muzzleflash_famas" -- Used for some muzzle effects.
 SWEP.ShellModel = "models/weapons/rifleshell.mdl"
 SWEP.ShellScale = 0.7
 --SWEP.ShellMaterial = "models/weapons/arcticcw/shell_556"
-SWEP.ShellPitch = 100
-local shell = "shared/shells/casing_eject_308_0"
-local shellsounds = {
-    shell .. "1.wav",
-    shell .. "2.wav",
-    shell .. "5.wav",
-    shell .. "7.wav"
-}
-SWEP.ShellSounds = shellsounds
+SWEP.ShellPitch = 90
+
+SWEP.CamCoolView = true -- Enable to use procedural camera movement. Set CamQCA to muzzle QCA or something.
+SWEP.CamQCA = 1
+SWEP.CamQCA_Mult = -1
 
 SWEP.MuzzleEffectAttachment = 0
 SWEP.CaseEffectAttachment = 2
@@ -175,7 +171,23 @@ SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayTime = 0.03 -- Time until weapon fires.
 SWEP.TriggerDelayRepeat = false -- Whether to do it for every shot on automatics.
 SWEP.TriggerDelayCancellable = false -- Whether to do it for every shot on automatics.
-SWEP.RPM = 500
+SWEP.TriggerDownSound = {
+"shared/base/mw19/various/trigger/weap_delta_fire_first_plr_01.wav",
+"shared/base/mw19/various/trigger/weap_delta_fire_first_plr_02.wav",
+"shared/base/mw19/various/trigger/weap_delta_fire_first_plr_03.wav",
+"shared/base/mw19/various/trigger/weap_delta_fire_first_plr_04.wav",
+"shared/base/mw19/various/trigger/weap_delta_fire_first_plr_05.wav",
+"shared/base/mw19/various/trigger/weap_delta_fire_first_plr_06.wav",
+}
+SWEP.TriggerUpSound = {
+"shared/base/mw19/various/trigger/weap_delta_disconnector_plr_01.wav",
+"shared/base/mw19/various/trigger/weap_delta_disconnector_plr_02.wav",
+"shared/base/mw19/various/trigger/weap_delta_disconnector_plr_03.wav",
+"shared/base/mw19/various/trigger/weap_delta_disconnector_plr_04.wav",
+"shared/base/mw19/various/trigger/weap_delta_disconnector_plr_05.wav",
+"shared/base/mw19/various/trigger/weap_delta_disconnector_plr_06.wav",
+}
+SWEP.RPM = 430
 SWEP.Num = 1
 SWEP.Firemodes = {
     {
@@ -359,14 +371,28 @@ SWEP.Spread = 0.001
 SWEP.LayerSoundSilencedIndoor = "saa/newsvd/2023aug/svd_s_tpi1.wav"
 
 local lsind = "shared/base/universal/sandstorm_reverb/fromrpg7/low/tail_indoors_small_close_0"
-SWEP.LayerSoundIndoor = "saa/newsvd/2023aug/svd_tpi1.wav"
+SWEP.LayerSoundIndoor = "shared/base/universal/fas_edited_reverb/r_s_a3.ogg"
 
 
-SWEP.DistantShootSound = "saa/newsvd/2023aug/svd_far.wav"
+SWEP.DistantShootSound = {
+    "shared/base/universal/reflection/huge_rif-01.wav",
+    "shared/base/universal/reflection/huge_rif-02.wav",
+    "shared/base/universal/reflection/huge_rif-03.wav",
+    "shared/base/universal/reflection/huge_rif-04.wav",
+    "shared/base/universal/reflection/huge_rif-05.wav",
+}
+SWEP.DistantShootSoundSilenced = {
+    "shared/base/universal/reflection/suppressed_rif-01.wav",
+    "shared/base/universal/reflection/suppressed_rif-02.wav",
+    "shared/base/universal/reflection/suppressed_rif-03.wav",
+    "shared/base/universal/reflection/suppressed_rif-04.wav",
+    "shared/base/universal/reflection/suppressed_rif-05.wav",
+    "shared/base/universal/reflection/suppressed_rif-06.wav",
+}
+SWEP.DistantShootSoundIndoor = "sas"
+SWEP.DistantShootSoundSilencedIndoor = "sas"
 --SWEP.DistantShootSoundIndoor = distantit
 -- SWEP.FirstShootSoundSilenced = {"smc/weapons/bocw/m60/M60_S" .. math.random(1, 6) .. ".wav"}
-SWEP.DistantShootSoundSilenced = "ahahahahhaahahah"
-
 SWEP.DryFireSound = "shared/foley/shared/dryfire_generic.ogg"
 SWEP.DryFireSingleAction = true -- Play dryfire sound only once
 -- Animations --

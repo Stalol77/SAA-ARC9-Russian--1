@@ -16,7 +16,9 @@ SWEP.ShellPitch = 95
 
 SWEP.MuzzleEffectAttachment = 0
 SWEP.CaseEffectAttachment = 2
-SWEP.CamAttachment = nil
+SWEP.CamCoolView = true -- Enable to use procedural camera movement. Set CamQCA to muzzle QCA or something.
+SWEP.CamQCA = 1
+SWEP.CamQCA_Mult = -1
 SWEP.TracerNum = 0
 SWEP.TracerEffect = "ARC9_tracer"
 SWEP.TracerCol = Color(0, 0, 0)
@@ -127,7 +129,8 @@ SWEP.VisualRecoilSpringMagnitude = 1
 
 
 SWEP.RPMMultFirstShot = 1
-SWEP.Sway = 1.2
+SWEP.Sway = 0.6
+SWEP.SwayMultSights = 2/6
 SWEP.CustomizeAng = Angle(90, 0, 0)
 SWEP.CustomizePos = Vector(14 , 45, 4)
 SWEP.CustomizeSnapshotFOV = 60
@@ -143,6 +146,22 @@ SWEP.Num = 1
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayTime = 0.025 -- Time until weapon fires.
 SWEP.TriggerDelayRepeat = false -- Whether to do it for every shot on automatics.
+SWEP.TriggerDownSound = {
+"shared/base/mw19/various/trigger/weap_akilo47_fire_first_plr_01.wav",
+"shared/base/mw19/various/trigger/weap_akilo47_fire_first_plr_02.wav",
+"shared/base/mw19/various/trigger/weap_akilo47_fire_first_plr_03.wav",
+"shared/base/mw19/various/trigger/weap_akilo47_fire_first_plr_04.wav",
+"shared/base/mw19/various/trigger/weap_akilo47_fire_first_plr_05.wav",
+"shared/base/mw19/various/trigger/weap_akilo47_fire_first_plr_06.wav",
+}
+SWEP.TriggerUpSound = {
+"shared/base/mw19/various/trigger/SP-R 208AS VAL_disconnector_plr_01.wav",
+"shared/base/mw19/various/trigger/SP-R 208AS VAL_disconnector_plr_02.wav",
+"shared/base/mw19/various/trigger/SP-R 208AS VAL_disconnector_plr_03.wav",
+"shared/base/mw19/various/trigger/SP-R 208AS VAL_disconnector_plr_04.wav",
+"shared/base/mw19/various/trigger/SP-R 208AS VAL_disconnector_plr_05.wav",
+"shared/base/mw19/various/trigger/SP-R 208AS VAL_disconnector_plr_06.wav",
+}
 SWEP.Firemodes = {
     {
         Mode = -1,
@@ -232,8 +251,8 @@ SWEP.BarrelLength = 34
 -- Ironsights / Customization / Poses --
 
 SWEP.HoldType = "ar2"
-SWEP.HoldTypeSprint = "passive"
-SWEP.HoldTypeHolstered = "passive"
+SWEP.HoldTypeSprint = "shotgun"
+SWEP.HoldTypeHolstered = "shotgun"
 SWEP.HoldTypeSights = "ar2"
 SWEP.HoldTypeCustomize = "slam"
 SWEP.HoldTypeBlindfire = "pistol"
