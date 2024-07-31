@@ -235,7 +235,7 @@ SWEP.MalfunctionWait = 0.2 -- The amount of time to wait before playing malfunct
 SWEP.MalfunctionMeanShotsToFail = 350 -- The mean number of shots between malfunctions, will be autocalculated if nil
 
 SWEP.StandardPresets = { -- A table of standard presets, that would be in every player preset menu, undeletable. Just put preset codes in ""
-    "[AK74M]XQAAAQBJAQAAAAAAAAA9iIIiM7tupQCpjtobRJEkdevdtR3kygwZeUq4Mjl2CII+k74pFnLQ3cEx/J6hxuWzwifR6Jgp47LpHNmRnLqYN4aogCQXQWL6NLK/WPOQEmxEbMGMvFayHBik/Su3xfN5XlztF+qCmVjzxQaI9wjWiV0M8AsQ2BGs2b9wPefLao/toYaFCionNckA",
+    "[Default]XQAAAQAWAQAAAAAAAAA9iIIiM7tupQCpjtobRJEkdYYzR6F4P3FJEqy9Re6YesVS9Y8wvnxDCnLFhjCA9thpsKiXwncIDA3beKFLSN+VUnypPZugeNYoz5NjLWo5DOn+f1OunzckjHKgLRrq4G8H5YUdfmyKMVdJKAfDfUUJVB94YgvPiTPE5CA="
 }
 
 SWEP.Bash = true
