@@ -1217,7 +1217,7 @@ SWEP.Attachments = {
     {
         PrintName = "Gas Port",
         Category = "saa_ak_gp",
-        Installed = "saa_ak_akmgp",
+        Installed = "saa_ak_n_gp",
         Bone = "b_wpn",
         Pos = Vector(0, 6*1.1, 1.5*1.1),
         Ang = Angle(0, 0, 0),
@@ -1229,7 +1229,7 @@ SWEP.Attachments = {
         DefaultIcon = Material("hud/arc9_saa/rus/akm_hg_alt.png", "mips smooth"),
         Category = {"saa_ak_hg", "saa_ak_polyhg", "saa_ak_underbarrel"},
         Integral = true,
-        Installed = "s100_handguard",
+        Installed = "saa_ak_s100hg",
         Bone = "b_wpn",
         Pos = Vector(0, 5*1.1, 0.5*1.1),
         Ang = Angle(0, 0, 0),
@@ -1246,7 +1246,7 @@ SWEP.Attachments = {
     {
         PrintName = "Stock",
         Category = {"saa_ak_stock", "saa_aks74_stock"},
-        Installed = "saa_ak_akmstock",
+        Installed = "saa_aks74m",
         Bone = "b_wpn",
         Pos = Vector(0, -7.3, 0),
         Ang = Angle(0, 0, 0),

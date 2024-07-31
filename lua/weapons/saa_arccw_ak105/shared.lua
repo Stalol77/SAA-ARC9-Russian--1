@@ -808,7 +808,7 @@ SWEP.Attachments = {
     {
         PrintName = "Dust Cover",
         Category = "saa_ak_dustcover",
-        Installed = "saa_ak74_ribbedcover",
+        Installed = "saa_ak_dc6p20",
         InstallSound = "shared/foley/new/att/dustcover_remove.mp3",
         Bone = "b_wpn",
         Pos = Vector(0, -2.5*1.1, 1*1.1),
@@ -858,7 +858,7 @@ SWEP.Attachments = {
         DefaultIcon = Material("hud/arc9_saa/rus/ak74_hg_alt.png", "mips smooth"),
         Category = {"saa_ak_hg", "saa_ak_polyhg", "saa_ak_underbarrel"},
         Integral = true,
-        Installed = "s100_handguard",
+        Installed = "saa_ak_s100hg",
         Bone = "b_wpn",
         Pos = Vector(0, 5*1.1, 0.5*1.1),
         Ang = Angle(0, 0, 0),
