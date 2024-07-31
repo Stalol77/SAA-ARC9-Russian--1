@@ -640,6 +640,7 @@ ATT.ActivateElements = {"romanian", "exclude_gp25"}
 
 ATT.Model = "models/saa/upgrades/arc9/a_kac_grip_rail.mdl"
 ATT.ModelAngleOffset = Angle(15, -90, 0)
+ATT.Nodraw = true
 ATT.ModelOffset = Vector(-0.5, 0, -0.5)
 ATT.ModelMaterial = "models/weapons/saa/shared/unlit_transparent"
 ATT.Scale = 1

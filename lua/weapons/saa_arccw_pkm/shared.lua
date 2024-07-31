@@ -12,15 +12,7 @@ SWEP.MuzzleParticle = "muzzleflash_famas" -- Used for some muzzle effects.
 SWEP.ShellModel = "models/weapons/rifleshell.mdl"
 SWEP.ShellScale = 0.75
 --SWEP.ShellMaterial = "models/weapons/arcticcw/shell_556"
-SWEP.ShellPitch = 93
-local shell = "shared/shells/casing_eject_308_0"
-local shellsounds = {
-    shell .. "1.wav",
-    shell .. "2.wav",
-    shell .. "5.wav",
-    shell .. "7.wav"
-}
-SWEP.ShellSounds = shellsounds
+SWEP.ShellPitch = 89
 
 SWEP.BipodPos = Vector(0, 1, -2)
 SWEP.BipodAng = Angle(0, 0, 0)
