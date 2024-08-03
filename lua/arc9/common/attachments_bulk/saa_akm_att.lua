@@ -442,6 +442,7 @@ ATT.CustomPros = {
     ["Can attach underbarrel foregrips"] = "",
     ["Can attach left-side Tactical devices"] = "",
     ["Can attach right-side Tactical devices"] = "",
+    ["Can attach underbarrel Tactical devices"] = "",
 }
 ATT.SortOrder = 1
 ATT.Category = "saa_ak_hg"
@@ -479,6 +480,14 @@ ATT.Attachments = {
         Category = {"saa_rail_tactical"},
         Pos = Vector(-1.05, 5.25, 0.35),
         Ang = Angle(0, 270, 270),
+        Icon_Offset = Vector(0, 0, 0),
+        Scale = 0.8
+    },
+    {
+        PrintName = "Bottom Tactical",
+        Category = {"saa_rail_tactical"},
+        Pos = Vector(0, 6.5, 1.4),
+        Ang = Angle(0, 270, 180),
         Icon_Offset = Vector(0, 0, 0),
         Scale = 0.8
     },

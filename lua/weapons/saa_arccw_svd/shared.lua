@@ -704,7 +704,7 @@ SWEP.Attachments = {
         Category = {"SAA_SVD_BARREL"},
         DefaultIcon = Material("hud/arc9_saa/rus/ao/svd_br.png", "mips smooth"),
         Bone = "Weapon",
-        Pos = Vector(0, 21.8, 0.6),
+        Pos = Vector(0, 16, 0.6),
         Ang = Angle(0, 270, 0),
         Scale = 1,
     },
