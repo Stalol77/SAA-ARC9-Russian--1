@@ -149,7 +149,7 @@ ATT = {}
 
 ATT.PrintName = "SVD-M Stock"
 ATT.Description = [[Receiver conversion that allows for Sidefolder stocks to be used.]]
-ATT.Icon = Material("hud/arc9_saa/rus/ao/svd_stock.png", "mips smooth")
+ATT.Icon = Material("hud/arc9_saa/rus/ao/svdm_stock.png", "mips smooth")
 
 
 ATT.SortOrder = 0

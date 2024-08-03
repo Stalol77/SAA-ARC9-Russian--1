@@ -7,7 +7,7 @@ ATT = {}
 ATT.PrintName = "Vz. 61 Factory Wire Stock"
 ATT.CompactName = "Vz.61 Stock"
 ATT.Description = [[Wire stock produced for Skorpion type machine pistols. ]]
-ATT.Icon = Material("hud/arc9_saa/rus/akm_dc.png", "mips smooth")
+ATT.Icon = Material("hud/arc9_saa/rus/ao/vz61_stock.png", "mips smooth")
 
 
 ATT.SortOrder = 0
@@ -36,7 +36,7 @@ ATT = {}
 ATT.PrintName = "Folded Stock"
 ATT.CompactName = "Vz.61 Stock"
 ATT.Description = [[Wire stock produced for Skorpion type machine pistols. ]]
-ATT.Icon = Material("hud/arc9_saa/rus/akm_dc.png", "mips smooth")
+ATT.Icon = Material("hud/arc9_saa/rus/ao/vz61_stockfold.png", "mips smooth")
 
 
 ATT.SortOrder = 0

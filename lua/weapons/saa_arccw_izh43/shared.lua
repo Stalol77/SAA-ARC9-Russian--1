@@ -463,6 +463,7 @@ SWEP.Attachments = {
     {
         PrintName = "Barrel",
         Category = {"saa_izh43_barrel"},
+        DefaultIcon = Material("hud/arc9_saa/rus/ao/izh_brdef.png", "mips smooth"),
         Bone = "BarrelTube",
         Pos = Vector(0, -9, 1.5),
         Ang = Angle(0, 0, 0),
@@ -471,6 +472,7 @@ SWEP.Attachments = {
     {
         PrintName = "Stock",
         Category = {"saa_izh43_stock"},
+        DefaultIcon = Material("hud/arc9_saa/rus/ao/izh_stockdef.png", "mips smooth"),
         Bone = "WeaponBase",
         Pos = Vector(0, 7, 0),
         Ang = Angle(0, 0, 0),

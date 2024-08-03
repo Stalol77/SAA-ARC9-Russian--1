@@ -1,6 +1,7 @@
 ATT.PrintName = "IZh-43 Sawn-Off Barrel"
 ATT.CompactName = "Sawn-Off Barrel"
 ATT.Description = [[Propretary barrel that has been Hand-Sawn that trades precision and muzzle velocity for a much higher handling ease.]]
+ATT.Icon = Material("hud/arc9_saa/rus/ao/izh_brs.png", "mips smooth")
 
 
 ATT.SortOrder = 0

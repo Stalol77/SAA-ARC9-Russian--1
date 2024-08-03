@@ -1,6 +1,7 @@
 ATT.PrintName = "PK Pecheneg Stock"
 ATT.CompactName = "PKP Stock"
 ATT.Description = [[Polymer-made lightweight stock that enhances the friction on the user's grip. Mostly found in newer PK models such as the PKP Pecheneg.]]
+ATT.Icon = Material("hud/arc9_saa/rus/ao/pkp_stock.png", "mips smooth")
 
 
 ATT.SortOrder = 0

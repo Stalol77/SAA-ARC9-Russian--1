@@ -1,6 +1,7 @@
 ATT.PrintName = "IZh-43 Sawn-Off Stock"
 ATT.CompactName = "Sawn-Off Stock"
 ATT.Description = [[Propretary stock that has been Hand-Sawn to allow for ease of mobility.]]
+ATT.Icon = Material("hud/arc9_saa/rus/ao/izh_pg.png", "mips smooth")
 
 
 ATT.SortOrder = 0
