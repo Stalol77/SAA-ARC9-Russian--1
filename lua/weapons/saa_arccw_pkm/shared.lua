@@ -104,6 +104,7 @@ SWEP.RecoilUp = 0.9 -- Multiplier for vertical recoil
 SWEP.RecoilSide = 1.2 -- Multiplier for vertical recoil
 SWEP.RecoilAddRecoil = 1/30
 SWEP.VisualRecoilMultRecoil = 1-5/70
+SWEP.VisualRecoilSideMultRecoil = 0.94
 SWEP.RecoilModifierCap = 15
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
@@ -195,9 +196,6 @@ SWEP.Num = 1
 SWEP.Firemodes = {
     {
         Mode = -1,
-    },
-    {
-        Mode = 1,
     },
 }
 
