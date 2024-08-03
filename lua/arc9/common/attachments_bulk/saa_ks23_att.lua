@@ -119,49 +119,6 @@ ARC9.LoadAttachment(ATT, "saa_ks23_irons")
 
 ATT = {}
 
-ATT.PrintName = [[KS-23 Clamped PU 3.5X Sniper Scope]]
-ATT.CompactName = "PU Scope"
-ATT.Description = [[Scope with 3.5X magnification, most commonly used on Mosin rifles, yet adapted for this shotgun.]]
---ATT.Icon = Material("hud/arc9_saa/rus/ks23_br.png", "mips smooth")
-
-ATT.SortOrder = 1
-ATT.Category = "saa_ks23_scope"
-
-ATT.ModelAngleOffset = Angle(0, 0, 0)
-ATT.Model = "models/saa/weapons/arccw/ks23/v_ks23_scope.mdl"
-ATT.Scale = 1
-ATT.ModelOffset = Vector(0, 0, 0)
-ATT.VisualRecoilADSMult = 0.8
-
-ATT.Sights = {
-    {
-        Pos = Vector(-0, 5.5, -1.32),
-        Ang = Angle(0, 0, 0),
-        Magnification = 1,
-        IgnoreExtra = true
-    },
-}
-
-ATT.RTScope = true
-ATT.RTScopeSubmatIndex = 2
-ATT.RTScopeFOV = 22/3.5
-ATT.RTScopeRes = 512
-ATT.RTScopeSurface = Material("models/weapons/arc9/bo2/bo2_optics/hamr_lens")
-ATT.RTScopeReticle = Material("models/weapons/optics/pu_reticle.png")
-ATT.RTScopeReticleScale = 0.8
-ATT.RTScopeShadowIntensity = 20
-ATT.RTScopeNoPP = true
-
-ATT.ActivateElements = {"puscope"}
-
-ARC9.LoadAttachment(ATT, "saa_ks23_puscope")
-
--- end here
-
--- start here
-
-ATT = {}
-
 ATT.PrintName = [[23x75mm Flashbang Special Purpose Round]]
 ATT.CompactName = "Flashbang"
 ATT.Description = [[Flashbang round intended for Riot-Suppression purposes void of murder.]]
