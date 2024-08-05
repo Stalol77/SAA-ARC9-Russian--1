@@ -453,11 +453,11 @@ SWEP.Animations = {
 SWEP.Attachments = {
    {
        PrintName = "MUZZLE",
-       Category = { "suppressor"},
+       Category = { "saa_12ga_muz"},
        InstalledElements = nil,
        ExcludeElements = {"barrel_change"},
        Bone = "A_Suppressor",
-       Pos = Vector(-0.2, 0, 0),
+       Pos = Vector(0.02, -1, 0.05),
        Ang = Angle(0, 90, 0),
 
        Scale = 1,
@@ -527,7 +527,7 @@ SWEP.AttachmentElements = {
         },
         AttPosMods = {
             [1] = {
-                Pos = Vector(-0.2, -8.5, 0),
+                Pos = Vector(0.02, -8.7, 0.05),
             }
         },
     },
