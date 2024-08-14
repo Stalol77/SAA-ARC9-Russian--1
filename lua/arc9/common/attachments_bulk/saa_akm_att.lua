@@ -433,7 +433,9 @@ ATT = {}
 
 ATT.PrintName = "Zenitco B-30 Handguard"
 ATT.CompactName = "B-30"
-ATT.Description = [[Handguard produced by private companies. Fitted with a sleek steel design, allows for a quicker heat dissipation and underbarrel attachments at the cost of a higher recoil.]]
+ATT.Description = [[Handguard produced by private companies in Russia.
+Fitted with a sleek steel design, allows for a quicker heat dissipation and underbarrel attachments at the cost of a higher recoil.
+An ultimate choice for customizing your Kalashnikov rifle, has a lot of space for tactical attachments to be installed.]]
 ATT.Icon = Material("hud/arc9_saa/rus/Alpha_handguard.png", "mips smooth")
 ATT.CustomCons = {
     ["Does not support Underbarrel Weapons"] = "",
@@ -512,7 +514,8 @@ ATT = {}
 
 ATT.PrintName = "Zenitco B-11 Handguard"
 ATT.CompactName = "B-11"
-ATT.Description = [[Handguard produced by private companies. Fitted with a sleek steel design, allows for a quicker heat dissipation and underbarrel attachments at the cost of a higher recoil.]]
+ATT.Description = [[Handguard produced by private companies in Russia.
+Fitted with a sleek steel design, allows for a quicker heat dissipation and underbarrel attachments at the cost of a higher recoil.]]
 ATT.Icon = Material("hud/arc9_saa/rus/b11.png", "mips smooth")
 ATT.CustomPros = {
     ["Can attach underbarrel foregrips"] = "",
@@ -562,7 +565,8 @@ ATT = {}
 
 ATT.PrintName = "Magpul MOE Handguard"
 ATT.CompactName = "MGP"
-ATT.Description = [[Handguard produced by private companies. Eases aim and .]]
+ATT.Description = [[Lightweight polymer handguard produced in the United States.
+A simple choice that, although featuring a larger overall hull, brings great firmness to the off-hand, thus enhancing aim steadiness.]]
 ATT.Icon = Material("hud/arc9_saa/rus/ao/magpul_hg.png", "mips smooth")
 ATT.CustomCons = {
     ["Does not support Underbarrel Weapons"] = "",
@@ -570,8 +574,8 @@ ATT.CustomCons = {
 
 ATT.SortOrder = 1
 ATT.Category = "saa_ak_hg"
-ATT.Sway = 0.98
-ATT.RecoilMult = 1.065
+ATT.SwayMult = 0.855
+ATT.VisualRecoilUpMult = 1.135
 ATT.RecoilKickMult = 1.39/1.2
 ATT.SprintToFireTimeMult = 0.27/0.33
 
@@ -587,7 +591,8 @@ ATT = {}
 
 ATT.PrintName = "AKM Factory Handguard"
 ATT.CompactName = "AKM"
-ATT.Description = [[Original Wooden Handguard produced for Russian AKM-series rifles.]]
+ATT.Description = [[Original Wooden Handguard produced for Russian AKM-series rifles.
+Features its distinctive smooth side bumps to ease aim control.]]
 ATT.Icon = Material("hud/arc9_saa/rus/ao/akmhandgua.png", "mips smooth")
 ATT.CustomPros = {
     ["Sway"] = "-10%",
@@ -612,7 +617,8 @@ ATT = {}
 
 ATT.PrintName = "AK-74 Factory Handguard"
 ATT.CompactName = "AK-74"
-ATT.Description = [[Original Wooden Handguard produced for Russian AKM-series rifles.]]
+ATT.Description = [[Original Wooden Handguard produced for Russian Kalashnikov 74-series rifles.
+Features its distinctive sharp side bumps to ease aim control.]]
 ATT.Icon = Material("hud/arc9_saa/rus/ao/ak74handgua.png", "mips smooth")
 ATT.CustomPros = {
     ["Sway"] = "-10%",
@@ -674,7 +680,9 @@ ATT = {}
 
 ATT.PrintName = "Series-100 Handguard"
 ATT.CompactName = "Series-100"
-ATT.Description = [[Handguard produced by private companies. Eases aim and .]]
+ATT.Description = [[Side ribbed polymer handguard produced during the modernization process of the AK-74 rifles and for the Kalashnikov 100 series in Russia.
+Lightweight design with side bump patterns to increase the steadiness of the grip on the off-hand.
+Can attach Foregrips with special rail kits as well as Standard Underbarrel weapons.]]
 ATT.Icon = Material("hud/arc9_saa/rus/ao/74m_hg.png", "mips smooth")
 ATT.CustomPros = {
     ["Can attach underbarrel foregrips"] = "",
@@ -712,7 +720,9 @@ ATT = {}
 
 ATT.PrintName = "VEPR Series 200 Handguard"
 ATT.CompactName = "VEPR-200"
-ATT.Description = [[Handguard produced by private companies. Eases aim and .]]
+ATT.Description = [[Polymer handguard produced during the modernization process of the RPK pattern and for the VEPR civilian rifles in Russia.
+Bulky yet somewhat lightweight design that features a good number of side ribs to enhance the firmness of the off-hand's grip upon the weapon.
+Can attach Foregrips with special rail kits as well as Standard Underbarrel weapons.]]
 ATT.Icon = Material("hud/arc9_saa/rus/ao/vepr_hg.png", "mips smooth")
 ATT.CustomPros = {
     ["Can attach underbarrel foregrips"] = "",
@@ -1295,10 +1305,13 @@ ATT = {}
 
 ATT.PrintName = "Zenitco B-31S Upper Handguard Rail"
 ATT.CompactName = "B-31S"
-ATT.Description = [[Gas port produced by private companies. Longer design allowing for railed accessories to be attached. Its sleek yet elongated aluminum structure enhances the heat capacity and dissipation.]]
+ATT.Description = [[Gas port produced by private companies Russia.
+Longer design allowing for railed accessories to be attached.
+Its sleek yet elongated aluminum structure enhances the heat capacity and dissipation.]]
 ATT.Icon = Material("hud/arc9_saa/rus/alpha_gasport.png", "mips smooth")
 ATT.CustomPros = {
     ["Optic rail"] = "",
+    ["Front sight rail"] = "",
 }
 ATT.CustomCons = {
     ["Incompatible with other optic rails"] = "",
@@ -1357,7 +1370,9 @@ ATT = {}
 
 ATT.PrintName = "Zenitco B-19 Gas Port"
 ATT.CompactName = "B-19"
-ATT.Description = [[Gas port produced by private companies. Its sleek aluminum structure enhances the heat capacity and dissipation.]]
+ATT.Description = [[Gas port produced by private companies in Russia.
+Its sleek aluminum structure enhances the heat capacity and dissipation.
+Allows for tactical devices and short range optics to be installed.]]
 ATT.Icon = Material("hud/arc9_saa/rus/b19.png", "mips smooth")
 ATT.CustomPros = {
     ["Optic-Tactical device rail"] = "",
@@ -1398,17 +1413,19 @@ ATT = {}
 
 ATT.PrintName = "Magpul MOE Gas Port"
 ATT.CompactName = "MGP"
-ATT.Description = [[Handguard produced by private companies. Reduces forward weight.]]
+ATT.Description = [[Gas Port produced by private companies in the US.
+Small, low-weight gas port with vent holes to increase thermal release]]
 ATT.Icon = Material("hud/arc9_saa/rus/mgp_gp.png", "mips smooth")
 
 
 ATT.SortOrder = 1
 ATT.Category = "saa_ak_gp"
-ATT.Sway = 0.95
-ATT.SprintToFireTimeMult = 1.05
-ATT.RecoilMult = 0.985
-ATT.HeatCapacityMult = 1.15
-ATT.HeatDissipationMult = 0.8
+
+
+ATT.SpeedMultMult = 0.985
+ATT.HeatCapacityMult = 1.35
+ATT.VisualRecoilUpMult = 0.965
+ATT.HeatDissipationMult = 0.88
 
 ATT.ActivateElements = {"magpul_gasport"}
 
@@ -1422,17 +1439,17 @@ ATT = {}
 
 ATT.PrintName = "74N Molot Gas Port"
 ATT.CompactName = "74N Molot"
-ATT.Description = [[Handguard produced by private companies. Reduces forward weight.]]
+ATT.Description = [[AK-74 production Gas Port Cover, increases heat capacity at the cost of a slower dissipation.
+Enhances aim control when firing due to the slight weight on the off-hand rest position.]]
 ATT.Icon = Material("hud/arc9_saa/rus/ak74_gp.png", "mips smooth")
 
 
 ATT.SortOrder = 1
 ATT.Category = "saa_ak_gp"
-ATT.Sway = 0.95
-ATT.SprintToFireTimeMult = 1.05
-ATT.RecoilMult = 0.985
-ATT.HeatCapacityMult = 1.15
-ATT.HeatDissipationMult = 0.8
+ATT.SpeedMultMult = 0.985
+ATT.HeatCapacityMult = 1.35
+ATT.VisualRecoilUpMult = 0.965
+ATT.HeatDissipationMult = 0.88
 
 ATT.ActivateElements = {"74n_gasport"}
 
@@ -1446,18 +1463,19 @@ ATT = {}
 
 ATT.PrintName = "Series-100 Gas Port"
 ATT.CompactName = "Series-100"
-ATT.Description = [[Sturdy Gas Port that generates good weight near grip area. Reduces felt recoil and boosts up heat capacity at the cost of a slower dissipation and heavier mass.]]
+ATT.Description = [[Sleek Plastic Gas Port, produced during the modernization process of the 74 Series rifles in Russia.
+Now also found in Series-100 Kalashnikov rifles.
+Very lightweight, slightly enhances aim control and heat capacity.]]
 ATT.Icon = Material("hud/arc9_saa/rus/ak74_gp.png", "mips smooth")
 
 
 ATT.SortOrder = 0
 ATT.Category = "saa_ak_gp"
 
-ATT.SpeedMultMult = 0.96
-ATT.HeatCapacityMult = 1.375
-ATT.RecoilMult = 0.945
-ATT.RecoilKickMult = 0.7
-ATT.HeatDissipationMult = 0.60
+ATT.SpeedMultMult = 0.995
+ATT.HeatCapacityMult = 1.23
+ATT.VisualRecoilUpMult = 3.66/3.75
+ATT.HeatDissipationMult = 0.885
 
 ATT.ActivateElements = {"n_gasport"}
 
@@ -1471,18 +1489,18 @@ ATT = {}
 
 ATT.PrintName = "VEPR-200 Series Gas Port"
 ATT.CompactName = "VEPR-200"
-ATT.Description = [[Sturdy Gas Port that generates good weight near grip area. Reduces felt recoil and boosts up heat capacity at the cost of a slower dissipation and heavier mass.]]
+ATT.Description = [[Ribbed plastic Gas Port produced for civilian Kalashnikov copies and modern RPK type rifles in Russia.
+Its ribbed design makes the overall size of the gas port smaller, all the while enhancing thermal dissipation with the larger surface area.]]
 ATT.Icon = Material("hud/arc9_saa/rus/ao/vepr_gb.png", "mips smooth")
 
 
 ATT.SortOrder = 0
 ATT.Category = "saa_ak_gp"
 
-ATT.SpeedMultMult = 0.96
-ATT.HeatCapacityMult = 1.375
-ATT.RecoilMult = 0.945
-ATT.RecoilKickMult = 0.7
-ATT.HeatDissipationMult = 0.60
+ATT.SpeedMultMult = 0.995
+ATT.HeatCapacityMult = 1.21
+ATT.VisualRecoilUpMult = 3.66/3.75
+ATT.HeatDissipationMult = 0.905
 
 ATT.ActivateElements = {"s200_gasport"}
 
@@ -1496,14 +1514,20 @@ ATT = {}
 
 ATT.PrintName = "Hungarian Gas Tube"
 ATT.CompactName = "Hungarian GP"
-ATT.Description = [[Gasport based upon the Hungaro-Romanian designs. Reduces forward weight.]]
+ATT.Description = [[Gasport based upon the Hungaro-Romanian designs.
+Enhances Thermal release, but lightens, perhaps, the front and off-hand rest positions of the weapon.]]
 ATT.Icon = Material("hud/arc9_saa/rus/AMD.png", "mips smooth")
 
 
 ATT.SortOrder = 1
 ATT.Category = "saa_ak_gp"
-ATT.SwayMult = 0.995
-ATT.SpeedMultMult = 1.005
+
+ATT.SwayMult = 0.985
+ATT.SwayMultShooting = 1.125
+ATT.SpeedMultMult = 0.995
+ATT.HeatCapacityMult = 0.97
+ATT.VisualRecoilUpMult = 3.81/3.75
+ATT.HeatDissipationMult = 1.35
 
 
 ATT.ActivateElements = {"hun_gasport"}
@@ -1518,7 +1542,8 @@ ATT = {}
 
 ATT.PrintName = "AKM Handguard Gas Port"
 ATT.CompactName = "AKM"
-ATT.Description = [[AKM production Gas Port Cover, increases heat capacity at the cost of a slower dissipation.]]
+ATT.Description = [[AKM production Gas Port Cover, increases heat capacity at the cost of a slower dissipation.
+Enhances aim control when firing due to the slight weight on the off-hand rest position.]]
 ATT.Icon = Material("hud/arc9_saa/rus/akm_gp.png", "mips smooth")
 
 
@@ -1526,9 +1551,9 @@ ATT.SortOrder = 0
 ATT.Category = "saa_ak_gp"
 
 ATT.SpeedMultMult = 0.985
-ATT.HeatCapacityMult = 1.25
-ATT.RecoilMult = 0.965
-ATT.HeatDissipationMult = 0.75
+ATT.HeatCapacityMult = 1.35
+ATT.VisualRecoilUpMult = 0.965
+ATT.HeatDissipationMult = 0.88
 
 ATT.ActivateElements = {"gasport_akm"}
 

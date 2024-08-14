@@ -82,7 +82,8 @@ SWEP.SecondarySupplyLimit = 3 -- Amount of reserve UBGL magazines you can take.
 
 SWEP.Recoil = 1
 SWEP.RecoilSide = 1.4
-SWEP.RecoilUp = 1.6
+SWEP.RecoilUp = 2
+SWEP.RecoilUpMultRecoil = 3
 
 SWEP.RecoilRandomUp = 0.6
 SWEP.RecoilRandomSide = 0.4
