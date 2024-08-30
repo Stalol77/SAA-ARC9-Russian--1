@@ -301,42 +301,52 @@ local akv2 = "saa/akmv3/"
 
 local ak74 = "saa/ak74/"
 local ak7v = "saa/ak74v/"
+local basesh = "shared/base/ak12/"
 
 SWEP.ShootSound = {
-    ak7v .. "akm_loop_stereo_default_initial_01.wav",
-    ak7v .. "akm_loop_stereo_default_initial_02.wav",
-    ak7v .. "akm_loop_stereo_default_initial_03.wav",
-    ak7v .. "akm_loop_stereo_default_initial_04.wav",
-    ak7v .. "akm_loop_stereo_default_initial_05.wav",
-    ak7v .. "akm_loop_stereo_default_initial_06.wav",
-    ak7v .. "akm_loop_stereo_default_initial_07.wav",
-    ak7v .. "akm_loop_stereo_default_initial_08.wav",
-    ak7v .. "akm_loop_stereo_default_initial_09.wav",
-    ak7v .. "akm_loop_stereo_default_initial_10.wav",
-    ak7v .. "akm_loop_stereo_default_initial_11.wav",
-    ak7v .. "akm_loop_stereo_default_initial_12.wav",
-    
+    basesh .. "akm_loop_stereo_default_initial_01.wav",
+    basesh .. "akm_loop_stereo_default_initial_02.wav",
+    basesh .. "akm_loop_stereo_default_initial_03.wav",
+    basesh .. "akm_loop_stereo_default_initial_04.wav",
+    basesh .. "akm_loop_stereo_default_initial_05.wav",
+    basesh .. "akm_loop_stereo_default_initial_06.wav",
+    basesh .. "akm_loop_stereo_default_initial_07.wav",
+    basesh .. "akm_loop_stereo_default_initial_08.wav",
+    basesh .. "akm_loop_stereo_default_initial_09.wav",
+    basesh .. "akm_loop_stereo_default_initial_10.wav",
+    basesh .. "akm_loop_stereo_default_initial_11.wav",
+    basesh .. "akm_loop_stereo_default_initial_12.wav",
+    basesh .. "akm_loop_stereo_default_initial_13.wav",
+    basesh .. "akm_loop_stereo_default_initial_14.wav",
+    basesh .. "akm_loop_stereo_default_initial_15.wav",
+    basesh .. "akm_loop_stereo_default_initial_16.wav",
+    basesh .. "akm_loop_stereo_default_initial_17.wav",
 }
 SWEP.ShootSoundIndoor = {
-    ak7v .. "akm_loop_stereo_default_initial_01.wav",
-    ak7v .. "akm_loop_stereo_default_initial_02.wav",
-    ak7v .. "akm_loop_stereo_default_initial_03.wav",
-    ak7v .. "akm_loop_stereo_default_initial_04.wav",
-    ak7v .. "akm_loop_stereo_default_initial_05.wav",
-    ak7v .. "akm_loop_stereo_default_initial_06.wav",
-    ak7v .. "akm_loop_stereo_default_initial_07.wav",
-    ak7v .. "akm_loop_stereo_default_initial_08.wav",
-    ak7v .. "akm_loop_stereo_default_initial_09.wav",
-    ak7v .. "akm_loop_stereo_default_initial_10.wav",
-    ak7v .. "akm_loop_stereo_default_initial_11.wav",
-    ak7v .. "akm_loop_stereo_default_initial_12.wav",
+    basesh .. "akm_loop_stereo_default_initial_01.wav",
+    basesh .. "akm_loop_stereo_default_initial_02.wav",
+    basesh .. "akm_loop_stereo_default_initial_03.wav",
+    basesh .. "akm_loop_stereo_default_initial_04.wav",
+    basesh .. "akm_loop_stereo_default_initial_05.wav",
+    basesh .. "akm_loop_stereo_default_initial_06.wav",
+    basesh .. "akm_loop_stereo_default_initial_07.wav",
+    basesh .. "akm_loop_stereo_default_initial_08.wav",
+    basesh .. "akm_loop_stereo_default_initial_09.wav",
+    basesh .. "akm_loop_stereo_default_initial_10.wav",
+    basesh .. "akm_loop_stereo_default_initial_11.wav",
+    basesh .. "akm_loop_stereo_default_initial_12.wav",
+    basesh .. "akm_loop_stereo_default_initial_13.wav",
+    basesh .. "akm_loop_stereo_default_initial_14.wav",
+    basesh .. "akm_loop_stereo_default_initial_15.wav",
+    basesh .. "akm_loop_stereo_default_initial_16.wav",
+    basesh .. "akm_loop_stereo_default_initial_17.wav",
 
 }
 
 
 
 SWEP.LayerSound = {
-    ak7v .. "ak74_loop_stereo_default_initial_tail_01.wav",
+   ak7v .. "ak74_loop_stereo_default_initial_tail_01.wav",
     ak7v .. "ak74_loop_stereo_default_initial_tail_02.wav",
     ak7v .. "ak74_loop_stereo_default_initial_tail_03.wav",
     ak7v .. "ak74_loop_stereo_default_initial_tail_04.wav",
@@ -427,6 +437,19 @@ local mechtable = {
     mech .. "6.wav",
 }
 
+newmech = {
+    "shared/base/bf4/hifi/20/HiFi_Loops_Wave 0 22 0.ogg",
+    "shared/base/bf4/hifi/20/HiFi_Loops_Wave 0 22 1.ogg",
+    "shared/base/bf4/hifi/20/HiFi_Loops_Wave 0 22 2.ogg",
+    "shared/base/bf4/hifi/20/HiFi_Loops_Wave 0 22 3.ogg",
+    "shared/base/bf4/hifi/20/HiFi_Loops_Wave 0 22 4.ogg",
+    "shared/base/bf4/hifi/20/HiFi_Loops_Wave 0 22 5.ogg",
+    "shared/base/bf4/hifi/20/HiFi_Loops_Wave 0 22 6.ogg",
+    "shared/base/bf4/hifi/20/HiFi_Loops_Wave 0 22 7.ogg",
+    "shared/base/bf4/hifi/20/HiFi_Loops_Wave 0 22 8.ogg",
+    "shared/base/bf4/hifi/20/HiFi_Loops_Wave 0 22 9.ogg",
+}
+
 local release = {
     "shared/foley/hops/ak/magrel_1.ogg",
     "shared/foley/hops/ak/magrel_2.ogg",
@@ -479,8 +502,9 @@ SWEP.Animations = {
         Source = "ACT_VM_PRIMARYATTACK",
         ShellEjectAt = 0.01,
         EventTable = {
-            {s = mechtable,    t = 0, v= 1.0, p = 100, c = cl },
-            {s = akv .. "aks_boltback.wav",    t = 0, v= 0.15, p = 100, c = cl },
+            {s = newmech,    t = 0, v= 1.0, p = 100, c = cl },
+            {s = "shared/base/bf4/hifi/20/HiFi_Loops_Wave 0 22 10.ogg",    t = 0, v= 0.15, p = 100, c = cl },
+            {s = akv .. "aks_boltback.wav",    t = 0, v= 0.2, p = 100, c = cl },
 
            {
             FOV = -4,
@@ -566,7 +590,8 @@ SWEP.Animations = {
         Source = "ACT_VM_ISHOOT",
         ShellEjectAt = 0.01,
         EventTable = {
-            {s = mechtable,    t = 0, v= 1, p = 100, c = cl },
+            {s = newmech,    t = 0, v= 1.0, p = 100, c = cl },
+            {s = "shared/base/bf4/hifi/20/HiFi_Loops_Wave 0 22 10.ogg",    t = 0, v= 0.15, p = 100, c = cl },
             {s = akv .. "aks_boltback.wav",    t = 0, v= 0.2, p = 100, c = cl },
 
            {

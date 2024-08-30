@@ -481,6 +481,7 @@ SWEP.Attachments = {
     {
         PrintName = "AMMO",
         Category = {"saa_12ga", "saa_12ga_special"},
+        DefaultIcon = Material("hud/arc9_saa/rus/ao/izh_brdef.png", "mips smooth"),
         Bone = "BarrelTube",
         Pos = Vector(0, 0, 1),
         Ang = Angle(0, 0, 0),

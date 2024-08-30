@@ -308,37 +308,48 @@ local akv2 = "saa/akmv3/"
 
 local ak74 = "saa/ak74/"
 local ak7v = "saa/ak74v/"
+local basesh = "shared/base/ak12/"
 
 SWEP.ShootSound = {
-    ak7v .. "akm_loop_stereo_default_initial_01.wav",
-    ak7v .. "akm_loop_stereo_default_initial_02.wav",
-    ak7v .. "akm_loop_stereo_default_initial_03.wav",
-    ak7v .. "akm_loop_stereo_default_initial_04.wav",
-    ak7v .. "akm_loop_stereo_default_initial_05.wav",
-    ak7v .. "akm_loop_stereo_default_initial_06.wav",
-    ak7v .. "akm_loop_stereo_default_initial_07.wav",
-    ak7v .. "akm_loop_stereo_default_initial_08.wav",
-    ak7v .. "akm_loop_stereo_default_initial_09.wav",
-    ak7v .. "akm_loop_stereo_default_initial_10.wav",
-    ak7v .. "akm_loop_stereo_default_initial_11.wav",
-    ak7v .. "akm_loop_stereo_default_initial_12.wav",
-    
+    basesh .. "akm_loop_stereo_default_initial_01.wav",
+    basesh .. "akm_loop_stereo_default_initial_02.wav",
+    basesh .. "akm_loop_stereo_default_initial_03.wav",
+    basesh .. "akm_loop_stereo_default_initial_04.wav",
+    basesh .. "akm_loop_stereo_default_initial_05.wav",
+    basesh .. "akm_loop_stereo_default_initial_06.wav",
+    basesh .. "akm_loop_stereo_default_initial_07.wav",
+    basesh .. "akm_loop_stereo_default_initial_08.wav",
+    basesh .. "akm_loop_stereo_default_initial_09.wav",
+    basesh .. "akm_loop_stereo_default_initial_10.wav",
+    basesh .. "akm_loop_stereo_default_initial_11.wav",
+    basesh .. "akm_loop_stereo_default_initial_12.wav",
+    basesh .. "akm_loop_stereo_default_initial_13.wav",
+    basesh .. "akm_loop_stereo_default_initial_14.wav",
+    basesh .. "akm_loop_stereo_default_initial_15.wav",
+    basesh .. "akm_loop_stereo_default_initial_16.wav",
+    basesh .. "akm_loop_stereo_default_initial_17.wav",
 }
 SWEP.ShootSoundIndoor = {
-    ak7v .. "akm_loop_stereo_default_initial_01.wav",
-    ak7v .. "akm_loop_stereo_default_initial_02.wav",
-    ak7v .. "akm_loop_stereo_default_initial_03.wav",
-    ak7v .. "akm_loop_stereo_default_initial_04.wav",
-    ak7v .. "akm_loop_stereo_default_initial_05.wav",
-    ak7v .. "akm_loop_stereo_default_initial_06.wav",
-    ak7v .. "akm_loop_stereo_default_initial_07.wav",
-    ak7v .. "akm_loop_stereo_default_initial_08.wav",
-    ak7v .. "akm_loop_stereo_default_initial_09.wav",
-    ak7v .. "akm_loop_stereo_default_initial_10.wav",
-    ak7v .. "akm_loop_stereo_default_initial_11.wav",
-    ak7v .. "akm_loop_stereo_default_initial_12.wav",
+    basesh .. "akm_loop_stereo_default_initial_01.wav",
+    basesh .. "akm_loop_stereo_default_initial_02.wav",
+    basesh .. "akm_loop_stereo_default_initial_03.wav",
+    basesh .. "akm_loop_stereo_default_initial_04.wav",
+    basesh .. "akm_loop_stereo_default_initial_05.wav",
+    basesh .. "akm_loop_stereo_default_initial_06.wav",
+    basesh .. "akm_loop_stereo_default_initial_07.wav",
+    basesh .. "akm_loop_stereo_default_initial_08.wav",
+    basesh .. "akm_loop_stereo_default_initial_09.wav",
+    basesh .. "akm_loop_stereo_default_initial_10.wav",
+    basesh .. "akm_loop_stereo_default_initial_11.wav",
+    basesh .. "akm_loop_stereo_default_initial_12.wav",
+    basesh .. "akm_loop_stereo_default_initial_13.wav",
+    basesh .. "akm_loop_stereo_default_initial_14.wav",
+    basesh .. "akm_loop_stereo_default_initial_15.wav",
+    basesh .. "akm_loop_stereo_default_initial_16.wav",
+    basesh .. "akm_loop_stereo_default_initial_17.wav",
 
 }
+
 
 
 

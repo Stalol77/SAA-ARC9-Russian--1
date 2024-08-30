@@ -152,7 +152,7 @@ SWEP.SwayMultShooting = 1.2
 SWEP.FreeAimRadiusSights = 2
 SWEP.FreeAimRadius = 12 / 1.25 
 -- Firerate / Firemodes --
-SWEP.RPM = 650
+SWEP.RPM = 680
 SWEP.Num = 1
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayTime = 0.025 -- Time until weapon fires.
@@ -320,36 +320,48 @@ local akv2 = "saa/akmv3/"
 
 local ak74 = "saa/ak74/"
 local ak7v = "saa/ak74v/"
+local basesh = "shared/base/ak74m/"
+
 
 SWEP.ShootSound = {
-    akv .. "rpd_fire_initial_1p_01.wav",
-    akv .. "rpd_fire_initial_1p_02.wav",
-    akv .. "rpd_fire_initial_1p_03.wav",
-    akv .. "rpd_fire_initial_1p_04.wav",
-    akv .. "rpd_fire_initial_1p_05.wav",
-    akv .. "rpd_fire_initial_1p_06.wav",
-    akv .. "rpd_fire_initial_1p_07.wav",
-    akv .. "rpd_fire_initial_1p_08.wav",
-    akv .. "rpd_fire_initial_1p_09.wav",
-    akv .. "rpd_fire_initial_1p_10.wav",
-    akv .. "rpd_fire_initial_1p_11.wav",
-    akv .. "rpd_fire_initial_1p_12.wav",
-
+    basesh .. "ak74_loop_stereo_default_initial_01.wav",
+    basesh .. "ak74_loop_stereo_default_initial_02.wav",
+    basesh .. "ak74_loop_stereo_default_initial_03.wav",
+    basesh .. "ak74_loop_stereo_default_initial_04.wav",
+    basesh .. "ak74_loop_stereo_default_initial_05.wav",
+    basesh .. "ak74_loop_stereo_default_initial_06.wav",
+    basesh .. "ak74_loop_stereo_default_initial_07.wav",
+    basesh .. "ak74_loop_stereo_default_initial_08.wav",
+    basesh .. "ak74_loop_stereo_default_initial_09.wav",
+    basesh .. "ak74_loop_stereo_default_initial_10.wav",
+    basesh .. "ak74_loop_stereo_default_initial_11.wav",
+    basesh .. "ak74_loop_stereo_default_initial_12.wav",
+    basesh .. "ak74_loop_stereo_default_initial_13.wav",
+    basesh .. "ak74_loop_stereo_default_initial_14.wav",
+    basesh .. "ak74_loop_stereo_default_initial_15.wav",
+    basesh .. "ak74_loop_stereo_default_initial_16.wav",
+    basesh .. "ak74_loop_stereo_default_initial_18.wav",
 
 }
 SWEP.ShootSoundIndoor = {
-    akv .. "rpd_fire_initial_1p_01.wav",
-    akv .. "rpd_fire_initial_1p_02.wav",
-    akv .. "rpd_fire_initial_1p_03.wav",
-    akv .. "rpd_fire_initial_1p_04.wav",
-    akv .. "rpd_fire_initial_1p_05.wav",
-    akv .. "rpd_fire_initial_1p_06.wav",
-    akv .. "rpd_fire_initial_1p_07.wav",
-    akv .. "rpd_fire_initial_1p_08.wav",
-    akv .. "rpd_fire_initial_1p_09.wav",
-    akv .. "rpd_fire_initial_1p_10.wav",
-    akv .. "rpd_fire_initial_1p_11.wav",
-    akv .. "rpd_fire_initial_1p_12.wav",
+    basesh .. "ak74_loop_stereo_default_initial_01.wav",
+    basesh .. "ak74_loop_stereo_default_initial_02.wav",
+    basesh .. "ak74_loop_stereo_default_initial_03.wav",
+    basesh .. "ak74_loop_stereo_default_initial_04.wav",
+    basesh .. "ak74_loop_stereo_default_initial_05.wav",
+    basesh .. "ak74_loop_stereo_default_initial_06.wav",
+    basesh .. "ak74_loop_stereo_default_initial_07.wav",
+    basesh .. "ak74_loop_stereo_default_initial_08.wav",
+    basesh .. "ak74_loop_stereo_default_initial_09.wav",
+    basesh .. "ak74_loop_stereo_default_initial_10.wav",
+    basesh .. "ak74_loop_stereo_default_initial_11.wav",
+    basesh .. "ak74_loop_stereo_default_initial_12.wav",
+    basesh .. "ak74_loop_stereo_default_initial_13.wav",
+    basesh .. "ak74_loop_stereo_default_initial_14.wav",
+    basesh .. "ak74_loop_stereo_default_initial_15.wav",
+    basesh .. "ak74_loop_stereo_default_initial_16.wav",
+    basesh .. "ak74_loop_stereo_default_initial_18.wav",
+
 
 }
 
@@ -455,6 +467,19 @@ local mechtable = {
     "saa/ak2022/sandstorm/rpk/RPK_mech_loop_09.wav",
 }
 
+newmech = {
+    "shared/base/bf4/hifi/20/HiFi_Loops_Wave 0 22 0.ogg",
+    "shared/base/bf4/hifi/20/HiFi_Loops_Wave 0 22 1.ogg",
+    "shared/base/bf4/hifi/20/HiFi_Loops_Wave 0 22 2.ogg",
+    "shared/base/bf4/hifi/20/HiFi_Loops_Wave 0 22 3.ogg",
+    "shared/base/bf4/hifi/20/HiFi_Loops_Wave 0 22 4.ogg",
+    "shared/base/bf4/hifi/20/HiFi_Loops_Wave 0 22 5.ogg",
+    "shared/base/bf4/hifi/20/HiFi_Loops_Wave 0 22 6.ogg",
+    "shared/base/bf4/hifi/20/HiFi_Loops_Wave 0 22 7.ogg",
+    "shared/base/bf4/hifi/20/HiFi_Loops_Wave 0 22 8.ogg",
+    "shared/base/bf4/hifi/20/HiFi_Loops_Wave 0 22 9.ogg",
+}
+
 SWEP.Animations = {
     ["draw"] = {
         Source = "ACT_VM_DRAW",
@@ -509,10 +534,7 @@ SWEP.Animations = {
         Source = "ACT_VM_PRIMARYATTACK",
         ShellEjectAt = 0.01,
         EventTable = {
-            {s = mechtable,    t = 0, v= 0.8, p = 100*(650/600), c = cl },
-            {s = akv .. "ak74_boltback.wav",    t = 0, v= 0.15, p = 100, c = cl },
-            {s = akv .. "aks_boltback.wav",    t = 0, v= 0.05, p = 100, c = ci },
-
+            {s = newmech,    t = 0, v= 0.8, p = 100, c = cl },
            {
             FOV = -4,
             FOV_Start = 0.05,
@@ -597,9 +619,7 @@ SWEP.Animations = {
         Source = "ACT_VM_ISHOOT",
         ShellEjectAt = 0.01,
         EventTable = {
-            {s = mechtable,    t = 0, v= 0.8, p = 100*(650/600), c = cl },
-            {s = akv .. "ak74_boltback.wav",    t = 0, v= 0.15, p = 100, c = cl },
-            {s = akv .. "aks_boltback.wav",    t = 0, v= 0.05, p = 100, c = ci },
+            {s = newmech,    t = 0, v= 0.8, p = 100, c = cl },
 
            {
             FOV = -4,

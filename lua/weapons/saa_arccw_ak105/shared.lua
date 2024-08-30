@@ -312,38 +312,51 @@ local akv2 = "saa/akmv3/"
 
 local ak74 = "saa/ak74/"
 local ak7v = "saa/ak74v/"
+local basesh = "shared/base/ak74m/"
+
 
 SWEP.ShootSound = {
-    akv .. "rpd_fire_initial_1p_01.wav",
-    akv .. "rpd_fire_initial_1p_02.wav",
-    akv .. "rpd_fire_initial_1p_03.wav",
-    akv .. "rpd_fire_initial_1p_04.wav",
-    akv .. "rpd_fire_initial_1p_05.wav",
-    akv .. "rpd_fire_initial_1p_06.wav",
-    akv .. "rpd_fire_initial_1p_07.wav",
-    akv .. "rpd_fire_initial_1p_08.wav",
-    akv .. "rpd_fire_initial_1p_09.wav",
-    akv .. "rpd_fire_initial_1p_10.wav",
-    akv .. "rpd_fire_initial_1p_11.wav",
-    akv .. "rpd_fire_initial_1p_12.wav",
-
+    basesh .. "ak74_loop_stereo_default_initial_01.wav",
+    basesh .. "ak74_loop_stereo_default_initial_02.wav",
+    basesh .. "ak74_loop_stereo_default_initial_03.wav",
+    basesh .. "ak74_loop_stereo_default_initial_04.wav",
+    basesh .. "ak74_loop_stereo_default_initial_05.wav",
+    basesh .. "ak74_loop_stereo_default_initial_06.wav",
+    basesh .. "ak74_loop_stereo_default_initial_07.wav",
+    basesh .. "ak74_loop_stereo_default_initial_08.wav",
+    basesh .. "ak74_loop_stereo_default_initial_09.wav",
+    basesh .. "ak74_loop_stereo_default_initial_10.wav",
+    basesh .. "ak74_loop_stereo_default_initial_11.wav",
+    basesh .. "ak74_loop_stereo_default_initial_12.wav",
+    basesh .. "ak74_loop_stereo_default_initial_13.wav",
+    basesh .. "ak74_loop_stereo_default_initial_14.wav",
+    basesh .. "ak74_loop_stereo_default_initial_15.wav",
+    basesh .. "ak74_loop_stereo_default_initial_16.wav",
+    basesh .. "ak74_loop_stereo_default_initial_18.wav",
 
 }
 SWEP.ShootSoundIndoor = {
-    akv .. "rpd_fire_initial_1p_01.wav",
-    akv .. "rpd_fire_initial_1p_02.wav",
-    akv .. "rpd_fire_initial_1p_03.wav",
-    akv .. "rpd_fire_initial_1p_04.wav",
-    akv .. "rpd_fire_initial_1p_05.wav",
-    akv .. "rpd_fire_initial_1p_06.wav",
-    akv .. "rpd_fire_initial_1p_07.wav",
-    akv .. "rpd_fire_initial_1p_08.wav",
-    akv .. "rpd_fire_initial_1p_09.wav",
-    akv .. "rpd_fire_initial_1p_10.wav",
-    akv .. "rpd_fire_initial_1p_11.wav",
-    akv .. "rpd_fire_initial_1p_12.wav",
+    basesh .. "ak74_loop_stereo_default_initial_01.wav",
+    basesh .. "ak74_loop_stereo_default_initial_02.wav",
+    basesh .. "ak74_loop_stereo_default_initial_03.wav",
+    basesh .. "ak74_loop_stereo_default_initial_04.wav",
+    basesh .. "ak74_loop_stereo_default_initial_05.wav",
+    basesh .. "ak74_loop_stereo_default_initial_06.wav",
+    basesh .. "ak74_loop_stereo_default_initial_07.wav",
+    basesh .. "ak74_loop_stereo_default_initial_08.wav",
+    basesh .. "ak74_loop_stereo_default_initial_09.wav",
+    basesh .. "ak74_loop_stereo_default_initial_10.wav",
+    basesh .. "ak74_loop_stereo_default_initial_11.wav",
+    basesh .. "ak74_loop_stereo_default_initial_12.wav",
+    basesh .. "ak74_loop_stereo_default_initial_13.wav",
+    basesh .. "ak74_loop_stereo_default_initial_14.wav",
+    basesh .. "ak74_loop_stereo_default_initial_15.wav",
+    basesh .. "ak74_loop_stereo_default_initial_16.wav",
+    basesh .. "ak74_loop_stereo_default_initial_18.wav",
+
 
 }
+
 
 
 
