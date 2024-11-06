@@ -13,6 +13,9 @@ SWEP.ShellScale = 0.7
 --SWEP.ShellMaterial = "models/weapons/arcticcw/shell_556"
 SWEP.ShellPitch = 95
 
+SWEP.ShellCorrectPos = Vector(0, 0, 0)
+SWEP.ShellCorrectAng = Angle(-5, 20, 0)
+
 SWEP.MuzzleParticle_Hook = function (self)
     local attached = self:GetElements()
     if attached["aku"] then return "muzzleflash_m3"
@@ -86,6 +89,7 @@ SWEP.SecondarySupplyLimit = 3 -- Amount of reserve UBGL magazines you can take.
 SWEP.Recoil = 1.14
 SWEP.RecoilSide = 0.9
 SWEP.RecoilUp = 1.6
+SWEP.RecoilUpMultRecoil = 6.8
 
 SWEP.RecoilRandomUp = 0.6
 SWEP.RecoilRandomSide = 0.4
@@ -107,9 +111,10 @@ SWEP.ViewRecoilSideMult = 15 -- 1-20
 SWEP.UseVisualRecoil = true
 
 SWEP.VisualRecoilUp = 2.55 -- Vertical tilt for visual recoil.F
+SWEP.VisualRecoilUpMultFirstShot = 1.4 -- Vertical tilt for visual recoil.F
 SWEP.VisualRecoilSide = 1.3 -- Horizontal tilt for visual recoil.
-SWEP.VisualRecoilRoll = 1 -- Roll tilt for visual recoil.
-
+SWEP.VisualRecoilRoll = 70 -- Roll tilt for visual recoil.
+SWEP.VisualRecoilRollMultSights = 20/70
 SWEP.VisualRecoilCenter = Vector(2, 4, 2) -- The "axis" of visual recoil. Where your hand is.
 
 SWEP.VisualRecoilPunch = 1.5 -- How far back visual recoil moves the gun.
@@ -156,7 +161,7 @@ SWEP.SwayMultShooting = 1.2
 SWEP.FreeAimRadiusSights = 2
 SWEP.FreeAimRadius = 12 / 1.25 
 -- Firerate / Firemodes --
-SWEP.RPM = 680
+SWEP.RPM = 640
 SWEP.Num = 1
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayTime = 0.025 -- Time until weapon fires.
@@ -195,9 +200,9 @@ SWEP.Firemodes = {
     },
 }
 
-SWEP.ActivePos = Vector(0.3, 1.9, 1)
-SWEP.ActivePosMove = Vector(0, 1.9, 0.7)
-SWEP.ActiveAng = Angle(1, 0, 0)
+SWEP.ActivePos = Vector(1.2, 1.9, 1)
+SWEP.ActivePosMove = Vector(1.3, 1.9, 0.7)
+SWEP.ActiveAng = Angle(2, 0, 0)
 
 SWEP.BobSettingsMove =  {2, 2, 3,    2, -7, 2}
 SWEP.BobSettingsSpeed = {0.2, 1, 0.92,    1, 1.02, 0.9}
@@ -243,7 +248,7 @@ SWEP.HeatFix = true -- when the "overheat" animation is played, all heat is rest
 SWEP.Malfunction = true
 SWEP.MalfunctionJam = true -- After a malfunction happens, the gun will dryfire until reload is pressed. If unset, instead plays animation right after.
 SWEP.MalfunctionWait = 0.45 -- The amount of time to wait before playing malfunction animation (or can reload)
-SWEP.MalfunctionMeanShotsToFail = 460 -- The mean number of shots between malfunctions, will be autocalculated if nil
+SWEP.MalfunctionMeanShotsToFail = 750 -- The mean number of shots between malfunctions, will be autocalculated if nil
 
 SWEP.StandardPresets = { -- A table of standard presets, that would be in every player preset menu, undeletable. Just put preset codes in ""
     "[Default]XQAAAQCTAAAAAAAAAAA9iIIiM7tupQCpjtobRJEkdZ1fP0HArenLRSEhGoD+yaYlxaMZdpytFp/YfFbfFRMOzt4PwBid8L+UrgGtzkCREd2sNJQA"
@@ -294,6 +299,15 @@ SWEP.IronSights = {
     Magnification = 1,
 }
 
+SWEP.EnterSightsSound = {
+    "shared/foley/new/cloth/short_cry_01.wav",
+    "shared/foley/new/cloth/short_cry_02.wav",
+}
+SWEP.ExitSightsSound = {
+    "shared/foley/new/cloth/short_movement_02.wav",
+    "shared/foley/new/cloth/raise_weapon_01.wav",
+}
+
 
 
 SWEP.CrouchPos = Vector(0, 0, 0)
@@ -325,49 +339,29 @@ local ak74 = "saa/ak74/"
 local ak7v = "saa/ak74v/"
 local ak12 = "saa/ak12/"
 
-SWEP.ShootSound = {
-    ak12 .. "ak12_close_loop.wav",
-    ak12 .. "ak12_close_loop-2.wav",
-    ak12 .. "ak12_close_loop-3.wav",
-    ak12 .. "ak12_close_loop-4.wav",
-    ak12 .. "ak12_close_loop-5.wav",
-    ak12 .. "ak12_close_loop-6.wav",
-    ak12 .. "ak12_close_loop-7.wav",
-    ak12 .. "ak12_close_loop-8.wav",
-    ak12 .. "ak12_close_loop-9.wav",
-    ak12 .. "ak12_close_loop-10.wav",
-    ak12 .. "ak12_close_loop-11.wav",
-    ak12 .. "ak12_close_loop-12.wav",
-    ak12 .. "ak12_close_loop-13.wav",
-    ak12 .. "ak12_close_loop-14.wav",
-    ak12 .. "ak12_close_loop-15.wav",
-    ak12 .. "ak12_close_loop-16.wav",
-
-
+local akalash = { 
+    "shared/base/akalash/AK101_fire_initial_1p_01.wav",
+    "shared/base/akalash/AK101_fire_initial_1p_02.wav",
+    "shared/base/akalash/AK101_fire_initial_1p_03.wav",
+    "shared/base/akalash/AK101_fire_initial_1p_04.wav",
+    "shared/base/akalash/AK101_fire_initial_1p_05.wav",
+    "shared/base/akalash/AK101_fire_initial_1p_06.wav",
+    "shared/base/akalash/AK101_fire_initial_1p_07.wav",
+    "shared/base/akalash/AK101_fire_initial_1p_08.wav",
+    "shared/base/akalash/AK101_fire_initial_1p_09.wav",
+    "shared/base/akalash/AK101_fire_initial_1p_10.wav",
 }
-SWEP.ShootSoundIndoor = {
-    ak12 .. "ak12_close_loop.wav",
-    ak12 .. "ak12_close_loop-2.wav",
-    ak12 .. "ak12_close_loop-3.wav",
-    ak12 .. "ak12_close_loop-4.wav",
-    ak12 .. "ak12_close_loop-5.wav",
-    ak12 .. "ak12_close_loop-6.wav",
-    ak12 .. "ak12_close_loop-7.wav",
-    ak12 .. "ak12_close_loop-8.wav",
-    ak12 .. "ak12_close_loop-9.wav",
-    ak12 .. "ak12_close_loop-10.wav",
-    ak12 .. "ak12_close_loop-11.wav",
-    ak12 .. "ak12_close_loop-12.wav",
-    ak12 .. "ak12_close_loop-13.wav",
-    ak12 .. "ak12_close_loop-14.wav",
-    ak12 .. "ak12_close_loop-15.wav",
-    ak12 .. "ak12_close_loop-16.wav",
+SWEP.ShootSound = akalash
+SWEP.ShootSoundIndoor = akalash
 
+
+
+SWEP.LayerSound = {
+    "shared/base/akalash/AK101_fire_initial_1p_tail_01.wav",
+    "shared/base/akalash/AK101_fire_initial_1p_tail_02.wav",
+    "shared/base/akalash/AK101_fire_initial_1p_tail_03.wav",
+    "shared/base/akalash/AK101_fire_initial_1p_tail_04.wav",
 }
-
-
-
-SWEP.LayerSound = ak12 .. "ak12_tail_02.wav"
 local lsind = "shared/base/universal/sandstorm_reverb/fromrpg7/low/tail_indoors_small_close_0"
 SWEP.LayerSoundIndoor = {
     ak12 .. "ak102_indoor_distant_loop.wav",

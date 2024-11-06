@@ -83,7 +83,7 @@ SWEP.SecondarySupplyLimit = 3 -- Amount of reserve UBGL magazines you can take.
 SWEP.Recoil = 1
 SWEP.RecoilSide = 1.4
 SWEP.RecoilUp = 2
-SWEP.RecoilUpMultRecoil = 3
+SWEP.RecoilUpMultRecoil = 5
 
 SWEP.RecoilRandomUp = 0.6
 SWEP.RecoilRandomSide = 0.4
@@ -304,52 +304,51 @@ local ak7v = "saa/ak74v/"
 local basesh = "shared/base/ak12/"
 
 SWEP.ShootSound = {
-    basesh .. "akm_loop_stereo_default_initial_01.wav",
-    basesh .. "akm_loop_stereo_default_initial_02.wav",
-    basesh .. "akm_loop_stereo_default_initial_03.wav",
-    basesh .. "akm_loop_stereo_default_initial_04.wav",
-    basesh .. "akm_loop_stereo_default_initial_05.wav",
-    basesh .. "akm_loop_stereo_default_initial_06.wav",
-    basesh .. "akm_loop_stereo_default_initial_07.wav",
-    basesh .. "akm_loop_stereo_default_initial_08.wav",
-    basesh .. "akm_loop_stereo_default_initial_09.wav",
-    basesh .. "akm_loop_stereo_default_initial_10.wav",
-    basesh .. "akm_loop_stereo_default_initial_11.wav",
-    basesh .. "akm_loop_stereo_default_initial_12.wav",
-    basesh .. "akm_loop_stereo_default_initial_13.wav",
-    basesh .. "akm_loop_stereo_default_initial_14.wav",
-    basesh .. "akm_loop_stereo_default_initial_15.wav",
-    basesh .. "akm_loop_stereo_default_initial_16.wav",
-    basesh .. "akm_loop_stereo_default_initial_17.wav",
+    "shared/base/akm/segmented_akm/akm_loop_stereo_default_initial_01.wav",
+    "shared/base/akm/segmented_akm/akm_loop_stereo_default_initial_02.wav",
+    "shared/base/akm/segmented_akm/akm_loop_stereo_default_initial_03.wav",
+    "shared/base/akm/segmented_akm/akm_loop_stereo_default_initial_04.wav",
+    "shared/base/akm/segmented_akm/akm_loop_stereo_default_initial_05.wav",
+    "shared/base/akm/segmented_akm/akm_loop_stereo_default_initial_06.wav",
+    "shared/base/akm/segmented_akm/akm_loop_stereo_default_initial_07.wav",
+    "shared/base/akm/segmented_akm/akm_loop_stereo_default_initial_08.wav",
+    "shared/base/akm/segmented_akm/akm_loop_stereo_default_initial_09.wav",
+    "shared/base/akm/segmented_akm/akm_loop_stereo_default_initial_10.wav",
+    "shared/base/akm/segmented_akm/akm_loop_stereo_default_initial_11.wav",
+    "shared/base/akm/segmented_akm/akm_loop_stereo_default_initial_12.wav",
+    "shared/base/akm/segmented_akm/akm_loop_stereo_default_initial_13.wav",
+    "shared/base/akm/segmented_akm/akm_loop_stereo_default_initial_14.wav",
+    "shared/base/akm/segmented_akm/akm_loop_stereo_default_initial_15.wav",
+    "shared/base/akm/segmented_akm/akm_loop_stereo_default_initial_16.wav",
+    "shared/base/akm/segmented_akm/akm_loop_stereo_default_initial_17.wav",
 }
 SWEP.ShootSoundIndoor = {
-    basesh .. "akm_loop_stereo_default_initial_01.wav",
-    basesh .. "akm_loop_stereo_default_initial_02.wav",
-    basesh .. "akm_loop_stereo_default_initial_03.wav",
-    basesh .. "akm_loop_stereo_default_initial_04.wav",
-    basesh .. "akm_loop_stereo_default_initial_05.wav",
-    basesh .. "akm_loop_stereo_default_initial_06.wav",
-    basesh .. "akm_loop_stereo_default_initial_07.wav",
-    basesh .. "akm_loop_stereo_default_initial_08.wav",
-    basesh .. "akm_loop_stereo_default_initial_09.wav",
-    basesh .. "akm_loop_stereo_default_initial_10.wav",
-    basesh .. "akm_loop_stereo_default_initial_11.wav",
-    basesh .. "akm_loop_stereo_default_initial_12.wav",
-    basesh .. "akm_loop_stereo_default_initial_13.wav",
-    basesh .. "akm_loop_stereo_default_initial_14.wav",
-    basesh .. "akm_loop_stereo_default_initial_15.wav",
-    basesh .. "akm_loop_stereo_default_initial_16.wav",
-    basesh .. "akm_loop_stereo_default_initial_17.wav",
-
+    "shared/base/akm/segmented_akm/akm_loop_stereo_default_initial_01.wav",
+    "shared/base/akm/segmented_akm/akm_loop_stereo_default_initial_02.wav",
+    "shared/base/akm/segmented_akm/akm_loop_stereo_default_initial_03.wav",
+    "shared/base/akm/segmented_akm/akm_loop_stereo_default_initial_04.wav",
+    "shared/base/akm/segmented_akm/akm_loop_stereo_default_initial_05.wav",
+    "shared/base/akm/segmented_akm/akm_loop_stereo_default_initial_06.wav",
+    "shared/base/akm/segmented_akm/akm_loop_stereo_default_initial_07.wav",
+    "shared/base/akm/segmented_akm/akm_loop_stereo_default_initial_08.wav",
+    "shared/base/akm/segmented_akm/akm_loop_stereo_default_initial_09.wav",
+    "shared/base/akm/segmented_akm/akm_loop_stereo_default_initial_10.wav",
+    "shared/base/akm/segmented_akm/akm_loop_stereo_default_initial_11.wav",
+    "shared/base/akm/segmented_akm/akm_loop_stereo_default_initial_12.wav",
+    "shared/base/akm/segmented_akm/akm_loop_stereo_default_initial_13.wav",
+    "shared/base/akm/segmented_akm/akm_loop_stereo_default_initial_14.wav",
+    "shared/base/akm/segmented_akm/akm_loop_stereo_default_initial_15.wav",
+    "shared/base/akm/segmented_akm/akm_loop_stereo_default_initial_16.wav",
+    "shared/base/akm/segmented_akm/akm_loop_stereo_default_initial_17.wav",
 }
 
 
 
 SWEP.LayerSound = {
-   ak7v .. "ak74_loop_stereo_default_initial_tail_01.wav",
-    ak7v .. "ak74_loop_stereo_default_initial_tail_02.wav",
-    ak7v .. "ak74_loop_stereo_default_initial_tail_03.wav",
-    ak7v .. "ak74_loop_stereo_default_initial_tail_04.wav",
+   "shared/base/akm/segmented_akm/akm_loop_stereo_default_initial_tail_01.wav",
+   "shared/base/akm/segmented_akm/akm_loop_stereo_default_initial_tail_02.wav",
+   "shared/base/akm/segmented_akm/akm_loop_stereo_default_initial_tail_03.wav",
+   "shared/base/akm/segmented_akm/akm_loop_stereo_default_initial_tail_04.wav",
 }
 local lsind = "shared/base/universal/sandstorm_reverb/fromrpg7/low/tail_indoors_small_close_0"
 SWEP.LayerSoundIndoor = { 
