@@ -96,7 +96,7 @@ SWEP.SecondarySupplyLimit = 3 -- Amount of reserve UBGL magazines you can take.
 
 SWEP.Bipod = true -- This weapon comes with a bipod.
 SWEP.RecoilMultBipod = 0.105
-SWEP.SwayMultBipod = 0.075
+SWEP.SwayMultBipod = 0.035
 SWEP.FreeAimRadiusMultBipod = 0
 
 -- Recoil --
@@ -185,7 +185,7 @@ SWEP.CustomizeSnapshotFOV = 54
 SWEP.SwayMultMidAir = 2
 SWEP.SwayMultMove = 1.5
 SWEP.SwayMultCrouch = 0.66
-SWEP.SwayMultShooting = 1
+SWEP.SwayMultShooting = 5
 SWEP.FreeAimRadiusSights = 0
 SWEP.FreeAimRadius = 12 / 1.25 
 -- Firerate / Firemodes --
@@ -278,7 +278,7 @@ SWEP.PostBashTime = 0.5
 
 SWEP.SpeedMult = 0.68
 SWEP.SpeedMultSights = 0.4
-SWEP.SpeedMultReload = 0.1
+SWEP.SpeedMultReload = 0.7
 SWEP.SightTime = 0.75
 SWEP.SpeedMultShooting = 0.2
 SWEP.AimDownSightsTime = 0.53 -- How long it takes to go from hip fire to aiming down sights.
