@@ -3,20 +3,22 @@
 	"$basetexture"				"saa\weapons\arccw\AKS\AK74\textures\ssak74\t_1p_aks74u_d"
 	"$bumpmap"					"saa\weapons\arccw\AKS\AK74\textures\ssak74\t_1p_aks74u_n"
 	"$phongexponenttexture"		"saa\weapons\arccw\AKS\AK74\textures\ssak74\t_1p_aks74u_e"
-	"$phongwarptexture"			"models\weapons\saa\shared\lightwarps\phongwarp_metal"
+	"$phongwarptexture"			"models\weapons\saa\shared\lightwarps\phongwarp_metal_highres"
+	"$color2"					"[0.35 0.35 0.35]"
 
-	"$envmap"					"models\weapons\envmaps\fo4_dith"
-	"$envmaptint"				"[ .13 .13 .13 ]"
 
 	"$phong"					"1"
-	"$phongboost"				"30"
-	"$phongfresnelranges"		"[0.32 0.72 0.99]"
+	"$phongboost"				"5"
+	"$phongfresnelranges"		"[0 0 1]"
 	"$phongalbedotint" 			"1"
+	"$phongalbedoboost"			"15"
 
 	"$rimlight"					"1"
 	"$rimlightexponent"			"33"
-	"$rimlightboost"			"20"
+	"$rimlightboost"			"4"
 	"$rimmask"					"1"
+	"$envmap"					"models\weapons\envmaps\fo4_dith"
+	"$envmaptint"				"[ .13 .13 .13 ]"	
 	"$envmapcoefficient"	"0.09" // Lighting will be multiplied by this value
 Proxies
 {

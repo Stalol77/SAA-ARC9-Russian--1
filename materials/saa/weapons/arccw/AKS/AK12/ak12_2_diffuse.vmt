@@ -5,18 +5,19 @@
      "$phongexponenttexture" "saa\weapons\arccw\AKS\AK12\ak12_2_exp.vtf"
 
 	$phong  				"1"
-	$phongboost			"2"
-	$phongalbedoboost	"50"
+	$phongboost			"1"
+	$phongalbedoboost	"95"
 	$phongfresnelranges		"[0.5 0.8 1]"
 	$phongalbedotint 			"1"	
+	"$normalmapalphaenvmapmask"	"1"
 
 	$rimlight				"1"
-	$rimlightboost			"0.0"
+	$rimlightboost			"0.3"
 	$rimlightexponent			"235"
 	$rimmask				"1"
 
 	"$envmap"					"models\weapons\envmaps\fo4_dith"
-	"$envmapfresnel"			".5"
+	"$envmapfresnel"			"1"
 	"$envmaptint"				".3"
 	"$envmapcoefficient"		"0.1" // Lighting will be multiplied by this value
 Proxies

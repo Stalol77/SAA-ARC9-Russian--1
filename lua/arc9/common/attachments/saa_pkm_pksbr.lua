@@ -6,7 +6,8 @@ ATT.Icon = Material("hud/arc9_saa/rus/ao/pks_br.png", "mips smooth")
 
 ATT.SortOrder = 0
 ATT.Category = "saa_pkm_barrel"
-ATT.RPMMult = 610/632
+ATT.RPMMult = 600/720
+ATT.VisualRecoilDampingConstMult = 30/50
 ATT.RangeMaxMult = (185/150)
 ATT.SwayMult = 1.3
 ATT.PhysBulletMuzzleVelocityMult = 853/825

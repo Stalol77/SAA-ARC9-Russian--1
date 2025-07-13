@@ -3,21 +3,17 @@
 	"$basetexture"				"saa\weapons\arccw\pkm\sandstorm\T_1P_PKM_d"
 	"$bumpmap"					"saa\weapons\arccw\pkm\sandstorm\T_1P_PKM_n"
 	"$phongexponenttexture"		"saa\weapons\arccw\pkm\sandstorm\T_1P_PKM_e"
-	"$phongwarptexture"			"models\weapons\saa\shared\lightwarps\phongwarp_metal"
+	"$phongwarptexture"			"models\weapons\saa\shared\lightwarps\phongwarp_gold"
 	"$color2"					"[0.2 0.2 0.2]"
-
-	$detail						"detail\metal_detail_01"
-	$detailscale				32
-	$detailblendfactor			1
-	$detailblendmode			0
 
 	"$envmap"					"models\weapons\envmaps\hdri_parking_brass"
 	"$envmapfresnel"			"0.25"
 	"$envmaptint"				"[ .01 .01 .01 ]"
-	"$envmapcoefficient"		"0.6"
+	"$envmapcoefficient"		"0.73"
 
 	"$phong"					"1"
-	"$phongboost"				"40"
+	"$phongboost"				"1"
+	"$phongalbedoboost"			"5"
 	"$phongfresnelranges"		"[0.32 0.72 0.99]"
 	"$phongalbedotint"			"1"
 

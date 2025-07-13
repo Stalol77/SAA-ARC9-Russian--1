@@ -3,8 +3,8 @@
 	"$basetexture"				"saa\weapons\arccw\AKS\AK74\textures\ak74m\ak74m_d"
 	"$bumpmap"					"saa\weapons\arccw\AKS\AK74\textures\ak74m\ak74m_n"
 	"$phongexponenttexture"		"saa\weapons\arccw\AKS\AK74\textures\ak74m\ak74m_e"
-	"$phongwarptexture"			"models\weapons\saa\shared\lightwarps\phongwarp_metal"
-	"$color2"					"[1 1 1]"
+	"$phongwarptexture"			"models\weapons\saa\shared\lightwarps\phongwarp_metal_highres"
+	"$color2"					"[0.5 0.5 0.5]"
 
 	"$envmap"					"models\weapons\envmaps\fo4_dith"
 	"$envmaptint"				"[ .13 .13 .13 ]"
@@ -18,6 +18,8 @@
 	"$rimlightexponent"			"33"
 	"$rimlightboost"			"0.5"
 	"$rimmask"					"1"
+
+	"$phongDisableHalfLambert"	"1"
 
 	"$nocull"					"1"
 	"$envmapcoefficient"	"0.15" // Lighting will be multiplied by this value

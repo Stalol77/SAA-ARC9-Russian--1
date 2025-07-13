@@ -11,17 +11,17 @@
 	"$envmapfresnel"			".5"
 	"$envmapcoefficient"		".5"
 
-	"$phong"					"1"
-	"$phongboost"				"15"
-	"$phongfresnelranges"		"[0.32 0.72 0.99]"
-	"$phongalbedotint" 			"1"
-
 	"$rimlight"					"1"
 	"$rimlightexponent"			"33"
 	"$rimlightboost"			"1"
 	"$rimmask"					"1"
 
 	"$nocull"					"1"
+
+	"$phong"					"1"
+	"$phongboost"				"15"
+	"$phongfresnelranges"		"[1.6 1.5 3]"
+	"$phongalbedotint" 			"1"
 
 Proxies
 {

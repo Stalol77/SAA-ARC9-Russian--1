@@ -10,7 +10,7 @@ SWEP.UseHands = true
 
 SWEP.MuzzleParticle = "muzzleflash_ak74" -- Used for some muzzle effects.
 SWEP.ShellModel = "models/weapons/rifleshell.mdl"
-SWEP.ShellScale = 0.7
+SWEP.ShellScale = 0.57
 --SWEP.ShellMaterial = "models/weapons/arcticcw/shell_556"
 SWEP.ShellPitch = 95
 
@@ -136,7 +136,7 @@ SWEP.VisualRecoilPositionBump = 1.5
 
 SWEP.VisualRecoilHipFire = 1
 
-SWEP.VisualRecoilDampingConst = 10 -- How spring will be visual recoil, 120 is default
+SWEP.VisualRecoilDampingConst = 17 -- How spring will be visual recoil, 120 is default
 SWEP.VisualRecoilSpringMagnitude = 1
 
 
@@ -153,7 +153,7 @@ SWEP.SwayMultShooting = 1.2
 SWEP.FreeAimRadiusSights = 2
 SWEP.FreeAimRadius = 12 / 1.25 
 -- Firerate / Firemodes --
-SWEP.RPM = 680
+SWEP.RPM = 650
 SWEP.Num = 1
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayTime = 0.025 -- Time until weapon fires.
@@ -197,7 +197,7 @@ SWEP.ViewModelFOVBase = 69 -- Set to override viewmodel FOV
 
 SWEP.ShootPitch = 100
 SWEP.ShootVolume = 120
-SWEP.ShootPitchVariation = 7
+SWEP.ShootPitchVariation = 10
 
 SWEP.ProceduralRegularFire = false
 SWEP.ProceduralIronFire = false
@@ -276,7 +276,7 @@ SWEP.HoldTypeCustomize = "slam"
 SWEP.HoldTypeBlindfire = "pistol"
 
 SWEP.IronSights = {
-    Pos = Vector(-2.45*1.1, -3*1.1, 1.5*1.1),
+    Pos = Vector(-2.45*1.1, -1.5*1.1, 1.5*1.1),
     Ang = Angle(0.0, 0.2,0),
     Midpoint = { -- Where the gun should be at the middle of it's irons
         Pos = Vector(0, 15, -4),
@@ -325,63 +325,52 @@ local basesh = "shared/base/ak74m/"
 
 
 SWEP.ShootSound = {
-    basesh .. "ak74_loop_stereo_default_initial_01.wav",
-    basesh .. "ak74_loop_stereo_default_initial_02.wav",
-    basesh .. "ak74_loop_stereo_default_initial_03.wav",
-    basesh .. "ak74_loop_stereo_default_initial_04.wav",
-    basesh .. "ak74_loop_stereo_default_initial_05.wav",
-    basesh .. "ak74_loop_stereo_default_initial_06.wav",
-    basesh .. "ak74_loop_stereo_default_initial_07.wav",
-    basesh .. "ak74_loop_stereo_default_initial_08.wav",
-    basesh .. "ak74_loop_stereo_default_initial_09.wav",
-    basesh .. "ak74_loop_stereo_default_initial_10.wav",
-    basesh .. "ak74_loop_stereo_default_initial_11.wav",
-    basesh .. "ak74_loop_stereo_default_initial_12.wav",
-    basesh .. "ak74_loop_stereo_default_initial_13.wav",
-    basesh .. "ak74_loop_stereo_default_initial_14.wav",
-    basesh .. "ak74_loop_stereo_default_initial_15.wav",
-    basesh .. "ak74_loop_stereo_default_initial_16.wav",
-    basesh .. "ak74_loop_stereo_default_initial_18.wav",
-
+    "saa/74_2507/74_fp-01.wav",
+    "saa/74_2507/74_fp-07.wav",
+    "saa/74_2507/74_fp-10.wav",
+    "saa/74_2507/74_fp-09.wav",
+    "saa/74_2507/74_fp-05.wav",
+    "saa/74_2507/74_fp-06.wav",
 }
 SWEP.ShootSoundIndoor = {
-    basesh .. "ak74_loop_stereo_default_initial_01.wav",
-    basesh .. "ak74_loop_stereo_default_initial_02.wav",
-    basesh .. "ak74_loop_stereo_default_initial_03.wav",
-    basesh .. "ak74_loop_stereo_default_initial_04.wav",
-    basesh .. "ak74_loop_stereo_default_initial_05.wav",
-    basesh .. "ak74_loop_stereo_default_initial_06.wav",
-    basesh .. "ak74_loop_stereo_default_initial_07.wav",
-    basesh .. "ak74_loop_stereo_default_initial_08.wav",
-    basesh .. "ak74_loop_stereo_default_initial_09.wav",
-    basesh .. "ak74_loop_stereo_default_initial_10.wav",
-    basesh .. "ak74_loop_stereo_default_initial_11.wav",
-    basesh .. "ak74_loop_stereo_default_initial_12.wav",
-    basesh .. "ak74_loop_stereo_default_initial_13.wav",
-    basesh .. "ak74_loop_stereo_default_initial_14.wav",
-    basesh .. "ak74_loop_stereo_default_initial_15.wav",
-    basesh .. "ak74_loop_stereo_default_initial_16.wav",
-    basesh .. "ak74_loop_stereo_default_initial_18.wav",
-
-
+    "saa/74_2507/74_fp-01.wav",
+    "saa/74_2507/74_fp-02.wav",
+    "saa/74_2507/74_fp-03.wav",
+    "saa/74_2507/74_fp-04.wav",
+    "saa/74_2507/74_fp-05.wav",
+    "saa/74_2507/74_fp-06.wav",
 }
-
 
 
 SWEP.LayerSound = {
-    akv .. "rpd_fire_initial_1p_tail_01.wav",
-    akv .. "rpd_fire_initial_1p_tail_02.wav",
-    akv .. "rpd_fire_initial_1p_tail_03.wav",
-    akv .. "rpd_fire_initial_1p_tail_04.wav",
+    "saa/74_2507/74_tb-01.wav",
+    "saa/74_2507/74_tb-02.wav",
+    "saa/74_2507/74_tb-03.wav",
+    "saa/74_2507/74_tb-04.wav",
 }
+
+
+
+--{
+--    akv .. "rpd_fire_initial_1p_tail_01.wav",
+--    akv .. "rpd_fire_initial_1p_tail_02.wav",
+--    akv .. "rpd_fire_initial_1p_tail_03.wav",
+--    akv .. "rpd_fire_initial_1p_tail_04.wav",
+--}
 local lsind = "shared/base/universal/sandstorm_reverb/fromrpg7/low/tail_indoors_small_close_0"
-SWEP.LayerSoundIndoor = { 
-    lsind .. "1.wav", 
-    lsind .. "2.wav", 
-    lsind .. "3.wav", 
-    lsind .. "4.wav",
-    lsind .. "5.wav",  
+SWEP.LayerSoundIndoor = {
+        "saa/74_2507/ak74_rev1-01.wav",
+        "saa/74_2507/ak74_rev1-02.wav",
+        "saa/74_2507/ak74_rev1-03.wav",
+        "saa/74_2507/ak74_rev1-04.wav",
 }
+--{ 
+--    lsind .. "1.wav", 
+--    lsind .. "2.wav", 
+--    lsind .. "3.wav", 
+--    lsind .. "4.wav",
+--    lsind .. "5.wav",  
+--}
 
 SWEP.ShootSoundSilenced = {
     ak74 .. "aksu_distant_loop.wav",
@@ -481,6 +470,13 @@ newmech = {
     "shared/base/bf4/hifi/20/HiFi_Loops_Wave 0 22 9.ogg",
 }
 
+local lfe = {
+    "shared/base/universal/bass/bass_loop_ar_01.wav",
+    "shared/base/universal/bass/bass_loop_ar_02.wav",
+    "shared/base/universal/bass/bass_loop_ar_03.wav",
+    "shared/base/universal/bass/bass_loop_ar_04.wav",
+}
+
 SWEP.Animations = {
     ["draw"] = {
         Source = "ACT_VM_DRAW",
@@ -534,16 +530,10 @@ SWEP.Animations = {
     ["fire"] = {
         Source = "ACT_VM_PRIMARYATTACK",
         ShellEjectAt = 0.01,
+        Mult = 60/65,
         EventTable = {
-            {s = newmech,    t = 0, v= 0.8, p = 100, c = cl },
-           {
-            FOV = -4,
-            FOV_Start = 0.05,
-            FOV_End = 0.8,
-            FOV_FuncStart = ARC9.Ease.OutCirc,
-            FOV_FuncEnd = ARC9.Ease.InCirc,
-            t = 0.0,
-            },
+            {s = newmech,    t = 0, v= 1.0, p = 100, c = cl },
+            {s = lfe,    t = 0, v= 1.0, p = 200, },
         },
     },
     ["ready"] = {
@@ -620,16 +610,8 @@ SWEP.Animations = {
         Source = "ACT_VM_ISHOOT",
         ShellEjectAt = 0.01,
         EventTable = {
-            {s = newmech,    t = 0, v= 0.8, p = 100, c = cl },
-
-           {
-            FOV = -4,
-            FOV_Start = 0.05,
-            FOV_End = 0.8,
-            FOV_FuncStart = ARC9.Ease.OutCirc,
-            FOV_FuncEnd = ARC9.Ease.InCirc,
-            t = 0.0,
-            },
+            {s = newmech,    t = 0, v= 1.0, p = 100, c = cl },
+            {s = lfe,    t = 0, v= 1.0, p = 200, },
         },
     },
     ["fire_iron_bipod"] = {
@@ -1123,6 +1105,11 @@ SWEP.AttachmentElements = {
             {6, 8},
         },
     },
+    ["aksu_ar15stock"] = {
+        Bodygroups = {
+            {6, 10},
+        },
+    },
     ["s100_stock"] = {
         Bodygroups = {
             {6, 6},
@@ -1185,9 +1172,9 @@ SWEP.HookP_NameChange = function(self, name)
 name = "AK-74"
     local attached = self:GetElements()
     if attached["aks74m_stock"] and attached["akmn_dovetail"] then name = "AK-74M"
-    elseif attached["akmn_dovetail"] and attached["aks74_stock"] then name = "AKS-74N"
+    elseif attached["aks74_stock"] or attached["aksu_ar15stock"] and attached["akmn_dovetail"]  then name = "AKS-74N"
     elseif attached["akmn_dovetail"] then name = "AK-74N"
-    elseif attached["aks74_stock"] or attached["aks74m_stock"] then name = "AKS-74"
+    elseif attached["aks74_stock"] or attached["aks74m_stock"] or attached["aksu_ar15stock"] then name = "AKS-74"
     else name = "AK-74"
     end
 

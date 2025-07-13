@@ -85,6 +85,46 @@ ARC9.LoadAttachment(ATT, "saa_ak_ribbedcover")
 
 ATT = {}
 
+ATT.PrintName = "6P26 Sb.7 AKSU"
+ATT.CompactName = "6P26 Sb.7"
+ATT.Description = [[Dust cover produced for AKS-74U rifles. Features the classic ribbed design to enhance durability and a set of switchable Ironsight Diopters, pivoted to the attachment slot.]]
+ATT.Icon = Material("hud/arc9_saa/rus/ao/akm_dc.png", "mips smooth")
+
+ATT.Attachments = {
+    {
+        PrintName = "OPTIC",
+        Category = {"SAA_SCOPE_SMALL","SAA_SCOPE_MEDIUM"},
+        Pos = Vector(-0.2, 3.5, -1.5),
+        ExcludeElements = {"nodustcoveroptics"},
+        InstalledElements = {"nodovetailoptics", "norearsightoptics", "krinkdcrail"},
+        Ang = Angle(0, 270, 0),
+        Scale = 0.9,
+        ExtraSightDistance = 3,
+    },
+}
+
+ATT.SortOrder = 0
+ATT.Category = "saa_aks74u_dustcover"
+
+
+ATT.SprintToFireTimeMult = 35/33
+ATT.SpeedMultMult = 34.5/35
+ATT.AimDownSightsTimeMult = 0.35/(1/3)
+ATT.HeatDissipationMult = 0.975
+ATT.MalfunctionMeanShotsToFailMult = 450/300
+ATT.MalfunctionWaitMult = 1.9
+
+
+ATT.ActivateElements = {"dustcover_aksu"}
+
+ARC9.LoadAttachment(ATT, "saa_aksu_ribbedcover")
+
+-- end here
+
+-- start here
+
+ATT = {}
+
 ATT.PrintName = "6P20-01 AK"
 ATT.CompactName = "6P20-01"
 ATT.Description = [[Dust cover produced for AK74 rifles. Features the classic ribbed design to enhance durability and covers the internals fairly well boosting the weapon's reliability.]]
@@ -563,6 +603,57 @@ ARC9.LoadAttachment(ATT, "saa_ak_b11handguard")
 
 ATT = {}
 
+ATT.PrintName = "Zenitco B-11U Handguard"
+ATT.CompactName = "B-11U"
+ATT.Description = [[Handguard produced by private companies in Russia.
+Fitted with a sleek steel design, allows for a quicker heat dissipation and underbarrel attachments at the cost of a higher recoil.]]
+ATT.Icon = Material("hud/arc9_saa/rus/b11.png", "mips smooth")
+ATT.CustomPros = {
+    ["Can attach underbarrel foregrips"] = "",
+    ["Can attach right-side Tactical devices"] = "",
+}
+ATT.CustomCons = {
+    ["Does not support Underbarrel Weapons"] = "",
+}
+
+ATT.SortOrder = 1
+ATT.Category = "saa_aks74u_hg"
+ATT.RecoilMult = 1.03
+ATT.SpeedMultMult = 0.99
+ATT.SprintToFireTimeMult = 1.025
+ATT.HeatDissipationMult = 1.50
+ATT.SwayMult = 0.66/0.56
+
+ATT.ActivateElements = {"railed_guard", "exclude_gp25"}
+
+ATT.Attachments = {
+    {
+        PrintName = "Underbarrel",
+        Category = {"SAA_FOREGRIP"},
+        Pos = Vector(0, 0, 0.9),
+        Ang = Angle(0, 270, 180),
+        Icon_Offset = Vector(0, 0, 0),
+        Scale = 1
+    },
+    {
+        PrintName = "Right Tactical",
+        Category = {"saa_rail_tactical"},
+        Pos = Vector(1.05, 2., 0.35),
+        Ang = Angle(0, 270, 90),
+        Icon_Offset = Vector(0, 0, 0),
+        Scale = 0.8
+    },
+}
+
+
+ARC9.LoadAttachment(ATT, "saa_aksu_b11uhandguard")
+
+-- end here
+
+-- start here
+
+ATT = {}
+
 ATT.PrintName = "Magpul MOE Handguard"
 ATT.CompactName = "MGP"
 ATT.Description = [[Lightweight polymer handguard produced in the United States.
@@ -608,6 +699,31 @@ ATT.Category = "saa_ak_hg"
 ATT.ActivateElements = {"akmhg"}
 
 ARC9.LoadAttachment(ATT, "saa_ak_akmhg")
+
+-- end here
+
+-- start here
+
+ATT = {}
+
+ATT.PrintName = "AKS-74U Factory Handguard"
+ATT.CompactName = "AKS-74U"
+ATT.Description = [[Original Wooden Handguard produced for Russian AKS-74U series carbine rifles.]]
+ATT.Icon = Material("hud/arc9_saa/rus/ao/akmhandgua.png", "mips smooth")
+ATT.CustomPros = {
+    ["Sway"] = "-10%",
+}
+
+ATT.SortOrder = -010
+ATT.Category = "saa_aks74u_hg"
+--ATT.Sway = 0.98
+--ATT.RecoilMult = 1.065
+--ATT.RecoilKickMult = 1.39/1.2
+--ATT.SprintToFireTimeMult = 0.27/0.33
+
+ATT.ActivateElements = {"aks74uhg"}
+
+ARC9.LoadAttachment(ATT, "saa_ak_aks74uhg")
 
 -- end here
 
@@ -1096,8 +1212,8 @@ ARC9.LoadAttachment(ATT, "saa_ak_rpk_polystock")
 
 ATT = {}
 
-ATT.PrintName = "Helix AS-2 Stock"
-ATT.CompactName = "Helix"
+ATT.PrintName = "Rifle Dynamics Buffer Tube Stock + Magpul MOE SL"
+ATT.CompactName = "MOE SL"
 ATT.Description = [[Multi-stage tube stock with buffer adaptor for AKs. Dampens recoil and eases aim control with a relatively complex surface that renders aiming down sights and running more difficult]]
 ATT.Icon = Material("hud/arc9_saa/rus/Alpha_Stock.png", "mips smooth")
 
@@ -1119,6 +1235,37 @@ ATT.VisualRecoilMultSights = 0.75
 ATT.ActivateElements = {"alpha_stock"}
 
 ARC9.LoadAttachment(ATT, "saa_ak_alphastock")
+
+-- end here
+
+-- start here
+
+ATT = {}
+
+ATT.PrintName = "ATI AR-15 TactiLite AKS Buffer Adapter + Magpul MOE Carbine Stock"
+ATT.CompactName = "MOE Car"
+ATT.Description = [[Multi-stage tube stock with buffer adaptor for Sidefolder AK Rifles. Dampens recoil and eases aim control with a relatively complex surface that renders aiming down sights and running more difficult]]
+ATT.Icon = Material("hud/arc9_saa/rus/ao/aks15.png", "mips smooth")
+
+
+ATT.SortOrder = 1
+ATT.Category = {"saa_aks74_stock",}
+ATT.Sway = 0.91
+ATT.SpeedMultMult = 0.855/0.87
+ATT.RecoilMult = 1/1.41
+ATT.SprintToFireTimeMult = 0.4/0.33
+ATT.RecoilMultSights = 0.85
+
+ATT.AimDownSightsTimeMult = 0.42/0.33
+ATT.RecoilKickMult = 2
+ATT.RecoilKickMultSights = 1.2
+ATT.VisualRecoilUpMult = 0.87/3
+ATT.VisualRecoilSideMult = 0.95/3
+ATT.VisualRecoilMultSights = 0.75
+
+ATT.ActivateElements = {"aksu_ar15stock"}
+
+ARC9.LoadAttachment(ATT, "saa_ak_aksar15")
 
 -- end here
 
@@ -1224,14 +1371,20 @@ ATT.Icon = Material("hud/arc9_saa/rus/aks74.png", "mips smooth")
 
 
 ATT.SortOrder = 0
-ATT.Category = "saa_aks74_stock"
+ATT.Category = {"saa_aks74_stock",}
 
 ATT.SpeedMultMult = 0.855/0.86
 ATT.ReloadTimeMult = 1.015
 ATT.RecoilMult = 1/1.2
-ATT.RecoilMultSights = 0.8
+
+ATT.RecoilKickMult = 2
+ATT.RecoilKickMultSights = 1.4
+
+ATT.RecoilMultHipFire = 0.85
+ATT.RecoilMultSights = 0.75
 
 ATT.VisualRecoilUpMult = 2/3
+ATT.VisualRecoilUpMultSights = 0.55 
 ATT.VisualRecoilSideMult = 0.6/3
 ATT.VisualRecoilMultSights = 0.5
 
@@ -1411,6 +1564,50 @@ ARC9.LoadAttachment(ATT, "saa_ak_b19")
 
 ATT = {}
 
+ATT.PrintName = "Zenitco B-19H Gas Port"
+ATT.CompactName = "B-19H"
+ATT.Description = [[Gas port produced by private companies in Russia.
+Its sleek aluminum structure enhances the heat capacity and dissipation.
+Allows for tactical devices and short range optics to be installed.]]
+ATT.Icon = Material("hud/arc9_saa/rus/b19.png", "mips smooth")
+ATT.CustomPros = {
+    ["Optic-Tactical device rail"] = "",
+}
+ATT.CustomCons = {
+    ["Incompatible with other optic rails"] = "",
+}
+
+ATT.SortOrder = 1
+ATT.Category = "saa_aks74u_gp"
+ATT.Sway = 1.065
+ATT.SprintToFireTimeMult = 1.05
+ATT.RecoilMult = 0.985
+ATT.HeatCapacityMult = 1.225
+ATT.HeatDissipationMult = 1.15
+ATT.Cons = {"Using a Top Barrel attachment might render aiming", "down sights difficult. High-Profile Optics are ", "very recommended."}
+ATT.ActivateElements = {"b19h_gasport"}
+
+ATT.Attachments = {
+    {
+        PrintName = "Top Barrel",
+        Category = {"SAA_SCOPE_XS"},
+        InstalledElements = {"nodovetailoptics", "nodustcoveroptics"},
+        Pos = Vector(-0.225, -2, -0.7),
+        Ang = Angle(0, 270, 0),
+        Icon_Offset = Vector(0, 0, 0),
+        Scale = 0.9,
+        ExtraSightDistance = 4,
+    },
+}
+
+ARC9.LoadAttachment(ATT, "saa_aksu_b19h")
+
+-- end here
+
+-- start here
+
+ATT = {}
+
 ATT.PrintName = "Magpul MOE Gas Port"
 ATT.CompactName = "MGP"
 ATT.Description = [[Gas Port produced by private companies in the US.
@@ -1454,6 +1651,30 @@ ATT.HeatDissipationMult = 0.88
 ATT.ActivateElements = {"74n_gasport"}
 
 ARC9.LoadAttachment(ATT, "saa_ak_74ngp")
+
+-- end here
+
+-- start here
+
+ATT = {}
+
+ATT.PrintName = "AKS-74U Factory Gas Port"
+ATT.CompactName = "74U"
+ATT.Description = [[AKS-74U production Gas Port Cover, increases heat capacity at the cost of a slower dissipation.
+Enhances aim control when firing due to the slight weight on the off-hand rest position.]]
+ATT.Icon = Material("hud/arc9_saa/rus/ak74_gp.png", "mips smooth")
+
+
+ATT.SortOrder = 1
+ATT.Category = "saa_aks74u_gp"
+ATT.SpeedMultMult = 0.985
+ATT.HeatCapacityMult = 1.35
+ATT.VisualRecoilUpMult = 0.965
+ATT.HeatDissipationMult = 0.88
+
+ATT.ActivateElements = {"74u_gasport"}
+
+ARC9.LoadAttachment(ATT, "saa_ak_s74ugp")
 
 -- end here
 

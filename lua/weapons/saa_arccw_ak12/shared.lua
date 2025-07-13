@@ -191,7 +191,9 @@ SWEP.Firemodes = {
         Mode = 3,
         Mult_TriggerDelayTime = 2,
         RecoilMultFirstShot = 0.82/1.18,
-        RPM = 700
+        RPM = 700,
+        RunawayBurst = true,
+        PostBurstDelay = 0.075,
     },
     {
         Mode = 1,
@@ -496,6 +498,7 @@ SWEP.Animations = {
     ["fire"] = {
         Source = "ACT_VM_PRIMARYATTACK",
         ShellEjectAt = 0.01,
+        Mult = 600/680,
         EventTable = {
             {s = ak12.."other/ak12_mp.ogg",    t = 0, v= 0.7, p = {100, 170}, c = cl },
         },
@@ -573,6 +576,7 @@ SWEP.Animations = {
     ["fire_iron"] = {
         Source = "ACT_VM_ISHOOT",
         ShellEjectAt = 0.01,
+        Mult = 60/68,
         EventTable = {
             {s = ak12.."other/ak12_mp.ogg",    t = 0, v= 0.7, p = {100, 170}, c = cl },
         },

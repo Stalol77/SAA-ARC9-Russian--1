@@ -3,7 +3,7 @@
      	"$basetexture" "saa\weapons\arccw\AKS\AK12\ak12_1_diffuse.vtf"
      	"$bumpmap" "saa\weapons\arccw\AKS\AK12\ak12_1_bump.vtf"
      	"$phongexponenttexture" "saa\weapons\arccw\AKS\AK12\ak12_1_exp.vtf"
-	"$phongwarptexture"			"models\weapons\saa\Shared\lightwarps\phongwarp_metal"
+	"$phongwarptexture"			"models\weapons\saa\Shared\lightwarps\phongwarp_metal2"
 
 
     	"$normalmapalphaenvmapmask" "1"
@@ -15,9 +15,9 @@
 
 	
 	"$phong" 			"1"
-	"$phongboost" 			"3"
+	"$phongboost" 			"4"
 	"$phongalbedotint"		"1"
-	"$phongalbedoboost"		"100"
+	"$phongalbedoboost"		"70"
 	"$phongfresnelranges"		"[0 0.8 1.0]"
 	"$halflambert"			"1"
 	
@@ -27,9 +27,9 @@
 	"$rimmask"				"1"
 
 	"$envmap"					"models\weapons\envmaps\fo4_dith"
-	"$envmapfresnel"			".5"
+	"$envmapfresnel"			"0.6"
 	"$envmaptint"				".3"
-	"$envmapcoefficient"		"0.8" // Lighting will be multiplied by this value
+	"$envmapcoefficient"		"0.65" // Lighting will be multiplied by this value
 Proxies
 {
     SAA_CubemapTintMult

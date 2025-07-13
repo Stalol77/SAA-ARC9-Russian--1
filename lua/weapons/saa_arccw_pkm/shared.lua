@@ -8,14 +8,27 @@ SWEP.UseHands = true
 
 -- Muzzle and shell effects --
 
-SWEP.MuzzleParticle = "muzzleflash_famas" -- Used for some muzzle effects.
+SWEP.MuzzleParticle = "muzzleflash_minimi" -- Used for some muzzle effects.
 SWEP.ShellModel = "models/weapons/rifleshell.mdl"
-SWEP.ShellScale = 0.75
+SWEP.ShellScale = 0.5
 --SWEP.ShellMaterial = "models/weapons/arcticcw/shell_556"
-SWEP.ShellPitch = 89
-
+SWEP.ShellPitch = 84
+SWEP.ShellSounds = ARC9.RifleShellSoundsTable
 SWEP.BipodPos = Vector(0, 1, -2)
 SWEP.BipodAng = Angle(0, 0, 0)
+SWEP.ExtraShellModels = {
+        {
+            model = "models/props_phx/construct/metal_plate_curve360.mdl", 
+            mat = "mechanics/metal2", 
+            scale = 0.01, 
+            physbox = Vector(1, 1, 1), 
+            pitch = 140, 
+            sounds = ARC9.PistolShellSoundsTable,
+            index = 1,
+            angle = Angle(0, 0, 90)
+        }
+    }
+
 
 SWEP.ImpactEffect = nil
 
@@ -25,6 +38,7 @@ SWEP.CamQCA_Mult = -1
 
 SWEP.MuzzleEffectAttachment = 0
 SWEP.CaseEffectAttachment = 2
+SWEP.CaseEffectQCA = 2
 SWEP.TracerNum = 0
 SWEP.TracerEffect = nul
 SWEP.TracerColor = Color(0, 0, 0)
@@ -35,7 +49,9 @@ SWEP.TracerSize = 1
 SWEP.PrintName = "PKM"
 
 -- Trivia --
-SWEP.Description = [[This hunk of steel has accompanied squads for over 60 years. The PKM, or Kalashnikov's Modernised Machinegun, has proven to be one of the most viable, if not the most, in battlefields all around the globe, shredding light armored vehicles and materiel but also offering optimal suppressing fire.]]
+SWEP.Description = [[The PKM Medium Machine Gun, introduced by the Soviet Union in the 1960s, is a belt-fed, gas-operated, air-cooled weapon chambered in 7.62×54mmR. Designed by Mikhail Kalashnikov, it remains one of the most widely used general-purpose machine guns globally. Lightweight for its class (around 7.5 kg), the PKM offers impressive reliability in harsh environments, including deserts, jungles, and frozen terrains. Its modularity allows for variations like tripod or vehicle mounting, night optics, and improved barrel assemblies, making it adaptable across missions.
+
+The PKM has seen service with both conventional militaries and irregular forces in conflicts from Vietnam to Syria, thanks to its simple maintenance, durability, and ease of training. However, it is not without drawbacks: it lacks the precision of Western counterparts like the FN MAG, and its recoil can be punishing during sustained fire without proper stabilization. Despite this, the PKM’s rugged design and battlefield versatility have cemented its role as a mainstay in modern and asymmetric warfare.]]
 
 -- Trivia --
 SWEP.Class = "Medium Machinegun"
@@ -56,7 +72,7 @@ SWEP.Slot = 2
 SWEP.ViewModel = "models/saa/weapons/arccw/pkm/v_pkm.mdl"
 SWEP.WorldModel = "models/weapons/arccw/c_ud_m16.mdl"
 SWEP.ViewModelFOVBase = 80 -- Set to override viewmodel FOV
-SWEP.CustomizeSnapshotFOV = 100
+SWEP.CustomizeSnapshotFOV = 54
 SWEP.AnimDraw = false
 
 -- Damage --
@@ -136,6 +152,8 @@ SWEP.VisualRecoilBipodMult = 0.1
 SWEP.VisualRecoilCenter = Vector(2, 10, 2) -- The "axis" of visual recoil. Where your hand is.
 
 SWEP.VisualRecoilPunch = 3 -- How far back visual recoil moves the gun.
+SWEP.VisualRecoilPunchMultHipFire = 1.7
+SWEP.VisualRecoilPunchMultBipod = 0.3 -- How far back visual recoil moves the gun.
 SWEP.VisualRecoilPunchMultSights = 0.1
 SWEP.VisualRecoilPositionBump = 1
 SWEP.VisualRecoilDampingConst = 50 -- How spring will be visual recoil, 120 is default
@@ -154,16 +172,16 @@ SWEP.VisualRecoilSpringMagnitude = 1
 SWEP.VisualRecoilMultBipod = 0.02
 
 
-SWEP.RecoilKick = 2.5 -- Camera recoil
-SWEP.RecoilKickDamping = 40 -- Camera recoil damping
+SWEP.RecoilKick = 5 -- Camera recoil
+SWEP.RecoilKickDamping = 65 -- Camera recoil damping
 
 
 
 SWEP.Sway = 0.9
 SWEP.SwayMultSights = 0.2/0.9
 SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizePos = Vector(19 , 27, 5)
-SWEP.CustomizeSnapshotFOV = 110
+SWEP.CustomizePos = Vector(19 , 50, 5)
+SWEP.CustomizeSnapshotFOV = 54
 SWEP.SwayMultMidAir = 2
 SWEP.SwayMultMove = 1.5
 SWEP.SwayMultCrouch = 0.66
@@ -176,12 +194,12 @@ SWEP.TriggerDelayTime = 0.07 -- Time until weapon fires.
 SWEP.TriggerDelayRepeat = false -- Whether to do it for every shot on automatics.
 SWEP.TriggerDelayCancellable = false
 SWEP.TriggerDownSound = {
-"shared/base/mw19/various/trigger/weap_delta_fire_first_plr_01.wav",
-"shared/base/mw19/various/trigger/weap_delta_fire_first_plr_02.wav",
-"shared/base/mw19/various/trigger/weap_delta_fire_first_plr_03.wav",
-"shared/base/mw19/various/trigger/weap_delta_fire_first_plr_04.wav",
-"shared/base/mw19/various/trigger/weap_delta_fire_first_plr_05.wav",
-"shared/base/mw19/various/trigger/weap_delta_fire_first_plr_06.wav",
+"shared/base/mw19/various/prefire/prefire_06-01.wav",
+"shared/base/mw19/various/prefire/prefire_06-02.wav",
+"shared/base/mw19/various/prefire/prefire_06-03.wav",
+"shared/base/mw19/various/prefire/prefire_06-04.wav",
+"shared/base/mw19/various/prefire/prefire_06-05.wav",
+"shared/base/mw19/various/prefire/prefire_06-06.wav",
 }
 SWEP.TriggerUpSound = {
 "shared/base/mw19/various/trigger/FAL_disconnector_plr_01.wav",
@@ -191,7 +209,7 @@ SWEP.TriggerUpSound = {
 "shared/base/mw19/various/trigger/FAL_disconnector_plr_05.wav",
 "shared/base/mw19/various/trigger/FAL_disconnector_plr_06.wav",
 }
-SWEP.RPM = 632
+SWEP.RPM = 720
 SWEP.Num = 1
 SWEP.Firemodes = {
     {
@@ -201,7 +219,16 @@ SWEP.Firemodes = {
 
 SWEP.ActivePos = Vector(-0.5, -1, 0.35)
 SWEP.ActiveAng = Angle(3, 1, -10)
-
+SWEP.ReloadPos = Vector(0, 3, 2)
+SWEP.ActivePosHook = function(self,vec)
+    local attached = self:GetElements()
+    local pos = Vector(-0.5, -1, 0.35)
+    local add = Vector(0,0,0)
+    if attached["lowpunch"] or attached["railed_lid"] then add = Vector(0,0.3,-1)
+    else add = Vector(0,0,0)
+    end
+    return pos + add
+end
 SWEP.BobSettingsMove =  {2, 2, 3,    2, -10, 4}
 SWEP.BobSettingsSpeed = {0.2, 1, 0.92,    1, 1.02, 0.5}
 
@@ -251,7 +278,7 @@ SWEP.PostBashTime = 0.5
 
 SWEP.SpeedMult = 0.68
 SWEP.SpeedMultSights = 0.4
-SWEP.SpeedMultReload = 0.5
+SWEP.SpeedMultReload = 0.1
 SWEP.SightTime = 0.75
 SWEP.SpeedMultShooting = 0.2
 SWEP.AimDownSightsTime = 0.53 -- How long it takes to go from hip fire to aiming down sights.
@@ -328,22 +355,12 @@ SWEP.HoldTypeBlindfire = "pistol"
 local pkm = "saa/pkm/"
 local pkm_far = "^" .. pkm
 local firingsound = {
-    pkm .. "2023aug/f2000_distant_oneshot_01.ogg",
-    pkm .. "2023aug/f2000_distant_oneshot_02.ogg",
-    pkm .. "2023aug/f2000_distant_oneshot_03.ogg",
-    pkm .. "2023aug/f2000_distant_oneshot_04.ogg",
-    pkm .. "2023aug/f2000_distant_oneshot_05.ogg",
-    pkm .. "2023aug/f2000_distant_oneshot_06.ogg",
-    pkm .. "2023aug/f2000_distant_oneshot_07.ogg",
-    pkm .. "2023aug/f2000_distant_oneshot_08.ogg",
-    pkm .. "2023aug/f2000_distant_oneshot_09.ogg",
-    pkm .. "2023aug/f2000_distant_oneshot_10.ogg",
-    pkm .. "2023aug/f2000_distant_oneshot_11.ogg",
-    pkm .. "2023aug/f2000_distant_oneshot_12.ogg",
-    pkm .. "2023aug/f2000_distant_oneshot_13.ogg",
-    pkm .. "2023aug/f2000_distant_oneshot_14.ogg",
-    pkm .. "2023aug/f2000_distant_oneshot_15.ogg",
-    pkm .. "2023aug/f2000_distant_oneshot_16.ogg",
+    "saa/pkm/2025/pk_fire-01.wav",
+    "saa/pkm/2025/pk_fire-02.wav",
+    "saa/pkm/2025/pk_fire-03.wav",
+    "saa/pkm/2025/pk_fire-04.wav",
+    "saa/pkm/2025/pk_fire-05.wav",
+    "saa/pkm/2025/pk_fire-06.wav",
 }
 local distantsound = {
     pkm .. "weap_lmg_fire_plr_atmo_ext2_01.wav",
@@ -355,7 +372,11 @@ local distantsound = {
 }
 SWEP.ShootSound = firingsound
 SWEP.ShootSoundIndoor = firingsound
-SWEP.LayerSound = pkm .. "2023aug/f2000_tail.wav"
+SWEP.LayerSound = {
+    "saa/pkm/2025/tail/pk-tail_01.wav",
+    "saa/pkm/2025/tail/pk-tail_02.wav",
+    "saa/pkm/2025/tail/pk-tail_03.wav",
+}
 local lsind = "shared/base/universal/sandstorm_reverb/fromrpg7/tail_indoors_small_close_0"
 SWEP.LayerSoundIndoor = { 
     pkm .. "2023aug/mutant_indoor_close.ogg",
@@ -411,22 +432,14 @@ SWEP.LayerSoundSilenced = distant_s
 SWEP.LayerSoundSilencedIndoor = distant_s
 
 local firelayer = {
-    pkm .. "2023aug/f2000_close_oneshot_01.ogg",
-    pkm .. "2023aug/f2000_close_oneshot_02.ogg",
-    pkm .. "2023aug/f2000_close_oneshot_03.ogg",
-    pkm .. "2023aug/f2000_close_oneshot_04.ogg",
-    pkm .. "2023aug/f2000_close_oneshot_05.ogg",
-    pkm .. "2023aug/f2000_close_oneshot_06.ogg",
-    pkm .. "2023aug/f2000_close_oneshot_07.ogg",
-    pkm .. "2023aug/f2000_close_oneshot_08.ogg",
-    pkm .. "2023aug/f2000_close_oneshot_09.ogg",
-    pkm .. "2023aug/f2000_close_oneshot_10.ogg",
-    pkm .. "2023aug/f2000_close_oneshot_11.ogg",
-    pkm .. "2023aug/f2000_close_oneshot_12.ogg",
-    pkm .. "2023aug/f2000_close_oneshot_13.ogg",
-    pkm .. "2023aug/f2000_close_oneshot_14.ogg",
-    pkm .. "2023aug/f2000_close_oneshot_15.ogg",
-    pkm .. "2023aug/f2000_close_oneshot_16.ogg",
+    "shared/base/universal/bass/bass_loop_mg-01.wav",
+    "shared/base/universal/bass/bass_loop_mg-02.wav",
+    "shared/base/universal/bass/bass_loop_mg-03.wav",
+    "shared/base/universal/bass/bass_loop_mg-04.wav",
+    "shared/base/universal/bass/bass_loop_mg-05.wav",
+    "shared/base/universal/bass/bass_loop_mg-06.wav",
+    "shared/base/universal/bass/bass_loop_mg-07.wav",
+    "shared/base/universal/bass/bass_loop_mg-08.wav",
 }
 
 -- Animations --
@@ -459,14 +472,12 @@ local belt_final = {
 
 }
 local mech = {
-    pkm .. "weap_mgolf34_fire_plr_mech_01.wav",
-    pkm .. "weap_mgolf34_fire_plr_mech_02.wav",
-    pkm .. "weap_mgolf34_fire_plr_mech_03.wav",
-    pkm .. "weap_mgolf34_fire_plr_mech_04.wav",
-    pkm .. "weap_mgolf34_fire_plr_mech_05.wav",
-    pkm .. "weap_mgolf34_fire_plr_mech_06.wav",
-    pkm .. "weap_mgolf34_fire_plr_mech_07.wav",
-    pkm .. "weap_mgolf34_fire_plr_mech_08.wav",
+        "saa/pkm/2025/pk_mech-01.wav",
+        "saa/pkm/2025/pk_mech-02.wav",
+        "saa/pkm/2025/pk_mech-03.wav",
+        "saa/pkm/2025/pk_mech-04.wav",
+        "saa/pkm/2025/pk_mech-05.wav",
+        "saa/pkm/2025/pk_mech-06.wav",
 
 } 
 
@@ -482,38 +493,32 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "base_draw",
-        Time = 1,
+        Time = 0.85,
     },
     ["holster"] = {
         Source = "base_holster",
-        Time = 1,
-    },
-    ["trigger"] = {
-        Source = "base_idle",
-        EventTable = {
-            {s = trigger,    t = 0, v=1, p=100},
-        },
+        Time = 0.75,
     },
     ["fire"] = {
         Source = {"base_fire_1", "base_fire_2"},
         ShellEjectAt = 0.01,
         Mult = 0.55,
         EventTable = {
-            {s = firelayer,    t = 0, v=0.3, p=100,},
-            {s = mech,    t = 0, v=0.8, p=100, l = 60},
-            {s = belt,    t = 0, v=0.1, p=100, l=60},
-            {s = belt_final,    t = 0.1, v=0.1, p=100, l=60},
+            {s = firelayer,    t = 0, v=0.35, p=100, shelleject = 1, att = 3},
+            {s = mech,    t = 0, v=1.0, p=100, l = 60},
+            {s = belt,    t = 0, v=0.5, p=100, l=60},
+            {s = belt_final,    t = 0.05, v=0.4, p=90, l=60},
         },
     },
     ["fire_iron"] = {
         Source = "ACT_VM_ISHOOT",
         ShellEjectAt = 0.01,
-        Mult = 0.63,
+        Mult = 0.4,
         EventTable = {
-            {s = firelayer,    t = 0, v=0.3, p=100,},
-            {s = mech,    t = 0, v=0.8, p=100, l = 60},
-            {s = belt,    t = 0, v=0.1, p=100, l=60},
-            {s = belt_final,    t = 0.1, v=0.1, p=100, l=60},
+            {s = firelayer,    t = 0, v=0.35, p=100, shelleject = 1, att = 3},
+            {s = mech,    t = 0, v=1.0, p=100, l = 60},
+            {s = belt,    t = 0, v=0.5, p=100, l=60},
+            {s = belt_final,    t = 0.05, v=0.4, p=90, l=60},
         },
     },
     ["ready"] = {
@@ -648,36 +653,15 @@ SWEP.Animations = {
         Source = "bipod_idle",
         Time = 0.05
     },
-    ["trigger_bipod"] = {
-        Source = "bipod_idle",
-        EventTable = {
-            {s = trigger,    t = 0, v=1, p=90},
-        },
-    },
-    ["untrigger_bipod"] = {
-        Source = "bipod_idle",
-        Time = 0.03,
-        EventTable = {
-            {s = trigger,    t = 0, v=1, p=100},
-        },
-    },
     ["fire_bipod"] = {
         Source = {"deployed_fire_1", "deployed_fire_2"},
         ShellEjectAt = 0.01,
         Mult = 0.55,
         EventTable = {
-            {s = firelayer,    t = 0, v=0.3, p=100,},
-            {s = mech,    t = 0, v=0.8, p=100, l = 60},
-            {s = belt,    t = 0, v=0.1, p=100, l=60},
-            {s = belt_final,    t = 0.1, v=0.1, p=100, l=60},
-            {
-            FOV = -4,
-            FOV_Start = 0.05,
-            FOV_End = 0.5,
-            FOV_FuncStart = ARC9.Ease.OutCirc,
-            FOV_FuncEnd = ARC9.Ease.InCirc,
-            t = 0.0,
-            },
+            {s = firelayer,    t = 0, v=0.35, p=100, shelleject = 1, att = 3},
+            {s = mech,    t = 0, v=1.0, p=100, l = 60},
+            {s = belt,    t = 0, v=0.5, p=100, l=60},
+            {s = belt_final,    t = 0.05, v=0.4, p=90, l=60},
         },
     },
     ["fire_bipod_empty"] = {
@@ -685,18 +669,8 @@ SWEP.Animations = {
         ShellEjectAt = 0.01,
         Mult = 0.55,
         EventTable = {
-            {s = firelayer,    t = 0, v=0.3, p=100,},
-            {s = mech,    t = 0, v=0.8, p=100, l = 60},
-            {s = belt,    t = 0, v=0.5, p=100, l=60},
-            {s = belt_final,    t = 0, v=0.5, p=100, l=60},
-            {
-            FOV = -4,
-            FOV_Start = 0.05,
-            FOV_End = 0.5,
-            FOV_FuncStart = ARC9.Ease.OutCirc,
-            FOV_FuncEnd = ARC9.Ease.InCirc,
-            t = 0.0,
-            },
+            {s = firelayer,    t = 0, v=0.35, p=100, shelleject = 1, att = 3},
+            {s = mech,    t = 0, v=1.0, p=100, l = 60},
         },
     },
     ["fire_iron_bipod"] = {
@@ -704,18 +678,10 @@ SWEP.Animations = {
         ShellEjectAt = 0.01,
         Mult = 0.63,
         EventTable = {
-            {s = firelayer,    t = 0, v=0.3, p=100,},
-            {s = mech,    t = 0, v=0.8, p=100, l = 60},
+            {s = firelayer,    t = 0, v=0.35, p=100, shelleject = 1, att = 3},
+            {s = mech,    t = 0, v=1.0, p=100, l = 60},
             {s = belt,    t = 0, v=0.5, p=100, l=60},
-            {s = belt_final,    t = 0, v=0.5, p=100, l=60},
-            {
-            FOV = -3,
-            FOV_Start = 0.05,
-            FOV_End = 0.5,
-            FOV_FuncStart = ARC9.Ease.OutCirc,
-            FOV_FuncEnd = ARC9.Ease.InCirc,
-            t = 0.0,
-            },
+            {s = belt_final,    t = 0.05, v=0.4, p=90, l=60},
         },
     },
     ["fire_iron_bipod_empty"] = {
@@ -723,18 +689,8 @@ SWEP.Animations = {
         ShellEjectAt = 0.01,
         Mult = 0.63,
         EventTable = {
-            {s = firelayer,    t = 0, v=0.3, p=100,},
-            {s = mech,    t = 0, v=0.8, p=100, l = 60},
-            {s = belt,    t = 0, v=0.5, p=100, l=60},
-            {s = belt_final,    t = 0, v=0.5, p=100, l=60},
-            {
-            FOV = -3,
-            FOV_Start = 0.05,
-            FOV_End = 0.5,
-            FOV_FuncStart = ARC9.Ease.OutCirc,
-            FOV_FuncEnd = ARC9.Ease.InCirc,
-            t = 0.0,
-            },
+            {s = firelayer,    t = 0, v=0.35, p=100, shelleject = 1, att = 3},
+            {s = mech,    t = 0, v=1.0, p=100, l = 60},
         },
     },
     ["reload_bipod"] = {
@@ -862,7 +818,9 @@ SWEP.Attachments = {
        Category = {"SAA_SCOPE_SMALL","SAA_SCOPE_MEDIUM"},
        Bone = "b_wpn_lid",
        InstalledElements = {"railed_lid"},
-       Pos = Vector(0.11, -4, 2.1),
+       ExcludeElements = {"pkpsp_optic"},
+       ExtraSightDistance = 1,
+       Pos = Vector(0.11, -6, 2.1),
        Ang = Angle(0, 270, 0),
 
        Scale = 0.9,
@@ -918,9 +876,19 @@ SWEP.Attachments = {
 
        Scale = 0.8,
    },
+    {
+       PrintName = "Magazine",
+       Category = {"saa_pkm_mag"},
+       DefaultIcon = Material("hud/arc9_saa/rus/ao/pkm_stock.png", "mips smooth"),
+       Bone = "b_wpn_mag",
+       Pos = Vector(0, 0, 0),
+       Ang = Angle(0, 0, 0),
+
+       Scale = 1.0,
+   },
 }
 
-SWEP.ExtraSightDist = 10
+
 
 SWEP.DefaultBodygroups = "00000000000"
 SWEP.AttachmentElements = {
@@ -934,6 +902,11 @@ SWEP.AttachmentElements = {
             {4, 1},
         },
     },
+    ["magcloth"] = {
+        Bodygroups = {
+            {2, 1},
+        },
+    },
     ["barrel_pks"] = {
         Bodygroups = {
             {4, 2},
@@ -941,7 +914,7 @@ SWEP.AttachmentElements = {
         AttPosMods = {
             [1] = {
                 Pos = Vector(0, 23, 1.55),
-            }
+            },
         },
     },
     ["barrel_pkt"] = {
@@ -951,6 +924,20 @@ SWEP.AttachmentElements = {
         AttPosMods = {
             [1] = {
                 Pos = Vector(0, 17, 1.55),
+            }
+        },
+    },
+    ["barrel_pkpsp"] = {
+        Bodygroups = {
+            {4, 4},
+            {3, 2},
+        },
+        AttPosMods = {
+            [1] = {
+                Pos = Vector(0, 12.5, 1.55),
+            },
+            [3] = {
+                Pos = Vector(0, 10, 1.55),
             }
         },
     },
@@ -967,6 +954,11 @@ SWEP.AttachmentElements = {
     ["stock_ps"] = {
         Bodygroups = {
             {6, 3},
+        },
+    },
+    ["stock_pt2v"] = {
+        Bodygroups = {
+            {6, 4},
         },
     },
     ["wood_grip"] = {
@@ -990,3 +982,14 @@ SWEP.AttachmentElements = {
         },
     },
 }
+
+
+SWEP.Hook_ModifyBodygroups = function(wep, data)
+    local model = data.model
+    if !model then return end
+
+    if wep:HasElement("handguard_rail") and wep:HasElement("barrel_pkpsp") then model:SetBodygroup(3,1)
+    end
+
+
+end

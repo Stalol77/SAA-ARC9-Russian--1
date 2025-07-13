@@ -99,13 +99,10 @@ SWEP.Recoil = 0.7*(1.5)
 SWEP.RecoilMultSights = 3
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
-SWEP.RecoilUp = 0.7 -- Multiplier for vertical recoil
+SWEP.RecoilUp = 2.5 -- Multiplier for vertical recoil
 SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 
 -- This is for EFT-like recoil, where gun shoots where sights at. Adds aditional movement to player view
-SWEP.EFTRecoil = true -- true
-SWEP.EFTRecoilUpMult = 30 -- 40-100
-SWEP.EFTRecoilSideMult = 30 -- 1-20
 SWEP.FirstShootRecoilUp = 1 -- eft too
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
@@ -134,6 +131,7 @@ SWEP.VisualRecoilCenter = Vector(2, 9, 2) -- The "axis" of visual recoil. Where 
 
 SWEP.VisualRecoilPunch = 0.1 -- How far back visual recoil moves the gun.
 SWEP.VisualRecoilPunchMultSights = 0.1
+SWEP.VisualRecoilPunchMultHipFire = 50
 SWEP.VisualRecoilPunchMultBlindFire = 10000
 SWEP.VisualRecoilPositionBump = 1
 SWEP.VisualRecoilDampingConst = 50 -- How spring will be visual recoil, 120 is default
@@ -148,8 +146,8 @@ SWEP.VisualRecoilSpringPunchDamping = 05 -- ehh another val for "eft" recoil, 6 
 SWEP.VisualRecoilHipFire = 1
 
 
-SWEP.RecoilKick = 1 -- Camera recoil
-SWEP.RecoilKickDamping = 50.151 -- Camera recoil damping
+SWEP.RecoilKick = 3 -- Camera recoil
+SWEP.RecoilKickDamping = 100 -- Camera recoil damping
 
 -- SInput rumble configuration
 -- Max of 65535

@@ -5,7 +5,7 @@ ATT.Icon = Material("hud/arc9_saa/rus/ao/pecheneg_br.png", "mips smooth")
 
 ATT.SortOrder = 0
 ATT.Category = "saa_pkm_barrel"
-ATT.RPMMult = 650/632
+ATT.RPMMult = 620/745
 ATT.PhysBulletMuzzleVelocityMult = 800/825
 
 ATT.ActivateElements = {"barrel_pkp"}

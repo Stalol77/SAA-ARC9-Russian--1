@@ -4,14 +4,14 @@
 	"$bumpmap"					"saa\weapons\arccw\AKS\AKM\sandstorm\akm_bolt_n"
 	"$phongexponenttexture"		"saa\weapons\arccw\AKS\AKM\sandstorm\akm_bolt_e"
 
-	"$phongwarptexture"			"models\weapons\saa\shared\lightwarps\phongwarp_metal"
-	"$color2"					"[0.6 0.6 0.64]"
+	"$phongwarptexture"			"models\weapons\saa\shared\lightwarps\phongwarp_metal2"
+	"$color2"					"[0.35 0.35 0.35]"
 	"$blendTintByBaseAlpha"		"0"
 	"$phong"					"1"
-	"$phongboost"				"3"
+	"$phongboost"				"1.5"
 	"$phongfresnelranges"		"[0.32 0.72 0.99]"
 	"$phongalbedotint" 			"1"
-	"$phongalbedoboost"			"20"
+	"$phongalbedoboost"			"40"
 
 	"$rimlight"					"1"
 	"$rimlightexponent"			"33"
@@ -20,7 +20,8 @@
 	"$envmap" 			"models\weapons\envmaps\fo4_dith"
 	"$normalmapalphaenvmapmask" 	"1"
 	"$envmaptint"			"[0.5 0.5 0.5]"
-	"$envmapcoefficient"	"0.2" // Lighting will be multiplied by this value
+	"$envmapcoefficient"	"0.5" // Lighting will be multiplied by this value
+	"$envmapfresnel"		"0.7"
 Proxies
 {
     SAA_CubemapTintMult

@@ -10,7 +10,7 @@ SWEP.UseHands = true
 
 SWEP.MuzzleParticle = "muzzleflash_ak47" -- Used for some muzzle effects.
 SWEP.ShellModel = "models/weapons/rifleshell.mdl"
-SWEP.ShellScale = 0.8
+SWEP.ShellScale = 0.58
 --SWEP.ShellMaterial = "models/weapons/arcticcw/shell_556"
 SWEP.ShellPitch = 95
 
@@ -82,7 +82,7 @@ SWEP.SecondarySupplyLimit = 3 -- Amount of reserve UBGL magazines you can take.
 
 SWEP.Recoil = 1
 SWEP.RecoilSide = 1.4
-SWEP.RecoilUp = 2
+SWEP.RecoilUp = 2.4
 SWEP.RecoilUpMultRecoil = 5
 
 SWEP.RecoilRandomUp = 0.6
@@ -102,8 +102,8 @@ SWEP.UseVisualRecoil = true
 
 SWEP.VisualRecoilUp = 3 -- Vertical tilt for visual recoil.F
 SWEP.VisualRecoilSide = 3 -- Horizontal tilt for visual recoil.
-SWEP.VisualRecoilRoll = 5 -- Roll tilt for visual recoil.
-SWEP.VisualRecoilRollMultSights = 10 -- Roll tilt for visual recoil.
+SWEP.VisualRecoilRoll = 70 -- Roll tilt for visual recoil.
+SWEP.VisualRecoilRollMultSights = 3/7 -- Roll tilt for visual recoil.
 
 SWEP.VisualRecoilCenter = Vector(2, 7, 2) -- The "axis" of visual recoil. Where your hand is.
 
@@ -259,7 +259,7 @@ SWEP.HoldTypeCustomize = "slam"
 SWEP.HoldTypeBlindfire = "pistol"
 
 SWEP.IronSights = {
-    Pos = Vector(-2.45*1.1, -3*1.1, 1.5*1.1),
+    Pos = Vector(-2.45*1.1, -1.5*1.1, 1.5*1.1),
     Ang = Angle(0.0, 0.2,0),
     Midpoint = { -- Where the gun should be at the middle of it's irons
         Pos = Vector(0, 15, -4),
@@ -1504,7 +1504,8 @@ SWEP.AttachmentElements = {
 SWEP.HookP_NameChange = function(self, name) 
 name = "AKM"
     local attached = self:GetElements()
-    if attached["akmn_dovetail"] and attached["akms_stock"] then name = "AKMSN"
+    if attached["366tkm"] then name = "VPO-209" 
+    elseif attached["akmn_dovetail"] and attached["akms_stock"] then name = "AKMSN"
     elseif attached["akmn_dovetail"] then name = "AKMN"
     elseif attached["akms_stock"] then name = "AKMS"
     else name = "AKM"

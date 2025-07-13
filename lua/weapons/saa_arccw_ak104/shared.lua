@@ -10,7 +10,7 @@ SWEP.UseHands = true
 
 SWEP.MuzzleParticle = "muzzleflash_ak74" -- Used for some muzzle effects.
 SWEP.ShellModel = "models/weapons/rifleshell.mdl"
-SWEP.ShellScale = 0.8
+SWEP.ShellScale = 0.58
 --SWEP.ShellMaterial = "models/weapons/arcticcw/shell_556"
 SWEP.ShellPitch = 95
 
@@ -81,7 +81,8 @@ SWEP.SecondarySupplyLimit = 3 -- Amount of reserve UBGL magazines you can take.
 
 SWEP.Recoil = 0.91
 SWEP.RecoilSide = 1.4
-SWEP.RecoilUp = 1.6
+SWEP.RecoilUp = 2.2
+SWEP.RecoilUpMultRecoil = 5
 
 SWEP.RecoilRandomUp = 0.6
 SWEP.RecoilRandomSide = 0.4
@@ -119,7 +120,7 @@ SWEP.VisualRecoilPositionBump = 1.5
 
 SWEP.VisualRecoilHipFire = 1
 
-SWEP.VisualRecoilDampingConst = 10 -- How spring will be visual recoil, 120 is default
+SWEP.VisualRecoilDampingConst = 15 -- How spring will be visual recoil, 120 is default
 SWEP.VisualRecoilSpringMagnitude = 1
 SWEP.VisualRecoilSpringPunchDamping = 2 -- ehh another val for "eft" recoil, 6 is default
 
@@ -264,7 +265,7 @@ SWEP.HoldTypeCustomize = "slam"
 SWEP.HoldTypeBlindfire = "pistol"
 
 SWEP.IronSights = {
-    Pos = Vector(-2.45, -3, 1.5)*1.1,
+    Pos = Vector(-2.45, -1, 1.5)*1.1,
     Ang = Angle(0.0, 0.2,0),
     Midpoint = { -- Where the gun should be at the middle of it's irons
         Pos = Vector(0, 15, -4),
@@ -1457,6 +1458,11 @@ SWEP.AttachmentElements = {
     ["alpha_stock"] = {
         Bodygroups = {
             {6, 8},
+        },
+    },
+    ["aksu_ar15stock"] = {
+        Bodygroups = {
+            {6, 10},
         },
     },
     ["s100_stock"] = {
